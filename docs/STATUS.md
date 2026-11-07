@@ -10,7 +10,7 @@ Name Juvanga; symbol B (J + sun); night/sand/gold palette with verified contrast
 
 Original F0: 86 detailed tasks, 47 traced requirements, product/architecture/quality/operations documents, brand/assets, frontend workshop, restart scripts, CI and contribution templates. Nine tooling and three browser tests passed; links/contrast/lint/typecheck/build passed; production dependency audit reported no known vulnerabilities. [Historical report and limitations](delivery/VALIDATION-F0.md).
 
-Files integrated into this repository; current git inspection shows an initial commit and an `origin` remote. Remote access and CI have not been verified in this session. Original PDFs and logo proposals retained. Dependencies installed locally and git-ignored. Target runtime: Node 24 LTS / npm 11.21.2; system runtime unchanged.
+Local `main` integrates JUV-101–103 by fast-forward through `9f46710`; their three merged feature branches were deleted locally. Full verification on integrated `main` passed. The project owner will push; remote access and CI remain unverified. Original PDFs and logo proposals retained. Dependencies installed locally and git-ignored. Target runtime: Node 24 LTS / npm 11.21.2; system runtime unchanged.
 
 ## Latest completed task
 
@@ -30,4 +30,4 @@ Commands: `npm run context`, `npm run next -- M0`, `npm run task -- JUV-104`, `n
 
 M0 drafts: Codex; accountable course owner/reviewer: project owner, self-appointed on 2026-11-07. Maintainer, C1 author/reviewer and operators remain to appoint; [product decisions](product/DECISIONS.md). Verify remote/hosting in the delivery ticket. ADR-005 documents managed-auth bcrypt versus Argon2id: review before real accounts.
 
-Latest handoff: [Free-course content](sessions/2026-11-07-free-course-content.md). Earlier: [Public content schema](sessions/2026-11-07-public-content-schema.md), [M0 course plan](sessions/2026-11-07-m0-course-plan.md), [English documentation](sessions/2026-11-06-english-documentation.md).
+Latest handoff: [Local main integration](sessions/2026-11-07-main-integration.md). Product handoffs: [Free-course content](sessions/2026-11-07-free-course-content.md), [Public content schema](sessions/2026-11-07-public-content-schema.md), [M0 course plan](sessions/2026-11-07-m0-course-plan.md).

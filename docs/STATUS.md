@@ -1,6 +1,6 @@
 # Current status — Juvanga
 
-Updated on 2026-11-07. **F0 complete; M0 underway; JUV-103 in review.**
+Updated on 2026-11-07. **F0 complete; M0 underway; JUV-103 done.**
 
 ## Stable decisions
 
@@ -14,19 +14,17 @@ Files integrated into this repository; current git inspection shows an initial c
 
 ## Latest completed task
 
-**JUV-102** — owner: Codex; branch: `feat/JUV-102-public-content-schema`; date: 2026-11-07; status: `done`. [Public course contract](architecture/PUBLIC-CONTENT.md), strict Zod schemas, versioned inventory and CLI/Vite build gate. HTML, unsafe URLs, broken lesson references, drafts, unexpected files and symlinks are rejected. [ADR-006](architecture/decisions/006-public-content.md). Full `npm run verify` passed under isolated Node 24.22.2/npm 11.21.2: 49 tests, links/views, contrasts, lint, typecheck and build. [Evidence and limitations](delivery/VALIDATION-JUV-102.md).
+**JUV-103** — owner: Codex; branch: `feat/JUV-103-free-course-content`; date: 2026-11-07; status: `done`; authoring commit: `fa9b20d`. Three French lessons with examples, exercises, versioned rubrics and solutions; [readable course copy](reviews/meeting-notes-action-plan-v1.md). The project owner explicitly confirmed complete-lesson review, all three exercises and approval without corrections. Review metadata recorded in UTC; the approved lesson text is unchanged. Full `npm run verify` passed after acceptance under isolated Node 24.22.2/npm 11.21.2 (49 tests, draft/copy, links/views, contrasts, lint, typecheck, build). [Evidence and limits](delivery/VALIDATION-JUV-103.md).
 
 ## Not implemented
 
-No published M0 course, business backend, cloud database, SMTP, domain or public deployment. Three French lessons are drafted for review; learner pages and reviewed publication remain unavailable. Current page is a brand workshop, not a first learning release. Local Fraunces/Inter remain JUV-105; workshop uses fallback fonts. Remote CI not run.
+No published M0 course, business backend, cloud database, SMTP, domain or public deployment. The three approved French lessons remain in the editorial directory, with no publication timestamp; public inventory is still empty. Course pages and reader remain to implement. Current page is a brand workshop, not a first learning release. Local Fraunces/Inter remain JUV-105; workshop uses fallback fonts. Remote CI not run.
 
-## Current M0 task
+## Next M0 task
 
-**JUV-103** — owner: Codex; branch: `feat/JUV-103-free-course-content`; date: 2026-11-07; status: `in_review`. Three complete French lessons, examples, exercises, versioned rubrics and solutions are prepared in the canonical draft; [readable review copy](reviews/meeting-notes-action-plan-v1.md). Provenance and rights are recorded. Full `npm run verify` passed with 49 tests and the new draft/review-copy check. [Evidence and limits](delivery/VALIDATION-JUV-103.md).
+**JUV-104**: accessible course components. Continue M0 in dependency order; JUV-103 now satisfies its editorial review and walkthrough requirements. Course publication remains a separate release step, not a consequence of ticket closure.
 
-Next: the designated project owner performs the pedagogical review and full non-author exercise walkthrough. No review or publication timestamp is invented. JUV-103 stays in review until these results are recorded; dependent tickets stay unstarted. JUV-104 (components) is independently ready.
-
-Commands: `npm run context`, `npm run task -- JUV-103`, `npm run course:review`, `npm run check:course`. With Node 24: `npm ci`, `npm run verify`, `npm run dev`.
+Commands: `npm run context`, `npm run next -- M0`, `npm run task -- JUV-104`, `npm run check:course`. With Node 24: `npm ci`, `npm run verify`, `npm run dev`.
 
 ## Owners and open decisions
 

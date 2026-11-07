@@ -21,7 +21,10 @@
   "authors": [
     "Codex"
   ],
-  "review": null,
+  "review": {
+    "reviewer": "Project owner",
+    "reviewedAt": "2026-11-07T08:22:14Z"
+  },
   "publishedAt": null,
   "modules": [
     {

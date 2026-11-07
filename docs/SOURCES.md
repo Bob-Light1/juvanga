@@ -36,7 +36,7 @@ JUV-102 implementation reference, consulted on 2026-11-07: [Zod schema API](http
 
 ## JUV-103 editorial provenance
 
-JUV-103 editorial provenance, 2026-11-07: the [course editorial record](../content/drafts/meeting-notes-action-plan/README.md) records the approved fictional source notes, original drafting, third-party media/excerpt status and pending human review. No new external provider research was needed.
+JUV-103 editorial provenance, 2026-11-07: the [course editorial record](../content/drafts/meeting-notes-action-plan/README.md) records the approved fictional source notes, original drafting, third-party media/excerpt status and the project owner's explicit complete-lesson approval and three-exercise walkthrough report. No new external provider research was needed.
 
 ## Order of authority
 

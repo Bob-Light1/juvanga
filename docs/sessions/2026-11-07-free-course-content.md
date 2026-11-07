@@ -1,9 +1,10 @@
 # Handoff — 2026-11-07 — free-course content
 
-- Ticket: JUV-103; owner: Codex; branch: `feat/JUV-103-free-course-content`; status: in_review; human review pending.
+- Ticket: JUV-103; owner: Codex; branch: `feat/JUV-103-free-course-content`; status: done. Resumed by Codex for closure after explicit human acceptance; authoring commit: `fa9b20d`.
 - Prepared: complete French course draft with three lessons, guided examples, exercises, versioned rubrics, worked solutions and revision guidance. Canonical JSON stays outside the public inventory.
-- Review: [readable generated copy](../reviews/meeting-notes-action-plan-v1.md); [provenance](../../content/drafts/meeting-notes-action-plan/README.md); [verification record](../delivery/VALIDATION-JUV-103.md). The project owner is the designated pedagogical reviewer and may perform the non-author walkthrough. No human verification has been inferred.
+- Review: project owner explicitly confirmed reading the full course, completing all three exercises and approving without corrections on 2026-11-07. [Canonical review metadata](../../content/drafts/meeting-notes-action-plan/v1.json); [evidence](../delivery/VALIDATION-JUV-103.md). Codex remains the draft author. Acceptance recorded at 08:22:14 UTC; no measured completion time reported.
 - Commands: `npm run course:review`; full `npm run verify` under isolated Node 24.22.2/npm 11.21.2 passed (draft/copy, 87 tickets/links/views, 14 contrast pairs, 49 tests, lint, typecheck, build). Three UTC assertions passed. A scan of 12 production files found no draft title/IDs; `git diff --check` passed.
-- Decisions: DEC-07 review remains pending; no new schema/architecture or public publication. Authoring helper consumes the existing JUV-102 contract.
-- Not run: human review/walkthrough, browser E2E, remote CI, production deployment.
-- Next: owner reads the three lessons and attempts all exercises, then reports corrections or explicit review/walkthrough results. Keep dependent tickets unstarted until JUV-103 is done. Independent next task: `npm run task -- JUV-104`.
+- Decisions: DEC-07 now records complete-lesson approval and the reported non-author walkthrough. Course remains unpublished; no lesson, schema or architecture change.
+- Closure verification: full `npm run verify` passed again after the review metadata update (49 tests plus draft/copy, docs, contrasts, lint, typecheck and build). Course diff against `fa9b20d` contains only review metadata; approved lessons and rubrics are unchanged. `git diff --check` passed.
+- Not run: browser E2E, remote CI, production deployment.
+- Next: `npm run task -- JUV-104` for accessible components. Further M0 tickets follow the dependency graph; editorial acceptance does not publish course pages.

@@ -15,7 +15,7 @@ Estimated learning time: 35–50 minutes, including a final check. This is a pla
 ## Responsibilities and publication gate
 
 - Draft author: Codex, responsible for preparing the plan and subsequent draft content.
-- Accountable course owner and pedagogical reviewer: the project owner participating in this conversation, self-appointed on 2026-11-07. The owner subsequently approved this plan; full lessons still need review.
+- Accountable course owner and pedagogical reviewer: the project owner participating in this conversation, self-appointed on 2026-11-07. The owner subsequently approved this plan; the complete-lesson review outcome is recorded in [JUV-103 evidence](../delivery/VALIDATION-JUV-103.md).
 - JUV-101 review: the project owner explicitly approved the outcome, sequence, exercise and solution on 2026-11-07.
 - JUV-103 publication evidence: record the owner's pedagogical review and a complete walkthrough by someone who did not write the course. The project owner can perform that walkthrough while Codex remains the draft author. If the owner co-authors the lessons, identify another walkthrough participant.
 
@@ -99,4 +99,4 @@ This is a product-content choice, not an architecture change. It introduces no f
 
 ## Review recorded
 
-The project owner explicitly approved the plan on 2026-11-07 without requesting adjustments. Complete lessons still require their own JUV-103 review. Beginner comprehension and actual learning time remain untested until JUV-113.
+The project owner explicitly approved the plan on 2026-11-07 without requesting adjustments. See [JUV-103 evidence](../delivery/VALIDATION-JUV-103.md) for the subsequent complete-lesson review. Representative beginner testing and observed learning time remain JUV-113 checks.

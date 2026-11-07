@@ -28,12 +28,12 @@ npm run dev
 | `npm test` | Tooling and documentation invariant tests |
 | `npm run lint` | Frontend code analysis |
 | `npm run typecheck` | Strict TypeScript |
-| `npm run build` | Frontend build in apps/web/dist |
+| `npm run build` | Validated client build + static prerender in apps/web/dist |
 | `npm run verify` | Previous checks excluding browser tests |
 | `npm run test:e2e` | Browser smoke and axe, after build |
-| `npm run preview -- --port 4173` | Serves the local build |
+| `npm run preview -- --port 4173` | Serves static route HTML and real 404 responses |
 
-Install the test browser once: `npx playwright install chromium`. On a machine with Chrome already installed: `PLAYWRIGHT_CHANNEL=chrome npm run test:e2e`. Do not share a personal browser profile. Brand tests are not M0 business acceptance testing.
+Install the test browser once: `npx playwright install chromium`. On a machine with Chrome already installed: `PLAYWRIGHT_CHANNEL=chrome npm run test:e2e`. Do not share a personal browser profile. Browser tests cover public navigation, initial HTML without JavaScript, 404s, metadata, assets and component accessibility. They are not complete M0 learner acceptance.
 
 ## Git and teamwork
 
@@ -50,3 +50,9 @@ M0 needs no secrets or Docker. M1: Supabase CLI and Docker for the local environ
 ## Dependency updates
 
 Keep exact added dependency versions and the lockfile. Use agreed npm 11, a new branch and compatibility checks. Audit before release; address findings according to exploitability and scope, never run `npm audit fix --force` without reviewing changes.
+
+## Public page build configuration
+
+`npm run build` is the complete artifact command; bare `vite build` omits prerendering. With `SITE_URL` unset, output is a noindex preview with no canonical and an empty sitemap. At release, pass the verified HTTPS origin through the build environment; the variable is non-secret and has no `VITE_` prefix. The build reads `process.env`, not a browser-visible provider configuration. See [deployment](../operations/DEPLOYMENT.md) and [ADR-008](../architecture/decisions/008-public-pages.md).
+
+Home is `/`, catalogue `/courses`, descriptions `/courses/:id`, and the former brand/component workshop `/workshop` (always noindex). [Discovery inventory](../../content/discovery/catalogue.json) selects only approved description sources. It never publishes lessons; see the [content boundary](../architecture/PUBLIC-CONTENT.md).

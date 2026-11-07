@@ -11,5 +11,6 @@
 | [ADR-005](005-managed-auth.md) | Managed auth, BFF and Argon2id deviation | Adopted for M1, security review required |
 | [ADR-006](006-public-content.md) | Strict versioned public courses and build validation | Adopted for M0 |
 | [ADR-007](007-accessible-components.md) | Native accessible course components and workshop | Adopted for M0 |
+| [ADR-008](008-public-pages.md) | Static public pages, discovery and React Router navigation | Adopted for M0 |
 
 Create a new decision to supersede an old one; do not rewrite history. Template: `docs/templates/ADR.md`.

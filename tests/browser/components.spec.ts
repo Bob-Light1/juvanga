@@ -21,7 +21,7 @@ async function checkLayout(page: Page) {
 }
 
 test('complete keyboard journey validates, recovers and preserves focus', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/workshop');
   await page.keyboard.press('Tab');
   await expect(page.getByRole('link', { name: 'Aller au contenu' })).toBeFocused();
   await page.keyboard.press('Enter');
@@ -93,7 +93,7 @@ test('complete keyboard journey validates, recovers and preserves focus', async 
 for (const width of [1280, 360]) {
   test(`components, all resource states and targets at ${width}px`, async ({ page }, testInfo) => {
     await page.setViewportSize({ width, height: 900 });
-    await page.goto('/#components');
+    await page.goto('/workshop#components');
     await checkLayout(page);
     const states = {
       loading: 'Chargement en cours', empty: 'Aucun parcours à afficher',
@@ -136,7 +136,7 @@ test('actual 200% browser zoom preserves reflow and keyboard controls', async ({
       fs.writeFileSync(testInfo.outputPath(name), Buffer.from(capture.data, 'base64'));
       await client.detach();
     };
-    await page.goto('http://127.0.0.1:4173/#components');
+    await page.goto('http://127.0.0.1:4173/workshop#components');
     const metrics = await page.evaluate(() => ({ cssWidth: innerWidth, outerWidth, pixelRatio: devicePixelRatio }));
     await testInfo.attach('zoom-metrics', { body: JSON.stringify(metrics), contentType: 'application/json' });
     expect(metrics.pixelRatio).toBeCloseTo(2, 1);

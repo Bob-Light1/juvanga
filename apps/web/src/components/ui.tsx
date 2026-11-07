@@ -1,4 +1,5 @@
 import { useId, type ButtonHTMLAttributes, type ComponentProps, type ReactNode } from 'react';
+import { Link } from 'react-router';
 
 type ActionVariant = 'primary' | 'secondary';
 
@@ -20,8 +21,9 @@ export function Button({ type = 'button', variant = 'primary', busy = false, dis
   );
 }
 
-export function ActionLink({ variant = 'primary', className = '', ...props }: ComponentProps<'a'> & { href: string; variant?: ActionVariant }) {
-  return <a {...props} className={`button button-${variant} ${className}`} />;
+export function ActionLink({ variant = 'primary', className = '', internal = false, href, ...props }: ComponentProps<'a'> & { href: string; variant?: ActionVariant; internal?: boolean }) {
+  if (internal) return <Link {...props} to={href} className={`button button-${variant} ${className}`} />;
+  return <a {...props} href={href} className={`button button-${variant} ${className}`} />;
 }
 
 type TextFieldProps = Omit<ComponentProps<'input'>, 'type'> & {
@@ -69,9 +71,10 @@ type CourseCardProps = {
   meta: string;
   href: string;
   actionLabel: string;
+  internal?: boolean;
 };
 
-export function CourseCard({ title, description, badge, meta, href, actionLabel }: CourseCardProps) {
+export function CourseCard({ title, description, badge, meta, href, actionLabel, internal = false }: CourseCardProps) {
   const titleId = useId();
   return (
     <article className="course-card" aria-labelledby={titleId}>
@@ -79,7 +82,7 @@ export function CourseCard({ title, description, badge, meta, href, actionLabel 
       <h3 id={titleId}>{title}</h3>
       <p className="course-meta">{meta}</p>
       <p>{description}</p>
-      <ActionLink href={href} variant="secondary">{actionLabel}</ActionLink>
+      <ActionLink href={href} variant="secondary" internal={internal}>{actionLabel}</ActionLink>
     </article>
   );
 }

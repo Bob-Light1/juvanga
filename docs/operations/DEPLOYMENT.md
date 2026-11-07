@@ -8,8 +8,8 @@ Cloudflare Pages Free with a `pages.dev` subdomain, static build. No domain purc
 
 1. Complete JUV-113, select a clean commit and produce a RELEASE record.
 2. Create an owner-controlled remote repository and Pages project. For Git integration: project root = repository; build command `npm ci && npm run build`; output `apps/web/dist`; Node 24 and npm 11.21.2 in the build environment. Verify actual versions; otherwise build in CI and upload dist.
-3. Prepare deep routes, 404 page and JUV-106 prerendering. The F0 starter lacks this routing; do not present it as M0.
-4. Remove `noindex` from index.html and `_headers` only for ready public pages. Previews remain noindex. Future private portal uses no-store; no public account cache.
+3. JUV-106 generates extensionless home/catalogue/course HTML and a top-level `404.html`. Use the complete `npm run build` artifact; do not add a wildcard SPA rewrite to home. Verify direct links, refresh and real 404 status on the chosen host.
+4. Only for a ready public release, set `SITE_URL` to the verified HTTPS origin in the build environment. The build generates matching canonical/Open Graph/sitemap/robots/headers and indexable public pages; workshop/404 stay noindex. Leave it unset for previews. Do not hand-edit generated HTML or headers. No actual domain is configured yet. Future private portal uses no-store; no public account cache.
 5. Deploy a preview; verify HTTPS, assets, CSP, journey, mobile, deep links, offline/service-worker version and absence of secrets.
 6. Publish the validated version; record URL, commit, author, date and owning account. Test rollback to the previous release, then restore the desired release.
 

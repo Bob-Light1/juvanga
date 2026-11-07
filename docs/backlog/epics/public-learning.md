@@ -173,7 +173,7 @@ Evidence: docs/delivery/VALIDATION-JUV-105.md ; docs/sessions/2026-11-07-local-f
 
 ## JUV-106 — Deliver indexable home, catalogue and course pages
 
-Milestone **M0** · Frontend · 2–4 person-days · status **todo**
+Milestone **M0** · Frontend · 2–4 person-days · status **done**
 
 Dependencies: JUV-102, JUV-104, JUV-105.
 
@@ -197,9 +197,9 @@ Requirements: COUR-04, USR-04.
 
 References: [docs/design/UX.md](../../../docs/design/UX.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-106-indexable-public-pages.
 
-Evidence: none — task not delivered.
+Evidence: docs/delivery/VALIDATION-JUV-106.md ; docs/architecture/decisions/008-public-pages.md ; docs/sessions/2026-11-07-indexable-public-pages.md.
 
 ---
 

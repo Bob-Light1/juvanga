@@ -4,7 +4,7 @@ import AxeBuilder from '@axe-core/playwright';
 for (const viewport of [{ width: 1280, height: 900 }, { width: 360, height: 800 }]) {
   test(`brand workshop at ${viewport.width}px`, async ({ page }, testInfo) => {
     await page.setViewportSize(viewport);
-    await page.goto('/');
+    await page.goto('/workshop');
     await expect(page.getByRole('heading', { level: 1 })).toContainText('Progresser');
     await expect(page.getByRole('img', { name: 'Juvanga', exact: true })).toBeVisible();
     expect(await page.locator('img').evaluateAll(images => images.every(image => (image as HTMLImageElement).complete && (image as HTMLImageElement).naturalWidth > 0))).toBe(true);
@@ -21,7 +21,7 @@ for (const viewport of [{ width: 1280, height: 900 }, { width: 360, height: 800 
 
 test('keyboard and reduced motion preserve interaction', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
-  await page.goto('/');
+  await page.goto('/workshop');
   await page.keyboard.press('Tab');
   await expect(page.getByRole('link', { name: 'Aller au contenu' })).toBeFocused();
   await page.keyboard.press('Enter');

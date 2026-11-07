@@ -33,6 +33,8 @@ JUV-101 proposes the [free-course plan](FREE-COURSE.md), including the outcome, 
 
 JUV-103 provides the [complete-lesson review copy](../reviews/meeting-notes-action-plan-v1.md) and [editorial provenance](../../content/drafts/meeting-notes-action-plan/README.md). After authoring commit `fa9b20d`, the project owner explicitly confirmed reading the complete lessons, performing all three exercises and approving the course without corrections on 2026-11-07. This supersedes the pending lesson-review and non-author walkthrough state. Actual review metadata is now recorded; the content remains outside the public inventory with no publication timestamp. No new architecture or public deployment is authorized by this editorial acceptance.
 
+JUV-106 adds selected public course descriptions under [ADR-008](../architecture/decisions/008-public-pages.md), derived from the approved source and marked as coming soon. This does not record lesson publication, change the review/publication timestamp or authorize a deployment.
+
 ## Prepare without waiting for these decisions
 
 M0 journey, public content, accessibility, tokens, technical contracts, tests using fictional data and procedures. Open financial decisions do not prevent development and testing of mechanisms, but do prevent their actual commercial activation.

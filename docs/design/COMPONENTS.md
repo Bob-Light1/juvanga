@@ -1,15 +1,15 @@
 # Accessible course components
 
-JUV-104; [ADR-007](../architecture/decisions/007-accessible-components.md). Implementation: [ui.tsx](../../apps/web/src/components/ui.tsx). Interactive review: the current workshop, section 03 (`/#components`). New French copy: [catalogue](../../apps/web/src/i18n/fr.ts).
+JUV-104; [ADR-007](../architecture/decisions/007-accessible-components.md). Implementation: [ui.tsx](../../apps/web/src/components/ui.tsx). Interactive review: the current workshop, section 03 (`/workshop#components`). New French copy: [catalogue](../../apps/web/src/i18n/fr.ts).
 
 ## Contracts
 
 | Component | Contract |
 | --- | --- |
 | `Button` | Native button, default `type="button"`; explicit `type="submit"` for forms. Primary/secondary variants. Busy state preserves focus, exposes `aria-busy`/`aria-disabled` and suppresses clicks, including keyboard activation. The caller supplies a loading label and guards form submission. Native `disabled` is reserved for unavailable actions, with a visible explanation nearby. |
-| `ActionLink` | Native anchor with required `href`; use for navigation, not actions. Same action styles and minimum target size. |
+| `ActionLink` | Native anchor with required `href`; use for navigation, not actions. JUV-106 adds opt-in `internal` React Router links, retaining native anchor behavior without JavaScript. Same action styles and minimum target size. |
 | `TextField` | Visible `label`, stable generated or supplied ID, optional hint/error, composed `aria-describedby`, and `aria-invalid` on error. Native input props/ref pass through. Caller supplies required wording, validation and focus behavior. No placeholder-only labels. |
-| `CourseCard` | Named article with heading, explicit badge/meta, description and one navigation action. Current heading level is h3; place under an h2. Never nest interactive controls inside a clickable card. |
+| `CourseCard` | Named article with heading, explicit badge/meta, description and one navigation action. JUV-106 adds an optional `internal` action flag. Current heading level is h3; place under an h2. Never nest interactive controls inside a clickable card. |
 | `Alert` | Title and optional body; info/success/warning/error have explicit text and a decorative symbol. Status region for routine updates; assertive alert for errors. Keep a live region mounted before updating its text where possible. |
 | `CourseNavigation` | Named navigation landmark and list of native links. Caller provides `current="page"` or `current="location"` as appropriate. Current location has bold text and a thicker border; links retain underlines. |
 | `ContentState` | Named section, h4 title, description and optional recovery action. Use beneath h3. Routine states use a polite status; errors use an assertive alert. State text and recovery behavior belong to the caller. |

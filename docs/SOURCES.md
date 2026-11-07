@@ -46,6 +46,10 @@ Consulted on 2026-11-07: Chromium's [zoom preference implementation](https://git
 
 Retrieved on 2026-11-07: Google Fonts official [Inter metadata](https://github.com/google/fonts/blob/main/ofl/inter/METADATA.pb), [Fraunces metadata](https://github.com/google/fonts/blob/main/ofl/fraunces/METADATA.pb) and browser WOFF2 stylesheet. Only the Latin subsets are bundled; source URLs/hashes and original SIL OFL 1.1 licenses are in `apps/web/public/fonts/`. The application makes no Google Fonts requests. Fallback x-height and vertical metrics were measured from the bundled fonts and local Arial/Georgia using temporary fontkit tooling outside the repository. No project dependency was added.
 
+## JUV-106 routing and static rendering references
+
+Consulted on 2026-11-07: official [React Router declarative installation](https://reactrouter.com/start/declarative/installation), [StaticRouter](https://reactrouter.com/api/declarative-routers/StaticRouter), [Vite server-side rendering](https://vite.dev/guide/ssr) and [Cloudflare Pages static/404 routing](https://developers.cloudflare.com/pages/configuration/serving-pages/). React Router 8.5.1 was resolved through the npm registry, pinned and recorded in the lockfile. No hosting account or domain was configured.
+
 ## Order of authority
 
 Current user instruction → explicit project decisions → source requirements not superseded → documented assumptions. Resolve and trace significant contradictions; ADRs do not cancel financial requirements for technical convenience.

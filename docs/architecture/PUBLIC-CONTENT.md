@@ -58,3 +58,7 @@ content/public/course-id/v1.json: $.modules[0].lessons[0].blocks[4].url: Use an 
 ```
 
 Correct a draft before publication. Correct a published course by adding a new version file and catalogue entry while retaining its earlier version. Increment exercise/rubric versions when their content changes. Release review must verify that previously published files were not edited; the schema cannot establish historical immutability or certify review.
+
+## Public presentation inventory (JUV-106)
+
+[ADR-008](decisions/008-public-pages.md) adds a separate explicit `content/discovery/catalogue.json` for approved upcoming descriptions. The build projects presentation fields from reviewed French documents; blocks, exercises, rubrics and solutions remain excluded. It does not change this published-lesson inventory or add publication timestamps. The UI marks unreleased descriptions as coming soon. Published entries supersede upcoming descriptions with the same stable course ID. See [projection/validation](../../scripts/discovery.mjs).

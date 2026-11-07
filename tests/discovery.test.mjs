@@ -74,7 +74,7 @@ test('empty inventory and route resolution preserve a real missing-page state', 
   const { options } = library(t);
   fs.writeFileSync(options.catalogue, JSON.stringify({ schemaVersion: 1, courses: [] }));
   assert.deepEqual(loadOverviews(options), []);
-  assert.deepEqual(publicPaths([]), ['/', '/courses']);
+  assert.deepEqual(publicPaths([]), ['/', '/courses', '/help', '/privacy', '/feedback']);
   assert.equal(getPage(`/courses/${fixture.id}`, []).kind, 'not-found');
   assert.equal(getPage('/courses/', []).kind, 'catalogue');
   assert.equal(getPage('/workshop', []).indexable, false);

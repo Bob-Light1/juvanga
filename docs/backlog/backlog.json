@@ -883,10 +883,10 @@
         2
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "blocked",
+      "owner": "Codex",
+      "branch": "feat/JUV-111-help-privacy-feedback",
+      "updated_at": "2026-11-07",
       "depends_on": [
         "JUV-106"
       ],
@@ -910,8 +910,11 @@
       "references": [
         "docs/product/DECISIONS.md"
       ],
-      "evidence": [],
-      "blocker": null
+      "evidence": [
+        "docs/delivery/VALIDATION-JUV-111.md",
+        "docs/sessions/2026-11-07-help-privacy-feedback.md"
+      ],
+      "blocker": "Support URL selected by the project owner, but exact URL, authorized reception test and feedback retention policy are not available. Hosting log details remain unverified before release."
     },
     {
       "id": "JUV-112",

@@ -341,7 +341,7 @@ Evidence: apps/web/src/ProgressPanel.tsx ; apps/web/src/progress/progress.ts ; a
 
 ## JUV-111 — Add help, privacy and real feedback
 
-Milestone **M0** · Product/frontend · 1–2 person-days · status **todo**
+Milestone **M0** · Product/frontend · 1–2 person-days · status **blocked**
 
 Dependencies: JUV-106.
 
@@ -365,9 +365,11 @@ Requirements: DATA-06, DATA-07.
 
 References: [docs/product/DECISIONS.md](../../../docs/product/DECISIONS.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-111-help-privacy-feedback.
 
-Evidence: none — task not delivered.
+Evidence: docs/delivery/VALIDATION-JUV-111.md ; docs/sessions/2026-11-07-help-privacy-feedback.md.
+
+Blocker: Support URL selected by the project owner, but exact URL, authorized reception test and feedback retention policy are not available. Hosting log details remain unverified before release.
 
 ---
 

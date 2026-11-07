@@ -71,7 +71,7 @@ test('reader accepts only published French courses and never loads discovery dra
 test('canonical routes retain exact versions; latest aliases resolve consistently', () => {
   const readers = [older, current].map(toReadingCourse);
   const overview = toOverview(current);
-  assert.equal(publicPaths([overview], readers).length, 9);
+  assert.equal(publicPaths([overview], readers).length, 12);
   assert.equal(readerAliases(readers).length, 3);
   for (const course of readers) for (const lesson of readingLessons(course)) {
     const url = lessonPath(course, lesson);

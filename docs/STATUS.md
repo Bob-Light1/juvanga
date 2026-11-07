@@ -20,12 +20,14 @@ Earlier delivery evidence: [F0](delivery/VALIDATION-F0.md), [public pages](deliv
 
 ## Not implemented or configured
 
-No real published lessons: the approved French course remains editorial, without a publication timestamp; the public inventory is empty. Only approved description fields are public, marked coming soon. Reader/practice/progress QA uses a separate synthetic inventory and restores the normal French noindex artifact. No help/privacy/feedback pages, offline guarantee, account synchronization, business backend, database, SMTP, verified domain or deployment. English translation and production origin are unconfigured. Workshop denied/offline states remain simulations. Actual hosting/headers, remote CI, physical-device/non-Chromium/screen-reader checks and independent learner UI review remain unverified.
+No real published lessons: the approved French course remains editorial, without a publication timestamp; the public inventory is empty. Only approved description fields are public, marked coming soon. Reader/practice/progress QA uses a separate synthetic inventory and restores the normal French noindex artifact. Help/privacy/feedback pages prepared; support is unavailable pending a real URL and reception test. No offline guarantee, account synchronization, business backend, database, SMTP, verified domain or deployment. English translation and production origin are unconfigured. Workshop denied/offline states remain simulations. Actual hosting/headers, remote CI, physical-device/non-Chromium/screen-reader checks and independent learner UI review remain unverified.
 
 ## Next M0 task and owners
 
-JUV-111 is next: help, privacy and real feedback. Publication remains a separate release step. Commands: `npm run context`, `npm run task -- JUV-111`. With Node 24/npm 11: `npm run verify`, `PLAYWRIGHT_CHANNEL=chrome npm run test:e2e`, `PLAYWRIGHT_CHANNEL=chrome npm run test:reader`.
+JUV-111 is blocked after local help/privacy/feedback implementation: support URL, reception test and retention policy are missing. JUV-112 is ready. JUV-113/114 cannot start acceptance/publication until their dependencies pass; the owner confirmed no tester observations and no configured Cloudflare access. Publication remains a separate release step. Commands: `npm run context`, `npm run task -- JUV-111`. With Node 24/npm 11: `npm run verify`, `PLAYWRIGHT_CHANNEL=chrome npm run test:e2e`, `PLAYWRIGHT_CHANNEL=chrome npm run test:reader`.
 
 M0 drafts: Codex; accountable course owner/reviewer: project owner, self-appointed on 2026-11-07. Maintainer, C1 author/reviewer and operators remain to appoint; [product decisions](product/DECISIONS.md). ADR-005 requires review before real accounts. Verify hosting at release.
 
 Latest handoff: [Main integration](sessions/2026-11-07-learning-main-integration.md). Product handoff: [Consented reading resume](sessions/2026-11-07-consented-reading-progress.md). Previous: [Practice](sessions/2026-11-07-practice-self-assessment.md).
+
+Active work: JUV-111; owner: Codex; branch: `feat/JUV-111-help-privacy-feedback`; date: 2026-11-07; status: `blocked`. The owner selected a URL but has no authorized means to test it; the exact address is not supplied.

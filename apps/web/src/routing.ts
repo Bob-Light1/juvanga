@@ -4,7 +4,7 @@ import { messages } from './i18n/index.ts';
 import { coursePath, type CourseOverview } from './content/overview.ts';
 
 export type Page = {
-  kind: 'home' | 'catalogue' | 'course' | 'workshop' | 'not-found' | 'lesson' | 'exercise' | 'missing-lesson' | 'progress';
+  kind: 'home' | 'catalogue' | 'course' | 'workshop' | 'not-found' | 'lesson' | 'exercise' | 'missing-lesson' | 'progress' | 'help' | 'privacy' | 'feedback';
   title: string; description: string; path: string; indexable: boolean;
   course?: CourseOverview;
   readingCourse?: ReadingCourse; lesson?: ReadingLesson;
@@ -15,6 +15,9 @@ export function getPage(pathname: string, courses: CourseOverview[], readers: Re
   const copy = messages.pages;
   if (path === '/') return { kind: 'home', title: copy.homeMetaTitle, description: copy.homeDescription, path, indexable: true };
   if (path === '/courses') return { kind: 'catalogue', title: copy.catalogueMetaTitle, description: copy.catalogueDescription, path, indexable: true };
+  for (const kind of ['help', 'privacy', 'feedback'] as const) {
+    if (path === `/${kind}`) return { kind, title: `${messages.support[`${kind}Label`]} — ${copy.brand}`, description: messages.support[`${kind}Description`], path, indexable: true };
+  }
   if (path === '/progress') return { kind: 'progress', title: messages.progress.metaTitle, description: messages.progress.description, path, indexable: false };
   if (path === '/workshop') return { kind: 'workshop', title: copy.workshopTitle, description: copy.workshopDescription, path, indexable: false };
   if (path.startsWith('/learn/')) {
@@ -31,7 +34,7 @@ export function getPage(pathname: string, courses: CourseOverview[], readers: Re
 }
 
 export function publicPaths(courses: CourseOverview[], readers: ReadingCourse[] = []) {
-  return ['/', '/courses', ...courses.map(coursePath), ...readers.flatMap(course => readingLessons(course).map(lesson => lessonPath(course, lesson)))];
+  return ['/', '/courses', ...courses.map(coursePath), '/help', '/privacy', '/feedback', ...readers.flatMap(course => readingLessons(course).map(lesson => lessonPath(course, lesson)))];
 }
 
 export function readerAliases(readers: ReadingCourse[]) {

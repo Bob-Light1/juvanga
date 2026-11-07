@@ -38,3 +38,9 @@ JUV-106 adds selected public course descriptions under [ADR-008](../architecture
 ## Prepare without waiting for these decisions
 
 M0 journey, public content, accessibility, tokens, technical contracts, tests using fictional data and procedures. Open financial decisions do not prevent development and testing of mechanisms, but do prevent their actual commercial activation.
+
+## DEC-10 implementation note — 2026-11-07
+
+JUV-111 exposes the actual local-data notice and minimal feedback guidance through the existing static pages. No support address, delivery test, operator or feedback-retention policy has been supplied. Hosting location and log retention are unverified. These remain release blockers; the notice states the configuration gap without inventing provider settings. Local erasure removes only the consented reading record, not potential hosting logs. See [JUV-111 evidence](../delivery/VALIDATION-JUV-111.md).
+
+The project owner selected a support URL on 2026-11-07, without supplying its address or an authorized reception-test method. Five testers may be recruited but have no observations yet; Cloudflare access is not configured. JUV-113 and JUV-114 must not be recorded as completed from automated checks alone.

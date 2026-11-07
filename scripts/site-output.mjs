@@ -35,5 +35,5 @@ export function robots(origin) {
 
 export function headers(base, origin) {
   const security = base.replace(/^  X-Robots-Tag:.*\n?/gm, '');
-  return security + (origin ? '\n/progress\n  X-Robots-Tag: noindex, nofollow\n/progress/\n  X-Robots-Tag: noindex, nofollow\n/workshop\n  X-Robots-Tag: noindex, nofollow\n/workshop/\n  X-Robots-Tag: noindex, nofollow\n/404.html\n  X-Robots-Tag: noindex, nofollow\n/learn/404\n  X-Robots-Tag: noindex, nofollow\n/learn/404.html\n  X-Robots-Tag: noindex, nofollow\n' : '  X-Robots-Tag: noindex, nofollow\n');
+  return security + (origin ? '' : '  X-Robots-Tag: noindex, nofollow\n') + '\n/sw.js\n  Cache-Control: no-cache\n/manifest.webmanifest\n  Cache-Control: no-cache\n/offline\n  X-Robots-Tag: noindex, nofollow\n' + (origin ? '\n/progress\n  X-Robots-Tag: noindex, nofollow\n/progress/\n  X-Robots-Tag: noindex, nofollow\n/workshop\n  X-Robots-Tag: noindex, nofollow\n/workshop/\n  X-Robots-Tag: noindex, nofollow\n/404.html\n  X-Robots-Tag: noindex, nofollow\n/learn/404\n  X-Robots-Tag: noindex, nofollow\n/learn/404.html\n  X-Robots-Tag: noindex, nofollow\n' : '');
 }

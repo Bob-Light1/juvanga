@@ -76,3 +76,11 @@ Canonical reading routes are `/learn/:course/v/:version/:lesson`; short `/learn/
 ## Local resume checks
 
 JUV-110 adds a noindex `/progress` page with optional consent and targeted erasure. Only the last reading location is retained, never exercise text or declarations. The schema, consent and exact-version behavior are documented in [ADR-012](../architecture/decisions/012-local-progress.md). The `test:reader` runner covers real storage refusal/opt-in/reload/erasure, corrupt/incompatible records, unknown content versions, quota/denied storage and cross-tab revocation. Normal `test:e2e` covers `/progress` static/no-JavaScript recovery and an empty real inventory. Future offline/auth work must preserve these boundaries.
+
+## Public offline snapshot
+
+The complete build now emits `/manifest.webmanifest`, `/sw.js`, a standalone `/offline` page and `build-report.json`. Only generated public pages and selected static assets are precached. Published illustrations are optional and cached after a request. Progress, workshop, API/account routes and URLs with query strings are excluded. The worker is registered only in production builds. Cache installation and browser eviction can fail; a saved reading position alone does not guarantee offline availability.
+
+A new release waits for an explicit reload (or closure of old tabs). Finish an exercise before accepting; its text is intentionally ephemeral. Consent and reading storage survive worker activation. The privacy notice explains how browser site-data settings clear public copies separately from targeted reading erasure. [ADR-013](../architecture/decisions/013-public-offline.md) defines the boundary and future migration.
+
+`PLAYWRIGHT_CHANNEL=chrome npm run test:e2e -- tests/browser/pwa.spec.ts` exercises actual worker installation, offline public/fallback behavior, update activation, storage preservation, refused registration, reduced motion and slow 4G metrics. `npm run test:reader` includes synthetic published lessons and exercises offline. Never run both browser commands concurrently: they share the build output. The full build enforces JS/image budgets and reports gzip JS and initial home image sizes. Remote caching headers and physical-device installation remain release checks.

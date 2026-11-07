@@ -1,3 +1,4 @@
+import { PwaStatus } from './pwa/PwaStatus';
 import { SupportPage } from './SupportPage';
 import { ProgressPage } from './ProgressPanel';
 import { useEffect, useRef } from 'react';
@@ -90,6 +91,7 @@ function PublicLayout() {
     <header className="header shell public-header"><Link className="brand-link" to="/" aria-label={copy.homeLink}><img src="/brand/juvanga-lockup.svg" alt="" width="228" height="70" /></Link>
       <nav aria-label={copy.navigation}><NavLink to="/" end>{copy.home}</NavLink><NavLink to="/courses">{copy.catalogue}</NavLink><NavLink to="/progress">{copy.progress}</NavLink></nav></header>
     <main id="main" className="shell public-main" tabIndex={-1}>
+      <PwaStatus />
       {page.kind === 'help' || page.kind === 'privacy' || page.kind === 'feedback' ? <SupportPage kind={page.kind} /> : page.kind === 'progress' ? <ProgressPage courses={readers} /> : page.kind === 'exercise' && page.readingCourse && page.lesson && exercise ? <ExercisePage key={page.path} course={page.readingCourse} lesson={page.lesson} exercise={exercise} /> : page.kind === 'lesson' && page.readingCourse && page.lesson ? <LessonReader key={page.path} course={page.readingCourse} lesson={page.lesson} /> : page.kind === 'missing-lesson' ? <MissingLesson /> : page.kind === 'home' ? <Home /> : page.kind === 'catalogue' ? <Catalogue /> : page.course ? <CoursePage course={page.course} /> : <NotFound />}
     </main><footer className="shell footer"><span>{copy.brand}</span><span>{copy.tagline}</span><nav aria-label={messages.support.helpLabel}><Link className="text-link" to="/help">{messages.support.helpLabel}</Link><Link className="text-link" to="/privacy">{messages.support.privacyLabel}</Link><Link className="text-link" to="/feedback">{messages.support.feedbackLabel}</Link></nav></footer>
   </>;

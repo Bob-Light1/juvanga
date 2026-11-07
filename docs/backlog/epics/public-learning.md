@@ -377,7 +377,7 @@ Blocker: Support URL selected by the project owner, but exact URL, authorized re
 
 ## JUV-112 — Optimize slow networks, public PWA and motion
 
-Milestone **M0** · Frontend · 1.5–3 person-days · status **todo**
+Milestone **M0** · Frontend · 1.5–3 person-days · status **done**
 
 Dependencies: JUV-108, JUV-110, JUV-105.
 
@@ -401,9 +401,9 @@ Requirements: USR-04, USR-07.
 
 References: [docs/design/MOTION.md](../../../docs/design/MOTION.md) ; [docs/delivery/QUALITY.md](../../../docs/delivery/QUALITY.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-112-public-offline-pwa.
 
-Evidence: none — task not delivered.
+Evidence: docs/architecture/decisions/013-public-offline.md ; docs/delivery/VALIDATION-JUV-112.md ; docs/sessions/2026-11-07-public-offline-pwa.md.
 
 ---
 

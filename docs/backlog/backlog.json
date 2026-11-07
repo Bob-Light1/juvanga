@@ -927,10 +927,10 @@
         3
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "done",
+      "owner": "Codex",
+      "branch": "feat/JUV-112-public-offline-pwa",
+      "updated_at": "2026-11-07",
       "depends_on": [
         "JUV-108",
         "JUV-110",
@@ -957,7 +957,11 @@
         "docs/design/MOTION.md",
         "docs/delivery/QUALITY.md"
       ],
-      "evidence": [],
+      "evidence": [
+        "docs/architecture/decisions/013-public-offline.md",
+        "docs/delivery/VALIDATION-JUV-112.md",
+        "docs/sessions/2026-11-07-public-offline-pwa.md"
+      ],
       "blocker": null
     },
     {

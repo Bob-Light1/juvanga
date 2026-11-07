@@ -148,3 +148,10 @@ input.field-input:read-only { background: var(--color-sand); }
 .support-page { max-width: 75ch; margin: auto; }
 .support-page h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin-top: var(--space-8); }
 .footer nav { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+
+.pwa-status:empty { display: none; }
+.pwa-status { max-width: 75ch; margin-inline: auto; }
+.pwa-status:not(:empty) { border: 2px solid var(--color-border); border-radius: var(--radius-sm); padding: var(--space-4); margin-block: var(--space-4); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}

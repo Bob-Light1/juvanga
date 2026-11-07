@@ -85,11 +85,11 @@ test('static aliases, retained versions and useful missing lessons work without 
   } finally { await context.close(); }
 });
 
-test('requested illustration survives slow network, failure and keyboard retry', async ({ page }) => {
+test('requested illustration survives slow network, failure and keyboard retry', async ({ page, context }) => {
   let requests = 0;
   let release: (() => void) | undefined;
   const pending = new Promise<void>(resolve => { release = resolve; });
-  await page.route('**/media/reader-fixture.png', async route => {
+  await context.route('**/media/reader-fixture.png', async route => {
     requests++;
     if (requests === 1) { await pending; await route.abort(); }
     else await route.fulfill({ contentType: 'image/png', body: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aWZkAAAAASUVORK5CYII=', 'base64') });

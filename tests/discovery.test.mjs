@@ -109,6 +109,7 @@ test('HTML metadata is escaped and sitemap, robots and headers share the release
   for (const route of paths) assert.ok(sitemap(paths, origin).includes(`<loc>${origin}${route}</loc>`));
   assert.ok(!sitemap(paths, origin).includes('/workshop'));
   assert.match(robots(origin), /Sitemap: https:\/\/juvanga.example\/sitemap.xml/);
+  assert.match(headers('/*\n  X-Robots-Tag: noindex, nofollow\n', '').split(/\n(?=\/)/)[0], /X-Robots-Tag: noindex, nofollow/);
   const releaseHeaders = headers('/*\n  X-Robots-Tag: noindex, nofollow\n', origin);
   assert.doesNotMatch(releaseHeaders.split(/\n(?=\/)/)[0], /X-Robots/);
   assert.match(releaseHeaders, /\/progress\n  X-Robots-Tag: noindex, nofollow/);

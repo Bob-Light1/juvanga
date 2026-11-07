@@ -48,3 +48,5 @@ Each transactional test verifies DB state, API response, audit and outbox. Mocks
 ## Milestone exit
 
 Zero blocking bugs; zero untreated critical/high vulnerabilities for accounts/commerce; every ticket's criteria met; applicable review and decisions; reproducible tests; stated known limitations; rollback/restoration according to milestone. Planned test ≠ passed test.
+
+The [M0 acceptance report/protocol](../reviews/M0-ACCEPTANCE.md) and header-only observation sheet track the JUV-113 human acceptance gate. They are prepared instructions, not executed sessions or release approval.

@@ -411,7 +411,7 @@ Evidence: docs/architecture/decisions/013-public-offline.md ; docs/delivery/VALI
 
 ## JUV-113 — Run acceptance testing with real testers
 
-Milestone **M0** · QA/produit · 1.5–3 person-days · status **todo**
+Milestone **M0** · QA/produit · 1.5–3 person-days · status **blocked**
 
 Dependencies: JUV-106, JUV-109, JUV-110, JUV-111, JUV-112, JUV-107.
 
@@ -434,9 +434,11 @@ Requirements: USR-04, USR-08.
 
 References: [docs/delivery/QUALITY.md](../../../docs/delivery/QUALITY.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-113-acceptance-preparation.
 
-Evidence: none — task not delivered.
+Evidence: docs/reviews/M0-ACCEPTANCE.md ; docs/sessions/2026-11-07-acceptance-preparation.md.
+
+Blocker: JUV-111 is incomplete. Five consenting real testers have no observations yet (owner confirmation, 2026-11-07); the real course is not in the published inventory. Preparation only; acceptance cannot be activated.
 
 ---
 

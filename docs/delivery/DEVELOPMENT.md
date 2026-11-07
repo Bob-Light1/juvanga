@@ -62,3 +62,9 @@ Home is `/`, catalogue `/courses`, descriptions `/courses/:id`, and the former b
 UI copy is in `apps/web/src/i18n/fr.ts`; import `messages` and the shared Intl formatters from `i18n/index.ts`. Stable semantic keys and French per-key fallback are documented in [ADR-009](../architecture/decisions/009-localization.md). French is the only advertised language.
 
 For expanded-copy QA, run `JUVANGA_PSEUDO_LOCALE=1 npm run build`, then `JUVANGA_PSEUDO_LOCALE=1 PLAYWRIGHT_CHANNEL=chrome npm run test:e2e -- tests/browser/i18n.spec.ts`. Rebuild with `npm run build` afterward to restore the French preview. Never use the pseudo build for a release.
+
+## Reader checks
+
+Canonical reading routes are `/learn/:course/v/:version/:lesson`; short `/learn/:course/:lesson` aliases resolve the latest published French version. Missing lessons provide recovery and a real 404 in local preview. Production hosting must verify extensionless routes and the reader-specific fallback before release. No real course is published by the reader ticket.
+
+`PLAYWRIGHT_CHANNEL=chrome npm run test:reader` builds the actual app against a temporary synthetic published inventory, runs the complete reader browser scenarios with a reserved test origin, and restores the default artifact in a finally block. Production configuration has no content-directory environment override. Keep this explicit test command separate from the normal preview suite; no test fixture belongs in a deployed artifact. See [validation](VALIDATION-JUV-108.md).

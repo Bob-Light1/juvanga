@@ -15,4 +15,6 @@
 
 | [ADR-009](009-localization.md) | French catalogue, fallback and explicit Intl formats | Adopted for M0 |
 
+| [ADR-010](010-lesson-reader.md) | Versioned static reader and requested same-origin illustrations | Adopted for M0 |
+
 Create a new decision to supersede an old one; do not rewrite history. Template: `docs/templates/ADR.md`.

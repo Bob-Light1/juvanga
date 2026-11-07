@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { contentValidationPlugin } from '../../scripts/content.mjs';
+import { readerPlugin } from '../../scripts/reader.mjs';
 import { overviewPlugin } from '../../scripts/discovery.mjs';
 import { staticPreviewPlugin } from '../../scripts/static-preview.mjs';
 import { siteOrigin } from '../../scripts/site-output.mjs';
@@ -9,6 +10,7 @@ export default defineConfig({
   plugins: [
     react(),
     overviewPlugin(),
+    readerPlugin(),
     staticPreviewPlugin(),
     contentValidationPlugin(),
   ],

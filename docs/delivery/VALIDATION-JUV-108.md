@@ -1,0 +1,28 @@
+# JUV-108 — Lesson reader validation
+
+Date: 2026-11-07. Owner: Codex. Branch: `feat/JUV-108-lesson-reader`. Status: done after local technical and visual author review.
+
+## Delivered and review scope
+
+The actual application renders every typed reading block, lesson objectives and examples, with an accessible programme, current-lesson indication, previous/next navigation across modules and a course return action. Canonical URLs retain the exact course version; short aliases select the latest published French version and use versioned canonicals. Static HTML supports refresh and reading without JavaScript. Local preview serves helpful reader-specific HTTP 404s. Unknown routes and versions remain noindex. The published course overview offers a start action only when its matching reader content is present.
+
+Only validated, published French course versions enter the reader projection. Exercise instructions, rubrics, solutions and editorial metadata remain outside that module. The real course draft, review record and empty published inventory are unchanged. JUV-109 retains practice/self-assessment work; reading never claims competency or creates progress data. No dependency, backend or provider is added.
+
+Schema version 1 retains its existing text-only contract. Explicit schema version 2 additionally supports bounded local raster image paths, nonblank alternative text, intrinsic dimensions and an optional caption. Images require a load action; descriptions stay readable, loading status is announced, errors offer retry and keyboard focus stays on the control. No media request occurs merely by scrolling; no audio/video/iframe is supported. The existing same-origin CSP is unchanged. [ADR-010](../architecture/decisions/010-lesson-reader.md) covers alternatives, compatibility and migration; the [authoring contract](../architecture/PUBLIC-CONTENT.md) explains media review limits.
+
+## Executed checks
+
+- Isolated Node 24.22.2/npm 11.21.2: `npm run verify` passed **75 tests**, generated-view/docs/link checks, course validation/review-copy freshness, contrast, ESLint, TypeScript and the complete default client/prerender build.
+- `PLAYWRIGHT_CHANNEL=chrome npm run test:reader`: **4 passed** on the actual application with a temporary synthetic inventory (two retained versions, three lessons, two modules and all supported block types). The test-only Vite config uses the reserved `https://juvanga.example` origin; production exposes no content-directory override. The runner restored the default noindex artifact afterward.
+- Two keyboard journeys at 360/1280 px cover start, every lesson, cross-module previous/next, last-lesson return, current programme item, main focus, browser history, refresh and exact-version internal links. No horizontal overflow or axe WCAG A/AA violations occurred. Screenshots were reviewed at both widths: readable column, intact programme/notes/actions, optional illustration description and clear practice notice. Captures/traces are local ignored `test-results/` artifacts, replaced by later runs.
+- A JavaScript-disabled browser reads canonical/alias/older-version routes, follows real previous links and refreshes. Raw HTML contains teaching text but no illustration request or worked solution. Unknown lessons and versions return HTTP 404 with help and a catalogue link. Canonicals and sitemap retain exact versions and exclude short aliases.
+- Requested-image scenario proves no request before activation, a deliberately stalled response with readable lesson navigation, failure with description/help, keyboard retry, successful image decoding with alternative text, hide and continued lesson navigation. Focus stays on the same control through loading, error and success.
+- Unit tests cover schema 1/2 compatibility in teaching/example/solution blocks, unsafe image paths, blank/HTML alt text, invalid dimensions, safe projections, publication/locale restrictions, exact-version resolution, latest aliases and malformed/missing routes. The existing schema security/build tests remain passing.
+- Technical author review checked exhaustive escaped JSX, distinct block/media DOM IDs, native link behavior, publication boundaries, version-aware navigation, SSR/client route agreement, unchanged CSP, synthetic-fixture isolation and restoration. Source diff confirms no editorial or public content change. A search of the restored deployable output found no synthetic-course/media identifiers.
+
+- `PLAYWRIGHT_CHANNEL=chrome npm run test:e2e`: **17 passed** on the restored default preview. Includes all public/component/font regressions, keyboard/zoom/reflow, initial HTML and publication-boundary checks, plus static/no-JavaScript and client-side recovery for a real unpublished lesson URL. The unpublished body remains absent; missing-reader help, noindex metadata, main focus and keyboard return work at 360 px.
+- Final `npm run verify` and `git diff --check` passed after the closing documentation/generated-view updates. The default French noindex artifact contains only the real approved course description, with no synthetic publication or illustration.
+
+## Limits
+
+Not run: actual hosting/deep-link/header verification, deployment, remote CI, physical-device/non-Chromium or screen-reader software tests. Reader-specific 404 serving is verified in local preview; hosting fallback behavior must be checked at release. Production origin and published course remain unconfigured/unreleased. Real media bytes, dimensions, rights and relevance need release review; the synthetic image only verifies loading/recovery behavior. Offline storage, reading progress and exercise interaction remain later tickets.

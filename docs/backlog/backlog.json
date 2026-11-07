@@ -730,10 +730,10 @@
         3
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "done",
+      "owner": "Codex",
+      "branch": "feat/JUV-108-lesson-reader",
+      "updated_at": "2026-11-07",
       "depends_on": [
         "JUV-103",
         "JUV-104",
@@ -759,7 +759,17 @@
       "references": [
         "docs/design/UX.md"
       ],
-      "evidence": [],
+      "evidence": [
+        "apps/web/src/LessonReader.tsx",
+        "apps/web/src/content/reader.ts",
+        "scripts/reader.mjs",
+        "tests/reader.test.mjs",
+        "tests/reader-browser/reader.spec.ts",
+        "tests/browser/reader-boundary.spec.ts",
+        "docs/architecture/decisions/010-lesson-reader.md",
+        "docs/delivery/VALIDATION-JUV-108.md",
+        "docs/sessions/2026-11-07-lesson-reader.md"
+      ],
       "blocker": null
     },
     {

@@ -6,3 +6,8 @@ declare module 'virtual:public-overviews' {
   const courses: import('./content/overview.ts').CourseOverview[];
   export default courses;
 }
+
+declare module 'virtual:public-reader' {
+  const courses: import('./content/reader.ts').ReadingCourse[];
+  export default courses;
+}

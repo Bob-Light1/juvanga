@@ -240,7 +240,7 @@ Evidence: apps/web/src/i18n/index.ts ; apps/web/src/i18n/fr.ts ; tests/i18n.test
 
 ## JUV-108 — Create the lesson reader
 
-Milestone **M0** · Frontend · 2–3 person-days · status **todo**
+Milestone **M0** · Frontend · 2–3 person-days · status **done**
 
 Dependencies: JUV-103, JUV-104, JUV-107.
 
@@ -264,9 +264,9 @@ Requirements: COUR-02, USR-08.
 
 References: [docs/design/UX.md](../../../docs/design/UX.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-108-lesson-reader.
 
-Evidence: none — task not delivered.
+Evidence: apps/web/src/LessonReader.tsx ; apps/web/src/content/reader.ts ; scripts/reader.mjs ; tests/reader.test.mjs ; tests/reader-browser/reader.spec.ts ; tests/browser/reader-boundary.spec.ts ; docs/architecture/decisions/010-lesson-reader.md ; docs/delivery/VALIDATION-JUV-108.md ; docs/sessions/2026-11-07-lesson-reader.md.
 
 ---
 

@@ -35,5 +35,5 @@ export function robots(origin) {
 
 export function headers(base, origin) {
   const security = base.replace(/^  X-Robots-Tag:.*\n?/gm, '');
-  return security + (origin ? '\n/workshop\n  X-Robots-Tag: noindex, nofollow\n/workshop/\n  X-Robots-Tag: noindex, nofollow\n/404.html\n  X-Robots-Tag: noindex, nofollow\n' : '  X-Robots-Tag: noindex, nofollow\n');
+  return security + (origin ? '\n/workshop\n  X-Robots-Tag: noindex, nofollow\n/workshop/\n  X-Robots-Tag: noindex, nofollow\n/404.html\n  X-Robots-Tag: noindex, nofollow\n/learn/404\n  X-Robots-Tag: noindex, nofollow\n/learn/404.html\n  X-Robots-Tag: noindex, nofollow\n' : '  X-Robots-Tag: noindex, nofollow\n');
 }

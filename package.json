@@ -28,7 +28,8 @@
     "check:content": "node scripts/content.mjs",
     "course:review": "node scripts/course-review.mjs",
     "check:course": "node scripts/course-review.mjs --check",
-    "verify": "npm run check:docs && npm run check:course && npm run check:contrast && npm test && npm run lint && npm run typecheck && npm run build"
+    "verify": "npm run check:docs && npm run check:course && npm run check:contrast && npm test && npm run lint && npm run typecheck && npm run build",
+    "test:reader": "node tests/run-reader-e2e.mjs"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.14.0",

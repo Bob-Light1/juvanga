@@ -33,17 +33,19 @@ export function loadOverviews({ catalogue = discoveryCatalogue, drafts = draftDi
   return [...latest.values()].map(toOverview);
 }
 
-export function overviewPlugin() {
+export function overviewPlugin(options = {}) {
   return {
     name: 'public-course-overviews',
     resolveId(id) { if (id === 'virtual:public-overviews') return '\0public-overviews'; },
     load(id) {
       if (id !== '\0public-overviews') return;
-      const overviews = loadOverviews();
-      this.addWatchFile(discoveryCatalogue);
-      this.addWatchFile(path.join(publicContentDirectory, 'catalogue.json'));
-      const inventory = JSON.parse(fs.readFileSync(discoveryCatalogue, 'utf8'));
-      for (const entry of inventory.courses) this.addWatchFile(path.join(draftDirectory, entry.id, `v${entry.version}.json`));
+      const overviews = loadOverviews(options);
+      this.addWatchFile(options.catalogue ?? discoveryCatalogue);
+      const publishedDirectory = options.publicDirectory ?? publicContentDirectory;
+      this.addWatchFile(path.join(publishedDirectory, 'catalogue.json'));
+      const inventory = JSON.parse(fs.readFileSync(options.catalogue ?? discoveryCatalogue, 'utf8'));
+      for (const entry of inventory.courses) this.addWatchFile(path.join(options.drafts ?? draftDirectory, entry.id, `v${entry.version}.json`));
+      for (const entry of validatePublicContent(publishedDirectory)) this.addWatchFile(path.join(publishedDirectory, entry.id, `v${entry.version}.json`));
       return `export default ${JSON.stringify(overviews)};`;
     },
   };

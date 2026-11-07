@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { validate, ready, load } from '../scripts/project.mjs';
+import { ratio } from '../scripts/contrast.mjs';
+const fixture=()=>({milestones:['F0','M0'],required_requirements:['USR-01'],tasks:[{id:'JUV-001',title:'Foundation',epic:'foundation',role:'Tech',updated_at:'2026-11-06',status:'todo',milestone:'F0',steps:['Build'],acceptance:['Usable'],verification:['Run'],references:['README.md'],estimate_days:[1,2],depends_on:[],requirements:['USR-01'],evidence:[]}]});
+test('valid graph and readiness',()=>{const d=fixture();assert.deepEqual(validate(d,false),[]);assert.equal(ready(d).length,1);});
+test('cycles and missing dependencies are rejected',()=>{const d=fixture();d.tasks[0].depends_on=['JUV-001','JUV-999'];const errors=validate(d,false).join('\n');assert.match(errors,/Cycle/);assert.match(errors,/unknown dependency/);});
+test('duplicate IDs are rejected',()=>{const d=fixture();d.tasks.push({...d.tasks[0]});assert.match(validate(d,false).join('\n'),/Duplicate/);});
+test('done requires evidence and completed dependencies',()=>{const d=fixture();d.tasks.push({...d.tasks[0],id:'JUV-002',status:'done',depends_on:['JUV-001']});const errors=validate(d,false).join('\n');assert.match(errors,/without evidence/);assert.match(errors,/incomplete dependency/);});
+test('active task needs owner and branch',()=>{const d=fixture();d.tasks[0].status='in_progress';assert.match(validate(d,false).join('\n'),/owner/);});
+test('uncovered requirement and future dependency rejected',()=>{const d=fixture();d.required_requirements.push('SEC-01');d.tasks.push({...d.tasks[0],id:'JUV-002',milestone:'M0'});d.tasks[0].depends_on=['JUV-002'];const errors=validate(d,false).join('\n');assert.match(errors,/Uncovered requirement/);assert.match(errors,/future milestone/);});
+test('ready tasks exclude blocked and unmet dependencies',()=>{const d=fixture();d.tasks.push({...d.tasks[0],id:'JUV-002',depends_on:['JUV-001']});assert.equal(ready(d).length,1);d.tasks[0].status='done';assert.equal(ready(d)[0].id,'JUV-002');d.tasks[1].status='blocked';assert.equal(ready(d).length,0);});
+test('contrast reference black/white is 21 and equal colors 1',()=>{assert.equal(ratio('#000000','#FFFFFF'),21);assert.equal(ratio('#14213D','#14213D'),1);assert.ok(ratio('#F5B82E','#FBF3E4')<4.5);});
+test('actual backlog has no structural defects',()=>assert.deepEqual(validate(load(),false),[]));

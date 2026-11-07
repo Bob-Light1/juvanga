@@ -1,0 +1,72 @@
+[
+  {
+    "foreground": "night",
+    "background": "sand",
+    "minimum": 4.5
+  },
+  {
+    "foreground": "sand",
+    "background": "night",
+    "minimum": 4.5
+  },
+  {
+    "foreground": "night",
+    "background": "gold",
+    "minimum": 4.5
+  },
+  {
+    "foreground": "muted",
+    "background": "sand",
+    "minimum": 4.5
+  },
+  {
+    "foreground": "action",
+    "background": "sand",
+    "minimum": 4.5
+  },
+  {
+    "foreground": "white",
+    "background": "action",
+    "minimum": 4.5
+  },
+  {
+    "foreground": "leaf",
+    "background": "sand",
+    "minimum": 4.5
+  },
+  {
+    "foreground": "white",
+    "background": "leaf",
+    "minimum": 4.5
+  },
+  {
+    "foreground": "danger",
+    "background": "sand",
+    "minimum": 4.5
+  },
+  {
+    "foreground": "white",
+    "background": "danger",
+    "minimum": 4.5
+  },
+  {
+    "foreground": "warning",
+    "background": "sand",
+    "minimum": 4.5
+  },
+  {
+    "foreground": "border",
+    "background": "sand",
+    "minimum": 3
+  },
+  {
+    "foreground": "border",
+    "background": "white",
+    "minimum": 3
+  },
+  {
+    "foreground": "action",
+    "background": "white",
+    "minimum": 4.5
+  }
+]

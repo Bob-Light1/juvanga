@@ -1,0 +1,38 @@
+{
+  "name": "juvanga",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=24 <25",
+    "npm": ">=11 <12"
+  },
+  "packageManager": "npm@11.21.2",
+  "scripts": {
+    "dev": "npm run dev -w @juvanga/web --",
+    "build": "npm run build -w @juvanga/web",
+    "preview": "npm run preview -w @juvanga/web --",
+    "typecheck": "npm run typecheck -w @juvanga/web",
+    "lint": "eslint apps/web/src",
+    "test": "node --test --test-isolation=none tests/*.test.mjs",
+    "test:e2e": "playwright test",
+    "context": "node scripts/project.mjs context",
+    "next": "node scripts/project.mjs next",
+    "task": "node scripts/project.mjs task",
+    "backlog:generate": "node scripts/project.mjs generate",
+    "check:docs": "node scripts/project.mjs check",
+    "check:contrast": "node scripts/contrast.mjs",
+    "verify": "npm run check:docs && npm run check:contrast && npm test && npm run lint && npm run typecheck && npm run build"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.0",
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.65.0",
+    "eslint": "10.14.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "typescript-eslint": "8.72.1"
+  }
+}

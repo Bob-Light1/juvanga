@@ -1,0 +1,26 @@
+{
+  "decision": "ADR-003",
+  "source_directory": "logo_choice/JUVANGA",
+  "primary": "B J monogram + sun",
+  "lockup": "Symbol B at 75% and vectorized lettering from A, translation -25; sources retained",
+  "files": {
+    "icon-512.png": {
+      "sha256": "a6de083ea4d6de6aac1f89f3494f89339735d670ac1c4000a0637aa65998a496"
+    },
+    "juvanga-symbol.svg": {
+      "sha256": "0a20c36b8ccdf7fda5c0388fdc6be3cc5e04c84c36a7036f309bdd83e8417704"
+    },
+    "icon-192.png": {
+      "sha256": "5fc82cd2479c1c08904639a65acd91c55eae3115261b5decfdcd7a18f310f590"
+    },
+    "juvanga-app-icon.svg": {
+      "sha256": "491d52c9de4227b5f41808c19c5e664c962c7b20a80bdbf30926a73abd0f3e93"
+    },
+    "juvanga-lockup.svg": {
+      "sha256": "85f69dff81c8e237485260de2a3120611f72bebc1c644e86aa608457c87c12d5"
+    },
+    "juvanga-lockup-dark.svg": {
+      "sha256": "6f8c2e62cdb53338d374614d86b0b57027c41476a5f3d6504d0aca96e8fc3c3b"
+    }
+  }
+}

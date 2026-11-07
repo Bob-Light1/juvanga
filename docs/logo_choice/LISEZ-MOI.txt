@@ -1,0 +1,8 @@
+FURAKILI et JUVANGA - logos (propositions de travail)
+- <MARQUE>/logos/svg : logos vectoriels, texte converti en tracés (aucune police requise). Versions couleur, fond sombre, noir monochrome.
+- <MARQUE>/logos/png : mêmes logos en PNG transparent, 2000 px de large.
+- <MARQUE>/app-icons : icônes d'application en carré plein (iOS/Android appliquent eux-mêmes les coins arrondis),
+  PNG 1024/512/192/180/167/152/120/76/64/48/32/16, favicon.ico, variante alternative, et premier plan Android adaptatif (432/1024).
+  Fond du premier plan Android : FURAKILI #1B1F4B, JUVANGA #14213D.
+Polices : Outfit/DM Sans (FURAKILI), Fraunces/Inter (JUVANGA), licence SIL OFL.
+Avant tout usage commercial : vérifier OAPI, domaines et fixer la prononciation officielle.

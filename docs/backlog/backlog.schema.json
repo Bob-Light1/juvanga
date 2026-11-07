@@ -1,0 +1,158 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Juvanga backlog",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "milestones",
+    "tasks",
+    "required_requirements"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "milestones": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "required_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "tasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "milestone",
+          "epic",
+          "title",
+          "role",
+          "priority",
+          "status",
+          "updated_at",
+          "owner",
+          "branch",
+          "blocker",
+          "depends_on",
+          "steps",
+          "acceptance",
+          "verification",
+          "requirements",
+          "references",
+          "evidence",
+          "estimate_days"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^JUV-[0-9]{3}$"
+          },
+          "milestone": {
+            "type": "string"
+          },
+          "epic": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          },
+          "priority": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "todo",
+              "in_progress",
+              "in_review",
+              "done",
+              "blocked"
+            ]
+          },
+          "updated_at": {
+            "type": "string"
+          },
+          "owner": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "branch": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "blocker": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "depends_on": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "acceptance": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "verification": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "requirements": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "references": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "evidence": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "estimate_days": {
+            "type": "array",
+            "minItems": 2,
+            "maxItems": 2,
+            "items": {
+              "type": "number",
+              "minimum": 0
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

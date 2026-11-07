@@ -683,10 +683,10 @@
         1
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "done",
+      "owner": "Codex",
+      "branch": "feat/JUV-107-french-localization",
+      "updated_at": "2026-11-07",
       "depends_on": [
         "JUV-104"
       ],
@@ -708,7 +708,15 @@
       "references": [
         "docs/design/UX.md"
       ],
-      "evidence": [],
+      "evidence": [
+        "apps/web/src/i18n/index.ts",
+        "apps/web/src/i18n/fr.ts",
+        "tests/i18n.test.mjs",
+        "tests/browser/i18n.spec.ts",
+        "docs/architecture/decisions/009-localization.md",
+        "docs/delivery/VALIDATION-JUV-107.md",
+        "docs/sessions/2026-11-07-french-localization.md"
+      ],
       "blocker": null
     },
     {

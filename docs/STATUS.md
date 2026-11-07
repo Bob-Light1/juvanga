@@ -1,6 +1,6 @@
 # Current status — Juvanga
 
-Updated on 2026-11-07. **F0 complete; M0 underway; JUV-105/JUV-106 done.**
+Updated on 2026-11-07. **F0 complete; M0 underway; JUV-105–107 done.**
 
 ## Stable decisions
 
@@ -20,11 +20,13 @@ Local `main` integrates JUV-101–106; JUV-104–106 were fast-forwarded through
 
 ## Not implemented
 
-No published lessons, reader, business backend, database, SMTP, domain or deployment. The approved French course stays in the editorial directory, with no publication timestamp; the published-lesson inventory is empty. Only selected presentation fields enter the public pages, marked coming soon. Default build is a noindex preview; the verified production origin remains unconfigured. Reader/progress/offline support and complete localization remain later tickets. Access-denied/offline workshop states are simulations. Remote CI and real hosting behavior are unverified.
+No published lessons, reader, business backend, database, SMTP, domain or deployment. The approved French course stays in the editorial directory, with no publication timestamp; the published-lesson inventory is empty. Only selected presentation fields enter the public pages, marked coming soon. Default build is a noindex preview; the verified production origin remains unconfigured. Reader/progress/offline support and English translation remain later work. Access-denied/offline workshop states are simulations. Remote CI and real hosting behavior are unverified.
 
 ## Next M0 task
 
-**JUV-107** is ready: complete French catalogue, remaining UI literals and formatting/fallback rules. JUV-108 reader depends on JUV-107. Continue in dependency order; publication remains a separate release step.
+**JUV-107** — owner: Codex; branch: `feat/JUV-107-french-localization`; date: 2026-11-07; status: `done`. Complete French UI catalogue, stable keys, French fallback, Intl XAF/UTC-to-Douala formats and expanded-copy QA. Full verify passed (66 tests); Chrome suite 16 passed; pseudo scenarios 2 passed. Technical/visual author review completed. [Evidence](delivery/VALIDATION-JUV-107.md), [ADR-009](architecture/decisions/009-localization.md).
+
+**JUV-108** is ready and explicitly authorized next. Reader must use only published courses; publication remains a separate release step.
 
 Commands: `npm run context`, `npm run task -- JUV-107`. With Node 24/npm 11: `npm run verify`, `PLAYWRIGHT_CHANNEL=chrome npm run test:e2e`, `npm run dev`.
 
@@ -32,4 +34,4 @@ Commands: `npm run context`, `npm run task -- JUV-107`. With Node 24/npm 11: `np
 
 M0 drafts: Codex; accountable course owner/reviewer: project owner, self-appointed on 2026-11-07. Maintainer, C1 author/reviewer and operators remain to appoint; [product decisions](product/DECISIONS.md). Verify remote/hosting in the delivery ticket. ADR-005 documents managed-auth bcrypt versus Argon2id: review before real accounts.
 
-Latest handoff: [UI main integration](sessions/2026-11-07-ui-main-integration.md). Product handoff: [Public pages](sessions/2026-11-07-indexable-public-pages.md). Previous: [Local fonts/assets](sessions/2026-11-07-local-fonts-assets.md), [accessible components](sessions/2026-11-07-accessible-components.md). Integration baseline: [Local main integration](sessions/2026-11-07-main-integration.md). Product handoffs: [Free-course content](sessions/2026-11-07-free-course-content.md), [Public content schema](sessions/2026-11-07-public-content-schema.md), [M0 course plan](sessions/2026-11-07-m0-course-plan.md).
+Latest handoff: [French localization](sessions/2026-11-07-french-localization.md). Previous: [UI main integration](sessions/2026-11-07-ui-main-integration.md). Product handoff: [Public pages](sessions/2026-11-07-indexable-public-pages.md). Previous: [Local fonts/assets](sessions/2026-11-07-local-fonts-assets.md), [accessible components](sessions/2026-11-07-accessible-components.md). Integration baseline: [Local main integration](sessions/2026-11-07-main-integration.md). Product handoffs: [Free-course content](sessions/2026-11-07-free-course-content.md), [Public content schema](sessions/2026-11-07-public-content-schema.md), [M0 course plan](sessions/2026-11-07-m0-course-plan.md).

@@ -5,10 +5,10 @@ import { ActionLink, CourseCard } from './components/ui';
 import type { CourseOverview } from './content/overview.ts';
 import { coursePath } from './content/overview.ts';
 import courses from 'virtual:public-overviews';
-import { fr } from './i18n/fr';
+import { messages } from './i18n/index.ts';
 import { getPage } from './routing';
 
-const copy = fr.pages;
+const copy = messages.pages;
 
 function OverviewCards() {
   if (!courses.length) return <div className="empty-catalogue"><h3>{copy.emptyTitle}</h3><p>{copy.emptyDescription}</p><ActionLink internal href="/">{copy.backHome}</ActionLink></div>;

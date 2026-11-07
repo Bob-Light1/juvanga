@@ -1,4 +1,3 @@
-// JUV-107 will extend this launch catalogue to the full application and formats.
 export const fr = {
   pages: {
     brand: 'Juvanga',
@@ -45,6 +44,29 @@ export const fr = {
     homeMetaTitle: 'Juvanga — Apprendre. Pratiquer. Progresser.',
     catalogueMetaTitle: 'Parcours gratuits — Juvanga',
     notFoundMetaTitle: 'Page introuvable — Juvanga',
+  },
+  workshop: {
+    badge: 'Atelier de marque · F0',
+    eyebrow: 'Des compétences qui ouvrent des possibilités',
+    title: ['Apprendre.', 'Pratiquer.', 'Progresser.'],
+    introduction: 'L’identité de Juvanga prend forme : une lumière chaleureuse, des idées claires et la confiance d’avancer.',
+    explore: 'Explorer l’identité',
+    symbolAlt: 'Monogramme J surmonté d’un soleil doré',
+    symbolCaption: ['Un signe simple.', 'Un horizon ouvert.'],
+    paletteEyebrow: '01 · La palette',
+    paletteTitle: 'Une présence lumineuse.',
+    colors: { night: 'Nuit', sand: 'Sable', gold: 'Or', dawn: 'Aube', leaf: 'Feuille' },
+    paletteNote: 'Le bleu nuit porte le texte. L’or attire le regard. Le sable laisse respirer la lecture.',
+    behaviorEyebrow: '02 · Les interactions',
+    behaviorTitle: ['Du mouvement,', 'avec intention.'],
+    behaviorDescription: 'Des transitions courtes accompagnent l’action et respectent la préférence de mouvement réduit de l’appareil.',
+    interaction: 'Exemple d’interaction',
+    stepTitle: 'Chaque étape a un objectif.',
+    hide: 'Masquer le principe',
+    show: 'Découvrir le principe',
+    principle: 'Comprendre une idée, l’essayer et observer ce que l’on sait désormais faire.',
+    noticeTitle: 'Socle de développement',
+    notice: 'Cette page sert à vérifier l’identité et les composants. Le premier parcours gratuit sera développé au jalon M0.',
   },
   components: {
     eyebrow: '03 · Les composants',

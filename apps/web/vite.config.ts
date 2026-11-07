@@ -12,6 +12,6 @@ export default defineConfig({
     staticPreviewPlugin(),
     contentValidationPlugin(),
   ],
-  define: { __SITE_ORIGIN__: JSON.stringify(siteOrigin(process.env.SITE_URL)) },
+  define: { __PSEUDO_LOCALIZATION__: process.env.JUVANGA_PSEUDO_LOCALE === '1', __SITE_ORIGIN__: JSON.stringify(siteOrigin(process.env.SITE_URL)) },
   build: { target: 'es2022' },
 });

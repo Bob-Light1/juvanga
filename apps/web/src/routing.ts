@@ -1,4 +1,4 @@
-import { fr } from './i18n/fr.ts';
+import { messages } from './i18n/index.ts';
 import { coursePath, type CourseOverview } from './content/overview.ts';
 
 export type Page = {
@@ -9,7 +9,7 @@ export type Page = {
 
 export function getPage(pathname: string, courses: CourseOverview[]): Page {
   const path = pathname.replace(/\/+$/, '') || '/';
-  const copy = fr.pages;
+  const copy = messages.pages;
   if (path === '/') return { kind: 'home', title: copy.homeMetaTitle, description: copy.homeDescription, path, indexable: true };
   if (path === '/courses') return { kind: 'catalogue', title: copy.catalogueMetaTitle, description: copy.catalogueDescription, path, indexable: true };
   if (path === '/workshop') return { kind: 'workshop', title: copy.workshopTitle, description: copy.workshopDescription, path, indexable: false };

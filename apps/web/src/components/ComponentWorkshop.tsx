@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState, type FormEvent } from 'react';
-import { fr } from '../i18n/fr';
+import { messages } from '../i18n/index.ts';
 import { ActionLink, Alert, Button, ContentState, CourseCard, CourseNavigation, TextField, type ContentStateKind } from './ui';
 
-const copy = fr.components;
+const copy = messages.components;
 const stateKinds: ContentStateKind[] = ['loading', 'empty', 'error', 'denied', 'offline'];
 
 export function ComponentWorkshop() {

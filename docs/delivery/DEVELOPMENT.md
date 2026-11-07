@@ -56,3 +56,9 @@ Keep exact added dependency versions and the lockfile. Use agreed npm 11, a new 
 `npm run build` is the complete artifact command; bare `vite build` omits prerendering. With `SITE_URL` unset, output is a noindex preview with no canonical and an empty sitemap. At release, pass the verified HTTPS origin through the build environment; the variable is non-secret and has no `VITE_` prefix. The build reads `process.env`, not a browser-visible provider configuration. See [deployment](../operations/DEPLOYMENT.md) and [ADR-008](../architecture/decisions/008-public-pages.md).
 
 Home is `/`, catalogue `/courses`, descriptions `/courses/:id`, and the former brand/component workshop `/workshop` (always noindex). [Discovery inventory](../../content/discovery/catalogue.json) selects only approved description sources. It never publishes lessons; see the [content boundary](../architecture/PUBLIC-CONTENT.md).
+
+## Localization checks
+
+UI copy is in `apps/web/src/i18n/fr.ts`; import `messages` and the shared Intl formatters from `i18n/index.ts`. Stable semantic keys and French per-key fallback are documented in [ADR-009](../architecture/decisions/009-localization.md). French is the only advertised language.
+
+For expanded-copy QA, run `JUVANGA_PSEUDO_LOCALE=1 npm run build`, then `JUVANGA_PSEUDO_LOCALE=1 PLAYWRIGHT_CHANNEL=chrome npm run test:e2e -- tests/browser/i18n.spec.ts`. Rebuild with `npm run build` afterward to restore the French preview. Never use the pseudo build for a release.

@@ -207,7 +207,7 @@ Evidence: docs/delivery/VALIDATION-JUV-106.md ; docs/architecture/decisions/008-
 
 ## JUV-107 — Prepare French and future localization
 
-Milestone **M0** · Frontend · 0.5–1 person-days · status **todo**
+Milestone **M0** · Frontend · 0.5–1 person-days · status **done**
 
 Dependencies: JUV-104.
 
@@ -230,9 +230,9 @@ Requirements: USR-08.
 
 References: [docs/design/UX.md](../../../docs/design/UX.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-107-french-localization.
 
-Evidence: none — task not delivered.
+Evidence: apps/web/src/i18n/index.ts ; apps/web/src/i18n/fr.ts ; tests/i18n.test.mjs ; tests/browser/i18n.spec.ts ; docs/architecture/decisions/009-localization.md ; docs/delivery/VALIDATION-JUV-107.md ; docs/sessions/2026-11-07-french-localization.md.
 
 ---
 

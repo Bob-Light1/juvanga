@@ -1,0 +1,304 @@
+[
+  {
+    "name": "blank title",
+    "path": [
+      "title"
+    ],
+    "value": "   "
+  },
+  {
+    "name": "raw HTML text",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "blocks",
+      0,
+      "text"
+    ],
+    "value": "<img src=x onerror=alert(1)>"
+  },
+  {
+    "name": "unfinished HTML tag",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "blocks",
+      0,
+      "text"
+    ],
+    "value": "<script"
+  },
+  {
+    "name": "arbitrary HTML block",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "blocks",
+      0,
+      "type"
+    ],
+    "value": "html"
+  },
+  {
+    "name": "unrecognized HTML field",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "blocks",
+      0,
+      "html"
+    ],
+    "value": "<script>alert(1)</script>"
+  },
+  {
+    "name": "javascript URL",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "blocks",
+      4,
+      "url"
+    ],
+    "value": "javascript:alert(1)"
+  },
+  {
+    "name": "mixed-case javascript URL",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "blocks",
+      4,
+      "url"
+    ],
+    "value": "JaVaScRiPt:alert(1)"
+  },
+  {
+    "name": "data URL",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "blocks",
+      4,
+      "url"
+    ],
+    "value": "data:text/html,test"
+  },
+  {
+    "name": "protocol-relative URL",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "blocks",
+      4,
+      "url"
+    ],
+    "value": "//example.com"
+  },
+  {
+    "name": "HTTP URL",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "blocks",
+      4,
+      "url"
+    ],
+    "value": "http://example.com"
+  },
+  {
+    "name": "credentials in URL",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "blocks",
+      4,
+      "url"
+    ],
+    "value": "https://user:password@example.com"
+  },
+  {
+    "name": "whitespace in URL",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "blocks",
+      4,
+      "url"
+    ],
+    "value": "https://exam\nple.com"
+  },
+  {
+    "name": "backslash in URL",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "blocks",
+      4,
+      "url"
+    ],
+    "value": "https://example.com\\@other.example"
+  },
+  {
+    "name": "invalid HTTPS URL",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "blocks",
+      4,
+      "url"
+    ],
+    "value": "https://"
+  },
+  {
+    "name": "nonpositive course version",
+    "path": [
+      "version"
+    ],
+    "value": 0
+  },
+  {
+    "name": "fractional exercise version",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "exercise",
+      "version"
+    ],
+    "value": 1.5
+  },
+  {
+    "name": "missing rubric version",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "exercise",
+      "rubric",
+      "version"
+    ],
+    "value": null
+  },
+  {
+    "name": "duplicate lesson ID",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "id"
+    ],
+    "value": "fixture-module"
+  },
+  {
+    "name": "private access",
+    "path": [
+      "access"
+    ],
+    "value": "private"
+  },
+  {
+    "name": "unknown private metadata",
+    "path": [
+      "privateNotes"
+    ],
+    "value": "Synthetic private field"
+  },
+  {
+    "name": "non-UTC review timestamp",
+    "path": [
+      "review",
+      "reviewedAt"
+    ],
+    "value": "2026-11-07T09:00:00+01:00"
+  },
+  {
+    "name": "publication without review",
+    "path": [
+      "review"
+    ],
+    "value": null
+  },
+  {
+    "name": "publication without timestamp",
+    "path": [
+      "publishedAt"
+    ],
+    "value": null
+  },
+  {
+    "name": "review after publication",
+    "path": [
+      "review",
+      "reviewedAt"
+    ],
+    "value": "2026-11-07T10:00:00Z"
+  },
+  {
+    "name": "NUL in text",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "blocks",
+      0,
+      "text"
+    ],
+    "value": "Unsafe\u0000text"
+  },
+  {
+    "name": "C1 control in text",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "blocks",
+      0,
+      "text"
+    ],
+    "value": "Unsafe\u0085text"
+  },
+  {
+    "name": "NUL in URL",
+    "path": [
+      "modules",
+      0,
+      "lessons",
+      0,
+      "blocks",
+      4,
+      "url"
+    ],
+    "value": "https://exam\u0000ple.com"
+  }
+]

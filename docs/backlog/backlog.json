@@ -441,10 +441,10 @@
         2
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "done",
+      "owner": "Codex",
+      "branch": "feat/JUV-102-public-content-schema",
+      "updated_at": "2026-11-07",
       "depends_on": [
         "JUV-101"
       ],
@@ -466,9 +466,17 @@
         "SEC-05"
       ],
       "references": [
-        "docs/architecture/DATA-MODEL.md"
+        "docs/architecture/DATA-MODEL.md",
+        "docs/architecture/PUBLIC-CONTENT.md",
+        "docs/architecture/decisions/006-public-content.md"
       ],
-      "evidence": [],
+      "evidence": [
+        "apps/web/src/content/schema.ts",
+        "scripts/content.mjs",
+        "tests/content.test.mjs",
+        "docs/delivery/VALIDATION-JUV-102.md",
+        "docs/sessions/2026-11-07-public-content-schema.md"
+      ],
       "blocker": null
     },
     {

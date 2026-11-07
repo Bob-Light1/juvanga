@@ -30,6 +30,10 @@ Reference session: 6 November 2026, Africa/Douala. External sources were consult
 
 Package versions: npm registry via npm view and lockfile. The project does not claim that name/domain availability or tax/legal compliance has been established; these remain assignable tasks in DECISIONS.
 
+## JUV-102 implementation reference
+
+JUV-102 implementation reference, consulted on 2026-11-07: [Zod schema API](https://zod.dev/api) and [basic parsing and inferred types](https://zod.dev/basics). Used for strict objects, discriminated unions, validation paths and shared TypeScript types. Zod 4.6.7 was resolved through npm and pinned in the workspace manifest/lockfile; no provider research was repeated.
+
 ## Order of authority
 
 Current user instruction → explicit project decisions → source requirements not superseded → documented assumptions. Resolve and trace significant contradictions; ADRs do not cancel financial requirements for technical convenience.

@@ -39,7 +39,7 @@ Evidence: docs/product/FREE-COURSE.md ; docs/delivery/VALIDATION-JUV-101.md ; do
 
 ## JUV-102 — Create the versioned public content schema
 
-Milestone **M0** · Frontend/education · 1–2 person-days · status **todo**
+Milestone **M0** · Frontend/education · 1–2 person-days · status **done**
 
 Dependencies: JUV-101.
 
@@ -60,11 +60,11 @@ Dependencies: JUV-101.
 
 Requirements: COUR-01, DATA-03, SEC-05.
 
-References: [docs/architecture/DATA-MODEL.md](../../../docs/architecture/DATA-MODEL.md).
+References: [docs/architecture/DATA-MODEL.md](../../../docs/architecture/DATA-MODEL.md) ; [docs/architecture/PUBLIC-CONTENT.md](../../../docs/architecture/PUBLIC-CONTENT.md) ; [docs/architecture/decisions/006-public-content.md](../../../docs/architecture/decisions/006-public-content.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-102-public-content-schema.
 
-Evidence: none — task not delivered.
+Evidence: apps/web/src/content/schema.ts ; scripts/content.mjs ; tests/content.test.mjs ; docs/delivery/VALIDATION-JUV-102.md ; docs/sessions/2026-11-07-public-content-schema.md.
 
 ---
 

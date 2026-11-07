@@ -40,4 +40,6 @@ Deny-by-default RLS on exposed tables; test visitor/user A/user B/trainer/coordi
 
 ## M0 → M1
 
+M0 implements the [public JSON content contract](PUBLIC-CONTENT.md), with the versioning and migration rules in [ADR-006](decisions/006-public-content.md). Public stable IDs are preserved alongside M1 database UUIDs.
+
 Each public course/lesson/exercise has a stable ID and content version. Initial import retains these IDs. Local reading progress may be offered for import after login and consent; it never becomes competence evidence. Require idempotency and confirmation before merging. No private files in static content.

@@ -1,6 +1,6 @@
 # Architecture and stack
 
-Detailed decisions: ADR-001 to ADR-005. F0 installs the frontend and documentation checks; M1/M2 services remain to be implemented.
+Detailed decisions: [ADR index](decisions/README.md). F0 installs the frontend and documentation checks; JUV-102 adds the [public content contract](PUBLIC-CONTENT.md); M1/M2 services remain to be implemented.
 
 ## Selected stack
 
@@ -11,7 +11,7 @@ Detailed decisions: ADR-001 to ADR-005. F0 installs the frontend and documentati
 | Styling | CSS tokens, local Fraunces/Inter in M0 | Explicit brand, few dependencies, accessibility |
 | Animation | Motion for React + CSS | Useful transitions and reduced motion |
 | Routing / data | React Router, TanStack Query in M0/M1 as needed | Stable links and controlled cache; no initial global store |
-| Validation | Zod in M0/M1, shared schemas | Validated input/content; safe errors |
+| Validation | Zod public content schema in M0; shared API contracts in M1 | Content/build validation implemented in JUV-102; API input validation remains future work |
 | M1 API | Hono TypeScript, Cloudflare Worker | Modular REST API, same repository, Web APIs |
 | M1 database | PostgreSQL via Supabase, SQL migrations | Transactions, constraints, RLS, portable exports |
 | M1 identity | Supabase Auth behind the BFF API | Managed email/MFA; application HttpOnly sessions |

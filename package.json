@@ -25,6 +25,7 @@
     "backlog:generate": "node scripts/project.mjs generate",
     "check:docs": "node scripts/project.mjs check",
     "check:contrast": "node scripts/contrast.mjs",
+    "check:content": "node scripts/content.mjs",
     "verify": "npm run check:docs && npm run check:contrast && npm test && npm run lint && npm run typecheck && npm run build"
   },
   "devDependencies": {

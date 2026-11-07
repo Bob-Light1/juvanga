@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "id": "fixture-course",
+  "version": 1,
+  "status": "published",
+  "access": "public",
+  "level": 0,
+  "locale": "en",
+  "title": "Synthetic content-validation fixture",
+  "summary": "A developer fixture, not a real published course.",
+  "objectives": [
+    "Check fictional notes against an action."
+  ],
+  "prerequisites": [],
+  "authors": [
+    "Synthetic fixture author"
+  ],
+  "review": {
+    "reviewer": "Synthetic fixture reviewer",
+    "reviewedAt": "2026-11-07T08:00:00Z"
+  },
+  "publishedAt": "2026-11-07T09:00:00Z",
+  "modules": [
+    {
+      "id": "fixture-module",
+      "title": "Practice module",
+      "lessons": [
+        {
+          "id": "fixture-lesson",
+          "title": "Compare notes",
+          "objectives": [
+            "Preserve one fictional action."
+          ],
+          "blocks": [
+            {
+              "type": "paragraph",
+              "id": "fixture-introduction",
+              "text": "Read the fictional note.\nKeep missing information explicit."
+            },
+            {
+              "type": "heading",
+              "id": "fixture-heading",
+              "level": 2,
+              "text": "An action"
+            },
+            {
+              "type": "list",
+              "id": "fixture-list",
+              "ordered": false,
+              "items": [
+                "Identify the task.",
+                "Identify its owner."
+              ]
+            },
+            {
+              "type": "note",
+              "id": "fixture-note",
+              "tone": "warning",
+              "text": "Do not invent an owner."
+            },
+            {
+              "type": "link",
+              "id": "fixture-reference",
+              "text": "Synthetic HTTPS reference",
+              "url": "https://example.com/reference"
+            },
+            {
+              "type": "lesson-link",
+              "id": "fixture-lesson-reference",
+              "text": "Return to the lesson",
+              "courseId": "fixture-course",
+              "courseVersion": 1,
+              "lessonId": "fixture-lesson"
+            }
+          ],
+          "example": [
+            {
+              "type": "paragraph",
+              "id": "fixture-example",
+              "text": "The facilitator checks the invitation."
+            }
+          ],
+          "exercise": {
+            "id": "fixture-exercise",
+            "version": 1,
+            "prompt": "Identify the task and owner.",
+            "instructions": [
+              "Use only the fictional note."
+            ],
+            "rubric": {
+              "id": "fixture-rubric",
+              "version": 1,
+              "criteria": [
+                {
+                  "id": "fixture-criterion",
+                  "description": "Task and owner match the note.",
+                  "critical": true
+                }
+              ]
+            },
+            "workedSolution": [
+              {
+                "type": "paragraph",
+                "id": "fixture-solution",
+                "text": "Task: check the invitation. Owner: facilitator."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -6,7 +6,7 @@ Generated view. Source: ../backlog.json. Indicative estimates; verify criteria b
 
 ## JUV-101 — Define the free course and its professional outcome
 
-Milestone **M0** · Education/product · 1–2 person-days · status **todo**
+Milestone **M0** · Education/product · 1–2 person-days · status **done**
 
 Dependencies: JUV-006.
 
@@ -27,11 +27,11 @@ Dependencies: JUV-006.
 
 Requirements: COUR-04, LEARN-01, USR-08.
 
-References: [docs/product/BRIEF.md](../../../docs/product/BRIEF.md).
+References: [docs/product/BRIEF.md](../../../docs/product/BRIEF.md) ; [docs/product/FREE-COURSE.md](../../../docs/product/FREE-COURSE.md) ; [docs/product/DECISIONS.md](../../../docs/product/DECISIONS.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-101-free-course-outcome.
 
-Evidence: none — task not delivered.
+Evidence: docs/product/FREE-COURSE.md ; docs/delivery/VALIDATION-JUV-101.md ; docs/sessions/2026-11-07-m0-course-plan.md ; Project owner explicitly approved the course plan on 2026-11-07 in this conversation..
 
 ---
 

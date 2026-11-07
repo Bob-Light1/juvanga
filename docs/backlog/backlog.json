@@ -1,7 +1,7 @@
 {
   "$schema": "./backlog.schema.json",
   "schema_version": 1,
-  "updated_at": "2026-11-06",
+  "updated_at": "2026-11-07",
   "estimate_unit": "indicative person-days, excluding waiting time and provider costs",
   "milestones": [
     "F0",
@@ -393,10 +393,10 @@
         2
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "done",
+      "owner": "Codex",
+      "branch": "feat/JUV-101-free-course-outcome",
+      "updated_at": "2026-11-07",
       "depends_on": [
         "JUV-006"
       ],
@@ -418,9 +418,16 @@
         "USR-08"
       ],
       "references": [
-        "docs/product/BRIEF.md"
+        "docs/product/BRIEF.md",
+        "docs/product/FREE-COURSE.md",
+        "docs/product/DECISIONS.md"
       ],
-      "evidence": [],
+      "evidence": [
+        "docs/product/FREE-COURSE.md",
+        "docs/delivery/VALIDATION-JUV-101.md",
+        "docs/sessions/2026-11-07-m0-course-plan.md",
+        "Project owner explicitly approved the course plan on 2026-11-07 in this conversation."
+      ],
       "blocker": null
     },
     {

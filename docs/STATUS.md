@@ -1,6 +1,6 @@
 # Current status — Juvanga
 
-Updated on 2026-11-06. **F0 complete; next milestone M0.**
+Updated on 2026-11-07. **F0 complete; M0 started; JUV-101 approved and done.**
 
 ## Stable decisions
 
@@ -10,7 +10,7 @@ Name Juvanga; symbol B (J + sun); night/sand/gold palette with verified contrast
 
 Original F0: 86 detailed tasks, 47 traced requirements, product/architecture/quality/operations documents, brand/assets, frontend workshop, restart scripts, CI and contribution templates. Nine tooling and three browser tests passed; links/contrast/lint/typecheck/build passed; production dependency audit reported no known vulnerabilities. [Historical report and limitations](delivery/VALIDATION-F0.md).
 
-Files integrated into this repository; git initialized, no commit or remote created. Original PDFs and logo proposals retained. Dependencies installed locally and git-ignored. Target runtime: Node 24 LTS / npm 11.21.2; system runtime unchanged.
+Files integrated into this repository; current git inspection shows an initial commit and an `origin` remote. Remote access and CI have not been verified in this session. Original PDFs and logo proposals retained. Dependencies installed locally and git-ignored. Target runtime: Node 24 LTS / npm 11.21.2; system runtime unchanged.
 
 ## Latest completed task
 
@@ -18,16 +18,18 @@ Files integrated into this repository; git initialized, no commit or remote crea
 
 ## Not implemented
 
-No real M0 course, business backend, cloud database, SMTP, domain or public deployment. Current page is a brand workshop, not a first learning release. Local Fraunces/Inter remain JUV-105; workshop uses fallback fonts. Remote CI not run.
+No published M0 course, business backend, cloud database, SMTP, domain or public deployment. The approved course plan is not delivered lessons. Current page is a brand workshop, not a first learning release. Local Fraunces/Inter remain JUV-105; workshop uses fallback fonts. Remote CI not run.
 
-## Next product task
+## Current M0 task
 
-**JUV-101**: define the first free course outcome, then author and reviewer. JUV-104 (components) and JUV-201 (local database, if backend team available) can proceed independently; prioritize M0.
+**JUV-101** — owner: Codex; branch: `feat/JUV-101-free-course-outcome`; date: 2026-11-07; status: `done`. [Course plan](product/FREE-COURSE.md) prepared: meeting notes to an action plan, three lessons, fictional exercise, worked solution and self-assessment. The project owner volunteered to own and review the course; the project owner explicitly approved the plan on 2026-11-07. [Verification and limitations](delivery/VALIDATION-JUV-101.md).
+
+Next: JUV-102 is ready following JUV-101 approval. JUV-104 (components) can proceed independently; prioritize M0.
 
 Commands: `npm run context`, `npm run next -- M0`, `npm run task -- JUV-101`. With Node 24: `npm ci`, `npm run verify`, `npm run dev`.
 
 ## Owners and open decisions
 
-Maintainer, author, reviewer and operators to appoint; [product decisions](product/DECISIONS.md). Configure remote/hosting in the delivery ticket. ADR-005 documents managed-auth bcrypt versus Argon2id: review before real accounts.
+M0 drafts: Codex; accountable course owner/reviewer: project owner, self-appointed on 2026-11-07. Maintainer, C1 author/reviewer and operators remain to appoint; [product decisions](product/DECISIONS.md). Verify remote/hosting in the delivery ticket. ADR-005 documents managed-auth bcrypt versus Argon2id: review before real accounts.
 
-Latest handoff: [English documentation](sessions/2026-11-06-english-documentation.md). Earlier: [foundations](sessions/2026-11-06-foundations.md).
+Latest handoff: [M0 course plan](sessions/2026-11-07-m0-course-plan.md). Earlier: [English documentation](sessions/2026-11-06-english-documentation.md), [foundations](sessions/2026-11-06-foundations.md).

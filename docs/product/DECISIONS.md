@@ -12,7 +12,7 @@ Reference date: 2026-11-06. The roles below are responsibilities to assign, not 
 | DEC-04 | Two finance operators, independent sources and review schedule | Required rule; operators missing | Finance | Before first real payment |
 | DEC-05 | Issuer, taxes, numbering, credit notes and retention | Pending validation | Finance/local expert | Before real issuance |
 | DEC-06 | B2B reporting; proposed threshold of 5; individual data | Pending validation | Product/legal | Before B2B activation |
-| DEC-07 | C1 course, author/reviewer, critical criteria and publication | To assign | Education | Free course before M0; C1 before M2 |
+| DEC-07 | C1 course, author/reviewer, critical criteria and publication | M0 plan approved; complete-lesson review pending; C1 still unassigned | Project owner for M0; education for C1 | Free course before M0; C1 before M2 |
 | DEC-08 | Budget, RPO/RTO, support SLA and incident owner | Pending validation | Management/technical | Before M1/M2 depending on data |
 | DEC-09 | Mode B, cutoff and on-call coverage | Deferred | Finance/operations | P2 only |
 | DEC-10 | Hosting, region, privacy, retention and transfers | Document according to collected data | Product/legal/technical | M0 for logs/feedback; M1 for accounts |
@@ -24,6 +24,12 @@ Reference date: 2026-11-06. The roles below are responsibilities to assign, not 
 ## Recording a decision
 
 Add date, decision maker, exact decision, alternatives, scope, effect and affected tickets. Do not replace an old value without retaining its superseding decision. No demonstration price is approved; the flyer's 100,000 XAF remains a historical example.
+
+## DEC-07 update — 2026-11-07
+
+The project owner explicitly volunteered to take responsibility for the M0 course and its pedagogical review. Codex prepares the drafts; the project owner reviews them. This supersedes the unassigned M0 responsibilities, without assigning C1 roles or recording a review that has not happened.
+
+JUV-101 proposes the [free-course plan](FREE-COURSE.md), including the outcome, three lessons, fictional exercise, worked solution, alternative considered and publication gates. The project owner explicitly approved the plan on 2026-11-07, superseding the pending plan review. Complete lessons still require review in JUV-103. Delegating review to an unnamed person was not selected because the owner volunteered. JUV-103 still requires a walkthrough by someone who did not write the course. This update affects JUV-101/JUV-103; it changes neither architecture nor milestone scope.
 
 ## Prepare without waiting for these decisions
 

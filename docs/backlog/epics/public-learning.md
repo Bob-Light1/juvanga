@@ -72,7 +72,7 @@ Evidence: apps/web/src/content/schema.ts ; scripts/content.mjs ; tests/content.t
 
 ## JUV-103 — Produce and review the complete free course
 
-Milestone **M0** · Education · 3–6 person-days · status **todo**
+Milestone **M0** · Education · 3–6 person-days · status **in_review**
 
 Dependencies: JUV-102.
 
@@ -94,11 +94,11 @@ Dependencies: JUV-102.
 
 Requirements: LEARN-01, COUR-04, USR-08.
 
-References: [docs/product/SCOPE.md](../../../docs/product/SCOPE.md).
+References: [docs/product/SCOPE.md](../../../docs/product/SCOPE.md) ; [docs/product/FREE-COURSE.md](../../../docs/product/FREE-COURSE.md) ; [docs/architecture/PUBLIC-CONTENT.md](../../../docs/architecture/PUBLIC-CONTENT.md) ; [content/drafts/meeting-notes-action-plan/README.md](../../../content/drafts/meeting-notes-action-plan/README.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-103-free-course-content.
 
-Evidence: none — task not delivered.
+Evidence: content/drafts/meeting-notes-action-plan/v1.json ; docs/reviews/meeting-notes-action-plan-v1.md ; content/drafts/meeting-notes-action-plan/README.md ; docs/delivery/VALIDATION-JUV-103.md ; docs/sessions/2026-11-07-free-course-content.md.
 
 ---
 

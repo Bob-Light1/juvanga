@@ -31,6 +31,8 @@ The project owner explicitly volunteered to take responsibility for the M0 cours
 
 JUV-101 proposes the [free-course plan](FREE-COURSE.md), including the outcome, three lessons, fictional exercise, worked solution, alternative considered and publication gates. The project owner explicitly approved the plan on 2026-11-07, superseding the pending plan review. Complete lessons still require review in JUV-103. Delegating review to an unnamed person was not selected because the owner volunteered. JUV-103 still requires a walkthrough by someone who did not write the course. This update affects JUV-101/JUV-103; it changes neither architecture nor milestone scope.
 
+JUV-103 now provides the [complete-lesson review copy](../reviews/meeting-notes-action-plan-v1.md) and [editorial provenance](../../content/drafts/meeting-notes-action-plan/README.md). Human lesson review and the non-author walkthrough remain pending; neither is implied by the instruction to prepare the content and create commits. The draft stays outside the public inventory with no review or publication timestamp. No new product or architecture decision supersedes the approved plan.
+
 ## Prepare without waiting for these decisions
 
 M0 journey, public content, accessibility, tokens, technical contracts, tests using fictional data and procedures. Open financial decisions do not prevent development and testing of mechanisms, but do prevent their actual commercial activation.

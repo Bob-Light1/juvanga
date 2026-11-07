@@ -49,6 +49,8 @@ An internal lesson link must resolve to a lesson in a version listed in the same
 
 ## Validation and correction
 
+For the first course draft, `npm run course:review` validates the canonical French JSON and generates a readable review copy. `npm run check:course`, included in `npm run verify`, rejects an invalid draft or a stale review copy. See the [editorial record](../../content/drafts/meeting-notes-action-plan/README.md). This authoring check uses the unchanged schema; it does not add the draft to the public inventory or perform a human review. Application UI copy remains separate in JUV-107.
+
 Run `npm run check:content` for focused diagnostics. Every Vite production build runs the same check, including `npm run build -w @juvanga/web`. Tests run through `npm test` under Node 24. Example diagnostic shape:
 
 ```text

@@ -25,6 +25,10 @@ function readDocument(file, schema) {
   return result.data;
 }
 
+export function validateCourseDocument(file) {
+  return readDocument(file, CourseSchema);
+}
+
 export function validatePublicContent(directory = publicContentDirectory) {
   if (!fs.existsSync(directory) || !fs.lstatSync(directory).isDirectory()) {
     throw new Error(`${directory}: $: Public content must be a directory, not a symlink`);

@@ -490,10 +490,10 @@
         6
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "in_review",
+      "owner": "Codex",
+      "branch": "feat/JUV-103-free-course-content",
+      "updated_at": "2026-11-07",
       "depends_on": [
         "JUV-102"
       ],
@@ -516,9 +516,18 @@
         "USR-08"
       ],
       "references": [
-        "docs/product/SCOPE.md"
+        "docs/product/SCOPE.md",
+        "docs/product/FREE-COURSE.md",
+        "docs/architecture/PUBLIC-CONTENT.md",
+        "content/drafts/meeting-notes-action-plan/README.md"
       ],
-      "evidence": [],
+      "evidence": [
+        "content/drafts/meeting-notes-action-plan/v1.json",
+        "docs/reviews/meeting-notes-action-plan-v1.md",
+        "content/drafts/meeting-notes-action-plan/README.md",
+        "docs/delivery/VALIDATION-JUV-103.md",
+        "docs/sessions/2026-11-07-free-course-content.md"
+      ],
       "blocker": null
     },
     {

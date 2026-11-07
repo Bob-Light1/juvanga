@@ -19,4 +19,6 @@
 
 | [ADR-011](011-practice.md) | Public exercises and declaration-only self-assessment | Adopted for M0 |
 
+| [ADR-012](012-local-progress.md) | Explicitly consented and erasable local reading position | Adopted for M0 |
+
 Create a new decision to supersede an old one; do not rewrite history. Template: `docs/templates/ADR.md`.

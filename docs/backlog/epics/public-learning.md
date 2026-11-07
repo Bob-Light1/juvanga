@@ -308,7 +308,7 @@ Evidence: apps/web/src/ExercisePage.tsx ; apps/web/src/content/practice.ts ; scr
 
 ## JUV-110 — Save reading progress with local consent
 
-Milestone **M0** · Frontend · 1–2 person-days · status **todo**
+Milestone **M0** · Frontend · 1–2 person-days · status **done**
 
 Dependencies: JUV-108.
 
@@ -331,9 +331,9 @@ Requirements: DATA-07, USR-08.
 
 References: [docs/design/UX.md](../../../docs/design/UX.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-110-consented-reading-progress.
 
-Evidence: none — task not delivered.
+Evidence: apps/web/src/ProgressPanel.tsx ; apps/web/src/progress/progress.ts ; apps/web/src/progress/use-progress.ts ; tests/progress.test.mjs ; tests/reader-browser/progress.spec.ts ; tests/browser/progress.spec.ts ; docs/architecture/decisions/012-local-progress.md ; docs/delivery/VALIDATION-JUV-110.md ; docs/sessions/2026-11-07-consented-reading-progress.md.
 
 ---
 

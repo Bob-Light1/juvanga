@@ -139,3 +139,8 @@ input.field-input:read-only { background: var(--color-sand); }
 .worked-solution { margin-block: var(--space-8); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
 .worked-solution summary { padding: var(--space-4); min-height: 48px; cursor: pointer; font-weight: 600; }
 .worked-solution > div { padding: var(--space-6); }
+
+.progress-controls { margin-block: var(--space-8); padding: var(--space-6); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: var(--color-white); }
+.progress-controls h2 { font-family: var(--font-body); font-size: 1.25rem; margin-block: 0 var(--space-4); }
+.progress-actions { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+.progress-page { max-width: 75ch; margin: auto; }

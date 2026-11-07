@@ -4,7 +4,7 @@ import { messages } from './i18n/index.ts';
 import { coursePath, type CourseOverview } from './content/overview.ts';
 
 export type Page = {
-  kind: 'home' | 'catalogue' | 'course' | 'workshop' | 'not-found' | 'lesson' | 'exercise' | 'missing-lesson';
+  kind: 'home' | 'catalogue' | 'course' | 'workshop' | 'not-found' | 'lesson' | 'exercise' | 'missing-lesson' | 'progress';
   title: string; description: string; path: string; indexable: boolean;
   course?: CourseOverview;
   readingCourse?: ReadingCourse; lesson?: ReadingLesson;
@@ -15,6 +15,7 @@ export function getPage(pathname: string, courses: CourseOverview[], readers: Re
   const copy = messages.pages;
   if (path === '/') return { kind: 'home', title: copy.homeMetaTitle, description: copy.homeDescription, path, indexable: true };
   if (path === '/courses') return { kind: 'catalogue', title: copy.catalogueMetaTitle, description: copy.catalogueDescription, path, indexable: true };
+  if (path === '/progress') return { kind: 'progress', title: messages.progress.metaTitle, description: messages.progress.description, path, indexable: false };
   if (path === '/workshop') return { kind: 'workshop', title: copy.workshopTitle, description: copy.workshopDescription, path, indexable: false };
   if (path.startsWith('/learn/')) {
     const reading = findReadingLesson(path, readers);

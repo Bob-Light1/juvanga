@@ -2,7 +2,7 @@
 
 ## M0: public surface
 
-Reviewed content without arbitrary HTML, safe links, locked dependencies, CSP and headers, no implicit collection of deliverables. Optional, erasable local progress limited to reading. Describe feedback and host logs in the notice; do not publish a form that sends to a fictional address. Foundation preview pages remain `noindex`.
+Reviewed content without arbitrary HTML, safe links, locked dependencies, CSP and headers, no implicit collection of deliverables. Optional, erasable local progress limited to reading; [ADR-012](decisions/012-local-progress.md) defines explicit opt-in, strict record validation, consent rechecks and recoverable storage failures. Describe feedback and host logs in the notice; do not publish a form that sends to a fictional address. Foundation preview pages remain `noindex`.
 
 ## M1: accounts and private data
 

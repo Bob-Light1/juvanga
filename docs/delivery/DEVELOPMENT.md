@@ -72,3 +72,7 @@ Canonical reading routes are `/learn/:course/v/:version/:lesson`; short `/learn/
 ## Practice checks
 
 `npm run test:reader` also runs the exercise attempt/compare/retry scenarios against the separate synthetic inventory. It verifies keyboard and no-JavaScript use, exact-version routes, no submission/storage, reload reset and declaration-only feedback. The runner restores the normal artifact; no real course is published. Exercise responses must never enter future progress persistence. See [ADR-011](../architecture/decisions/011-practice.md).
+
+## Local resume checks
+
+JUV-110 adds a noindex `/progress` page with optional consent and targeted erasure. Only the last reading location is retained, never exercise text or declarations. The schema, consent and exact-version behavior are documented in [ADR-012](../architecture/decisions/012-local-progress.md). The `test:reader` runner covers real storage refusal/opt-in/reload/erasure, corrupt/incompatible records, unknown content versions, quota/denied storage and cross-tab revocation. Normal `test:e2e` covers `/progress` static/no-JavaScript recovery and an empty real inventory. Future offline/auth work must preserve these boundaries.

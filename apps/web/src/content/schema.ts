@@ -1,7 +1,8 @@
 import { z } from 'zod';
+import { contentIdPattern, maxContentIdLength } from './id.ts';
 
-export const ContentIdSchema = z.string().max(100).regex(
-  /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/,
+export const ContentIdSchema = z.string().max(maxContentIdLength).regex(
+  contentIdPattern,
   'Use a stable lowercase ID with optional hyphen-separated words',
 );
 const version = z.number().int().positive().max(Number.MAX_SAFE_INTEGER);

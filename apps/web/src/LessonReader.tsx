@@ -1,3 +1,5 @@
+import { ProgressControls } from './ProgressPanel';
+import { useReadingPosition } from './progress/use-progress.ts';
 import { useState } from 'react';
 import { Link } from 'react-router';
 import { ActionLink, Button } from './components/ui';
@@ -50,6 +52,7 @@ export function LessonBlocks({ blocks }: { blocks: ContentBlock[] }) {
 }
 
 export function LessonReader({ course, lesson }: { course: ReadingCourse; lesson: ReadingLesson }) {
+  useReadingPosition(course.id, course.version, lesson.id);
   const lessons = readingLessons(course);
   const index = lessons.findIndex(candidate => candidate.id === lesson.id);
   const previous = lessons[index - 1], next = lessons[index + 1];
@@ -63,6 +66,7 @@ export function LessonReader({ course, lesson }: { course: ReadingCourse; lesson
     </nav></aside>
     <article className="lesson-body" aria-labelledby="lesson-title">
       <header><p className="eyebrow">{copy.eyebrow}</p><h1 id="lesson-title">{lesson.title}</h1></header>
+      <ProgressControls />
       <section aria-labelledby="lesson-objectives"><h2 id="lesson-objectives">{copy.objectives}</h2><ul>{lesson.objectives.map(item => <li key={item}>{item}</li>)}</ul></section>
       <LessonBlocks blocks={lesson.blocks} />
       <section aria-labelledby="lesson-example"><h2 id="lesson-example">{copy.example}</h2><LessonBlocks blocks={lesson.example} /></section>

@@ -833,10 +833,10 @@
         2
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "done",
+      "owner": "Codex",
+      "branch": "feat/JUV-110-consented-reading-progress",
+      "updated_at": "2026-11-07",
       "depends_on": [
         "JUV-108"
       ],
@@ -859,7 +859,17 @@
       "references": [
         "docs/design/UX.md"
       ],
-      "evidence": [],
+      "evidence": [
+        "apps/web/src/ProgressPanel.tsx",
+        "apps/web/src/progress/progress.ts",
+        "apps/web/src/progress/use-progress.ts",
+        "tests/progress.test.mjs",
+        "tests/reader-browser/progress.spec.ts",
+        "tests/browser/progress.spec.ts",
+        "docs/architecture/decisions/012-local-progress.md",
+        "docs/delivery/VALIDATION-JUV-110.md",
+        "docs/sessions/2026-11-07-consented-reading-progress.md"
+      ],
       "blocker": null
     },
     {

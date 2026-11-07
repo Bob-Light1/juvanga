@@ -8,7 +8,7 @@ import { exercisePaths } from './content/practice.ts';
 import { getPage, publicPaths, readerAliases } from './routing';
 
 export const paths = publicPaths(courses, readers);
-export const extraPaths = [...readerAliases(readers), ...exercisePaths(readers)];
+export const extraPaths = [...readerAliases(readers), ...exercisePaths(readers), '/progress'];
 export function render(path: string) {
   return {
     page: getPage(path, courses, readers),

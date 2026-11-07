@@ -40,6 +40,10 @@ function utcDate(value: string): Date {
   return date;
 }
 
+export function isUtcInstant(value: string): boolean {
+  try { utcDate(value); return true; } catch { return false; }
+}
+
 export function formatDate(value: string): string {
   return new Intl.DateTimeFormat(locale, { timeZone, dateStyle: 'long' }).format(utcDate(value));
 }

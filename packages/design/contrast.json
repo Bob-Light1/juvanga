@@ -68,5 +68,20 @@
     "foreground": "action",
     "background": "white",
     "minimum": 4.5
+  },
+  {
+    "foreground": "night",
+    "background": "white",
+    "minimum": 4.5
+  },
+  {
+    "foreground": "muted",
+    "background": "white",
+    "minimum": 4.5
+  },
+  {
+    "foreground": "danger",
+    "background": "white",
+    "minimum": 4.5
   }
 ]

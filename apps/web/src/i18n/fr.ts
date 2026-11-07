@@ -1,0 +1,41 @@
+// JUV-107 will extend this launch catalogue to the full application and formats.
+export const fr = {
+  components: {
+    eyebrow: '03 · Les composants',
+    title: 'Des repères pour apprendre.',
+    introduction: 'Démonstration des interactions du futur parcours. Aucun cours n’est publié ici ; aucune donnée n’est envoyée ni enregistrée.',
+    navigation: 'Démonstration des composants',
+    links: { form: 'Essayer le formulaire', card: 'Voir la carte', states: 'Explorer les états' },
+    form: {
+      title: 'Un objectif, une prochaine étape.',
+      label: 'Votre objectif (obligatoire)',
+      hint: 'Écrivez quelques mots, sans information personnelle.',
+      error: 'Erreur : indiquez votre objectif avant de continuer.',
+      submit: 'Vérifier mon objectif',
+      ready: 'Renseignez votre objectif pour essayer la démonstration.',
+      busy: 'Vérification en cours…',
+      success: 'Exemple réussi : votre objectif est renseigné.',
+      successDetail: 'Cette démonstration vérifie seulement que le champ est rempli. Elle ne valide aucune compétence.',
+      disabled: 'Publication indisponible',
+      disabledHint: 'La publication n’est pas disponible dans cette démonstration.',
+    },
+    card: {
+      title: 'Exemple de parcours',
+      badge: 'Démonstration',
+      meta: 'Aucun cours publié',
+      description: 'Une carte présente l’objectif du parcours et une action explicite pour continuer.',
+      action: 'Revenir au formulaire',
+    },
+    states: {
+      title: 'Comprendre chaque état.',
+      label: 'État à explorer',
+      retry: 'Réessayer la démonstration',
+      back: 'Revenir au formulaire',
+      loading: { label: 'Chargement', title: 'Chargement en cours', description: 'Le contenu se prépare. Vous pouvez continuer à naviguer dans la page.' },
+      empty: { label: 'Vide', title: 'Aucun parcours à afficher', description: 'Le catalogue de cette démonstration est vide. Vous pouvez essayer le formulaire.' },
+      error: { label: 'Erreur', title: 'Erreur : contenu indisponible', description: 'Le contenu n’a pas pu être chargé. Réessayez pour relancer la démonstration.' },
+      denied: { label: 'Accès refusé', title: 'Accès indisponible', description: 'Cet exemple illustre un accès refusé. Le futur parcours M0 sera gratuit, sans compte obligatoire.' },
+      offline: { label: 'Réseau indisponible', title: 'Connexion indisponible', description: 'Cet état est simulé. Aucun contenu hors ligne n’est proposé par cette démonstration.' },
+    },
+  },
+} as const;

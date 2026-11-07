@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { AnimatePresence, motion, useReducedMotion } from 'motion/react';
+import { ComponentWorkshop } from './components/ComponentWorkshop';
+import { ActionLink, Button } from './components/ui';
 
 const palette = [
   ['Nuit', '#14213D', 'night'], ['Sable', '#FBF3E4', 'sand'],
@@ -23,7 +25,7 @@ export function App() {
             <p className="eyebrow">Des compétences qui ouvrent des possibilités</p>
             <h1 id="hero-title">Apprendre.<br />Pratiquer.<br /><em>Progresser.</em></h1>
             <p className="intro">L’identité de Juvanga prend forme : une lumière chaleureuse, des idées claires et la confiance d’avancer.</p>
-            <a className="button" href="#identity">Explorer l’identité <span aria-hidden="true">↘</span></a>
+            <ActionLink href="#identity">Explorer l’identité <span aria-hidden="true">↘</span></ActionLink>
           </div>
           <div className="symbol-card">
             <img src="/brand/juvanga-symbol.svg" alt="Monogramme J surmonté d’un soleil doré" width="280" height="280" />
@@ -45,7 +47,7 @@ export function App() {
           <div className="example-card">
             <span className="pill">Exemple d’interaction</span>
             <h3>Chaque étape a un objectif.</h3>
-            <button className="button" aria-expanded={expanded} aria-controls="motion-detail" onClick={() => setExpanded(!expanded)}>{expanded ? 'Masquer le principe' : 'Découvrir le principe'}</button>
+            <Button aria-expanded={expanded} aria-controls="motion-detail" onClick={() => setExpanded(!expanded)}>{expanded ? 'Masquer le principe' : 'Découvrir le principe'}</Button>
             <div id="motion-detail" aria-live="polite">
               <AnimatePresence initial={false}>
                 {expanded && <motion.p key="detail" initial={{ opacity: 0, y: reducedMotion ? 0 : 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }} transition={{ duration: reducedMotion ? 0 : 0.2 }}>Comprendre une idée, l’essayer et observer ce que l’on sait désormais faire.</motion.p>}
@@ -53,6 +55,7 @@ export function App() {
             </div>
           </div>
         </section>
+        <ComponentWorkshop />
         <aside className="notice"><strong>Socle de développement</strong><p>Cette page sert à vérifier l’identité et les composants. Le premier parcours gratuit sera développé au jalon M0.</p></aside>
       </main>
       <footer className="shell footer"><span>Juvanga</span><span>Apprendre. Pratiquer. Progresser.</span></footer>

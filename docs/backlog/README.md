@@ -43,7 +43,7 @@ Usage: `npm run next` for ready tasks; `npm run task -- JUV-101` for a ticket. S
 | [JUV-101](epics/public-learning.md#juv-101) | M0 | Define the free course and its professional outcome | JUV-006 | done |
 | [JUV-102](epics/public-learning.md#juv-102) | M0 | Create the versioned public content schema | JUV-101 | done |
 | [JUV-103](epics/public-learning.md#juv-103) | M0 | Produce and review the complete free course | JUV-102 | done |
-| [JUV-104](epics/public-learning.md#juv-104) | M0 | Build accessible course components | JUV-004 | todo |
+| [JUV-104](epics/public-learning.md#juv-104) | M0 | Build accessible course components | JUV-004 | done |
 | [JUV-105](epics/public-learning.md#juv-105) | M0 | Integrate local fonts and final assets | JUV-003, JUV-104 | todo |
 | [JUV-106](epics/public-learning.md#juv-106) | M0 | Deliver indexable home, catalogue and course pages | JUV-102, JUV-104, JUV-105 | todo |
 | [JUV-107](epics/public-learning.md#juv-107) | M0 | Prepare French and future localization | JUV-104 | todo |

@@ -542,10 +542,10 @@
         3
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "done",
+      "owner": "Codex",
+      "branch": "feat/JUV-104-accessible-components",
+      "updated_at": "2026-11-07",
       "depends_on": [
         "JUV-004"
       ],
@@ -569,7 +569,15 @@
       "references": [
         "docs/design/UX.md"
       ],
-      "evidence": [],
+      "evidence": [
+        "apps/web/src/components/ui.tsx",
+        "apps/web/src/components/ComponentWorkshop.tsx",
+        "tests/browser/components.spec.ts",
+        "docs/design/COMPONENTS.md",
+        "docs/architecture/decisions/007-accessible-components.md",
+        "docs/delivery/VALIDATION-JUV-104.md",
+        "docs/sessions/2026-11-07-accessible-components.md"
+      ],
       "blocker": null
     },
     {

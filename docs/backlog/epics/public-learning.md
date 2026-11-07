@@ -106,7 +106,7 @@ Evidence: content/drafts/meeting-notes-action-plan/v1.json ; docs/reviews/meetin
 
 ## JUV-104 — Build accessible course components
 
-Milestone **M0** · Frontend/design · 1.5–3 person-days · status **todo**
+Milestone **M0** · Frontend/design · 1.5–3 person-days · status **done**
 
 Dependencies: JUV-004.
 
@@ -130,9 +130,9 @@ Requirements: USR-05, USR-07.
 
 References: [docs/design/UX.md](../../../docs/design/UX.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-104-accessible-components.
 
-Evidence: none — task not delivered.
+Evidence: apps/web/src/components/ui.tsx ; apps/web/src/components/ComponentWorkshop.tsx ; tests/browser/components.spec.ts ; docs/design/COMPONENTS.md ; docs/architecture/decisions/007-accessible-components.md ; docs/delivery/VALIDATION-JUV-104.md ; docs/sessions/2026-11-07-accessible-components.md.
 
 ---
 

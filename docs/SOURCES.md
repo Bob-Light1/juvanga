@@ -38,6 +38,10 @@ JUV-102 implementation reference, consulted on 2026-11-07: [Zod schema API](http
 
 JUV-103 editorial provenance, 2026-11-07: the [course editorial record](../content/drafts/meeting-notes-action-plan/README.md) records the approved fictional source notes, original drafting, third-party media/excerpt status and the project owner's explicit complete-lesson approval and three-exercise walkthrough report. No new external provider research was needed.
 
+## JUV-104 browser verification reference
+
+Consulted on 2026-11-07: Chromium's [zoom preference implementation](https://github.com/chromium/chromium/blob/main/chrome/browser/ui/zoom/chrome_zoom_level_prefs.cc). Used only to configure a temporary browser profile for actual 200% zoom: default zoom is a dictionary keyed by storage partition, and the default partition key is `x`. Tests additionally assert the measured viewport and device pixel ratio rather than trusting preference setup. No provider research or package change was required.
+
 ## Order of authority
 
 Current user instruction → explicit project decisions → source requirements not superseded → documented assumptions. Resolve and trace significant contradictions; ADRs do not cancel financial requirements for technical convenience.

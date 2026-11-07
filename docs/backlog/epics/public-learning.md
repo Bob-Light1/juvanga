@@ -446,7 +446,7 @@ Blocker: JUV-111 is incomplete. Five consenting real testers have no observation
 
 ## JUV-114 — Publish M0 for free and test rollback
 
-Milestone **M0** · Operations · 0.5–1.5 person-days · status **todo**
+Milestone **M0** · Operations · 0.5–1.5 person-days · status **blocked**
 
 Dependencies: JUV-113, JUV-005.
 
@@ -469,6 +469,8 @@ Requirements: USR-04.
 
 References: [docs/operations/DEPLOYMENT.md](../../../docs/operations/DEPLOYMENT.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-114-release-preparation.
 
-Evidence: none — task not delivered.
+Evidence: docs/operations/M0-RELEASE.md ; docs/sessions/2026-11-07-release-preparation.md.
+
+Blocker: JUV-113 acceptance is incomplete; project owner confirmed Cloudflare access is not configured. No verified production origin, support channel, deployment or rollback target exists. Release preparation only.

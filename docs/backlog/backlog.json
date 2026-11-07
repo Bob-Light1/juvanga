@@ -1023,10 +1023,10 @@
         1.5
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "blocked",
+      "owner": "Codex",
+      "branch": "feat/JUV-114-release-preparation",
+      "updated_at": "2026-11-07",
       "depends_on": [
         "JUV-113",
         "JUV-005"
@@ -1049,8 +1049,11 @@
       "references": [
         "docs/operations/DEPLOYMENT.md"
       ],
-      "evidence": [],
-      "blocker": null
+      "evidence": [
+        "docs/operations/M0-RELEASE.md",
+        "docs/sessions/2026-11-07-release-preparation.md"
+      ],
+      "blocker": "JUV-113 acceptance is incomplete; project owner confirmed Cloudflare access is not configured. No verified production origin, support channel, deployment or rollback target exists. Release preparation only."
     },
     {
       "id": "JUV-201",

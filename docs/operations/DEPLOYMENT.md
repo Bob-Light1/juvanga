@@ -36,3 +36,7 @@ Deploy a compatible schema first, then code compatible with old/new versions, ve
 Measure DB, storage, egress, requests, CPU and email weekly. Internal target alert at 70%, action at 85%. Disable expensive imports/media, limit registration and archive under policy before saturation. No automatic paid upgrade without a budget decision. A reliable commercial pilot may require a paid plan, restoration and support: do not sell an SLA based on free quotas.
 
 Cloud accounts, secrets, remote and domain remain to be supplied/configured by their owners in the deployment ticket. They are not needed to finish local foundations.
+
+## Current M0 release record
+
+[JUV-114 release and rollback record](M0-RELEASE.md) tracks the unconfigured origin/provider, acceptance/support gates and the not-yet-executed remote smoke/rollback drill. It includes installed-service-worker recovery; a server-side rollback alone does not replace an active public cache. No deployment is implied by building or completing this preparation.

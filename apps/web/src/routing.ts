@@ -1,9 +1,10 @@
 import { findReadingLesson, latestLessonPath, latestReadingCourses, lessonPath, readingLessons, type ReadingCourse, type ReadingLesson } from './content/reader.ts';
+import { exercisePath } from './content/practice.ts';
 import { messages } from './i18n/index.ts';
 import { coursePath, type CourseOverview } from './content/overview.ts';
 
 export type Page = {
-  kind: 'home' | 'catalogue' | 'course' | 'workshop' | 'not-found' | 'lesson' | 'missing-lesson';
+  kind: 'home' | 'catalogue' | 'course' | 'workshop' | 'not-found' | 'lesson' | 'exercise' | 'missing-lesson';
   title: string; description: string; path: string; indexable: boolean;
   course?: CourseOverview;
   readingCourse?: ReadingCourse; lesson?: ReadingLesson;
@@ -16,7 +17,10 @@ export function getPage(pathname: string, courses: CourseOverview[], readers: Re
   if (path === '/courses') return { kind: 'catalogue', title: copy.catalogueMetaTitle, description: copy.catalogueDescription, path, indexable: true };
   if (path === '/workshop') return { kind: 'workshop', title: copy.workshopTitle, description: copy.workshopDescription, path, indexable: false };
   if (path.startsWith('/learn/')) {
-    const found = findReadingLesson(path, readers);
+    const reading = findReadingLesson(path, readers);
+    const exercise = !reading && path.endsWith('/exercise');
+    const found = reading ?? (exercise ? findReadingLesson(path.slice(0, -9), readers) : undefined);
+    if (found && exercise) return { kind: 'exercise', title: `${messages.practice.metaTitle} — ${found.lesson.title} — ${copy.brand}`, description: messages.practice.introduction, path: exercisePath(found.course, found.lesson), indexable: false, readingCourse: found.course, lesson: found.lesson };
     if (found) return { kind: 'lesson', title: `${found.lesson.title} — ${copy.brand}`, description: found.lesson.objectives.join(' '), path: lessonPath(found.course, found.lesson), indexable: true, readingCourse: found.course, lesson: found.lesson };
     return { kind: 'missing-lesson', title: messages.reader.missingMetaTitle, description: messages.reader.missingHelp, path, indexable: false };
   }

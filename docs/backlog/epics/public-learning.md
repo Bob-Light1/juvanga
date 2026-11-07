@@ -274,7 +274,7 @@ Evidence: apps/web/src/LessonReader.tsx ; apps/web/src/content/reader.ts ; scrip
 
 ## JUV-109 — Enable practice and self-assessment
 
-Milestone **M0** · Frontend/education · 1.5–3 person-days · status **todo**
+Milestone **M0** · Frontend/education · 1.5–3 person-days · status **done**
 
 Dependencies: JUV-108.
 
@@ -298,9 +298,9 @@ Requirements: LEARN-01, LEARN-02.
 
 References: [docs/product/SCOPE.md](../../../docs/product/SCOPE.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-109-practice-self-assessment.
 
-Evidence: none — task not delivered.
+Evidence: apps/web/src/ExercisePage.tsx ; apps/web/src/content/practice.ts ; scripts/practice.mjs ; tests/practice.test.mjs ; tests/reader-browser/practice.spec.ts ; docs/architecture/decisions/011-practice.md ; docs/delivery/VALIDATION-JUV-109.md ; docs/sessions/2026-11-07-practice-self-assessment.md.
 
 ---
 

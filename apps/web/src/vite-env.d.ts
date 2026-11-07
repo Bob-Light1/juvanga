@@ -11,3 +11,8 @@ declare module 'virtual:public-reader' {
   const courses: import('./content/reader.ts').ReadingCourse[];
   export default courses;
 }
+
+declare module 'virtual:public-practice' {
+  const courses: import('./content/practice.ts').PracticeCourse[];
+  export default courses;
+}

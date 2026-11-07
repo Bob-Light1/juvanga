@@ -1,5 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { Link, NavLink, Route, Routes, useLocation } from 'react-router';
+import practice from 'virtual:public-practice';
+import { ExercisePage } from './ExercisePage';
+import { findExercise } from './content/practice.ts';
 import readers from 'virtual:public-reader';
 import { LessonReader, MissingLesson } from './LessonReader';
 import { lessonPath, readingLessons } from './content/reader.ts';
@@ -79,12 +82,13 @@ function RouteEffects() {
 
 function PublicLayout() {
   const page = getPage(useLocation().pathname, courses, readers);
+  const exercise = page.readingCourse && page.lesson && findExercise(practice, page.readingCourse.id, page.readingCourse.version, page.lesson.id);
   return <>
     <a className="skip-link" href="#main">{copy.skip}</a>
     <header className="header shell public-header"><Link className="brand-link" to="/" aria-label={copy.homeLink}><img src="/brand/juvanga-lockup.svg" alt="" width="228" height="70" /></Link>
       <nav aria-label={copy.navigation}><NavLink to="/" end>{copy.home}</NavLink><NavLink to="/courses">{copy.catalogue}</NavLink></nav></header>
     <main id="main" className="shell public-main" tabIndex={-1}>
-      {page.kind === 'lesson' && page.readingCourse && page.lesson ? <LessonReader key={page.path} course={page.readingCourse} lesson={page.lesson} /> : page.kind === 'missing-lesson' ? <MissingLesson /> : page.kind === 'home' ? <Home /> : page.kind === 'catalogue' ? <Catalogue /> : page.course ? <CoursePage course={page.course} /> : <NotFound />}
+      {page.kind === 'exercise' && page.readingCourse && page.lesson && exercise ? <ExercisePage key={page.path} course={page.readingCourse} lesson={page.lesson} exercise={exercise} /> : page.kind === 'lesson' && page.readingCourse && page.lesson ? <LessonReader key={page.path} course={page.readingCourse} lesson={page.lesson} /> : page.kind === 'missing-lesson' ? <MissingLesson /> : page.kind === 'home' ? <Home /> : page.kind === 'catalogue' ? <Catalogue /> : page.course ? <CoursePage course={page.course} /> : <NotFound />}
     </main><footer className="shell footer"><span>{copy.brand}</span><span>{copy.tagline}</span></footer>
   </>;
 }

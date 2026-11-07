@@ -68,3 +68,7 @@ For expanded-copy QA, run `JUVANGA_PSEUDO_LOCALE=1 npm run build`, then `JUVANGA
 Canonical reading routes are `/learn/:course/v/:version/:lesson`; short `/learn/:course/:lesson` aliases resolve the latest published French version. Missing lessons provide recovery and a real 404 in local preview. Production hosting must verify extensionless routes and the reader-specific fallback before release. No real course is published by the reader ticket.
 
 `PLAYWRIGHT_CHANNEL=chrome npm run test:reader` builds the actual app against a temporary synthetic published inventory, runs the complete reader browser scenarios with a reserved test origin, and restores the default artifact in a finally block. Production configuration has no content-directory environment override. Keep this explicit test command separate from the normal preview suite; no test fixture belongs in a deployed artifact. See [validation](VALIDATION-JUV-108.md).
+
+## Practice checks
+
+`npm run test:reader` also runs the exercise attempt/compare/retry scenarios against the separate synthetic inventory. It verifies keyboard and no-JavaScript use, exact-version routes, no submission/storage, reload reset and declaration-only feedback. The runner restores the normal artifact; no real course is published. Exercise responses must never enter future progress persistence. See [ADR-011](../architecture/decisions/011-practice.md).

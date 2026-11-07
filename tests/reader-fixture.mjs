@@ -17,6 +17,14 @@ export function readerFixtures() {
     const suffix = `-${index + 1}`;
     const lesson = JSON.parse(JSON.stringify(template), (key, value) => key === 'id' ? value + suffix : value);
     lesson.title = title;
+    lesson.example[0].text = 'Le facilitateur vérifie l’invitation.';
+    lesson.exercise.prompt = 'Retrouvez la tâche et la personne responsable dans la note fictive.';
+    lesson.exercise.instructions = ['Appuyez-vous seulement sur la note.', 'Laissez les informations inconnues explicites.'];
+    lesson.exercise.rubric.criteria = [
+      { id: `fixture-criterion${suffix}`, description: 'La tâche et la personne correspondent à la note.', critical: true },
+      { id: `fixture-secondary-criterion${suffix}`, description: 'Les informations manquantes ne sont pas inventées.', critical: false },
+    ];
+    lesson.exercise.workedSolution[0].text = 'Tâche : vérifier l’invitation. Responsable : le facilitateur.';
     lesson.objectives = ['Retrouver une action dans un exemple fictif.'];
     lesson.blocks = [
       { type: 'paragraph', id: `reader-paragraph${suffix}`, text: 'Une note fictive à lire.\nLes informations manquantes restent explicites.' },

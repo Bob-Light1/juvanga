@@ -17,4 +17,6 @@
 
 | [ADR-010](010-lesson-reader.md) | Versioned static reader and requested same-origin illustrations | Adopted for M0 |
 
+| [ADR-011](011-practice.md) | Public exercises and declaration-only self-assessment | Adopted for M0 |
+
 Create a new decision to supersede an old one; do not rewrite history. Template: `docs/templates/ADR.md`.

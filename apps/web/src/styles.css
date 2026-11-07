@@ -127,3 +127,15 @@ input.field-input:read-only { background: var(--color-sand); }
   .reader-layout { grid-template-columns: 1fr; gap: var(--space-6); }
   .reader-outline { border-right: 0; border-bottom: 1px solid var(--color-border); padding-right: 0; padding-bottom: var(--space-6); }
 }
+
+.exercise-page { margin: auto; padding-block: var(--space-8); }
+.exercise-page textarea { resize: vertical; line-height: 1.65; }
+.assessment-criteria { min-width: 0; margin-block: var(--space-8); padding: var(--space-6); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+.assessment-criteria legend { max-width: 100%; font-weight: 700; }
+.criterion-choice { display: flex; gap: var(--space-4); align-items: start; min-height: 44px; padding-block: var(--space-3); cursor: pointer; }
+.criterion-choice input { flex: 0 0 auto; width: 24px; height: 24px; accent-color: var(--color-night); margin-top: var(--space-1); }
+.criterion-critical { display: block; font-size: .85rem; }
+.assessment-feedback { padding: var(--space-4); border-left: 4px solid var(--color-night); background: var(--color-white); }
+.worked-solution { margin-block: var(--space-8); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
+.worked-solution summary { padding: var(--space-4); min-height: 48px; cursor: pointer; font-weight: 600; }
+.worked-solution > div { padding: var(--space-6); }

@@ -92,7 +92,7 @@ test('canonical routes retain exact versions; latest aliases resolve consistentl
 
 test('unpublished, missing, malformed or unknown version routes give helpful noindex recovery', () => {
   const readers = [older, current].map(toReadingCourse);
-  for (const url of ['/learn/unknown/missing', '/learn/fixture-course/v/99/fixture-lesson-1', '/learn/fixture-course/v/2/missing', '/learn/fixture-course/v/02/fixture-lesson-1', '/learn/fixture-course/v/2/fixture-lesson-1/exercise']) {
+  for (const url of ['/learn/unknown/missing', '/learn/fixture-course/v/99/fixture-lesson-1', '/learn/fixture-course/v/2/missing', '/learn/fixture-course/v/02/fixture-lesson-1']) {
     const page = getPage(url, [], readers);
     assert.equal(page.kind, 'missing-lesson');
     assert.equal(page.indexable, false);

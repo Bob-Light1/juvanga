@@ -48,7 +48,7 @@ Usage: `npm run next` for ready tasks; `npm run task -- JUV-101` for a ticket. S
 | [JUV-106](epics/public-learning.md#juv-106) | M0 | Deliver indexable home, catalogue and course pages | JUV-102, JUV-104, JUV-105 | done |
 | [JUV-107](epics/public-learning.md#juv-107) | M0 | Prepare French and future localization | JUV-104 | done |
 | [JUV-108](epics/public-learning.md#juv-108) | M0 | Create the lesson reader | JUV-103, JUV-104, JUV-107 | done |
-| [JUV-109](epics/public-learning.md#juv-109) | M0 | Enable practice and self-assessment | JUV-108 | todo |
+| [JUV-109](epics/public-learning.md#juv-109) | M0 | Enable practice and self-assessment | JUV-108 | done |
 | [JUV-110](epics/public-learning.md#juv-110) | M0 | Save reading progress with local consent | JUV-108 | todo |
 | [JUV-111](epics/public-learning.md#juv-111) | M0 | Add help, privacy and real feedback | JUV-106 | todo |
 | [JUV-112](epics/public-learning.md#juv-112) | M0 | Optimize slow networks, public PWA and motion | JUV-108, JUV-110, JUV-105 | todo |

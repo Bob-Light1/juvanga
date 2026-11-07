@@ -15,9 +15,9 @@ export async function buildWeb({ configFile } = {}) {
   try {
     await build({ root, configFile });
     await build({ root, configFile, build: { ssr: path.join(root, 'src/entry-server.tsx'), outDir: temporary, emptyOutDir: true, copyPublicDir: false }, ssr: { noExternal: ['motion'] } });
-    const { render, paths, aliases } = await import(pathToFileURL(path.join(temporary, 'entry-server.js')).href);
+    const { render, paths, extraPaths } = await import(pathToFileURL(path.join(temporary, 'entry-server.js')).href);
     const template = fs.readFileSync(path.join(out, 'index.html'), 'utf8');
-    for (const route of [...paths, ...aliases, '/workshop', '/404', '/learn/404']) {
+    for (const route of [...paths, ...extraPaths, '/workshop', '/404', '/learn/404']) {
       const file = path.join(out, route === '/' ? 'index.html' : `${route.slice(1)}.html`);
       fs.mkdirSync(path.dirname(file), { recursive: true });
       fs.writeFileSync(file, pageDocument(template, render(route), origin));

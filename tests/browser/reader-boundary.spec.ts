@@ -9,8 +9,10 @@ test('unpublished lesson stays inaccessible with helpful static and client recov
   const context = await browser.newContext({ javaScriptEnabled: false, baseURL: 'http://127.0.0.1:4173' });
   try {
     const staticPage = await context.newPage();
-    expect((await staticPage.goto(unpublished))?.status()).toBe(404);
-    await expect(staticPage.getByRole('heading', { level: 1 })).toHaveText('Cette leçon est introuvable.');
+    for (const url of [unpublished, `${unpublished}/exercise`]) {
+      expect((await staticPage.goto(url))?.status()).toBe(404);
+      await expect(staticPage.getByRole('heading', { level: 1 })).toHaveText('Cette leçon est introuvable.');
+    }
     await staticPage.getByRole('link', { name: 'Revenir aux parcours' }).click();
     await expect(staticPage).toHaveURL('/courses');
   } finally { await context.close(); }

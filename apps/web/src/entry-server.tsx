@@ -4,10 +4,11 @@ import { StaticRouter } from 'react-router';
 import { App } from './App';
 import readers from 'virtual:public-reader';
 import courses from 'virtual:public-overviews';
+import { exercisePaths } from './content/practice.ts';
 import { getPage, publicPaths, readerAliases } from './routing';
 
 export const paths = publicPaths(courses, readers);
-export const aliases = readerAliases(readers);
+export const extraPaths = [...readerAliases(readers), ...exercisePaths(readers)];
 export function render(path: string) {
   return {
     page: getPage(path, courses, readers),

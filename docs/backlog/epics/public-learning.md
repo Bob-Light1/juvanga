@@ -140,7 +140,7 @@ Evidence: apps/web/src/components/ui.tsx ; apps/web/src/components/ComponentWork
 
 ## JUV-105 — Integrate local fonts and final assets
 
-Milestone **M0** · Frontend/design · 0.5–1 person-days · status **todo**
+Milestone **M0** · Frontend/design · 0.5–1 person-days · status **done**
 
 Dependencies: JUV-003, JUV-104.
 
@@ -163,9 +163,9 @@ Requirements: USR-05, USR-06.
 
 References: [docs/design/BRAND.md](../../../docs/design/BRAND.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-105-local-fonts-assets.
 
-Evidence: none — task not delivered.
+Evidence: docs/delivery/VALIDATION-JUV-105.md ; docs/sessions/2026-11-07-local-fonts-assets.md ; apps/web/public/fonts/manifest.json.
 
 ---
 

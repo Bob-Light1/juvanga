@@ -10,7 +10,7 @@ button { font: inherit; cursor: pointer; }
 .pill { display: inline-block; padding: 7px 14px; border: 1px solid var(--color-border); border-radius: 100px; font-size: .78rem; font-weight: 600; }
 .hero { display: grid; grid-template-columns: 1.3fr 1fr; gap: 64px; align-items: center; padding: 48px 0 80px; }
 .eyebrow { font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
-h1, h2, h3 { font-family: var(--font-display); line-height: 1.08; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.08; }
 h1 { font-size: clamp(3rem, 6.4vw, 5.4rem); letter-spacing: -.04em; margin: 28px 0; }
 h1 em { color: var(--color-action); font-weight: inherit; }
 h2 { font-size: clamp(2rem, 4vw, 3.2rem); letter-spacing: -.03em; margin: 18px 0 32px; }

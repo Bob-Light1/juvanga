@@ -1,0 +1,31 @@
+/* Local Latin subsets cover French accents, ligatures and punctuation. */
+@font-face {
+  font-family: 'Inter Fallback';
+  src: local('Arial');
+  size-adjust: 105.2731%;
+  ascent-override: 92.0226%;
+  descent-override: 22.9129%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Fraunces Fallback';
+  src: local('Georgia');
+  size-adjust: 100.1152%;
+  ascent-override: 97.6875%;
+  descent-override: 25.4707%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('/fonts/inter-latin-wght-400-700.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 600 700;
+  font-display: swap;
+  src: url('/fonts/fraunces-latin-wght-600-700.woff2') format('woff2');
+}

@@ -1,0 +1,16 @@
+{
+  "retrievedOn": "2026-11-07",
+  "stylesheet": "https://fonts.googleapis.com/css2?family=Fraunces:wght@600..700&family=Inter:wght@400..700&display=swap",
+  "subset": "Latin, including French accents and \u0153/\u0152",
+  "license": "SIL Open Font License 1.1; see OFL-Inter.txt and OFL-Fraunces.txt",
+  "files": {
+    "inter-latin-wght-400-700.woff2": {
+      "source": "https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7.woff2",
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62"
+    },
+    "fraunces-latin-wght-600-700.woff2": {
+      "source": "https://fonts.gstatic.com/s/fraunces/v38/6NUu8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0K7iN7hzFUPJH58nib14c7qv8.woff2",
+      "sha256": "7f9d191d999336d3b9790afa72e1358e50a13b06d4f289341e92a311967a80f9"
+    }
+  }
+}

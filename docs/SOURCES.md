@@ -42,6 +42,10 @@ JUV-103 editorial provenance, 2026-11-07: the [course editorial record](../conte
 
 Consulted on 2026-11-07: Chromium's [zoom preference implementation](https://github.com/chromium/chromium/blob/main/chrome/browser/ui/zoom/chrome_zoom_level_prefs.cc). Used only to configure a temporary browser profile for actual 200% zoom: default zoom is a dictionary keyed by storage partition, and the default partition key is `x`. Tests additionally assert the measured viewport and device pixel ratio rather than trusting preference setup. No provider research or package change was required.
 
+## JUV-105 font provenance
+
+Retrieved on 2026-11-07: Google Fonts official [Inter metadata](https://github.com/google/fonts/blob/main/ofl/inter/METADATA.pb), [Fraunces metadata](https://github.com/google/fonts/blob/main/ofl/fraunces/METADATA.pb) and browser WOFF2 stylesheet. Only the Latin subsets are bundled; source URLs/hashes and original SIL OFL 1.1 licenses are in `apps/web/public/fonts/`. The application makes no Google Fonts requests. Fallback x-height and vertical metrics were measured from the bundled fonts and local Arial/Georgia using temporary fontkit tooling outside the repository. No project dependency was added.
+
 ## Order of authority
 
 Current user instruction → explicit project decisions → source requirements not superseded → documented assumptions. Resolve and trace significant contradictions; ADRs do not cancel financial requirements for technical convenience.

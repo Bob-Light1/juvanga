@@ -41,7 +41,7 @@ Body text: contrast ≥4.5:1. Large text: ≥3:1. Meaningful control/focus: ≥3
 
 ## Typography and composition
 
-Fraunces for large headings (600/700), Inter for interface and reading (400/600). Local fonts and Latin subsets, `font-display: swap`, retain SIL OFL licenses when added (JUV-105). The starter uses system fallbacks until those files are integrated.
+Fraunces for large headings (600/700), Inter for interface and reading (400/600). Local fonts and Latin subsets, `font-display: swap`, with SIL OFL licenses in `apps/web/public/fonts/`. JUV-105 adds two preloaded Latin WOFF2 files (84,876 bytes combined), metric-adjusted Arial/Georgia fallbacks, then system fallbacks when those faces are unavailable. See the font manifest for source URLs and SHA-256 hashes. Interface weights 400/600/700 and heading weights 600/700 are available.
 
 Body 17–18 px, minimum 16 px for mobile fields; line height 1.55–1.65; reading width 65–72 characters. Fluid headings with `clamp`, no text in images. Spacing scale 4/8/12/16/24/32/48/64 px; corner radii 8/16/24 px; product target touch controls at least 44 × 44 px. Subtle shadows; predominantly sand background, light surfaces and sparse accents.
 

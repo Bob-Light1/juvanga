@@ -591,10 +591,10 @@
         1
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "done",
+      "owner": "Codex",
+      "branch": "feat/JUV-105-local-fonts-assets",
+      "updated_at": "2026-11-07",
       "depends_on": [
         "JUV-003",
         "JUV-104"
@@ -618,7 +618,11 @@
       "references": [
         "docs/design/BRAND.md"
       ],
-      "evidence": [],
+      "evidence": [
+        "docs/delivery/VALIDATION-JUV-105.md",
+        "docs/sessions/2026-11-07-local-fonts-assets.md",
+        "apps/web/public/fonts/manifest.json"
+      ],
       "blocker": null
     },
     {

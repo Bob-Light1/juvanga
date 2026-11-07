@@ -8,7 +8,7 @@ Name Juvanga; symbol B (J + sun); night/sand/gold palette; React/TypeScript/Vite
 
 ## Repository and baseline
 
-Local `main` integrates JUV-101–106 through `c05c3bd`; [previous integration](sessions/2026-11-07-ui-main-integration.md). Current delivery branch: `feat/JUV-110-consented-reading-progress`, based on JUV-109 commit `af14dc5`. Separate local branches for JUV-107–110 are retained. Owner: Codex; delivery date: 2026-11-07. The project owner handles integration/pushes; remote access and CI remain unverified. Target Node 24 LTS/npm 11.21.2; system runtime unchanged.
+Local `main` now integrates JUV-101–110 through `c6f7761`. Integration owner: Codex; branch: `main`; date: 2026-11-07; status: `complete`. Full `npm run verify` passed on integrated `main` (87 tests, docs/content/contrast/lint/typecheck and client/prerender build). Four conflict-free fast-forward merges preserved JUV-107–110 commits and their local feature branches. The tree matched JUV-110 exactly before maintenance documentation edits. [Current integration](sessions/2026-11-07-learning-main-integration.md); [previous integration](sessions/2026-11-07-ui-main-integration.md). The project owner handles pushes; remote access and CI remain unverified. Target Node 24 LTS/npm 11.21.2; system runtime unchanged.
 
 Earlier delivery evidence: [F0](delivery/VALIDATION-F0.md), [public pages](delivery/VALIDATION-JUV-106.md), [French catalogue/formats](delivery/VALIDATION-JUV-107.md) and [versioned reader](delivery/VALIDATION-JUV-108.md). Reader schema 1 remains text-only; explicit schema 2 permits requested same-origin raster illustrations. Published content/rubrics are immutable.
 
@@ -28,4 +28,4 @@ JUV-111 is next: help, privacy and real feedback. Publication remains a separate
 
 M0 drafts: Codex; accountable course owner/reviewer: project owner, self-appointed on 2026-11-07. Maintainer, C1 author/reviewer and operators remain to appoint; [product decisions](product/DECISIONS.md). ADR-005 requires review before real accounts. Verify hosting at release.
 
-Latest handoff: [Consented reading resume](sessions/2026-11-07-consented-reading-progress.md). Previous: [Practice](sessions/2026-11-07-practice-self-assessment.md).
+Latest handoff: [Main integration](sessions/2026-11-07-learning-main-integration.md). Product handoff: [Consented reading resume](sessions/2026-11-07-consented-reading-progress.md). Previous: [Practice](sessions/2026-11-07-practice-self-assessment.md).

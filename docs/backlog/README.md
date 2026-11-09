@@ -54,7 +54,7 @@ Usage: `npm run next` for ready tasks; `npm run task -- JUV-101` for a ticket. S
 | [JUV-112](epics/public-learning.md#juv-112) | M0 | Optimize slow networks, public PWA and motion | JUV-108, JUV-110, JUV-105 | done |
 | [JUV-113](epics/public-learning.md#juv-113) | M0 | Run acceptance testing with real testers | JUV-106, JUV-109, JUV-110, JUV-111, JUV-112, JUV-107 | blocked |
 | [JUV-114](epics/public-learning.md#juv-114) | M0 | Publish M0 for free and test rollback | JUV-113, JUV-005 | blocked |
-| [JUV-201](epics/identity-platform.md#juv-201) | M1 | Initialize PostgreSQL, migrations and local environment | JUV-006 | todo |
+| [JUV-201](epics/identity-platform.md#juv-201) | M1 | Initialize PostgreSQL, migrations and local environment | JUV-006 | done |
 | [JUV-202](epics/identity-platform.md#juv-202) | M1 | Create Hono API, OpenAPI and same-origin routing | JUV-201, JUV-114 | todo |
 | [JUV-203](epics/identity-platform.md#juv-203) | M1 | Configure provider email, identity and MFA | JUV-202 | todo |
 | [JUV-204](epics/identity-platform.md#juv-204) | M1 | Implement BFF sessions, rotation and CSRF protection | JUV-203 | todo |

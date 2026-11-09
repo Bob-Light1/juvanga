@@ -886,7 +886,7 @@
       "status": "blocked",
       "owner": "Codex",
       "branch": "feat/JUV-111-help-privacy-feedback",
-      "updated_at": "2026-11-07",
+      "updated_at": "2026-11-09",
       "depends_on": [
         "JUV-106"
       ],
@@ -914,7 +914,7 @@
         "docs/delivery/VALIDATION-JUV-111.md",
         "docs/sessions/2026-11-07-help-privacy-feedback.md"
       ],
-      "blocker": "Support URL selected by the project owner, but exact URL, authorized reception test and feedback retention policy are not available. Hosting log details remain unverified before release."
+      "blocker": "Owner selected an external form and retention of 90 days after closure on 2026-11-09; see docs/operations/OWNER-ACTIONS.md. Provider, exact responder URL, receiving operator, deletion routine, authorized reception test and verified hosting log details remain missing."
     },
     {
       "id": "JUV-112",
@@ -1066,10 +1066,10 @@
         4
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "done",
+      "owner": "Codex",
+      "branch": "feat/JUV-201-local-database",
+      "updated_at": "2026-11-09",
       "depends_on": [
         "JUV-006"
       ],
@@ -1092,7 +1092,10 @@
       "references": [
         "docs/architecture/DATA-MODEL.md"
       ],
-      "evidence": [],
+      "evidence": [
+        "docs/delivery/VALIDATION-JUV-201.md",
+        "docs/sessions/2026-11-09-local-database.md"
+      ],
       "blocker": null
     },
     {

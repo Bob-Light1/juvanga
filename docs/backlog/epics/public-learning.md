@@ -369,7 +369,7 @@ Owner: Codex ; branch: feat/JUV-111-help-privacy-feedback.
 
 Evidence: docs/delivery/VALIDATION-JUV-111.md ; docs/sessions/2026-11-07-help-privacy-feedback.md.
 
-Blocker: Support URL selected by the project owner, but exact URL, authorized reception test and feedback retention policy are not available. Hosting log details remain unverified before release.
+Blocker: Owner selected an external form and retention of 90 days after closure on 2026-11-09; see docs/operations/OWNER-ACTIONS.md. Provider, exact responder URL, receiving operator, deletion routine, authorized reception test and verified hosting log details remain missing.
 
 ---
 

@@ -23,4 +23,6 @@
 
 | [ADR-013](013-public-offline.md) | Exact public offline snapshot and explicit updates | Adopted for M0 |
 
+| [ADR-014](014-local-database.md) | Local database boundary and explicit privileges | Adopted for local M1 preparation |
+
 Create a new decision to supersede an old one; do not rewrite history. Template: `docs/templates/ADR.md`.

@@ -13,7 +13,7 @@ npm run verify
 npm run dev
 ```
 
-`nvm` is optional and must be installed separately if missing. `npm run dev` displays the local URL, usually http://127.0.0.1:5173. The current app is an F0 brand workshop, not yet a learner area.
+`nvm` is optional and must be installed separately if missing. `npm run dev` displays the local URL, usually http://127.0.0.1:5173. The current app serves the M0 public preview; no real course lessons are published yet.
 
 ## Stable commands
 
@@ -46,6 +46,25 @@ Write documentation, code, identifiers and all code comments in English, includi
 ## Future services
 
 M0 needs no secrets or Docker. M1: Supabase CLI and Docker for the local environment, Hono/Worker through a versioned CLI added in JUV-202, schema through migrations. No installation may create a cloud resource. Contracts and fictional data must enable separate frontend/backend work. Do not install unused P2 SDKs now.
+
+## Local database
+
+JUV-201 uses the pinned project-local Supabase CLI and Docker. No hosted account, login, cloud link or credential is needed. Keep any local runtime credentials in ignored server-only files; never add them to `VITE_*`, static content or committed test output. The frontend remains independent of the database.
+
+```sh
+npm ci
+npm run db:start
+npm run test:db
+npm run db:stop
+```
+
+`db:start` starts the isolated `juvanga-local` project with PostgreSQL 17, Auth and the Data API; unused services and new signups are disabled. Local API port: 56321; database: 56322; reserved shadow database: 56320. Avoid port conflicts and do not run database suites concurrently against this project. Bind/firewall local services appropriately for the development machine; do not expose the stack as public hosting.
+
+**`test:db` and `db:reset` delete the disposable local database contents.** Only fictional fixtures belong there. `test:db` resets twice, runs pending migrations after each reset, verifies pgTAP constraints/grants/RLS and confirms anonymous profile requests are denied over the local API. Tests use database role/JWT-claim simulation; they do not prove BFF sessions, SMTP, MFA or production access control. `db:stop` retains this project's local volumes and leaves other projects running. Commands accept no extra arguments or remote target.
+
+The two seeded `example.invalid` Auth identities have no password or confirmed address. They are SQL fixtures, not working login accounts. Application objects live in `app`; its `profiles` table permits own-row reads and server-only writes. New tables/functions require explicit grants under [ADR-014](../architecture/decisions/014-local-database.md). Use `npm exec -- supabase migration new description` to create the next timestamped migration; never change one already applied. `npm run verify` remains the frontend/documentation suite and does not start Docker; run the separate `test:db` check for database changes.
+
+For M0 support, testers and hosting tasks, follow [owner actions](../operations/OWNER-ACTIONS.md). Hosted Supabase, external SMTP and real accounts remain later unconfigured gates.
 
 ## Dependency updates
 

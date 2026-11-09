@@ -8,6 +8,21 @@ concurrency:
   group: quality-${{ github.ref }}
   cancel-in-progress: true
 jobs:
+  database:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm install --global npm@11.21.2
+      - run: npm ci
+      - run: npm run db:start
+      - run: npm run test:db
+      - if: always()
+        run: npm run db:stop
   verify:
     runs-on: ubuntu-latest
     steps:

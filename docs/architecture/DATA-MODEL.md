@@ -2,6 +2,8 @@
 
 Target model, not an already applied schema. UUID, UTC `timestamptz`, nonnegative integer XAF amounts (`bigint` with a safe bound in the JSON contract), optimistic versioning for mutable objects, organization IDs in relevant keys and constraints.
 
+JUV-201 introduces only local `app.profiles` (Auth UUID reference, display name, UTC creation instant) with own-row reads and server-only writes. The remaining entities below are still targets, not delivered tables. [ADR-014](decisions/014-local-database.md) defines the local migration, seed and permission boundary; it does not activate real accounts.
+
 | Module | Entities and relationships | Essential constraints |
 | --- | --- | --- |
 | Identity | AuthUser 1:1 Profile; User 1:N Session; scoped RoleGrant | Normalized email, revocable sessions; administrative roles outside user-editable metadata |

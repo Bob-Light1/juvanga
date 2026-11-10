@@ -365,11 +365,11 @@ Requirements: DATA-06, DATA-07.
 
 References: [docs/product/DECISIONS.md](../../../docs/product/DECISIONS.md).
 
-Owner: Codex ; branch: feat/JUV-111-help-privacy-feedback.
+Owner: Codex ; branch: feat/JUV-111-email-support.
 
-Evidence: docs/delivery/VALIDATION-JUV-111.md ; docs/sessions/2026-11-07-help-privacy-feedback.md.
+Evidence: docs/delivery/VALIDATION-JUV-111.md ; docs/sessions/2026-11-07-help-privacy-feedback.md ; docs/sessions/2026-11-10-email-support.md.
 
-Blocker: Owner selected an external form and retention of 90 days after closure on 2026-11-09; see docs/operations/OWNER-ACTIONS.md. Provider, exact responder URL, receiving operator, deletion routine, authorized reception test and verified hosting log details remain missing.
+Blocker: Owner selected email support on 2026-11-10, superseding the external form; retention remains 90 days after closure. Actual mailbox/alias, receiving operator, deletion routine, authorized reception test and hosting details remain missing. See docs/operations/OWNER-ACTIONS.md.
 
 ---
 

@@ -1,6 +1,6 @@
 # Current status — Juvanga
 
-Updated on 2026-11-09. **F0 complete; M0 underway. JUV-101–110 done; JUV-111 blocked; JUV-112 done; JUV-113/114 blocked after preparation. M1 local database foundation (JUV-201) done.**
+Updated on 2026-11-10. **F0 complete; M0 underway. JUV-101–110 done; JUV-111 blocked; JUV-112 done; JUV-113/114 blocked after preparation. M1 local database foundation (JUV-201) done.**
 
 ## Stable decisions
 
@@ -14,7 +14,7 @@ Local `main` contains JUV-101–110 and integration/cleanup documentation throug
 
 **JUV-201** — owner: Codex; branch: `feat/JUV-201-local-database`; date: 2026-11-09; status: `done`. Local PostgreSQL 17, minimal profiles, explicit grants/forced RLS, fictional seed and pinned CLI; [ADR-014](architecture/decisions/014-local-database.md). Full verify passed (94 tests); both reset cycles passed 39 SQL assertions, no migration replay and actual anonymous API denial. Author technical review completed. [Evidence](delivery/VALIDATION-JUV-201.md). No hosted service or real account configured.
 
-**JUV-111** — owner: Codex; branch: `feat/JUV-111-help-privacy-feedback`; date: 2026-11-07; status: `blocked`; commit: `dd78857`. Static help/privacy/feedback pages, footer navigation, exact local-data/erasure notice and minimal feedback guidance. Full verify passed (87 tests); all three support browser scenarios passed. On 2026-11-09 the owner selected an external form and deletion 90 days after closure. Provider, responder URL, operator, deletion routine, authorized receipt test and hosting-log details remain missing; see [owner actions](operations/OWNER-ACTIONS.md). No fictional contact/form. [Evidence](delivery/VALIDATION-JUV-111.md).
+**JUV-111** — owner: Codex; branch: `feat/JUV-111-email-support`; reassigned to Codex on 2026-11-10; status: `blocked`; original implementation: `dd78857`. Static help/privacy/feedback pages, footer navigation, exact local-data/erasure notice and minimal feedback guidance. Full verify passed (87 tests); all three support browser scenarios passed. On 2026-11-10 the owner adopted email support, superseding the external form; deletion 90 days after closure remains selected. Actual address/provider, operator, deletion routine, reception/reply test and hosting-log details remain missing; see [owner actions](operations/OWNER-ACTIONS.md). No fictional contact/form. [Evidence](delivery/VALIDATION-JUV-111.md).
 
 **JUV-112** — owner: Codex; branch: `feat/JUV-112-public-offline-pwa`; date: 2026-11-07; status: `done`; commit: `9ae5e25`. Exact public snapshot, manifest, standalone offline fallback, explicit update, separate progress storage and reduced motion; [ADR-013](architecture/decisions/013-public-offline.md). Full verify passed (94 tests); all 25 default browser scenarios passed across full/focused runs. All 17 synthetic-reader scenarios passed; the normal French noindex artifact was restored. Author technical/cache-boundary/visual review completed. [Evidence and measurements](delivery/VALIDATION-JUV-112.md), [handoff](sessions/2026-11-07-public-offline-pwa.md).
 
@@ -30,6 +30,6 @@ No business backend, hosted database, real accounts, SMTP, synchronization or co
 
 Commands: `npm run context`, `npm run task -- JUV-111`, `npm run verify`, `npm run db:start`, `npm run test:db`, `npm run db:stop`, `PLAYWRIGHT_CHANNEL=chrome npm run test:e2e`, `PLAYWRIGHT_CHANNEL=chrome npm run test:reader`. Run browser suites sequentially; they share the output artifact.
 
-JUV-201 is complete locally. JUV-202 still depends on JUV-114; do not activate it before M0 acceptance/release. The local Juvanga stack is stopped. No active ticket or deployment. Full verify and database integration passed with isolated Node 24.22.2/npm 11.21.2; browser suites and remote CI were not run this session.
+JUV-201 is complete locally. JUV-202 still depends on JUV-114; do not activate it before M0 acceptance/release. The local Juvanga stack is stopped. No active ticket or deployment. The 2026-11-10 support decision update is documentation only. Full verify passed with isolated Node 24.22.2/npm 11.21.2 (94 tests); browser, database and remote CI checks were not rerun.
 
-Latest handoff: [Local database and owner actions](sessions/2026-11-09-local-database.md).
+Latest handoff: [Email support decision](sessions/2026-11-10-email-support.md). Database handoff: [JUV-201](sessions/2026-11-09-local-database.md).

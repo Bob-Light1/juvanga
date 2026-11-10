@@ -885,8 +885,8 @@
       "priority": "P0",
       "status": "blocked",
       "owner": "Codex",
-      "branch": "feat/JUV-111-help-privacy-feedback",
-      "updated_at": "2026-11-09",
+      "branch": "feat/JUV-111-email-support",
+      "updated_at": "2026-11-10",
       "depends_on": [
         "JUV-106"
       ],
@@ -912,9 +912,10 @@
       ],
       "evidence": [
         "docs/delivery/VALIDATION-JUV-111.md",
-        "docs/sessions/2026-11-07-help-privacy-feedback.md"
+        "docs/sessions/2026-11-07-help-privacy-feedback.md",
+        "docs/sessions/2026-11-10-email-support.md"
       ],
-      "blocker": "Owner selected an external form and retention of 90 days after closure on 2026-11-09; see docs/operations/OWNER-ACTIONS.md. Provider, exact responder URL, receiving operator, deletion routine, authorized reception test and verified hosting log details remain missing."
+      "blocker": "Owner selected email support on 2026-11-10, superseding the external form; retention remains 90 days after closure. Actual mailbox/alias, receiving operator, deletion routine, authorized reception test and hosting details remain missing. See docs/operations/OWNER-ACTIONS.md."
     },
     {
       "id": "JUV-112",

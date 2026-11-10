@@ -367,9 +367,9 @@ References: [docs/product/DECISIONS.md](../../../docs/product/DECISIONS.md).
 
 Owner: Codex ; branch: feat/JUV-111-email-support.
 
-Evidence: docs/delivery/VALIDATION-JUV-111.md ; docs/sessions/2026-11-07-help-privacy-feedback.md ; docs/sessions/2026-11-10-email-support.md.
+Evidence: docs/delivery/VALIDATION-JUV-111.md ; docs/sessions/2026-11-07-help-privacy-feedback.md ; docs/sessions/2026-11-10-email-support.md ; docs/sessions/2026-11-10-email-contact-integration.md.
 
-Blocker: Owner selected email support on 2026-11-10, superseding the external form; retention remains 90 days after closure. Actual mailbox/alias, receiving operator, deletion routine, authorized reception test and hosting details remain missing. See docs/operations/OWNER-ACTIONS.md.
+Blocker: Email contact integrated; owner confirmed two-way reception and manual deletion 90 days after closure. Public operator wording and actual hosting processing locations/request-log settings and retention remain unverified.
 
 ---
 

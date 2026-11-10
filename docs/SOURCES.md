@@ -58,6 +58,10 @@ Consulted on 2026-11-09: official Supabase [local CLI workflow](https://supabase
 
 Consulted on 2026-11-09 after the owner selected an external form and 90-day retention after closure: Google Forms official [publishing and sharing](https://support.google.com/docs/answer/2839588?hl=en), [response notifications and email collection](https://support.google.com/docs/answer/139706?hl=en-GB), and [separate form/spreadsheet storage and deletion](https://support.google.com/docs/answer/2917686?hl=en). Used for the proposed setup in [owner actions](operations/OWNER-ACTIONS.md). No Google account, form, public link, notification or provider retention setting has been configured or tested.
 
+## JUV-111 email privacy references
+
+Consulted on 2026-11-10 after the owner supplied the Gmail contact: Google's official [privacy policy](https://policies.google.com/privacy?hl=fr) and [data-retention explanation](https://policies.google.com/technologies/retention?hl=fr). Used to identify Gmail as the email provider and distinguish the owner's selected support deletion period from provider-managed logs, backups and deletion processes. No account-specific region, routing, delivery, retention setting or legal compliance is verified by these references.
+
 ## Order of authority
 
 Current user instruction → explicit project decisions → source requirements not superseded → documented assumptions. Resolve and trace significant contradictions; ADRs do not cancel financial requirements for technical convenience.

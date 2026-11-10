@@ -2,19 +2,18 @@
 
 Updated: 2026-11-10. These are pending owner actions, not completed configuration or acceptance. M1 local database preparation in JUV-201 is independent of these gates. No account creation, invitation, message or deployment has been executed by this checklist.
 
-## 1. Create and verify the support mailbox
+## 1. Operate the verified support mailbox
 
-The owner selected **email support for the initial release** on 2026-11-10, superseding the external form chosen on 2026-11-09. **Deletion 90 days after closure** remains the selected retention rule. No actual mailbox/alias, receiving operator or deletion mechanism has been supplied or verified.
+The owner selected email support on 2026-11-10. The public address is configured in [SupportPage](../../apps/web/src/SupportPage.tsx). Requests can be received, handled and answered directly in that mailbox; no second address, forwarding or delegation is required. A personal mailbox was used only for the reception test and is not published or versioned. On the same date the owner confirmed receipt in both directions: a message to support and a reply from support. This is owner-reported operational evidence, not a message sent or independently inspected by Codex.
 
-The owner needs to:
+The owner also confirmed manual tracking of closure/deletion dates and deletion of correspondence and controlled copies **90 days after closure**. This commitment does not configure automatic deletion or establish Gmail's provider-managed log or backup retention.
 
-1. Create a dedicated mailbox or alias with a provider/account they control. An alias must forward to a monitored mailbox. A custom domain is optional; no domain purchase is required by this decision. Supply only the actual public support address, never a password, API token or recovery code.
-2. Identify who handles requests and approve the public operator/contact wording. Confirm that this person can receive and reply to messages using the selected support channel.
-3. Perform a nonsensitive test from another mailbox and verify receipt, including the spam folder, then test a reply. Suggested subject: Juvanga support reception test. Alternatively, explicitly authorize a specific reception test. No message has been sent by Codex.
-4. Keep a private closure/deletion-due record and arrange deletion 90 days after each request is closed, including received/sent correspondence and copies under the operator's control. This rule does not establish the email provider's own log or backup retention.
-5. Provide the public address, responsible operator and actual test result. Do not put private messages or participant details in the repository.
+The remaining owner actions are:
 
-Codex can then display the verified address with an email link and a copyable fallback, update the French notice and run local checks. A link opening a mail application is not evidence of delivery. The M0 website needs no SMTP integration for this contact link. The actual email provider and hosting-log details still need verification before JUV-111 completion; see [JUV-111 validation](../delivery/VALIDATION-JUV-111.md).
+1. Monitor the public mailbox and maintain the agreed closure/deletion calendar. Include received/sent copies and any copies subsequently created under the operator's control; no forwarding is needed.
+2. Confirm the public operator/contact wording and actual provider/hosting details needed for the privacy notice, following section 2. Keep private messages and personal test addresses outside the repository.
+
+The website displays only the supplied public address, a native email link and a selectable fallback. Clicking does not send mail or prove delivery. The French notice explains purpose/data, the selected retention rule, provider-managed retention and the separation from local reading erasure. The website sends no automatic message and needs no SMTP integration for this link. The contact and reception gates are satisfied; JUV-111 remains incomplete pending the remaining operator/privacy/hosting details; see [validation](../delivery/VALIDATION-JUV-111.md).
 
 ## 2. Prepare owner-controlled hosting and the notice
 

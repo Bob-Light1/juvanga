@@ -367,7 +367,7 @@ References: [docs/product/DECISIONS.md](../../../docs/product/DECISIONS.md).
 
 Owner: Codex ; branch: feat/JUV-111-public-operator.
 
-Evidence: docs/delivery/VALIDATION-JUV-111.md ; docs/sessions/2026-11-07-help-privacy-feedback.md ; docs/sessions/2026-11-10-email-support.md ; docs/sessions/2026-11-10-email-contact-integration.md ; docs/sessions/2026-11-20-public-operator.md.
+Evidence: docs/delivery/VALIDATION-JUV-111.md ; docs/sessions/2026-11-07-help-privacy-feedback.md ; docs/sessions/2026-11-10-email-support.md ; docs/sessions/2026-11-10-email-contact-integration.md ; docs/sessions/2026-11-20-public-operator.md ; docs/sessions/2026-11-20-account-security.md.
 
 Blocker: Email contact, two-way reception, 90-day manual deletion and public site/hosting/support operator wording are confirmed. Actual hosting service configuration, processing locations and request-log availability/settings/retention remain unverified.
 

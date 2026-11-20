@@ -8,7 +8,7 @@ Juvanga; symbol B (J + sun); night/sand/gold; React/TypeScript/Vite/Motion. M0 i
 
 ## Repository
 
-PR #1 is merged at `77f0315`; its main CI passed. Local `main` was fast-forwarded and all seven merged local feature branches removed. JUV-111 is resumed/reassigned to Codex on `feat/JUV-111-public-operator` on 2026-11-20 for the owner-confirmed public operator wording. Use isolated Node 24/npm 11. No deployment.
+PR #1 is merged at `77f0315`; its main CI passed. Local `main` was fast-forwarded and all seven merged local feature branches removed. JUV-111 is resumed/reassigned to Codex on `feat/JUV-111-public-operator` on 2026-11-20 for the owner-confirmed public operator wording. Use isolated Node 24/npm 11. Account email verification and active TOTP are recorded in the release record. No deployment.
 
 ## Current work and evidence
 
@@ -32,4 +32,4 @@ Commands: `npm run context`, `npm run task -- JUV-111`, `npm run verify`, `npm r
 
 JUV-202 still depends on JUV-114. Full local verify passed (94 tests); 17 reader scenarios passed and the French noindex artifact was restored. CI on `f098d48` passed 94 tests, all 25 browser scenarios and two 39-assertion database cycles. [PR #1](https://github.com/Bob-Light1/juvanga/pull/1) is merged and its main CI passed. No deployment; DNS/HTTPS and human acceptance remain unverified.
 
-Latest handoff: [Public operator](sessions/2026-11-20-public-operator.md). Prior: [Cloudflare repository preparation](sessions/2026-11-20-cloudflare-repository-preparation.md), [email contact integration](sessions/2026-11-10-email-contact-integration.md).
+Latest handoff: [Account security](sessions/2026-11-20-account-security.md), [public operator](sessions/2026-11-20-public-operator.md). Prior: [Cloudflare repository preparation](sessions/2026-11-20-cloudflare-repository-preparation.md), [email contact integration](sessions/2026-11-10-email-contact-integration.md).

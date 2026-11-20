@@ -41,6 +41,12 @@ Owner-supplied screenshots show the GitHub repository selected and the Pages set
 
 Read-only GitHub inspection confirmed remote `main` at `81f6241`, behind local `main` (`500bebb`) and the current feature history. The owner authorized commits and a PR before continuing Cloudflare setup. Preserve existing feature commits and propose their integration into `main`; this does not complete acceptance, authorize production promotion or establish a public origin. Keep `SITE_URL` unset. See the [repository preparation handoff](../sessions/2026-11-20-cloudflare-repository-preparation.md) for validation and PR evidence.
 
+## Cloudflare account security evidence — 2026-11-20
+
+The owner reported that the Cloudflare account email is marked `(verified)`. The supplied Authentication screenshot dated 2026-11-20 18:12 Africa/Douala shows Two-Factor Authentication **Active** and a mobile-app TOTP method configured. Email authentication and a security key are not shown as enabled; the existing TOTP method already establishes active 2FA. Backup-code reminders are enabled, but the screenshot does not establish that recovery codes are retained safely or that a recovery/login test was performed. No recovery codes, QR codes, account email or screenshot copy are stored in the repository.
+
+This records owner-reported email verification and screenshot evidence of the displayed 2FA state, not independent account access. It does not establish domain registrant email confirmation, hosting project creation, privacy/log settings or deployment. The confirmed site/hosting/support operator is recorded in [DEC-10](../product/DECISIONS.md#dec-10-operator-update--2026-11-20).
+
 ## Entry checklist (not executed)
 
 1. Complete JUV-111 and JUV-113; record the five real consenting tester sessions, resolved defects and named acceptance review. Select the actual accepted course and code versions. Do not use synthetic reader fixtures in a deployment.

@@ -2,6 +2,8 @@
 
 Target model, not an already applied schema. UUID, UTC `timestamptz`, nonnegative integer XAF amounts (`bigint` with a safe bound in the JSON contract), optimistic versioning for mutable objects, organization IDs in relevant keys and constraints.
 
+JUV-201 introduces only local `app.profiles` (Auth UUID reference, display name, UTC creation instant) with own-row reads and server-only writes. The remaining entities below are still targets, not delivered tables. [ADR-014](decisions/014-local-database.md) defines the local migration, seed and permission boundary; it does not activate real accounts.
+
 | Module | Entities and relationships | Essential constraints |
 | --- | --- | --- |
 | Identity | AuthUser 1:1 Profile; User 1:N Session; scoped RoleGrant | Normalized email, revocable sessions; administrative roles outside user-editable metadata |
@@ -42,4 +44,4 @@ Deny-by-default RLS on exposed tables; test visitor/user A/user B/trainer/coordi
 
 M0 implements the [public JSON content contract](PUBLIC-CONTENT.md), with the versioning and migration rules in [ADR-006](decisions/006-public-content.md). Public stable IDs are preserved alongside M1 database UUIDs.
 
-Each public course/lesson/exercise has a stable ID and content version. Initial import retains these IDs. Local reading progress may be offered for import after login and consent; it never becomes competence evidence. Require idempotency and confirmation before merging. No private files in static content.
+Each public course/lesson/exercise has a stable ID and content version. Initial import retains these IDs. [M0 local reading progress](decisions/012-local-progress.md) may be offered for import after login and consent; it never becomes competence evidence. Require idempotency and confirmation before merging. No private files in static content.

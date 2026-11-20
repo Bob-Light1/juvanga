@@ -8,7 +8,7 @@ Implemented by JUV-102. Decision: [ADR-006](decisions/006-public-content.md). Ca
 - `content/public/course-id/v1.json`: the matching reviewed, published course document.
 - Drafts, private files and real learner data must stay outside `content/public` and the frontend's static assets. Unlisted files and symlinks in this tree fail validation.
 
-The empty catalogue is intentional until a complete course is reviewed. `content/public` is an authoring inventory, not Vite's automatically copied `public` folder. JUV-106/JUV-108 will consume validated documents explicitly; no renderer or course route is delivered by JUV-102.
+The empty catalogue is intentional until a complete course is reviewed. `content/public` is an authoring inventory, not Vite's automatically copied `public` folder. JUV-106 projects public descriptions; JUV-108 consumes only validated published French reading content. Neither feature publishes an editorial draft.
 
 ## Document structure
 
@@ -24,7 +24,7 @@ All objects reject unknown fields. No values are silently coerced. Every string 
 | Criterion | `id`, `description`, `critical` |
 | Review | `reviewer`, `reviewedAt` |
 
-`schemaVersion` is currently 1. IDs are stable lowercase alphanumeric words separated by hyphens; versions are positive safe integers. Preserve lesson, exercise, rubric and criterion IDs across new versions when they represent the same entity. IDs are unique across entities within each course version. M1 must preserve these public IDs alongside its database UUIDs.
+`schemaVersion` is 1 for existing text-only documents. Version 2 additionally permits same-origin image blocks; version 1 continues to reject images and accepts all unchanged existing documents. A new media-bearing course requires an explicitly reviewed new version; do not rewrite a published version. IDs are stable lowercase alphanumeric words separated by hyphens; versions are positive safe integers. Preserve lesson, exercise, rubric and criterion IDs across new versions when they represent the same entity. IDs are unique across entities within each course version. M1 must preserve these public IDs alongside its database UUIDs.
 
 `access` is `public`; `level` is 0. `locale` is `fr` or `en`; the real initial course is French. `status` is `draft`, `review`, `published` or `archived`; the public inventory accepts only `published`. The executable schema can validate draft-shaped documents in tests or future editorial tools, while the public checker rejects their inclusion in the inventory.
 
@@ -44,8 +44,9 @@ All blocks have a stable `id` and one of these `type` values:
 | `note` | `tone` (`information` or `warning`), `text` |
 | `link` | `text`, `url` (absolute HTTPS, no credentials, whitespace or backslashes) |
 | `lesson-link` | `text`, `courseId`, `courseVersion`, `lessonId` |
+| `image` (schema 2 only) | `src` (same-origin `/media/<lowercase-name>.(png\|jpg\|webp\|avif)`), nonblank `alt`, integer `width`/`height` (1–8192), optional `caption` |
 
-An internal lesson link must resolve to a lesson in a version listed in the same public catalogue. The checker inspects teaching blocks, examples and worked solutions. Routes are generated later from these references. External links are validated without fetching their targets; review destination availability and relevance before publication.
+An internal lesson link must resolve to a lesson in a version listed in the same public catalogue. The checker inspects teaching blocks, examples and worked solutions. JUV-108 generates `/learn/:course/v/:version/:lesson` references preserving the exact version. External links are validated without fetching their targets; review destination availability and relevance before publication.
 
 ## Validation and correction
 
@@ -62,3 +63,13 @@ Correct a draft before publication. Correct a published course by adding a new v
 ## Public presentation inventory (JUV-106)
 
 [ADR-008](decisions/008-public-pages.md) adds a separate explicit `content/discovery/catalogue.json` for approved upcoming descriptions. The build projects presentation fields from reviewed French documents; blocks, exercises, rubrics and solutions remain excluded. It does not change this published-lesson inventory or add publication timestamps. The UI marks unreleased descriptions as coming soon. Published entries supersede upcoming descriptions with the same stable course ID. See [projection/validation](../../scripts/discovery.mjs).
+
+## Reader and illustration contract (JUV-108)
+
+The reader projection excludes exercise instructions, rubrics, worked solutions and editorial metadata. It renders plain text, objectives and examples; exercise interaction remains JUV-109. See [ADR-010](decisions/010-lesson-reader.md). Canonical URLs retain course versions; `/learn/:course/:lesson` selects the latest published French version and points its canonical to the versioned route. Only canonical routes enter the sitemap.
+
+An image must have a meaningful equivalent description, intrinsic dimensions, reviewed rights and a matching raster asset in `apps/web/public/media/`. No remote URL, traversal, SVG, data URL, video or iframe is accepted. Images require an explicit load action, retain their description during failure and offer retry. Text remains readable with JavaScript disabled; optional images need JavaScript to load. The schema validates source syntax and dimensions; it does not verify asset existence, bytes, relevance or rights. Check those before publication. Current real content remains text-only and unpublished.
+
+## Exercise presentation (JUV-109)
+
+A separate public exercise projection adds the prompt, instructions, rubric and worked solution for published French versions only. Reading projections remain unchanged. Exact-version `/learn/:course/v/:version/:lesson/exercise` routes and latest short aliases show instructions/criteria before a collapsed public solution. Exercise pages are noindex and excluded from the sitemap. Responses and personal checkbox choices are ephemeral, never submitted or retained; there is no score, human review or competency result. See [ADR-011](decisions/011-practice.md).

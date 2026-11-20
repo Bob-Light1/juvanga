@@ -74,7 +74,7 @@ test('empty inventory and route resolution preserve a real missing-page state', 
   const { options } = library(t);
   fs.writeFileSync(options.catalogue, JSON.stringify({ schemaVersion: 1, courses: [] }));
   assert.deepEqual(loadOverviews(options), []);
-  assert.deepEqual(publicPaths([]), ['/', '/courses']);
+  assert.deepEqual(publicPaths([]), ['/', '/courses', '/help', '/privacy', '/feedback']);
   assert.equal(getPage(`/courses/${fixture.id}`, []).kind, 'not-found');
   assert.equal(getPage('/courses/', []).kind, 'catalogue');
   assert.equal(getPage('/workshop', []).indexable, false);
@@ -109,7 +109,10 @@ test('HTML metadata is escaped and sitemap, robots and headers share the release
   for (const route of paths) assert.ok(sitemap(paths, origin).includes(`<loc>${origin}${route}</loc>`));
   assert.ok(!sitemap(paths, origin).includes('/workshop'));
   assert.match(robots(origin), /Sitemap: https:\/\/juvanga.example\/sitemap.xml/);
-  assert.doesNotMatch(headers('/*\n  X-Robots-Tag: noindex, nofollow\n', origin).split('\n/workshop')[0], /X-Robots/);
+  assert.match(headers('/*\n  X-Robots-Tag: noindex, nofollow\n', '').split(/\n(?=\/)/)[0], /X-Robots-Tag: noindex, nofollow/);
+  const releaseHeaders = headers('/*\n  X-Robots-Tag: noindex, nofollow\n', origin);
+  assert.doesNotMatch(releaseHeaders.split(/\n(?=\/)/)[0], /X-Robots/);
+  assert.match(releaseHeaders, /\/progress\n  X-Robots-Tag: noindex, nofollow/);
   const missing = pageDocument(template, { page: getPage('/missing', []), html: '<h1>404</h1>' }, origin);
   assert.match(missing, /noindex, nofollow/);
   assert.doesNotMatch(missing, /rel="canonical"/);

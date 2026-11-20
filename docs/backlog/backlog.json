@@ -1,7 +1,7 @@
 {
   "$schema": "./backlog.schema.json",
   "schema_version": 1,
-  "updated_at": "2026-11-07",
+  "updated_at": "2026-11-20",
   "estimate_unit": "indicative person-days, excluding waiting time and provider costs",
   "milestones": [
     "F0",
@@ -683,10 +683,10 @@
         1
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "done",
+      "owner": "Codex",
+      "branch": "feat/JUV-107-french-localization",
+      "updated_at": "2026-11-07",
       "depends_on": [
         "JUV-104"
       ],
@@ -708,7 +708,15 @@
       "references": [
         "docs/design/UX.md"
       ],
-      "evidence": [],
+      "evidence": [
+        "apps/web/src/i18n/index.ts",
+        "apps/web/src/i18n/fr.ts",
+        "tests/i18n.test.mjs",
+        "tests/browser/i18n.spec.ts",
+        "docs/architecture/decisions/009-localization.md",
+        "docs/delivery/VALIDATION-JUV-107.md",
+        "docs/sessions/2026-11-07-french-localization.md"
+      ],
       "blocker": null
     },
     {
@@ -722,10 +730,10 @@
         3
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "done",
+      "owner": "Codex",
+      "branch": "feat/JUV-108-lesson-reader",
+      "updated_at": "2026-11-07",
       "depends_on": [
         "JUV-103",
         "JUV-104",
@@ -751,7 +759,17 @@
       "references": [
         "docs/design/UX.md"
       ],
-      "evidence": [],
+      "evidence": [
+        "apps/web/src/LessonReader.tsx",
+        "apps/web/src/content/reader.ts",
+        "scripts/reader.mjs",
+        "tests/reader.test.mjs",
+        "tests/reader-browser/reader.spec.ts",
+        "tests/browser/reader-boundary.spec.ts",
+        "docs/architecture/decisions/010-lesson-reader.md",
+        "docs/delivery/VALIDATION-JUV-108.md",
+        "docs/sessions/2026-11-07-lesson-reader.md"
+      ],
       "blocker": null
     },
     {
@@ -765,10 +783,10 @@
         3
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "done",
+      "owner": "Codex",
+      "branch": "feat/JUV-109-practice-self-assessment",
+      "updated_at": "2026-11-07",
       "depends_on": [
         "JUV-108"
       ],
@@ -792,7 +810,16 @@
       "references": [
         "docs/product/SCOPE.md"
       ],
-      "evidence": [],
+      "evidence": [
+        "apps/web/src/ExercisePage.tsx",
+        "apps/web/src/content/practice.ts",
+        "scripts/practice.mjs",
+        "tests/practice.test.mjs",
+        "tests/reader-browser/practice.spec.ts",
+        "docs/architecture/decisions/011-practice.md",
+        "docs/delivery/VALIDATION-JUV-109.md",
+        "docs/sessions/2026-11-07-practice-self-assessment.md"
+      ],
       "blocker": null
     },
     {
@@ -806,10 +833,10 @@
         2
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "done",
+      "owner": "Codex",
+      "branch": "feat/JUV-110-consented-reading-progress",
+      "updated_at": "2026-11-07",
       "depends_on": [
         "JUV-108"
       ],
@@ -832,7 +859,17 @@
       "references": [
         "docs/design/UX.md"
       ],
-      "evidence": [],
+      "evidence": [
+        "apps/web/src/ProgressPanel.tsx",
+        "apps/web/src/progress/progress.ts",
+        "apps/web/src/progress/use-progress.ts",
+        "tests/progress.test.mjs",
+        "tests/reader-browser/progress.spec.ts",
+        "tests/browser/progress.spec.ts",
+        "docs/architecture/decisions/012-local-progress.md",
+        "docs/delivery/VALIDATION-JUV-110.md",
+        "docs/sessions/2026-11-07-consented-reading-progress.md"
+      ],
       "blocker": null
     },
     {
@@ -846,10 +883,10 @@
         2
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "blocked",
+      "owner": "Codex",
+      "branch": "feat/JUV-111-email-support",
+      "updated_at": "2026-11-10",
       "depends_on": [
         "JUV-106"
       ],
@@ -873,8 +910,13 @@
       "references": [
         "docs/product/DECISIONS.md"
       ],
-      "evidence": [],
-      "blocker": null
+      "evidence": [
+        "docs/delivery/VALIDATION-JUV-111.md",
+        "docs/sessions/2026-11-07-help-privacy-feedback.md",
+        "docs/sessions/2026-11-10-email-support.md",
+        "docs/sessions/2026-11-10-email-contact-integration.md"
+      ],
+      "blocker": "Email contact integrated; owner confirmed two-way reception and manual deletion 90 days after closure. Public operator wording and actual hosting processing locations/request-log settings and retention remain unverified."
     },
     {
       "id": "JUV-112",
@@ -887,10 +929,10 @@
         3
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "done",
+      "owner": "Codex",
+      "branch": "feat/JUV-112-public-offline-pwa",
+      "updated_at": "2026-11-07",
       "depends_on": [
         "JUV-108",
         "JUV-110",
@@ -917,7 +959,11 @@
         "docs/design/MOTION.md",
         "docs/delivery/QUALITY.md"
       ],
-      "evidence": [],
+      "evidence": [
+        "docs/architecture/decisions/013-public-offline.md",
+        "docs/delivery/VALIDATION-JUV-112.md",
+        "docs/sessions/2026-11-07-public-offline-pwa.md"
+      ],
       "blocker": null
     },
     {
@@ -931,10 +977,10 @@
         3
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "blocked",
+      "owner": "Codex",
+      "branch": "feat/JUV-113-acceptance-preparation",
+      "updated_at": "2026-11-07",
       "depends_on": [
         "JUV-106",
         "JUV-109",
@@ -962,8 +1008,11 @@
       "references": [
         "docs/delivery/QUALITY.md"
       ],
-      "evidence": [],
-      "blocker": null
+      "evidence": [
+        "docs/reviews/M0-ACCEPTANCE.md",
+        "docs/sessions/2026-11-07-acceptance-preparation.md"
+      ],
+      "blocker": "JUV-111 is incomplete. Five consenting real testers have no observations yet (owner confirmation, 2026-11-07); the real course is not in the published inventory. Preparation only; acceptance cannot be activated."
     },
     {
       "id": "JUV-114",
@@ -976,10 +1025,10 @@
         1.5
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "blocked",
+      "owner": "Codex",
+      "branch": "feat/JUV-114-domain-record",
+      "updated_at": "2026-11-20",
       "depends_on": [
         "JUV-113",
         "JUV-005"
@@ -1002,8 +1051,13 @@
       "references": [
         "docs/operations/DEPLOYMENT.md"
       ],
-      "evidence": [],
-      "blocker": null
+      "evidence": [
+        "docs/operations/M0-RELEASE.md",
+        "docs/sessions/2026-11-07-release-preparation.md",
+        "docs/sessions/2026-11-12-domain-registration.md",
+        "docs/sessions/2026-11-20-cloudflare-repository-preparation.md"
+      ],
+      "blocker": "JUV-113 acceptance is incomplete. Domain registration and owner Cloudflare access are evidenced; the 2026-11-20 screenshots show GitHub connected and the Pages build form populated, not a completed deployment. Application DNS/HTTPS, hosting operations, remote smoke and rollback remain unverified; JUV-111 operator/hosting details are pending. Owner authorized repository commits and PR preparation; release remains blocked."
     },
     {
       "id": "JUV-201",
@@ -1016,10 +1070,10 @@
         4
       ],
       "priority": "P0",
-      "status": "todo",
-      "owner": null,
-      "branch": null,
-      "updated_at": "2026-11-06",
+      "status": "done",
+      "owner": "Codex",
+      "branch": "feat/JUV-201-local-database",
+      "updated_at": "2026-11-09",
       "depends_on": [
         "JUV-006"
       ],
@@ -1042,7 +1096,10 @@
       "references": [
         "docs/architecture/DATA-MODEL.md"
       ],
-      "evidence": [],
+      "evidence": [
+        "docs/delivery/VALIDATION-JUV-201.md",
+        "docs/sessions/2026-11-09-local-database.md"
+      ],
       "blocker": null
     },
     {

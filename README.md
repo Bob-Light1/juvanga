@@ -9,7 +9,7 @@ A platform for practical training, guided sessions and demonstrated skills. Fren
 1. Read the [current status](docs/STATUS.md), then the [contribution guidelines](CONTRIBUTING.md).
 2. `npm run context` displays the restart summary. `npm run next` lists tasks whose dependencies are complete.
 3. Choose an ID and read its ticket: `npm run task -- JUV-101`.
-4. Install with `npm ci`, then run `npm run dev`. The foundation displays a brand workshop; the learner product still needs to be built.
+4. Install with `npm ci`, then run `npm run dev` for the M0 public preview. Real course lessons are not yet published.
 5. Before delivery: run `npm run verify` and the targeted tests listed in the ticket; update status and handoff.
 
 **Target prerequisites: Node 24 LTS and npm 11.** See [setup](docs/delivery/DEVELOPMENT.md) and the lockfile. Documentation tools have no npm dependencies.
@@ -27,7 +27,7 @@ Project documentation, code, identifiers and code comments must be in English; t
 | Data, access and transactions | [Model](docs/architecture/DATA-MODEL.md), [API](docs/architecture/API.md), [security](docs/architecture/SECURITY.md) |
 | Identity and animation | [Brand](docs/design/BRAND.md), [UX](docs/design/UX.md), [Motion](docs/design/MOTION.md) |
 | Deliver and operate | [Roadmap](docs/delivery/ROADMAP.md), [quality](docs/delivery/QUALITY.md), [deployment](docs/operations/DEPLOYMENT.md) |
-| Outstanding human decisions | [Product decisions](docs/product/DECISIONS.md) |
+| Outstanding human decisions | [Product decisions](docs/product/DECISIONS.md) and [owner action guide](docs/operations/OWNER-ACTIONS.md) |
 | Requirement origins | [Sources](docs/SOURCES.md) and [traceability](docs/backlog/TRACEABILITY.md) |
 
 ## Incremental delivery

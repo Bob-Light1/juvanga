@@ -1,7 +1,8 @@
 import { z } from 'zod';
+import { contentIdPattern, maxContentIdLength } from './id.ts';
 
-export const ContentIdSchema = z.string().max(100).regex(
-  /^[a-z][a-z0-9]*(?:-[a-z0-9]+)*$/,
+export const ContentIdSchema = z.string().max(maxContentIdLength).regex(
+  contentIdPattern,
   'Use a stable lowercase ID with optional hyphen-separated words',
 );
 const version = z.number().int().positive().max(Number.MAX_SAFE_INTEGER);
@@ -29,6 +30,12 @@ export const PublicUrlSchema = z.string().max(2_000).refine(value => {
 }, 'Use an absolute HTTPS URL without credentials, whitespace or backslashes');
 
 export const BlockSchema = z.discriminatedUnion('type', [
+  z.strictObject({
+    type: z.literal('image'), id: ContentIdSchema,
+    src: z.string().max(200).regex(/^\/media\/[a-z0-9]+(?:-[a-z0-9]+)*\.(?:png|jpg|webp|avif)$/),
+    alt: shortText, width: z.number().int().min(1).max(8192), height: z.number().int().min(1).max(8192),
+    caption: shortText.optional(),
+  }),
   z.strictObject({ type: z.literal('paragraph'), id: ContentIdSchema, text }),
   z.strictObject({ type: z.literal('heading'), id: ContentIdSchema, level: z.union([z.literal(2), z.literal(3)]), text: shortText }),
   z.strictObject({ type: z.literal('list'), id: ContentIdSchema, ordered: z.boolean(), items: z.array(text).min(1).max(50) }),
@@ -66,7 +73,7 @@ export const LessonSchema = z.strictObject({
 });
 
 export const CourseSchema = z.strictObject({
-  schemaVersion: z.literal(1),
+  schemaVersion: z.union([z.literal(1), z.literal(2)]),
   id: ContentIdSchema,
   version,
   status: z.enum(['draft', 'review', 'published', 'archived']),
@@ -99,14 +106,19 @@ export const CourseSchema = z.strictObject({
       const lp = [...mp, 'lessons', li];
       claim(lesson.id, [...lp, 'id']);
       for (const field of ['blocks', 'example'] as const) {
-        lesson[field].forEach((block, bi) => claim(block.id, [...lp, field, bi, 'id']));
+        lesson[field].forEach((block, bi) => {
+          claim(block.id, [...lp, field, bi, 'id']);
+          if (course.schemaVersion === 1 && block.type === 'image') context.addIssue({ code: 'custom', path: [...lp, field, bi], message: 'Images require schemaVersion 2' });
+        });
       }
       claim(lesson.exercise.id, [...lp, 'exercise', 'id']);
       claim(lesson.exercise.rubric.id, [...lp, 'exercise', 'rubric', 'id']);
       lesson.exercise.rubric.criteria.forEach((criterion, ci) =>
         claim(criterion.id, [...lp, 'exercise', 'rubric', 'criteria', ci, 'id']));
-      lesson.exercise.workedSolution.forEach((block, bi) =>
-        claim(block.id, [...lp, 'exercise', 'workedSolution', bi, 'id']));
+      lesson.exercise.workedSolution.forEach((block, bi) => {
+        claim(block.id, [...lp, 'exercise', 'workedSolution', bi, 'id']);
+        if (course.schemaVersion === 1 && block.type === 'image') context.addIssue({ code: 'custom', path: [...lp, 'exercise', 'workedSolution', bi], message: 'Images require schemaVersion 2' });
+      });
     });
   });
   if (course.status === 'published' || course.status === 'archived') {

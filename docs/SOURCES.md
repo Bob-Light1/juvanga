@@ -50,6 +50,22 @@ Retrieved on 2026-11-07: Google Fonts official [Inter metadata](https://github.c
 
 Consulted on 2026-11-07: official [React Router declarative installation](https://reactrouter.com/start/declarative/installation), [StaticRouter](https://reactrouter.com/api/declarative-routers/StaticRouter), [Vite server-side rendering](https://vite.dev/guide/ssr) and [Cloudflare Pages static/404 routing](https://developers.cloudflare.com/pages/configuration/serving-pages/). React Router 8.5.1 was resolved through the npm registry, pinned and recorded in the lockfile. No hosting account or domain was configured.
 
+## JUV-201 local database references
+
+Consulted on 2026-11-09: official Supabase [local CLI workflow](https://supabase.com/docs/guides/local-development/cli-workflows), [configuration reference](https://supabase.com/docs/guides/local-development/cli/config), [API security and default privileges](https://supabase.com/docs/guides/api/securing-your-api), [row-level security](https://supabase.com/docs/guides/database/postgres/row-level-security) and [CLI reference](https://supabase.com/docs/reference/cli/introduction). Used to select the local migration/seed lifecycle, dedicated exposed schema, explicit grants, global function default revocation and pgTAP role tests. This refresh concerns the new local database work, not hosted pricing/quotas or M0 publication. Package versions are pinned from the npm registry and lockfile.
+
+## M0 external form setup guidance
+
+Consulted on 2026-11-09 after the owner selected an external form and 90-day retention after closure: Google Forms official [publishing and sharing](https://support.google.com/docs/answer/2839588?hl=en), [response notifications and email collection](https://support.google.com/docs/answer/139706?hl=en-GB), and [separate form/spreadsheet storage and deletion](https://support.google.com/docs/answer/2917686?hl=en). Used for the proposed setup in [owner actions](operations/OWNER-ACTIONS.md). No Google account, form, public link, notification or provider retention setting has been configured or tested.
+
+## JUV-111 email privacy references
+
+Consulted on 2026-11-10 after the owner supplied the Gmail contact: Google's official [privacy policy](https://policies.google.com/privacy?hl=fr) and [data-retention explanation](https://policies.google.com/technologies/retention?hl=fr). Used to identify Gmail as the email provider and distinguish the owner's selected support deletion period from provider-managed logs, backups and deletion processes. No account-specific region, routing, delivery, retention setting or legal compliance is verified by these references.
+
+## JUV-114 CI browser zoom reference
+
+Consulted on 2026-11-20: Playwright's official [browser distributions and new headless mode](https://playwright.dev/docs/browsers#chromium-new-headless-mode). The `chromium` channel selects full Chromium instead of the default headless shell. The initial remote zoom test measured device pixel ratio 1 with the shell despite the profile's 200% preference; the dedicated persistent-context test now selects full Chromium by default and retains its measured 200% assertions. Explicit `PLAYWRIGHT_CHANNEL` overrides remain available. No application behavior, package or hosting architecture changed.
+
 ## Order of authority
 
 Current user instruction → explicit project decisions → source requirements not superseded → documented assumptions. Resolve and trace significant contradictions; ADRs do not cancel financial requirements for technical convenience.

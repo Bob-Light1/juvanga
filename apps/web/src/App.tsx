@@ -1,14 +1,23 @@
+import { PwaStatus } from './pwa/PwaStatus';
+import { SupportPage } from './SupportPage';
+import { ProgressPage } from './ProgressPanel';
 import { useEffect, useRef } from 'react';
 import { Link, NavLink, Route, Routes, useLocation } from 'react-router';
+import practice from 'virtual:public-practice';
+import { ExercisePage } from './ExercisePage';
+import { findExercise } from './content/practice.ts';
+import readers from 'virtual:public-reader';
+import { LessonReader, MissingLesson } from './LessonReader';
+import { lessonPath, readingLessons } from './content/reader.ts';
 import { BrandWorkshop } from './BrandWorkshop';
 import { ActionLink, CourseCard } from './components/ui';
 import type { CourseOverview } from './content/overview.ts';
 import { coursePath } from './content/overview.ts';
 import courses from 'virtual:public-overviews';
-import { fr } from './i18n/fr';
+import { messages } from './i18n/index.ts';
 import { getPage } from './routing';
 
-const copy = fr.pages;
+const copy = messages.pages;
 
 function OverviewCards() {
   if (!courses.length) return <div className="empty-catalogue"><h3>{copy.emptyTitle}</h3><p>{copy.emptyDescription}</p><ActionLink internal href="/">{copy.backHome}</ActionLink></div>;
@@ -33,12 +42,14 @@ function Catalogue() {
 }
 
 function CoursePage({ course }: { course: CourseOverview }) {
+  const reader = readers.find(candidate => candidate.id === course.id && candidate.version === course.version);
+  const first = reader && readingLessons(reader)[0];
   return <>
     <div className="page-intro course-intro"><Link className="text-link" to="/courses">{copy.backToCatalogue}</Link><p className="eyebrow">{copy.level}</p><h1>{course.title}</h1><p className="intro">{course.summary}</p><span className="pill">{copy.free}</span><p>{copy.noPaidTool}</p></div>
-    <aside className="notice"><strong>{copy.comingSoon}</strong><p>{course.availability === 'coming-soon' ? copy.comingSoonDetail : copy.readerPending}</p></aside>
+    <aside className="notice">{reader && first ? <ActionLink internal href={lessonPath(reader, first)} variant="secondary">{copy.start}</ActionLink> : <><strong>{copy.comingSoon}</strong><p>{course.availability === 'coming-soon' ? copy.comingSoonDetail : copy.readerPending}</p></>}</aside>
     <div className="course-details"><section className="section" aria-labelledby="objectives-title"><h2 id="objectives-title">{copy.objectives}</h2><ul>{course.objectives.map(objective => <li key={objective}>{objective}</li>)}</ul></section>
     <section className="section" aria-labelledby="prerequisites-title"><h2 id="prerequisites-title">{copy.prerequisites}</h2>{course.prerequisites.length ? <ul>{course.prerequisites.map(item => <li key={item}>{item}</li>)}</ul> : <p>{copy.noPrerequisites}</p>}</section></div>
-    <section className="section" aria-labelledby="programme-title"><h2 id="programme-title">{copy.programme}</h2>{course.modules.map(module => <div key={module.id}><h3>{module.title}</h3><ol className="lesson-outline">{module.lessons.map(lesson => <li key={lesson.id}>{lesson.title}</li>)}</ol></div>)}</section>
+    <section className="section" aria-labelledby="programme-title"><h2 id="programme-title">{copy.programme}</h2>{course.modules.map(module => <div key={module.id}><h3>{module.title}</h3><ol className="lesson-outline">{module.lessons.map(lesson => <li key={lesson.id}>{reader ? <Link className="text-link" to={lessonPath(reader, lesson)}>{lesson.title}</Link> : lesson.title}</li>)}</ol></div>)}</section>
   </>;
 }
 
@@ -50,7 +61,7 @@ function RouteEffects() {
   const location = useLocation();
   const previousPath = useRef(location.pathname);
   useEffect(() => {
-    const page = getPage(location.pathname, courses);
+    const page = getPage(location.pathname, courses, readers);
     document.title = page.title;
     const values = { description: page.description, robots: __SITE_ORIGIN__ && page.indexable ? 'index, follow' : 'noindex, nofollow' };
     for (const [name, content] of Object.entries(values)) document.querySelector(`meta[name="${name}"]`)?.setAttribute('content', content);
@@ -73,14 +84,16 @@ function RouteEffects() {
 }
 
 function PublicLayout() {
-  const page = getPage(useLocation().pathname, courses);
+  const page = getPage(useLocation().pathname, courses, readers);
+  const exercise = page.readingCourse && page.lesson && findExercise(practice, page.readingCourse.id, page.readingCourse.version, page.lesson.id);
   return <>
     <a className="skip-link" href="#main">{copy.skip}</a>
     <header className="header shell public-header"><Link className="brand-link" to="/" aria-label={copy.homeLink}><img src="/brand/juvanga-lockup.svg" alt="" width="228" height="70" /></Link>
-      <nav aria-label={copy.navigation}><NavLink to="/" end>{copy.home}</NavLink><NavLink to="/courses">{copy.catalogue}</NavLink></nav></header>
+      <nav aria-label={copy.navigation}><NavLink to="/" end>{copy.home}</NavLink><NavLink to="/courses">{copy.catalogue}</NavLink><NavLink to="/progress">{copy.progress}</NavLink></nav></header>
     <main id="main" className="shell public-main" tabIndex={-1}>
-      {page.kind === 'home' ? <Home /> : page.kind === 'catalogue' ? <Catalogue /> : page.course ? <CoursePage course={page.course} /> : <NotFound />}
-    </main><footer className="shell footer"><span>{copy.brand}</span><span>{copy.tagline}</span></footer>
+      <PwaStatus />
+      {page.kind === 'help' || page.kind === 'privacy' || page.kind === 'feedback' ? <SupportPage kind={page.kind} /> : page.kind === 'progress' ? <ProgressPage courses={readers} /> : page.kind === 'exercise' && page.readingCourse && page.lesson && exercise ? <ExercisePage key={page.path} course={page.readingCourse} lesson={page.lesson} exercise={exercise} /> : page.kind === 'lesson' && page.readingCourse && page.lesson ? <LessonReader key={page.path} course={page.readingCourse} lesson={page.lesson} /> : page.kind === 'missing-lesson' ? <MissingLesson /> : page.kind === 'home' ? <Home /> : page.kind === 'catalogue' ? <Catalogue /> : page.course ? <CoursePage course={page.course} /> : <NotFound />}
+    </main><footer className="shell footer"><span>{copy.brand}</span><span>{copy.tagline}</span><nav aria-label={messages.support.helpLabel}><Link className="text-link" to="/help">{messages.support.helpLabel}</Link><Link className="text-link" to="/privacy">{messages.support.privacyLabel}</Link><Link className="text-link" to="/feedback">{messages.support.feedbackLabel}</Link></nav></footer>
   </>;
 }
 

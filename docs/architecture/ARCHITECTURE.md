@@ -1,6 +1,6 @@
 # Architecture and stack
 
-Detailed decisions: [ADR index](decisions/README.md). F0 installs the frontend and documentation checks; JUV-102 adds the [public content contract](PUBLIC-CONTENT.md); JUV-106 adds [static public pages and routing](decisions/008-public-pages.md); M1/M2 services remain to be implemented.
+Detailed decisions: [ADR index](decisions/README.md). F0 installs the frontend and documentation checks; JUV-102 adds the [public content contract](PUBLIC-CONTENT.md); JUV-106 adds [static public pages and routing](decisions/008-public-pages.md); JUV-201 prepares the [local database boundary](decisions/014-local-database.md). M1/M2 business services remain to be implemented.
 
 ## Selected stack
 

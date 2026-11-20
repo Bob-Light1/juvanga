@@ -18,7 +18,7 @@ export function staticPreviewPlugin() {
         if (inside && fs.existsSync(candidate) && fs.statSync(candidate).isFile()) return next();
         const html = inside && relative ? `${candidate}.html` : '';
         const found = html && fs.existsSync(html) && fs.statSync(html).isFile();
-        const file = found ? html : path.join(root, '404.html');
+        const file = found ? html : path.join(root, pathname.startsWith('/learn/') ? 'learn/404.html' : '404.html');
         if (!fs.existsSync(file)) return next();
         response.statusCode = found ? 200 : 404;
         response.setHeader('Content-Type', 'text/html; charset=utf-8');

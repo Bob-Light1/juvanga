@@ -207,7 +207,7 @@ Evidence: docs/delivery/VALIDATION-JUV-106.md ; docs/architecture/decisions/008-
 
 ## JUV-107 — Prepare French and future localization
 
-Milestone **M0** · Frontend · 0.5–1 person-days · status **todo**
+Milestone **M0** · Frontend · 0.5–1 person-days · status **done**
 
 Dependencies: JUV-104.
 
@@ -230,9 +230,9 @@ Requirements: USR-08.
 
 References: [docs/design/UX.md](../../../docs/design/UX.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-107-french-localization.
 
-Evidence: none — task not delivered.
+Evidence: apps/web/src/i18n/index.ts ; apps/web/src/i18n/fr.ts ; tests/i18n.test.mjs ; tests/browser/i18n.spec.ts ; docs/architecture/decisions/009-localization.md ; docs/delivery/VALIDATION-JUV-107.md ; docs/sessions/2026-11-07-french-localization.md.
 
 ---
 
@@ -240,7 +240,7 @@ Evidence: none — task not delivered.
 
 ## JUV-108 — Create the lesson reader
 
-Milestone **M0** · Frontend · 2–3 person-days · status **todo**
+Milestone **M0** · Frontend · 2–3 person-days · status **done**
 
 Dependencies: JUV-103, JUV-104, JUV-107.
 
@@ -264,9 +264,9 @@ Requirements: COUR-02, USR-08.
 
 References: [docs/design/UX.md](../../../docs/design/UX.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-108-lesson-reader.
 
-Evidence: none — task not delivered.
+Evidence: apps/web/src/LessonReader.tsx ; apps/web/src/content/reader.ts ; scripts/reader.mjs ; tests/reader.test.mjs ; tests/reader-browser/reader.spec.ts ; tests/browser/reader-boundary.spec.ts ; docs/architecture/decisions/010-lesson-reader.md ; docs/delivery/VALIDATION-JUV-108.md ; docs/sessions/2026-11-07-lesson-reader.md.
 
 ---
 
@@ -274,7 +274,7 @@ Evidence: none — task not delivered.
 
 ## JUV-109 — Enable practice and self-assessment
 
-Milestone **M0** · Frontend/education · 1.5–3 person-days · status **todo**
+Milestone **M0** · Frontend/education · 1.5–3 person-days · status **done**
 
 Dependencies: JUV-108.
 
@@ -298,9 +298,9 @@ Requirements: LEARN-01, LEARN-02.
 
 References: [docs/product/SCOPE.md](../../../docs/product/SCOPE.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-109-practice-self-assessment.
 
-Evidence: none — task not delivered.
+Evidence: apps/web/src/ExercisePage.tsx ; apps/web/src/content/practice.ts ; scripts/practice.mjs ; tests/practice.test.mjs ; tests/reader-browser/practice.spec.ts ; docs/architecture/decisions/011-practice.md ; docs/delivery/VALIDATION-JUV-109.md ; docs/sessions/2026-11-07-practice-self-assessment.md.
 
 ---
 
@@ -308,7 +308,7 @@ Evidence: none — task not delivered.
 
 ## JUV-110 — Save reading progress with local consent
 
-Milestone **M0** · Frontend · 1–2 person-days · status **todo**
+Milestone **M0** · Frontend · 1–2 person-days · status **done**
 
 Dependencies: JUV-108.
 
@@ -331,9 +331,9 @@ Requirements: DATA-07, USR-08.
 
 References: [docs/design/UX.md](../../../docs/design/UX.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-110-consented-reading-progress.
 
-Evidence: none — task not delivered.
+Evidence: apps/web/src/ProgressPanel.tsx ; apps/web/src/progress/progress.ts ; apps/web/src/progress/use-progress.ts ; tests/progress.test.mjs ; tests/reader-browser/progress.spec.ts ; tests/browser/progress.spec.ts ; docs/architecture/decisions/012-local-progress.md ; docs/delivery/VALIDATION-JUV-110.md ; docs/sessions/2026-11-07-consented-reading-progress.md.
 
 ---
 
@@ -341,7 +341,7 @@ Evidence: none — task not delivered.
 
 ## JUV-111 — Add help, privacy and real feedback
 
-Milestone **M0** · Product/frontend · 1–2 person-days · status **todo**
+Milestone **M0** · Product/frontend · 1–2 person-days · status **blocked**
 
 Dependencies: JUV-106.
 
@@ -365,9 +365,11 @@ Requirements: DATA-06, DATA-07.
 
 References: [docs/product/DECISIONS.md](../../../docs/product/DECISIONS.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-111-email-support.
 
-Evidence: none — task not delivered.
+Evidence: docs/delivery/VALIDATION-JUV-111.md ; docs/sessions/2026-11-07-help-privacy-feedback.md ; docs/sessions/2026-11-10-email-support.md ; docs/sessions/2026-11-10-email-contact-integration.md.
+
+Blocker: Email contact integrated; owner confirmed two-way reception and manual deletion 90 days after closure. Public operator wording and actual hosting processing locations/request-log settings and retention remain unverified.
 
 ---
 
@@ -375,7 +377,7 @@ Evidence: none — task not delivered.
 
 ## JUV-112 — Optimize slow networks, public PWA and motion
 
-Milestone **M0** · Frontend · 1.5–3 person-days · status **todo**
+Milestone **M0** · Frontend · 1.5–3 person-days · status **done**
 
 Dependencies: JUV-108, JUV-110, JUV-105.
 
@@ -399,9 +401,9 @@ Requirements: USR-04, USR-07.
 
 References: [docs/design/MOTION.md](../../../docs/design/MOTION.md) ; [docs/delivery/QUALITY.md](../../../docs/delivery/QUALITY.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-112-public-offline-pwa.
 
-Evidence: none — task not delivered.
+Evidence: docs/architecture/decisions/013-public-offline.md ; docs/delivery/VALIDATION-JUV-112.md ; docs/sessions/2026-11-07-public-offline-pwa.md.
 
 ---
 
@@ -409,7 +411,7 @@ Evidence: none — task not delivered.
 
 ## JUV-113 — Run acceptance testing with real testers
 
-Milestone **M0** · QA/produit · 1.5–3 person-days · status **todo**
+Milestone **M0** · QA/produit · 1.5–3 person-days · status **blocked**
 
 Dependencies: JUV-106, JUV-109, JUV-110, JUV-111, JUV-112, JUV-107.
 
@@ -432,9 +434,11 @@ Requirements: USR-04, USR-08.
 
 References: [docs/delivery/QUALITY.md](../../../docs/delivery/QUALITY.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-113-acceptance-preparation.
 
-Evidence: none — task not delivered.
+Evidence: docs/reviews/M0-ACCEPTANCE.md ; docs/sessions/2026-11-07-acceptance-preparation.md.
+
+Blocker: JUV-111 is incomplete. Five consenting real testers have no observations yet (owner confirmation, 2026-11-07); the real course is not in the published inventory. Preparation only; acceptance cannot be activated.
 
 ---
 
@@ -442,7 +446,7 @@ Evidence: none — task not delivered.
 
 ## JUV-114 — Publish M0 for free and test rollback
 
-Milestone **M0** · Operations · 0.5–1.5 person-days · status **todo**
+Milestone **M0** · Operations · 0.5–1.5 person-days · status **blocked**
 
 Dependencies: JUV-113, JUV-005.
 
@@ -465,6 +469,8 @@ Requirements: USR-04.
 
 References: [docs/operations/DEPLOYMENT.md](../../../docs/operations/DEPLOYMENT.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-114-domain-record.
 
-Evidence: none — task not delivered.
+Evidence: docs/operations/M0-RELEASE.md ; docs/sessions/2026-11-07-release-preparation.md ; docs/sessions/2026-11-12-domain-registration.md ; docs/sessions/2026-11-20-cloudflare-repository-preparation.md.
+
+Blocker: JUV-113 acceptance is incomplete. Domain registration and owner Cloudflare access are evidenced; the 2026-11-20 screenshots show GitHub connected and the Pages build form populated, not a completed deployment. Application DNS/HTTPS, hosting operations, remote smoke and rollback remain unverified; JUV-111 operator/hosting details are pending. Owner authorized repository commits and PR preparation; release remains blocked.

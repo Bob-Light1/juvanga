@@ -13,4 +13,16 @@
 | [ADR-007](007-accessible-components.md) | Native accessible course components and workshop | Adopted for M0 |
 | [ADR-008](008-public-pages.md) | Static public pages, discovery and React Router navigation | Adopted for M0 |
 
+| [ADR-009](009-localization.md) | French catalogue, fallback and explicit Intl formats | Adopted for M0 |
+
+| [ADR-010](010-lesson-reader.md) | Versioned static reader and requested same-origin illustrations | Adopted for M0 |
+
+| [ADR-011](011-practice.md) | Public exercises and declaration-only self-assessment | Adopted for M0 |
+
+| [ADR-012](012-local-progress.md) | Explicitly consented and erasable local reading position | Adopted for M0 |
+
+| [ADR-013](013-public-offline.md) | Exact public offline snapshot and explicit updates | Adopted for M0 |
+
+| [ADR-014](014-local-database.md) | Local database boundary and explicit privileges | Adopted for local M1 preparation |
+
 Create a new decision to supersede an old one; do not rewrite history. Template: `docs/templates/ADR.md`.

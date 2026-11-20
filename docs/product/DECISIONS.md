@@ -16,7 +16,7 @@ Reference date: 2026-11-06. The roles below are responsibilities to assign, not 
 | DEC-08 | Budget, RPO/RTO, support SLA and incident owner | Pending validation | Management/technical | Before M1/M2 depending on data |
 | DEC-09 | Mode B, cutoff and on-call coverage | Deferred | Finance/operations | P2 only |
 | DEC-10 | Hosting, region, privacy, retention and transfers | Document according to collected data | Product/legal/technical | M0 for logs/feedback; M1 for accounts |
-| DEC-11 | Public domain, name availability and asset rights | To verify | Project owner | Before final public identity |
+| DEC-11 | Public domain, name availability and asset rights | Domain purchased; DNS/HTTPS, name and asset rights remain unverified; see dated update below | Project owner | Before final public identity |
 | DEC-12 | External SMTP, sender domain and quota | Not configured | Operations | Before public M1 registration |
 | DEC-13 | Repository maintainer and reviewers | To appoint | Project owner | Before remote teamwork |
 | DEC-14 | English documentation, code, identifiers and code comments; French launch interface | Confirmed by the user on 2026-11-06 | Codex for JUV-007; contributors thereafter | Applies to all maintained documentation and new comments; preserve source archives with English companions |
@@ -35,6 +35,24 @@ JUV-103 provides the [complete-lesson review copy](../reviews/meeting-notes-acti
 
 JUV-106 adds selected public course descriptions under [ADR-008](../architecture/decisions/008-public-pages.md), derived from the approved source and marked as coming soon. This does not record lesson publication, change the review/publication timestamp or authorize a deployment.
 
+## DEC-11 update — 2026-11-12
+
+The project owner selected and purchased the brand's exact `.com` domain through Cloudflare Registrar, following comparison with another registrar and an optional `.cm` companion. The owner requested that this registration be retained for future sessions. Canonical registration facts and screenshot evidence limits are in [the release record](../operations/M0-RELEASE.md#domain-registration-evidence--2026-11-12).
+
+This supersedes the pending domain-acquisition state, without establishing trademark/name clearance, asset rights, DNS/HTTPS configuration, verified registrant email or a public deployment. The existing Cloudflare hosting architecture is unchanged; no new ADR is needed. JUV-114 remains blocked by acceptance and operational gates. Domain registration alone does not authorize release or set `SITE_URL`.
+
 ## Prepare without waiting for these decisions
 
 M0 journey, public content, accessibility, tokens, technical contracts, tests using fictional data and procedures. Open financial decisions do not prevent development and testing of mechanisms, but do prevent their actual commercial activation.
+
+## DEC-10 implementation note — 2026-11-07
+
+JUV-111 exposes the actual local-data notice and minimal feedback guidance through the existing static pages. No support address, delivery test, operator or feedback-retention policy has been supplied. Hosting location and log retention are unverified. These remain release blockers; the notice states the configuration gap without inventing provider settings. Local erasure removes only the consented reading record, not potential hosting logs. See [JUV-111 evidence](../delivery/VALIDATION-JUV-111.md).
+
+The project owner selected a support URL on 2026-11-07, without supplying its address or an authorized reception-test method. Five testers may be recruited but have no observations yet; Cloudflare access is not configured. JUV-113 and JUV-114 must not be recorded as completed from automated checks alone.
+
+On 2026-11-09 the owner requested setup guidance, then selected an external contact form and retention of 90 days after closure. Provider, exact responder URL, receiving operator, actual deletion routine and reception evidence remain pending. This supersedes the earlier unspecified URL indication. The [owner action guide](../operations/OWNER-ACTIONS.md) records the setup steps; the mailbox proposal was not selected. No automatic deletion or provider-log retention is inferred.
+
+On 2026-11-10 the owner adopted email support for the initial release, superseding the external form choice. The 90-day retention rule after closure remains selected. The actual mailbox/alias, receiving operator, deletion routine, reception/reply test and provider/hosting details remain unverified; follow the owner action guide. No contact address or successful delivery is invented.
+
+The owner subsequently supplied a public Gmail support address on 2026-11-10. The public address is integrated through the existing static support page and i18n catalogue. Support may be handled directly in that mailbox; no second address or forwarding is required. The personal test address stays out of versioned/public artifacts. The owner confirmed receipt of both the inbound test and the support reply, and committed to tracking closure dates and manually deleting controlled correspondence/copies at 90 days. This is owner-reported evidence; automatic deletion and provider-managed retention are not inferred. Operator wording and actual hosting details remain pending in the owner action guide.

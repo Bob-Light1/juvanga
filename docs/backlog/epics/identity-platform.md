@@ -6,7 +6,7 @@ Generated view. Source: ../backlog.json. Indicative estimates; verify criteria b
 
 ## JUV-201 — Initialize PostgreSQL, migrations and local environment
 
-Milestone **M1** · Backend · 2–4 person-days · status **todo**
+Milestone **M1** · Backend · 2–4 person-days · status **done**
 
 Dependencies: JUV-006.
 
@@ -29,9 +29,9 @@ Requirements: DATA-01, SEC-03.
 
 References: [docs/architecture/DATA-MODEL.md](../../../docs/architecture/DATA-MODEL.md).
 
-Owner: unassigned ; branch: —.
+Owner: Codex ; branch: feat/JUV-201-local-database.
 
-Evidence: none — task not delivered.
+Evidence: docs/delivery/VALIDATION-JUV-201.md ; docs/sessions/2026-11-09-local-database.md.
 
 ---
 

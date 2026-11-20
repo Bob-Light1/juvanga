@@ -471,6 +471,6 @@ References: [docs/operations/DEPLOYMENT.md](../../../docs/operations/DEPLOYMENT.
 
 Owner: Codex ; branch: feat/JUV-114-domain-record.
 
-Evidence: docs/operations/M0-RELEASE.md ; docs/sessions/2026-11-07-release-preparation.md ; docs/sessions/2026-11-12-domain-registration.md.
+Evidence: docs/operations/M0-RELEASE.md ; docs/sessions/2026-11-07-release-preparation.md ; docs/sessions/2026-11-12-domain-registration.md ; docs/sessions/2026-11-20-cloudflare-repository-preparation.md.
 
-Blocker: JUV-113 acceptance is incomplete. Owner-supplied screenshots establish purchased domain registration and owner dashboard access; canonical facts are in docs/operations/M0-RELEASE.md. Hosting project, authorized Codex access, application DNS/HTTPS origin, deployment and rollback remain unverified; JUV-111 operator/hosting details are pending. Documentation preparation only.
+Blocker: JUV-113 acceptance is incomplete. Domain registration and owner Cloudflare access are evidenced; the 2026-11-20 screenshots show GitHub connected and the Pages build form populated, not a completed deployment. Application DNS/HTTPS, hosting operations, remote smoke and rollback remain unverified; JUV-111 operator/hosting details are pending. Owner authorized repository commits and PR preparation; release remains blocked.

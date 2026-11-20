@@ -1,7 +1,7 @@
 {
   "$schema": "./backlog.schema.json",
   "schema_version": 1,
-  "updated_at": "2026-11-12",
+  "updated_at": "2026-11-20",
   "estimate_unit": "indicative person-days, excluding waiting time and provider costs",
   "milestones": [
     "F0",
@@ -1028,7 +1028,7 @@
       "status": "blocked",
       "owner": "Codex",
       "branch": "feat/JUV-114-domain-record",
-      "updated_at": "2026-11-12",
+      "updated_at": "2026-11-20",
       "depends_on": [
         "JUV-113",
         "JUV-005"
@@ -1054,9 +1054,10 @@
       "evidence": [
         "docs/operations/M0-RELEASE.md",
         "docs/sessions/2026-11-07-release-preparation.md",
-        "docs/sessions/2026-11-12-domain-registration.md"
+        "docs/sessions/2026-11-12-domain-registration.md",
+        "docs/sessions/2026-11-20-cloudflare-repository-preparation.md"
       ],
-      "blocker": "JUV-113 acceptance is incomplete. Owner-supplied screenshots establish purchased domain registration and owner dashboard access; canonical facts are in docs/operations/M0-RELEASE.md. Hosting project, authorized Codex access, application DNS/HTTPS origin, deployment and rollback remain unverified; JUV-111 operator/hosting details are pending. Documentation preparation only."
+      "blocker": "JUV-113 acceptance is incomplete. Domain registration and owner Cloudflare access are evidenced; the 2026-11-20 screenshots show GitHub connected and the Pages build form populated, not a completed deployment. Application DNS/HTTPS, hosting operations, remote smoke and rollback remain unverified; JUV-111 operator/hosting details are pending. Owner authorized repository commits and PR preparation; release remains blocked."
     },
     {
       "id": "JUV-201",

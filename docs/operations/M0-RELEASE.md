@@ -1,6 +1,6 @@
 # M0 release and rollback record
 
-Updated: 2026-11-12. Preparation owner: Codex, reassigned for domain documentation only. Branch: `feat/JUV-114-domain-record`.
+Updated: 2026-11-20. Preparation owner: Codex, reassigned for repository and hosting preparation. Branch: `feat/JUV-114-domain-record`.
 Status: **blocked; no deployment, publication or rollback executed**.
 
 ## Current record
@@ -8,7 +8,7 @@ Status: **blocked; no deployment, publication or rollback executed**.
 | Field | Verified state |
 | --- | --- |
 | JUV-113 acceptance | Incomplete; [entry gates and observation report](../reviews/M0-ACCEPTANCE.md) |
-| Owner-controlled Cloudflare access/project | Owner dashboard access evidenced in supplied screenshots; no Juvanga hosting project or Codex account access verified |
+| Owner-controlled Cloudflare access/project | Owner dashboard access and GitHub connection evidenced; Pages setup form populated on 2026-11-20. No completed project/deployment or Codex account access verified |
 | Public HTTPS origin / domain | Domain registered; see registration evidence below. Application origin, DNS attachment and HTTPS not configured or verified |
 | Accepted release commit / artifact hash | Not selected; latest implementation evidence is [JUV-112](../delivery/VALIDATION-JUV-112.md) |
 | Real published course version | None; approved course remains editorial |
@@ -34,6 +34,12 @@ The project owner purchased **`juvanga.com`** through **Cloudflare Registrar**. 
 This supersedes the previous missing-domain state. The domain is already registered for the project, not merely available to purchase. Evidence is limited to the owner's screenshots; no independent registry or account inspection was performed. Personal details and screenshot copies are not stored in the repository.
 
 DNS records, DNSSEC, registrant email verification, account two-factor authentication, hosting attachment, a working public HTTPS application and domain-based email remain unverified. Leave `SITE_URL` unset until the release gates and actual application origin are verified. Purchasing the domain does not publish the application or complete JUV-114. Next: prepare the owner-controlled hosting project and validate DNS/HTTPS during the gated release procedure below.
+
+## Pages setup evidence — 2026-11-20
+
+Owner-supplied screenshots show the GitHub repository selected and the Pages setup form populated with project name `juvanga`, production branch `main`, React (Vite), build command `npm ci && npm run build`, output `apps/web/dist` and `NODE_VERSION=24`. The root-directory section is collapsed, so its value is not established by the screenshot. `SITE_URL` is absent from the visible environment-variable list. The proposed `juvanga.pages.dev` address is not evidence of a successful deployment or verified origin.
+
+Read-only GitHub inspection confirmed remote `main` at `81f6241`, behind local `main` (`500bebb`) and the current feature history. The owner authorized commits and a PR before continuing Cloudflare setup. Preserve existing feature commits and propose their integration into `main`; this does not complete acceptance, authorize production promotion or establish a public origin. Keep `SITE_URL` unset. See the [repository preparation handoff](../sessions/2026-11-20-cloudflare-repository-preparation.md) for validation and PR evidence.
 
 ## Entry checklist (not executed)
 

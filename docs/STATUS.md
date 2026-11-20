@@ -1,6 +1,6 @@
 # Current status — Juvanga
 
-Updated on 2026-11-10. **F0 complete; M0 underway. JUV-101–110 done; JUV-111 email integrated, blocked on operator/hosting details; JUV-112 done; JUV-113/114 blocked after preparation. M1 local database foundation (JUV-201) done.**
+Updated on 2026-11-12. **F0 complete; M0 underway. JUV-101–110 done; JUV-111 email integrated, blocked on operator/hosting details; JUV-112 done; JUV-113/114 blocked after preparation. M1 local database foundation (JUV-201) done.**
 
 ## Stable decisions
 
@@ -24,12 +24,12 @@ Previous learning delivery: [reader](delivery/VALIDATION-JUV-108.md), [practice]
 
 No real lessons are published: the approved French course remains editorial, with no publication timestamp; the public inventory is empty. Synthetic published content is test-only and must never remain in the default artifact.
 
-JUV-113: owner Codex; branch `feat/JUV-113-acceptance-preparation`; date 2026-11-07; status `blocked`; commit `c899564` (preparation only). It cannot enter active acceptance while JUV-111 is incomplete. Five real testers have no observations yet; the [protocol and blank observation sheet](reviews/M0-ACCEPTANCE.md) are prepared. JUV-114: owner Codex; branch `feat/JUV-114-release-preparation`; date 2026-11-07; status `blocked` (preparation only). It depends on completed acceptance; Cloudflare access is not configured. The [release/rollback record](operations/M0-RELEASE.md) is prepared. No production origin, hosting project, verified remote headers, domain or rollback exists. Publication is a separate gated release step. Real testers, physical devices, non-Chromium, screen readers and independent learner review remain unverified.
+JUV-113: owner Codex; branch `feat/JUV-113-acceptance-preparation`; date 2026-11-07; status `blocked`; commit `c899564` (preparation only). It cannot enter active acceptance while JUV-111 is incomplete. Five real testers have no observations yet; the [protocol and blank observation sheet](reviews/M0-ACCEPTANCE.md) are prepared. JUV-114: owner Codex, reassigned for documentation; branch `feat/JUV-114-domain-record`; date 2026-11-12; status `blocked` (preparation only). **`juvanga.com` is purchased and active at Cloudflare Registrar**, evidenced by owner-supplied screenshots; see [registration facts and limits](operations/M0-RELEASE.md#domain-registration-evidence--2026-11-12). DNS/HTTPS attachment and email verification remain unverified. No production origin, hosting project, verified remote headers or rollback exists. Publication requires completed acceptance. Real testers, physical devices, non-Chromium, screen readers and independent learner review remain unverified.
 
 No business backend, hosted database, real accounts, SMTP, synchronization or configured English translation. JUV-201 uses fictional local data only. ADR-005 requires review before real accounts. M0 course accountable owner/reviewer: project owner, self-appointed on 2026-11-07. Maintainer/C1/operator roles remain unassigned; [decisions](product/DECISIONS.md).
 
 Commands: `npm run context`, `npm run task -- JUV-111`, `npm run verify`, `npm run db:start`, `npm run test:db`, `npm run db:stop`, `PLAYWRIGHT_CHANNEL=chrome npm run test:e2e`, `PLAYWRIGHT_CHANNEL=chrome npm run test:reader`. Run browser suites sequentially; they share the output artifact.
 
-JUV-201 is complete locally; its stack is stopped. JUV-202 still depends on JUV-114. The normal French noindex artifact is restored after support tests. No deployment; database and remote CI checks were not rerun for this support change.
+JUV-201 is complete locally; its stack is stopped. JUV-202 still depends on JUV-114. Domain documentation verify passed (94 tests); normal French noindex artifact preserved. Browser/database suites, remote CI and DNS/HTTPS checks were not rerun. No deployment.
 
-Latest handoff: [Email contact integration](sessions/2026-11-10-email-contact-integration.md). Database handoff: [JUV-201](sessions/2026-11-09-local-database.md).
+Latest handoff: [Domain registration](sessions/2026-11-12-domain-registration.md). Prior: [email contact integration](sessions/2026-11-10-email-contact-integration.md), [local database](sessions/2026-11-09-local-database.md).

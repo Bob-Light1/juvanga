@@ -469,8 +469,8 @@ Requirements: USR-04.
 
 References: [docs/operations/DEPLOYMENT.md](../../../docs/operations/DEPLOYMENT.md).
 
-Owner: Codex ; branch: feat/JUV-114-release-preparation.
+Owner: Codex ; branch: feat/JUV-114-domain-record.
 
-Evidence: docs/operations/M0-RELEASE.md ; docs/sessions/2026-11-07-release-preparation.md.
+Evidence: docs/operations/M0-RELEASE.md ; docs/sessions/2026-11-07-release-preparation.md ; docs/sessions/2026-11-12-domain-registration.md.
 
-Blocker: JUV-113 acceptance is incomplete; project owner confirmed Cloudflare access is not configured. No verified production origin, support channel, deployment or rollback target exists. Release preparation only.
+Blocker: JUV-113 acceptance is incomplete. Owner-supplied screenshots establish purchased domain registration and owner dashboard access; canonical facts are in docs/operations/M0-RELEASE.md. Hosting project, authorized Codex access, application DNS/HTTPS origin, deployment and rollback remain unverified; JUV-111 operator/hosting details are pending. Documentation preparation only.

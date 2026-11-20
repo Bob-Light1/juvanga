@@ -1,6 +1,6 @@
 # M0 release and rollback record
 
-Date: 2026-11-07. Preparation owner: Codex. Branch: `feat/JUV-114-release-preparation`.
+Updated: 2026-11-12. Preparation owner: Codex, reassigned for domain documentation only. Branch: `feat/JUV-114-domain-record`.
 Status: **blocked; no deployment, publication or rollback executed**.
 
 ## Current record
@@ -8,11 +8,11 @@ Status: **blocked; no deployment, publication or rollback executed**.
 | Field | Verified state |
 | --- | --- |
 | JUV-113 acceptance | Incomplete; [entry gates and observation report](../reviews/M0-ACCEPTANCE.md) |
-| Owner-controlled Cloudflare access/project | Not configured (project owner confirmation) |
-| Public HTTPS origin / domain | Not configured or verified |
+| Owner-controlled Cloudflare access/project | Owner dashboard access evidenced in supplied screenshots; no Juvanga hosting project or Codex account access verified |
+| Public HTTPS origin / domain | Domain registered; see registration evidence below. Application origin, DNS attachment and HTTPS not configured or verified |
 | Accepted release commit / artifact hash | Not selected; latest implementation evidence is [JUV-112](../delivery/VALIDATION-JUV-112.md) |
 | Real published course version | None; approved course remains editorial |
-| Real support URL and reception test | Missing; JUV-111 blocked |
+| Real support URL and reception test | Email contact and owner-reported two-way reception recorded in [JUV-111 evidence](../delivery/VALIDATION-JUV-111.md); operator/hosting details remain pending |
 | Hosting logs, location, retention and feedback policy | Not verified; DEC-10 remains open |
 | Free-plan quotas / owning account / check date | Not verified for a real project; recheck at release |
 | Production deployment ID / operator / UTC timestamp | None |
@@ -20,7 +20,20 @@ Status: **blocked; no deployment, publication or rollback executed**.
 | Actual rollback and restoration results | Not run |
 | Remote HTTPS, headers, deep-link and installed-worker smoke | Not run |
 
-The [deployment procedure](DEPLOYMENT.md) and [recorded sources](../SOURCES.md) retain prior provider research and its date. This preparation performs no fresh provider/account check and does not claim that limits are verified today. Do not add a secret or domain to the repository to fill this table.
+The [deployment procedure](DEPLOYMENT.md) and [recorded sources](../SOURCES.md) retain prior provider research and its date. This update records owner-supplied screenshots, not independent account access or a fresh provider check. Current hosting limits remain unverified. Do not invent a production origin or store credentials or personal account identifiers in this record.
+
+## Domain registration evidence — 2026-11-12
+
+The project owner purchased **`juvanga.com`** through **Cloudflare Registrar**. The supplied Cloudflare registration dashboard screenshot dated 2026-11-12 16:17 Africa/Douala shows:
+
+- Registration status: **Active**.
+- Expiration date: **2027-11-12** (date as displayed by the provider; no exact UTC expiration timestamp verified).
+- Automatic renewal: enabled, scheduled for **2027-10-13**.
+- Displayed renewal price: **USD 11.17/year**, observed on 2026-11-12; future pricing is not guaranteed.
+
+This supersedes the previous missing-domain state. The domain is already registered for the project, not merely available to purchase. Evidence is limited to the owner's screenshots; no independent registry or account inspection was performed. Personal details and screenshot copies are not stored in the repository.
+
+DNS records, DNSSEC, registrant email verification, account two-factor authentication, hosting attachment, a working public HTTPS application and domain-based email remain unverified. Leave `SITE_URL` unset until the release gates and actual application origin are verified. Purchasing the domain does not publish the application or complete JUV-114. Next: prepare the owner-controlled hosting project and validate DNS/HTTPS during the gated release procedure below.
 
 ## Entry checklist (not executed)
 

@@ -1,6 +1,6 @@
 # Owner actions to unblock M0
 
-Updated: 2026-11-10. These are pending owner actions, not completed configuration or acceptance. M1 local database preparation in JUV-201 is independent of these gates. No account creation, invitation, message or deployment has been executed by this checklist.
+Updated: 2026-11-12. This guide distinguishes owner-reported preparation from pending configuration and acceptance. M1 local database preparation in JUV-201 is independent of these gates. No account creation, invitation, message or deployment has been executed by this checklist.
 
 ## 1. Operate the verified support mailbox
 
@@ -17,9 +17,9 @@ The website displays only the supplied public address, a native email link and a
 
 ## 2. Prepare owner-controlled hosting and the notice
 
-Create or identify the Cloudflare account that will own M0 hosting, appoint an operator and arrange authorized access through the normal account controls. Do not send passwords, API tokens or recovery codes in chat. Account preparation is distinct from publishing the application.
+The owner has registered the project domain and supplied evidence of Cloudflare dashboard access; see [the registration record](M0-RELEASE.md#domain-registration-evidence--2026-11-12). Use the owner-controlled account for M0 hosting, appoint an operator and arrange authorized access through the normal account controls. Verify registrant email confirmation and account two-factor authentication; neither is established by the screenshots. Do not send passwords, API tokens or recovery codes in chat. Account preparation is distinct from publishing the application.
 
-Before acceptance, confirm the actual hosting operator, processing locations and available request-log settings/retention, together with the chosen support provider's handling. Record evidence and date instead of copying generic provider defaults. No hosted project is currently verified. Current quotas and domain/subdomain availability must be checked when the real project is configured; [the release record](M0-RELEASE.md) is authoritative for release evidence.
+Before acceptance, confirm the actual hosting operator, processing locations and available request-log settings/retention, together with the chosen support provider's handling. Record evidence and date instead of copying generic provider defaults. No hosted project is currently verified. Current quotas, provider subdomain availability and the purchased domain's DNS/HTTPS attachment must be checked when the real project is configured; [the release record](M0-RELEASE.md) is authoritative for release evidence.
 
 ## 3. Make the course available for real acceptance
 

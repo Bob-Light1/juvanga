@@ -16,7 +16,7 @@ Reference date: 2026-11-06. The roles below are responsibilities to assign, not 
 | DEC-08 | Budget, RPO/RTO, support SLA and incident owner | Pending validation | Management/technical | Before M1/M2 depending on data |
 | DEC-09 | Mode B, cutoff and on-call coverage | Deferred | Finance/operations | P2 only |
 | DEC-10 | Hosting, region, privacy, retention and transfers | Document according to collected data | Product/legal/technical | M0 for logs/feedback; M1 for accounts |
-| DEC-11 | Public domain, name availability and asset rights | To verify | Project owner | Before final public identity |
+| DEC-11 | Public domain, name availability and asset rights | Domain purchased; DNS/HTTPS, name and asset rights remain unverified; see dated update below | Project owner | Before final public identity |
 | DEC-12 | External SMTP, sender domain and quota | Not configured | Operations | Before public M1 registration |
 | DEC-13 | Repository maintainer and reviewers | To appoint | Project owner | Before remote teamwork |
 | DEC-14 | English documentation, code, identifiers and code comments; French launch interface | Confirmed by the user on 2026-11-06 | Codex for JUV-007; contributors thereafter | Applies to all maintained documentation and new comments; preserve source archives with English companions |
@@ -34,6 +34,12 @@ JUV-101 proposes the [free-course plan](FREE-COURSE.md), including the outcome, 
 JUV-103 provides the [complete-lesson review copy](../reviews/meeting-notes-action-plan-v1.md) and [editorial provenance](../../content/drafts/meeting-notes-action-plan/README.md). After authoring commit `fa9b20d`, the project owner explicitly confirmed reading the complete lessons, performing all three exercises and approving the course without corrections on 2026-11-07. This supersedes the pending lesson-review and non-author walkthrough state. Actual review metadata is now recorded; the content remains outside the public inventory with no publication timestamp. No new architecture or public deployment is authorized by this editorial acceptance.
 
 JUV-106 adds selected public course descriptions under [ADR-008](../architecture/decisions/008-public-pages.md), derived from the approved source and marked as coming soon. This does not record lesson publication, change the review/publication timestamp or authorize a deployment.
+
+## DEC-11 update — 2026-11-12
+
+The project owner selected and purchased the brand's exact `.com` domain through Cloudflare Registrar, following comparison with another registrar and an optional `.cm` companion. The owner requested that this registration be retained for future sessions. Canonical registration facts and screenshot evidence limits are in [the release record](../operations/M0-RELEASE.md#domain-registration-evidence--2026-11-12).
+
+This supersedes the pending domain-acquisition state, without establishing trademark/name clearance, asset rights, DNS/HTTPS configuration, verified registrant email or a public deployment. The existing Cloudflare hosting architecture is unchanged; no new ADR is needed. JUV-114 remains blocked by acceptance and operational gates. Domain registration alone does not authorize release or set `SITE_URL`.
 
 ## Prepare without waiting for these decisions
 

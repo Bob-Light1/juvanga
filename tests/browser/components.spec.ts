@@ -124,7 +124,8 @@ test('actual 200% browser zoom preserves reflow and keyboard controls', async ({
     partition: { default_zoom_level: { x: Math.log(2) / Math.log(1.2) } },
   }));
   const context = await chromium.launchPersistentContext(profile, {
-    channel: process.env.PLAYWRIGHT_CHANNEL || undefined,
+    // Full Chromium applies profile zoom preferences; headless shell ignores them.
+    channel: process.env.PLAYWRIGHT_CHANNEL || 'chromium',
     headless: true, viewport: null, args: ['--window-size=1280,900'],
   });
   try {

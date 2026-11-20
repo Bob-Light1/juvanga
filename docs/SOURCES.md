@@ -62,6 +62,10 @@ Consulted on 2026-11-09 after the owner selected an external form and 90-day ret
 
 Consulted on 2026-11-10 after the owner supplied the Gmail contact: Google's official [privacy policy](https://policies.google.com/privacy?hl=fr) and [data-retention explanation](https://policies.google.com/technologies/retention?hl=fr). Used to identify Gmail as the email provider and distinguish the owner's selected support deletion period from provider-managed logs, backups and deletion processes. No account-specific region, routing, delivery, retention setting or legal compliance is verified by these references.
 
+## JUV-114 CI browser zoom reference
+
+Consulted on 2026-11-20: Playwright's official [browser distributions and new headless mode](https://playwright.dev/docs/browsers#chromium-new-headless-mode). The `chromium` channel selects full Chromium instead of the default headless shell. The initial remote zoom test measured device pixel ratio 1 with the shell despite the profile's 200% preference; the dedicated persistent-context test now selects full Chromium by default and retains its measured 200% assertions. Explicit `PLAYWRIGHT_CHANNEL` overrides remain available. No application behavior, package or hosting architecture changed.
+
 ## Order of authority
 
 Current user instruction → explicit project decisions → source requirements not superseded → documented assumptions. Resolve and trace significant contradictions; ADRs do not cancel financial requirements for technical convenience.

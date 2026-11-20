@@ -66,6 +66,10 @@ Consulted on 2026-11-10 after the owner supplied the Gmail contact: Google's off
 
 Consulted on 2026-11-20: Playwright's official [browser distributions and new headless mode](https://playwright.dev/docs/browsers#chromium-new-headless-mode). The `chromium` channel selects full Chromium instead of the default headless shell. The initial remote zoom test measured device pixel ratio 1 with the shell despite the profile's 200% preference; the dedicated persistent-context test now selects full Chromium by default and retains its measured 200% assertions. Explicit `PLAYWRIGHT_CHANNEL` overrides remain available. No application behavior, package or hosting architecture changed.
 
+## M0 owner account preparation — 2026-11-20
+
+Consulted Cloudflare's official [email verification](https://developers.cloudflare.com/fundamentals/user-profiles/verify-email-address/) and [two-factor authentication](https://developers.cloudflare.com/fundamentals/user-profiles/2fa/) instructions to guide the newly confirmed hosting/support operator through the account checks already listed in owner actions. Email verification status is displayed in My Profile; authentication methods are in Authentication. Email verification precedes 2FA enrollment. This is setup guidance only: no account, verification status, recovery code or authentication setting was inspected or changed. Hosting processing/log facts are still unverified.
+
 ## Order of authority
 
 Current user instruction → explicit project decisions → source requirements not superseded → documented assumptions. Resolve and trace significant contradictions; ADRs do not cancel financial requirements for technical convenience.

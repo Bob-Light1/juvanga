@@ -1,7 +1,7 @@
 # JUV-111 — Help, privacy and feedback
 
 Owner: Codex. Branch: `feat/JUV-111-help-privacy-feedback`. Date: 2026-11-07.
-Current status: email integrated; blocked on operator wording and actual hosting details. The dated sections below preserve earlier evidence.
+Current status: email and public operator wording integrated; blocked on actual hosting details. The dated sections below preserve earlier evidence.
 
 `/help`, `/privacy` and `/feedback` are statically rendered and linked in the public footer. French copy lives in the shared catalogue. Help explains the actual unpublished/published course boundary, practice and optional resume. The notice describes the exact local record, no automatic expiry, targeted erasure and its failure fallback; exercise text is ephemeral. Hosting requests are distinguished from local storage. No provider, location or log retention is invented.
 
@@ -27,3 +27,7 @@ Validation with isolated Node 24.22.2/npm 11.21.2:
 - Author technical, copy, visual and privacy-boundary review completed; no structural change or new dependency. Mobile feedback rendering inspected. Private-address exclusion scan passed.
 
 Logs and limitations are in the [integration handoff](../sessions/2026-11-10-email-contact-integration.md). Actual operator wording, hosting processing locations and request-log settings/retention are still missing, so the ticket is not marked done. No deployment, remote headers, provider account settings, database tests, real-device/non-Chromium/screen-reader checks, independent privacy/legal review or five-person acceptance was performed. Technical review is not legal compliance certification.
+
+## Public operator update — 2026-11-20
+
+The owner supplied the public operator identity and confirmed personally handling hosting and support; [DEC-10](../product/DECISIONS.md#dec-10-operator-update--2026-11-20) is the canonical decision. The French privacy catalogue now identifies the site/hosting/support operator and links readers to the existing support contact. Hosting provider configuration, processing locations and request-log availability/retention remain explicitly unverified; JUV-111 remains blocked for those facts. Validation and limits are recorded in the [public operator handoff](../sessions/2026-11-20-public-operator.md).

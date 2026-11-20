@@ -365,11 +365,11 @@ Requirements: DATA-06, DATA-07.
 
 References: [docs/product/DECISIONS.md](../../../docs/product/DECISIONS.md).
 
-Owner: Codex ; branch: feat/JUV-111-email-support.
+Owner: Codex ; branch: feat/JUV-111-public-operator.
 
-Evidence: docs/delivery/VALIDATION-JUV-111.md ; docs/sessions/2026-11-07-help-privacy-feedback.md ; docs/sessions/2026-11-10-email-support.md ; docs/sessions/2026-11-10-email-contact-integration.md.
+Evidence: docs/delivery/VALIDATION-JUV-111.md ; docs/sessions/2026-11-07-help-privacy-feedback.md ; docs/sessions/2026-11-10-email-support.md ; docs/sessions/2026-11-10-email-contact-integration.md ; docs/sessions/2026-11-20-public-operator.md.
 
-Blocker: Email contact integrated; owner confirmed two-way reception and manual deletion 90 days after closure. Public operator wording and actual hosting processing locations/request-log settings and retention remain unverified.
+Blocker: Email contact, two-way reception, 90-day manual deletion and public site/hosting/support operator wording are confirmed. Actual hosting service configuration, processing locations and request-log availability/settings/retention remain unverified.
 
 ---
 

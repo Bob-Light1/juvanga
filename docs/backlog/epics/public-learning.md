@@ -365,11 +365,11 @@ Requirements: DATA-06, DATA-07.
 
 References: [docs/product/DECISIONS.md](../../../docs/product/DECISIONS.md).
 
-Owner: Codex ; branch: feat/JUV-111-email-support.
+Owner: Codex ; branch: feat/JUV-111-public-operator.
 
-Evidence: docs/delivery/VALIDATION-JUV-111.md ; docs/sessions/2026-11-07-help-privacy-feedback.md ; docs/sessions/2026-11-10-email-support.md ; docs/sessions/2026-11-10-email-contact-integration.md.
+Evidence: docs/delivery/VALIDATION-JUV-111.md ; docs/sessions/2026-11-07-help-privacy-feedback.md ; docs/sessions/2026-11-10-email-support.md ; docs/sessions/2026-11-10-email-contact-integration.md ; docs/sessions/2026-11-20-public-operator.md ; docs/sessions/2026-11-20-account-security.md ; docs/sessions/2026-11-20-technical-bootstrap.md.
 
-Blocker: Email contact integrated; owner confirmed two-way reception and manual deletion 90 days after closure. Public operator wording and actual hosting processing locations/request-log settings and retention remain unverified.
+Blocker: Public operator, support reception/retention and account email/TOTP evidence are recorded. The owner authorized a publicly reachable nonindexable pages.dev technical bootstrap before acceptance; provider configuration, processing locations and request-log availability/retention remain to be verified. Official release is not authorized.
 
 ---
 
@@ -471,6 +471,6 @@ References: [docs/operations/DEPLOYMENT.md](../../../docs/operations/DEPLOYMENT.
 
 Owner: Codex ; branch: feat/JUV-114-domain-record.
 
-Evidence: docs/operations/M0-RELEASE.md ; docs/sessions/2026-11-07-release-preparation.md ; docs/sessions/2026-11-12-domain-registration.md ; docs/sessions/2026-11-20-cloudflare-repository-preparation.md.
+Evidence: docs/operations/M0-RELEASE.md ; docs/sessions/2026-11-07-release-preparation.md ; docs/sessions/2026-11-12-domain-registration.md ; docs/sessions/2026-11-20-cloudflare-repository-preparation.md ; docs/sessions/2026-11-20-technical-bootstrap.md.
 
-Blocker: JUV-113 acceptance is incomplete. Domain registration and owner Cloudflare access are evidenced; the 2026-11-20 screenshots show GitHub connected and the Pages build form populated, not a completed deployment. Application DNS/HTTPS, hosting operations, remote smoke and rollback remain unverified; JUV-111 operator/hosting details are pending. Owner authorized repository commits and PR preparation; release remains blocked.
+Blocker: Official release remains blocked by JUV-113 acceptance and operational verification. On 2026-11-20 the owner separately authorized a public nonindexable pages.dev technical bootstrap under JUV-111, without the custom domain; see DEC-10 and M0-RELEASE. No successful deployment, remote smoke or rollback is yet evidenced.

@@ -66,6 +66,14 @@ Consulted on 2026-11-10 after the owner supplied the Gmail contact: Google's off
 
 Consulted on 2026-11-20: Playwright's official [browser distributions and new headless mode](https://playwright.dev/docs/browsers#chromium-new-headless-mode). The `chromium` channel selects full Chromium instead of the default headless shell. The initial remote zoom test measured device pixel ratio 1 with the shell despite the profile's 200% preference; the dedicated persistent-context test now selects full Chromium by default and retains its measured 200% assertions. Explicit `PLAYWRIGHT_CHANNEL` overrides remain available. No application behavior, package or hosting architecture changed.
 
+## M0 owner account preparation — 2026-11-20
+
+Consulted Cloudflare's official [email verification](https://developers.cloudflare.com/fundamentals/user-profiles/verify-email-address/) and [two-factor authentication](https://developers.cloudflare.com/fundamentals/user-profiles/2fa/) instructions to guide the newly confirmed hosting/support operator through the account checks already listed in owner actions. Email verification status is displayed in My Profile; authentication methods are in Authentication. Email verification precedes 2FA enrollment. This is setup guidance only: no account, verification status, recovery code or authentication setting was inspected or changed. Hosting processing/log facts are still unverified.
+
+## M0 hosting privacy research scope — 2026-11-20
+
+Consulted the official [Pages data-localization guidance](https://developers.cloudflare.com/data-localization/how-to/pages/), [Pages Functions debugging/logging](https://developers.cloudflare.com/pages/functions/debugging-and-logging/) and [2026-10-02 analytics retention change](https://developers.cloudflare.com/changelog/post/2026-10-02-30-days-analytics-on-every-plan/) for the next JUV-111 hosting check. These distinguish Pages regional controls, Functions logs and analytics datasets; none establishes a specific retention period or region for Juvanga's not-yet-verified static Pages project. Do not apply Functions or domain-analytics defaults to static hosting, or infer account settings from general documentation. Actual project/plan/settings evidence remains pending.
+
 ## Order of authority
 
 Current user instruction → explicit project decisions → source requirements not superseded → documented assumptions. Resolve and trace significant contradictions; ADRs do not cancel financial requirements for technical convenience.

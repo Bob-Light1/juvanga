@@ -916,9 +916,10 @@
         "docs/sessions/2026-11-10-email-support.md",
         "docs/sessions/2026-11-10-email-contact-integration.md",
         "docs/sessions/2026-11-20-public-operator.md",
-        "docs/sessions/2026-11-20-account-security.md"
+        "docs/sessions/2026-11-20-account-security.md",
+        "docs/sessions/2026-11-20-technical-bootstrap.md"
       ],
-      "blocker": "Email contact, two-way reception, 90-day manual deletion and public site/hosting/support operator wording are confirmed. Actual hosting service configuration, processing locations and request-log availability/settings/retention remain unverified."
+      "blocker": "Public operator, support reception/retention and account email/TOTP evidence are recorded. The owner authorized a publicly reachable nonindexable pages.dev technical bootstrap before acceptance; provider configuration, processing locations and request-log availability/retention remain to be verified. Official release is not authorized."
     },
     {
       "id": "JUV-112",
@@ -1057,9 +1058,10 @@
         "docs/operations/M0-RELEASE.md",
         "docs/sessions/2026-11-07-release-preparation.md",
         "docs/sessions/2026-11-12-domain-registration.md",
-        "docs/sessions/2026-11-20-cloudflare-repository-preparation.md"
+        "docs/sessions/2026-11-20-cloudflare-repository-preparation.md",
+        "docs/sessions/2026-11-20-technical-bootstrap.md"
       ],
-      "blocker": "JUV-113 acceptance is incomplete. Domain registration and owner Cloudflare access are evidenced; the 2026-11-20 screenshots show GitHub connected and the Pages build form populated, not a completed deployment. Application DNS/HTTPS, hosting operations, remote smoke and rollback remain unverified; JUV-111 operator/hosting details are pending. Owner authorized repository commits and PR preparation; release remains blocked."
+      "blocker": "Official release remains blocked by JUV-113 acceptance and operational verification. On 2026-11-20 the owner separately authorized a public nonindexable pages.dev technical bootstrap under JUV-111, without the custom domain; see DEC-10 and M0-RELEASE. No successful deployment, remote smoke or rollback is yet evidenced."
     },
     {
       "id": "JUV-201",

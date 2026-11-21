@@ -21,6 +21,8 @@ The owner has registered the project domain and supplied evidence of Cloudflare 
 
 Before acceptance, verify the hosting provider/service configuration, processing locations and available request-log settings/retention, together with the chosen support provider's handling. Record evidence and date instead of copying generic provider defaults. No hosted project is currently verified. Current quotas, provider subdomain availability and the purchased domain's DNS/HTTPS attachment must be checked when the real project is configured; [the release record](M0-RELEASE.md) is authoritative for release evidence.
 
+The owner subsequently authorized a first publicly reachable nonindexable `pages.dev` technical bootstrap before acceptance. Follow [the scoped instructions](M0-RELEASE.md#technical-bootstrap-authorized--2026-11-20) to create the project needed for actual hosting checks. This is separate from the official launch in section 4; no custom-domain attachment or indexable release is authorized yet.
+
 ## 3. Make the course available for real acceptance
 
 The complete French course has editorial approval but no publication decision/timestamp in the public inventory. Identify the exact approved course version and explicitly decide its inclusion in the acceptance artifact. Codex can prepare the resulting artifact and validate it. Do not use the synthetic test course as learner content.

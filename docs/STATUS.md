@@ -1,6 +1,6 @@
 # Current status — Juvanga
 
-Updated on 2026-11-20. **F0 complete; M0 underway. JUV-101–110 done; JUV-111 email integrated, blocked on operator/hosting details; JUV-112 done; JUV-113/114 blocked after preparation. M1 local database foundation (JUV-201) done.**
+Updated on 2026-11-20. **F0 complete; M0 underway. JUV-101–110 done; JUV-111 email integrated, blocked on hosting details; JUV-112 done; JUV-113/114 blocked after preparation. M1 local database foundation (JUV-201) done.**
 
 ## Stable decisions
 
@@ -8,7 +8,7 @@ Juvanga; symbol B (J + sun); night/sand/gold; React/TypeScript/Vite/Motion. M0 i
 
 ## Repository
 
-PR #1 is merged at `77f0315`; its main CI passed. Local `main` was fast-forwarded and all seven merged local feature branches removed. JUV-111 is resumed/reassigned to Codex on `feat/JUV-111-public-operator` on 2026-11-20 for the owner-confirmed public operator wording. Use isolated Node 24/npm 11. Account email verification and active TOTP are recorded in the release record. No deployment.
+PR #1 is merged at `77f0315`; its main CI passed. Local `main` was fast-forwarded and all seven merged local feature branches removed. JUV-111 is resumed/reassigned to Codex on `feat/JUV-111-public-operator` on 2026-11-20 for the owner-confirmed public operator wording. Use isolated Node 24/npm 11. Account email verification and active TOTP are recorded. The owner authorized a public nonindexable technical bootstrap from this branch; deployment remains unverified.
 
 ## Current work and evidence
 
@@ -24,7 +24,7 @@ Previous learning delivery: [reader](delivery/VALIDATION-JUV-108.md), [practice]
 
 No real lessons are published: the approved French course remains editorial, with no publication timestamp; the public inventory is empty. Synthetic published content is test-only and must never remain in the default artifact.
 
-JUV-113: owner Codex; branch `feat/JUV-113-acceptance-preparation`; date 2026-11-07; status `blocked`; commit `c899564` (preparation only). It cannot enter active acceptance while JUV-111 is incomplete. Five real testers have no observations yet; the [protocol and blank observation sheet](reviews/M0-ACCEPTANCE.md) are prepared. JUV-114: owner Codex, reassigned for repository preparation; branch `feat/JUV-114-domain-record`; date 2026-11-20; status `blocked` (preparation only). **`juvanga.com` is purchased and active at Cloudflare Registrar**, evidenced by owner-supplied screenshots; see [registration facts and limits](operations/M0-RELEASE.md#domain-registration-evidence--2026-11-12). DNS/HTTPS attachment and email verification remain unverified. No production origin, hosting project, verified remote headers or rollback exists. Publication requires completed acceptance. Real testers, physical devices, non-Chromium, screen readers and independent learner review remain unverified.
+JUV-113: owner Codex; branch `feat/JUV-113-acceptance-preparation`; date 2026-11-07; status `blocked`; commit `c899564` (preparation only). It cannot enter active acceptance while JUV-111 is incomplete. Five real testers have no observations yet; the [protocol and blank observation sheet](reviews/M0-ACCEPTANCE.md) are prepared. JUV-114: owner Codex, reassigned for repository preparation; branch `feat/JUV-114-domain-record`; date 2026-11-20; status `blocked` (preparation only). **`juvanga.com` is purchased and active at Cloudflare Registrar**, evidenced by owner-supplied screenshots; see [registration facts and limits](operations/M0-RELEASE.md#domain-registration-evidence--2026-11-12). DNS/HTTPS attachment and email verification remain unverified. No production origin, hosting project, verified remote headers or rollback exists. Official release requires completed acceptance; the separately authorized technical bootstrap is described in [the release record](operations/M0-RELEASE.md#technical-bootstrap-authorized--2026-11-20). Real testers, physical devices, non-Chromium, screen readers and independent learner review remain unverified.
 
 No business backend, hosted database, real accounts, SMTP, synchronization or configured English translation. JUV-201 uses fictional local data only. ADR-005 requires review before real accounts. M0 course accountable owner/reviewer: project owner, self-appointed on 2026-11-07. Maintainer/C1 roles remain unassigned; the M0 hosting/support operator is confirmed; [decisions](product/DECISIONS.md).
 
@@ -32,4 +32,4 @@ Commands: `npm run context`, `npm run task -- JUV-111`, `npm run verify`, `npm r
 
 JUV-202 still depends on JUV-114. Full local verify passed (94 tests); 17 reader scenarios passed and the French noindex artifact was restored. CI on `f098d48` passed 94 tests, all 25 browser scenarios and two 39-assertion database cycles. [PR #1](https://github.com/Bob-Light1/juvanga/pull/1) is merged and its main CI passed. No deployment; DNS/HTTPS and human acceptance remain unverified.
 
-Latest handoff: [Account security](sessions/2026-11-20-account-security.md), [public operator](sessions/2026-11-20-public-operator.md). Prior: [Cloudflare repository preparation](sessions/2026-11-20-cloudflare-repository-preparation.md), [email contact integration](sessions/2026-11-10-email-contact-integration.md).
+Latest handoff: [Technical bootstrap](sessions/2026-11-20-technical-bootstrap.md). Prior: [account security](sessions/2026-11-20-account-security.md), [public operator](sessions/2026-11-20-public-operator.md).

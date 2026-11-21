@@ -6,6 +6,8 @@ Initial state: no provider account, cloud project, domain or secret is configure
 
 Cloudflare Pages Free with a `pages.dev` subdomain, static build. No domain purchase, database, SMTP or AI API needed. Exact domain depends on availability. Human effort, test device and internet connection are excluded from “free hosting”.
 
+The owner authorized a first public nonindexable technical bootstrap on 2026-11-20 before the official-release checklist below. Follow [the scoped bootstrap procedure](M0-RELEASE.md#technical-bootstrap-authorized--2026-11-20) using the preparation branch, without `SITE_URL` or custom-domain attachment. The following numbered checklist remains the official-release procedure.
+
 1. Complete JUV-113, select a clean commit and produce a RELEASE record.
 2. Create an owner-controlled remote repository and Pages project. For Git integration: project root = repository; build command `npm ci && npm run build`; output `apps/web/dist`; Node 24 and npm 11.21.2 in the build environment. Verify actual versions; otherwise build in CI and upload dist.
 3. JUV-106 generates extensionless home/catalogue/course HTML and a top-level `404.html`. Use the complete `npm run build` artifact; do not add a wildcard SPA rewrite to home. Verify direct links, refresh and real 404 status on the chosen host.

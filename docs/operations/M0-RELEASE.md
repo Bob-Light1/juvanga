@@ -1,7 +1,7 @@
 # M0 release and rollback record
 
 Updated: 2026-11-20. Preparation owner: Codex, reassigned for repository and hosting preparation. Branch: `feat/JUV-114-domain-record`.
-Status: **blocked; no deployment, publication or rollback executed**.
+Status: **official release blocked; technical bootstrap authorized separately; no successful deployment or rollback evidenced**.
 
 ## Current record
 
@@ -12,7 +12,7 @@ Status: **blocked; no deployment, publication or rollback executed**.
 | Public HTTPS origin / domain | Domain registered; see registration evidence below. Application origin, DNS attachment and HTTPS not configured or verified |
 | Accepted release commit / artifact hash | Not selected; latest implementation evidence is [JUV-112](../delivery/VALIDATION-JUV-112.md) |
 | Real published course version | None; approved course remains editorial |
-| Real support URL and reception test | Email contact and owner-reported two-way reception recorded in [JUV-111 evidence](../delivery/VALIDATION-JUV-111.md); operator/hosting details remain pending |
+| Real support URL and reception test | Email reception/retention and operator wording recorded in [JUV-111 evidence](../delivery/VALIDATION-JUV-111.md); actual hosting facts remain pending |
 | Hosting logs, location, retention and feedback policy | Not verified; DEC-10 remains open |
 | Free-plan quotas / owning account / check date | Not verified for a real project; recheck at release |
 | Production deployment ID / operator / UTC timestamp | None |
@@ -33,7 +33,7 @@ The project owner purchased **`juvanga.com`** through **Cloudflare Registrar**. 
 
 This supersedes the previous missing-domain state. The domain is already registered for the project, not merely available to purchase. Evidence is limited to the owner's screenshots; no independent registry or account inspection was performed. Personal details and screenshot copies are not stored in the repository.
 
-DNS records, DNSSEC, registrant email verification, account two-factor authentication, hosting attachment, a working public HTTPS application and domain-based email remain unverified. Leave `SITE_URL` unset until the release gates and actual application origin are verified. Purchasing the domain does not publish the application or complete JUV-114. Next: prepare the owner-controlled hosting project and validate DNS/HTTPS during the gated release procedure below.
+At registration, DNS records, DNSSEC, registrant email verification, account two-factor authentication, hosting attachment, a working public HTTPS application and domain-based email were unverified. Later account-security evidence is recorded below. Leave `SITE_URL` unset until the release gates and actual application origin are verified. Purchasing the domain does not publish the application or complete JUV-114.
 
 ## Pages setup evidence — 2026-11-20
 
@@ -47,7 +47,21 @@ The owner reported that the Cloudflare account email is marked `(verified)`. The
 
 This records owner-reported email verification and screenshot evidence of the displayed 2FA state, not independent account access. It does not establish domain registrant email confirmation, hosting project creation, privacy/log settings or deployment. The confirmed site/hosting/support operator is recorded in [DEC-10](../product/DECISIONS.md#dec-10-operator-update--2026-11-20).
 
-## Entry checklist (not executed)
+## Project inventory evidence — 2026-11-20
+
+The owner-supplied Workers & Pages screenshot dated 2026-11-20 18:27 Africa/Douala shows one unrelated application and no `juvanga` project. Preserve the unrelated application. This establishes the displayed inventory, not current quotas or an existing Juvanga deployment. Account identifiers and screenshot copies are not retained.
+
+## Technical bootstrap authorized — 2026-11-20
+
+The owner explicitly authorized this first publicly reachable technical deployment before acceptance; [DEC-10](../product/DECISIONS.md#dec-10-technical-bootstrap-update--2026-11-20) records the scoped change in order. This enables actual hosting checks and does not complete or waive the official-release gates below.
+
+1. Push the validated `feat/JUV-111-public-operator` branch, which includes the latest owner-confirmed public notice. Confirm the remote commit and CI evidence before instructing the owner to deploy.
+2. Resume the existing Pages Git setup for `juvanga`, or use Workers & Pages > Create application > Pages and connect the same repository. Use project name `juvanga` (subject to availability); select `feat/JUV-111-public-operator` as the **Production branch** for this technical project. Use React (Vite), repository root (empty root-directory field), `npm ci && npm run build`, output `apps/web/dist` and `NODE_VERSION=24`. Keep `SITE_URL` absent and synthetic/pseudo-locale build variables absent. The provider's production-branch label does not mean official launch approval.
+3. The owner may select **Save and Deploy** within this approved scope. Keep the free plan; no paid upgrade, custom-domain attachment or new analytics service is authorized. Record the actual selected service/plan and Node/npm versions from the resulting project/build logs rather than inferring them from account usage widgets.
+4. Report the resulting deployment URL, commit and deployment ID, or the relevant build error. Verify remote HTTPS, static links/404, noindex, headers/CSP, the operator wording and normal public-content boundaries. Record actual project options and request-log/processing facts for JUV-111. Do not describe an unverified `pages.dev` address as a successful deployment or noindex as access control.
+5. Keep `juvanga.com` unattached and `SITE_URL` unset. Complete hosting/support notice verification and JUV-113 real-user acceptance before official launch. Merge reviewed changes into `main` and update the Pages serving branch before the official-release procedure. Keep the serving branch until that switch is verified.
+
+## Official-release entry checklist (not executed)
 
 1. Complete JUV-111 and JUV-113; record the five real consenting tester sessions, resolved defects and named acceptance review. Select the actual accepted course and code versions. Do not use synthetic reader fixtures in a deployment.
 2. Configure an owner-controlled Pages account/project and appoint the release/incident operator. Confirm the free plan, current build/file/transfer limits, availability of the proposed subdomain and no automatic paid upgrade. Record account ownership without credentials or personal account identifiers in public documentation.

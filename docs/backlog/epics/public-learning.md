@@ -365,11 +365,11 @@ Requirements: DATA-06, DATA-07.
 
 References: [docs/product/DECISIONS.md](../../../docs/product/DECISIONS.md).
 
-Owner: Codex ; branch: feat/JUV-111-public-operator.
+Owner: Claude ; branch: feat/JUV-111-hosting-evidence.
 
-Evidence: docs/delivery/VALIDATION-JUV-111.md ; docs/sessions/2026-11-07-help-privacy-feedback.md ; docs/sessions/2026-11-10-email-support.md ; docs/sessions/2026-11-10-email-contact-integration.md ; docs/sessions/2026-11-20-public-operator.md ; docs/sessions/2026-11-20-account-security.md ; docs/sessions/2026-11-20-technical-bootstrap.md.
+Evidence: docs/delivery/VALIDATION-JUV-111.md ; docs/sessions/2026-11-07-help-privacy-feedback.md ; docs/sessions/2026-11-10-email-support.md ; docs/sessions/2026-11-10-email-contact-integration.md ; docs/sessions/2026-11-20-public-operator.md ; docs/sessions/2026-11-20-account-security.md ; docs/sessions/2026-11-20-technical-bootstrap.md ; docs/sessions/2026-11-21-technical-deployment.md.
 
-Blocker: Public operator, support reception/retention and account email/TOTP evidence are recorded. The owner authorized a publicly reachable nonindexable pages.dev technical bootstrap before acceptance; provider configuration, processing locations and request-log availability/retention remain to be verified. Official release is not authorized.
+Blocker: Public operator, support reception/retention and account evidence are recorded. The nonindexable pages.dev technical deployment of 7f78d38 is verified remotely. Build settings are recorded. No precise log retention was found. The owner validated the corrected French notice and reported Web Analytics and Logpush inactive; it awaits merge to main, deployment and remote verification. Official release is not authorized.
 
 ---
 

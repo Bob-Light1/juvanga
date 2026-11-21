@@ -42,7 +42,6 @@ export function writePwa(out, routes) {
   const initialImageBytes = homeImages.reduce((sum, file) => sum + fs.statSync(path.join(out, file)).size, 0);
   if (javascriptGzipBytes > 250 * 1024 || initialImageBytes > 300 * 1024) throw new Error('Public build exceeds the JavaScript or initial-image budget');
   const report = { cacheName, javascriptGzipBytes, javascriptBudgetBytes: 250 * 1024, initialImageBytes, initialImageBudgetBytes: 300 * 1024, precacheCount: precache.length, optionalMediaCount: optional.length };
-  fs.writeFileSync(path.join(out, 'build-report.json'), JSON.stringify(report, null, 2) + '\n');
-  console.log(`Public PWA: ${javascriptGzipBytes} bytes gzip JS; ${initialImageBytes} bytes initial images; ${precache.length} public resources.`);
+  console.log(`Public PWA: ${cacheName}; ${javascriptGzipBytes} bytes gzip JS; ${initialImageBytes} bytes initial images; ${precache.length} public resources.`);
   return { cacheName, precache, optional, report };
 }

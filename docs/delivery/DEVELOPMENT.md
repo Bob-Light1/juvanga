@@ -98,7 +98,7 @@ JUV-110 adds a noindex `/progress` page with optional consent and targeted erasu
 
 ## Public offline snapshot
 
-The complete build now emits `/manifest.webmanifest`, `/sw.js`, a standalone `/offline` page and `build-report.json`. Only generated public pages and selected static assets are precached. Published illustrations are optional and cached after a request. Progress, workshop, API/account routes and URLs with query strings are excluded. The worker is registered only in production builds. Cache installation and browser eviction can fail; a saved reading position alone does not guarantee offline availability.
+The complete build now emits `/manifest.webmanifest`, `/sw.js` and a standalone `/offline` page; build metrics are printed to the build log and are not published. Only generated public pages and selected static assets are precached. Published illustrations are optional and cached after a request. Progress, workshop, API/account routes and URLs with query strings are excluded. The worker is registered only in production builds. Cache installation and browser eviction can fail; a saved reading position alone does not guarantee offline availability.
 
 A new release waits for an explicit reload (or closure of old tabs). Finish an exercise before accepting; its text is intentionally ephemeral. Consent and reading storage survive worker activation. The privacy notice explains how browser site-data settings clear public copies separately from targeted reading erasure. [ADR-013](../architecture/decisions/013-public-offline.md) defines the boundary and future migration.
 

@@ -74,6 +74,10 @@ Consulted Cloudflare's official [email verification](https://developers.cloudfla
 
 Consulted the official [Pages data-localization guidance](https://developers.cloudflare.com/data-localization/how-to/pages/), [Pages Functions debugging/logging](https://developers.cloudflare.com/pages/functions/debugging-and-logging/) and [2026-10-02 analytics retention change](https://developers.cloudflare.com/changelog/post/2026-10-02-30-days-analytics-on-every-plan/) for the next JUV-111 hosting check. These distinguish Pages regional controls, Functions logs and analytics datasets; none establishes a specific retention period or region for Juvanga's not-yet-verified static Pages project. Do not apply Functions or domain-analytics defaults to static hosting, or infer account settings from general documentation. Actual project/plan/settings evidence remains pending.
 
+## M0 hosting notice research — 2026-11-21
+
+Consulted the official [Pages data-localization guidance](https://developers.cloudflare.com/data-localization/how-to/pages/), [Logs FAQ](https://developers.cloudflare.com/logs/faq/general-faq/) and search excerpts of the [Privacy Policy](https://www.cloudflare.com/privacypolicy/) and [DPA v6.3](https://cf-assets.www.cloudflare.com/slt3lc6tev37/3LmXORq5FW5EuJ0OT1B871/f466268011407efbc07f4fadbd1af466/Cloudflare_Customer_DPA_v6.3_June_20__2025.pdf). Cloudflare acts as processor for Customer Logs, which can include IP addresses; the DPA covers self-serve agreements; Regional Services do not apply to `*.pages.dev`. No precise retention period for static Pages request logs was found. The full policy and DPA could not be opened from the Camtel connection, so their current text was not read end to end. This is not legal advice.
+
 ## Order of authority
 
 Current user instruction → explicit project decisions → source requirements not superseded → documented assumptions. Resolve and trace significant contradictions; ADRs do not cancel financial requirements for technical convenience.

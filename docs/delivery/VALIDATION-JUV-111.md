@@ -1,7 +1,7 @@
 # JUV-111 — Help, privacy and feedback
 
 Owner: Codex. Branch: `feat/JUV-111-help-privacy-feedback`. Date: 2026-11-07.
-Current status: email and public operator wording integrated; blocked on actual hosting details. The dated sections below preserve earlier evidence.
+Current status: email, public operator wording and nonindexable technical deployment verified; blocked on hosting log/location facts and the resulting notice update. The dated sections below preserve earlier evidence.
 
 `/help`, `/privacy` and `/feedback` are statically rendered and linked in the public footer. French copy lives in the shared catalogue. Help explains the actual unpublished/published course boundary, practice and optional resume. The notice describes the exact local record, no automatic expiry, targeted erasure and its failure fallback; exercise text is ephemeral. Hosting requests are distinguished from local storage. No provider, location or log retention is invented.
 
@@ -31,3 +31,7 @@ Logs and limitations are in the [integration handoff](../sessions/2026-11-10-ema
 ## Public operator update — 2026-11-20
 
 The owner supplied the public operator identity and confirmed personally handling hosting and support; [DEC-10](../product/DECISIONS.md#dec-10-operator-update--2026-11-20) is the canonical decision. The French privacy catalogue now identifies the site/hosting/support operator and links readers to the existing support contact. Hosting provider configuration, processing locations and request-log availability/retention remain explicitly unverified; JUV-111 remains blocked for those facts. Validation and limits are recorded in the [public operator handoff](../sessions/2026-11-20-public-operator.md).
+
+## Technical deployment update — 2026-11-21
+
+The remote deployment of `7f78d38` passed the checks in the [release evidence](../operations/M0-RELEASE.md#technical-deployment-evidence--2026-11-21). JUV-111 stays blocked: request-log availability/retention and processing locations are unverified, and the live French notice still says public hosting is not configured. The owner validated the corrected notice on 2026-11-21 and reported Web Analytics and Logpush inactive; those settings were not independently inspected. The correction is not deployed yet.

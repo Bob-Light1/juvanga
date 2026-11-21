@@ -1,24 +1,24 @@
 # M0 release and rollback record
 
-Updated: 2026-11-20. Preparation owner: Codex, reassigned for repository and hosting preparation. Branch: `feat/JUV-114-domain-record`.
-Status: **official release blocked; technical bootstrap authorized separately; no successful deployment or rollback evidenced**.
+Updated: 2026-11-21. JUV-114 preparation owner: Codex, branch `feat/JUV-114-domain-record`. JUV-111 hosting evidence owner: Claude, branch `feat/JUV-111-hosting-evidence`.
+Status: **official release blocked; nonindexable technical deployment verified; rollback not run**.
 
 ## Current record
 
 | Field | Verified state |
 | --- | --- |
 | JUV-113 acceptance | Incomplete; [entry gates and observation report](../reviews/M0-ACCEPTANCE.md) |
-| Owner-controlled Cloudflare access/project | Owner dashboard access and GitHub connection evidenced; Pages setup form populated on 2026-11-20. No completed project/deployment or Codex account access verified |
-| Public HTTPS origin / domain | Domain registered; see registration evidence below. Application origin, DNS attachment and HTTPS not configured or verified |
+| Owner-controlled Cloudflare access/project | Pages project `juvanga` shown in owner screenshot; see [technical deployment evidence](#technical-deployment-evidence--2026-11-21). No agent account access |
+| Public HTTPS origin / domain | Technical origin `https://juvanga.pages.dev` verified. `juvanga.com` remains unattached; official origin not configured |
 | Accepted release commit / artifact hash | Not selected; latest implementation evidence is [JUV-112](../delivery/VALIDATION-JUV-112.md) |
 | Real published course version | None; approved course remains editorial |
 | Real support URL and reception test | Email reception/retention and operator wording recorded in [JUV-111 evidence](../delivery/VALIDATION-JUV-111.md); actual hosting facts remain pending |
-| Hosting logs, location, retention and feedback policy | Not verified; DEC-10 remains open |
-| Free-plan quotas / owning account / check date | Not verified for a real project; recheck at release |
-| Production deployment ID / operator / UTC timestamp | None |
+| Hosting logs, location, retention and feedback policy | Provider role and possible transfers documented; no precise log retention found; corrected notice owner-validated on 2026-11-21, not yet deployed |
+| Free-plan quotas / owning account / check date | Plan and quotas not displayed in the supplied screenshots; recheck at release |
+| Production deployment ID / operator / UTC timestamp | Technical deployment `a449b027-aa67-4ed2-a0f0-0637f8f2d34a`, commit `7f78d38`, 2026-11-21T15:34:48Z. No official production release |
 | Previous compatible deployment / rollback target | None |
 | Actual rollback and restoration results | Not run |
-| Remote HTTPS, headers, deep-link and installed-worker smoke | Not run |
+| Remote HTTPS, headers, deep-link and installed-worker smoke | Passed for the technical deployment; official-release smoke not run |
 
 The [deployment procedure](DEPLOYMENT.md) and [recorded sources](../SOURCES.md) retain prior provider research and its date. This update records owner-supplied screenshots, not independent account access or a fresh provider check. Current hosting limits remain unverified. Do not invent a production origin or store credentials or personal account identifiers in this record.
 
@@ -60,6 +60,26 @@ The owner explicitly authorized this first publicly reachable technical deployme
 3. The owner may select **Save and Deploy** within this approved scope. Keep the free plan; no paid upgrade, custom-domain attachment or new analytics service is authorized. Record the actual selected service/plan and Node/npm versions from the resulting project/build logs rather than inferring them from account usage widgets.
 4. Report the resulting deployment URL, commit and deployment ID, or the relevant build error. Verify remote HTTPS, static links/404, noindex, headers/CSP, the operator wording and normal public-content boundaries. Record actual project options and request-log/processing facts for JUV-111. Do not describe an unverified `pages.dev` address as a successful deployment or noindex as access control.
 5. Keep `juvanga.com` unattached and `SITE_URL` unset. Complete hosting/support notice verification and JUV-113 real-user acceptance before official launch. Merge reviewed changes into `main` and update the Pages serving branch before the official-release procedure. Keep the serving branch until that switch is verified.
+
+## Technical deployment evidence — 2026-11-21
+
+An owner-supplied screenshot shows Pages project `juvanga`, production source `main` at `7f78d38`, deployment `https://a449b027.juvanga.pages.dev`, success status, automatic deployments and domain `juvanga.pages.dev`. [DEC-10](../product/DECISIONS.md#dec-10-technical-deployment-update--2026-11-21) records the serving-branch change.
+
+Read-only checks from Camtel (AS15964) on 2026-11-21:
+
+- All 28 public files compared by SHA-256 matched a local build of the same application tree. Five needed a later retry after network errors.
+- Unknown routes returned HTTP 404; `/_headers` was not served.
+- CSP, nosniff, referrer, frame and permissions headers were effective. `X-Robots-Tag: noindex, nofollow` and `robots.txt` block indexing. Noindex is not access control.
+- `/privacy` displays the confirmed operator. The artifact contains no published lesson.
+- Headless Chrome at 360 px loaded nine routes without console errors, failed requests or horizontal overflow. The service worker became active at scope `/`.
+
+Findings on the deployed artifact: `/build-report.json` is public; it holds non-secret build metrics but is unnecessary. The French notice says public hosting is not configured. Branch `feat/JUV-111-hosting-evidence` prepares both corrections; the owner validated the notice on 2026-11-21 and reported Web Analytics and Logpush inactive. Neither correction is deployed yet.
+
+Supplied settings and build log show an empty root directory, `npm ci && npm run build`, output `apps/web/dist`, `NODE_VERSION=24`, Node 24.22.1, npm 11.21.2, build system version 3, disabled build cache, no deploy hooks and automatic deployments from `main`.
+
+Camtel did not reach some sampled Cloudflare ranges (`104.16.112.0/20`, `104.22.0.0/15`, `172.67.0.0/18`) during this check. The two current `juvanga.pages.dev` addresses in `172.66.0.0/16` worked, with intermittent TLS errors in one run and 20/20 requests in a later run. Test any custom-domain addresses from Camtel before launch.
+
+Not verified: plan and quotas, actual request-log contents, precise log retention, exact processing locations, independent inspection of the Web Analytics and Logpush settings, rollback, real devices, non-Chromium browsers, screen readers and testers.
 
 ## Official-release entry checklist (not executed)
 

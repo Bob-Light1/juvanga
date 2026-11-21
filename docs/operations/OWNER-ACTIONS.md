@@ -1,6 +1,6 @@
 # Owner actions to unblock M0
 
-Updated: 2026-11-20. This guide distinguishes owner-reported preparation from pending configuration and acceptance. M1 local database preparation in JUV-201 is independent of these gates. No account creation, invitation, message or deployment has been executed by this checklist.
+Updated: 2026-11-21. This guide distinguishes owner-reported preparation from pending configuration and acceptance. M1 local database preparation in JUV-201 is independent of these gates. No account creation, invitation, message or deployment has been executed by this checklist.
 
 ## 1. Operate the verified support mailbox
 
@@ -19,7 +19,7 @@ The website displays only the supplied public address, a native email link and a
 
 The owner has registered the project domain and supplied evidence of Cloudflare dashboard access; see [the registration record](M0-RELEASE.md#domain-registration-evidence--2026-11-12). Use the owner-controlled account for M0 hosting with the confirmed operator recorded in DEC-10, and arrange authorized access through the normal account controls. The account email and TOTP checks are recorded in the [account evidence](M0-RELEASE.md#cloudflare-account-security-evidence--2026-11-20). Registrant email confirmation remains a separate unverified check. Do not send passwords, API tokens or recovery codes in chat. Account preparation is distinct from publishing the application.
 
-Before acceptance, verify the hosting provider/service configuration, processing locations and available request-log settings/retention, together with the chosen support provider's handling. Record evidence and date instead of copying generic provider defaults. No hosted project is currently verified. Current quotas, provider subdomain availability and the purchased domain's DNS/HTTPS attachment must be checked when the real project is configured; [the release record](M0-RELEASE.md) is authoritative for release evidence.
+Before acceptance, verify the hosting provider/service configuration, processing locations and available request-log settings/retention, together with the chosen support provider's handling. Record evidence and date instead of copying generic provider defaults. The [technical deployment](M0-RELEASE.md#technical-deployment-evidence--2026-11-21) is verified on `juvanga.pages.dev`; its plan, logs and processing locations are not. Current quotas, provider subdomain availability and the purchased domain's DNS/HTTPS attachment must be checked when the real project is configured; [the release record](M0-RELEASE.md) is authoritative for release evidence.
 
 The owner subsequently authorized a first publicly reachable nonindexable `pages.dev` technical bootstrap before acceptance. Follow [the scoped instructions](M0-RELEASE.md#technical-bootstrap-authorized--2026-11-20) to create the project needed for actual hosting checks. This is separate from the official launch in section 4; no custom-domain attachment or indexable release is authorized yet.
 

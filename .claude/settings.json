@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "ask": [
+      "Read(/docs/first_docs/*.pdf)",
+      "Read(/docs/logo_choice/**)",
+      "Read(/package-lock.json)",
+      "Edit(/AGENTS.md)",
+      "Edit(/docs/first_docs/**)",
+      "Edit(/docs/logo_choice/**)"
+    ],
+    "deny": [
+      "Read(/.env)",
+      "Read(/.env.local)",
+      "Read(/.env.production)",
+      "Read(/.dev.vars)",
+      "Edit(/.env)",
+      "Edit(/.env.local)",
+      "Edit(/.env.production)",
+      "Edit(/.dev.vars)",
+      "Read(~/.codex/auth.json)",
+      "Edit(~/.codex/**)"
+    ]
+  }
+}

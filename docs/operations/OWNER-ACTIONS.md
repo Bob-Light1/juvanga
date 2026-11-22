@@ -11,9 +11,9 @@ The owner also confirmed manual tracking of closure/deletion dates and deletion 
 The remaining owner actions are:
 
 1. Monitor the public mailbox and maintain the agreed closure/deletion calendar. Include received/sent copies and any copies subsequently created under the operator's control; no forwarding is needed.
-2. Verify the actual provider/hosting details needed for the privacy notice, following section 2. The public site/hosting/support operator is confirmed in [DEC-10](../product/DECISIONS.md#dec-10-operator-update--2026-11-20). Keep private messages and personal test addresses outside the repository.
+2. Keep the published hosting notice accurate if Cloudflare settings change, including Web Analytics or Logpush. The public site/hosting/support operator is confirmed in [DEC-10](../product/DECISIONS.md#dec-10-operator-update--2026-11-20). Keep private messages and personal test addresses outside the repository.
 
-The website displays only the supplied public address, a native email link and a selectable fallback. Clicking does not send mail or prove delivery. The French notice explains purpose/data, the selected retention rule, provider-managed retention and the separation from local reading erasure. The website sends no automatic message and needs no SMTP integration for this link. The contact and reception gates are satisfied; JUV-111 remains incomplete pending the remaining hosting/privacy details; see [validation](../delivery/VALIDATION-JUV-111.md).
+The website displays only the supplied public address, a native email link and a selectable fallback. Clicking does not send mail or prove delivery. The French notice explains purpose/data, the selected retention rule, provider-managed retention and the separation from local reading erasure. The website sends no automatic message and needs no SMTP integration for this link. The contact and reception gates are satisfied; JUV-111 is complete; see [validation](../delivery/VALIDATION-JUV-111.md).
 
 ## 2. Prepare owner-controlled hosting and the notice
 
@@ -27,7 +27,7 @@ The owner subsequently authorized a first publicly reachable nonindexable `pages
 
 The complete French course has editorial approval but no publication decision/timestamp in the public inventory. Identify the exact approved course version and explicitly decide its inclusion in the acceptance artifact. Codex can prepare the resulting artifact and validate it. Do not use the synthetic test course as learner content.
 
-Appoint the facilitator/reviewer and recruit five consenting real testers, including a physical mobile device and the required keyboard/accessibility/network coverage. Choose how long participant records are retained outside the repository. After JUV-111 is complete, run the [acceptance protocol](../reviews/M0-ACCEPTANCE.md), record anonymous observations and review the result. Recruitment and device use require real people; automated tests do not replace them.
+Appoint the facilitator/reviewer and recruit five consenting real testers, including a physical mobile device and the required keyboard/accessibility/network coverage. Choose how long participant records are retained outside the repository. JUV-111 is complete. After the course publication decision, run the [acceptance protocol](../reviews/M0-ACCEPTANCE.md), record anonymous observations and review the result. Recruitment and device use require real people; automated tests do not replace them.
 
 ## 4. Approve and execute the release after acceptance
 

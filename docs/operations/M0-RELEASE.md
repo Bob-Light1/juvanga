@@ -1,6 +1,6 @@
 # M0 release and rollback record
 
-Updated: 2026-11-21. JUV-114 preparation owner: Codex, branch `feat/JUV-114-domain-record`. JUV-111 hosting evidence owner: Claude, branch `feat/JUV-111-hosting-evidence`.
+Updated: 2026-11-21. JUV-114 preparation owner: Codex, branch `feat/JUV-114-domain-record`. JUV-111 closure owner: Claude, branch `docs/JUV-111-closure`.
 Status: **official release blocked; nonindexable technical deployment verified; rollback not run**.
 
 ## Current record
@@ -12,11 +12,11 @@ Status: **official release blocked; nonindexable technical deployment verified; 
 | Public HTTPS origin / domain | Technical origin `https://juvanga.pages.dev` verified. `juvanga.com` remains unattached; official origin not configured |
 | Accepted release commit / artifact hash | Not selected; latest implementation evidence is [JUV-112](../delivery/VALIDATION-JUV-112.md) |
 | Real published course version | None; approved course remains editorial |
-| Real support URL and reception test | Email reception/retention and operator wording recorded in [JUV-111 evidence](../delivery/VALIDATION-JUV-111.md); actual hosting facts remain pending |
-| Hosting logs, location, retention and feedback policy | Provider role and possible transfers documented; no precise log retention found; corrected notice owner-validated on 2026-11-21, not yet deployed |
+| Real support URL and reception test | Email reception/retention and operator wording recorded in [JUV-111 evidence](../delivery/VALIDATION-JUV-111.md); hosting notice deployed |
+| Hosting logs, location, retention and feedback policy | Provider role and possible transfers documented; no precise log retention found; owner-validated notice deployed on 2026-11-21; Web Analytics/Logpush state owner-reported |
 | Free-plan quotas / owning account / check date | Plan and quotas not displayed in the supplied screenshots; recheck at release |
-| Production deployment ID / operator / UTC timestamp | Technical deployment `a449b027-aa67-4ed2-a0f0-0637f8f2d34a`, commit `7f78d38`, 2026-11-21T15:34:48Z. No official production release |
-| Previous compatible deployment / rollback target | None |
+| Production deployment ID / operator / UTC timestamp | Latest technical deployment serves `260ddbf` (ID not supplied). Earlier: `a449b027-aa67-4ed2-a0f0-0637f8f2d34a`, `7f78d38`, 2026-11-21T15:34:48Z. No official production release |
+| Previous compatible deployment / rollback target | `a449b027` exists; compatibility and rollback not tested |
 | Actual rollback and restoration results | Not run |
 | Remote HTTPS, headers, deep-link and installed-worker smoke | Passed for the technical deployment; official-release smoke not run |
 
@@ -80,6 +80,12 @@ Supplied settings and build log show an empty root directory, `npm ci && npm run
 Camtel did not reach some sampled Cloudflare ranges (`104.16.112.0/20`, `104.22.0.0/15`, `172.67.0.0/18`) during this check. The two current `juvanga.pages.dev` addresses in `172.66.0.0/16` worked, with intermittent TLS errors in one run and 20/20 requests in a later run. Test any custom-domain addresses from Camtel before launch.
 
 Not verified: plan and quotas, actual request-log contents, precise log retention, exact processing locations, independent inspection of the Web Analytics and Logpush settings, rollback, real devices, non-Chromium browsers, screen readers and testers.
+
+## Corrected notice deployment evidence — 2026-11-21
+
+This supersedes the undeployed-correction state above. `main` at `260ddbf` passed Quality CI. All 28 compared public files matched a local build of the identical tree, and cache `juvanga-public-2aab75674ca10db0889a` is live. `/privacy` shows the owner-validated notice. Nine routes passed in headless Chrome at 360 px with the service worker active.
+
+`/build-report.json` is absent from the new deployment: a cache-busted request returned 404. The plain URL still returned a stale edge-cache copy of the non-secret report (`cf-cache-status: HIT`).
 
 ## Official-release entry checklist (not executed)
 

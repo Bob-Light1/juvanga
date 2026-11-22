@@ -883,9 +883,9 @@
         2
       ],
       "priority": "P0",
-      "status": "blocked",
+      "status": "done",
       "owner": "Claude",
-      "branch": "feat/JUV-111-hosting-evidence",
+      "branch": "docs/JUV-111-closure",
       "updated_at": "2026-11-21",
       "depends_on": [
         "JUV-106"
@@ -920,7 +920,7 @@
         "docs/sessions/2026-11-20-technical-bootstrap.md",
         "docs/sessions/2026-11-21-technical-deployment.md"
       ],
-      "blocker": "Public operator, support reception/retention and account evidence are recorded. The nonindexable pages.dev technical deployment of 7f78d38 is verified remotely. Build settings are recorded. No precise log retention was found. The owner validated the corrected French notice and reported Web Analytics and Logpush inactive; it awaits merge to main, deployment and remote verification. Official release is not authorized."
+      "blocker": null
     },
     {
       "id": "JUV-112",
@@ -984,7 +984,7 @@
       "status": "blocked",
       "owner": "Codex",
       "branch": "feat/JUV-113-acceptance-preparation",
-      "updated_at": "2026-11-07",
+      "updated_at": "2026-11-21",
       "depends_on": [
         "JUV-106",
         "JUV-109",
@@ -1016,7 +1016,7 @@
         "docs/reviews/M0-ACCEPTANCE.md",
         "docs/sessions/2026-11-07-acceptance-preparation.md"
       ],
-      "blocker": "JUV-111 is incomplete. Five consenting real testers have no observations yet (owner confirmation, 2026-11-07); the real course is not in the published inventory. Preparation only; acceptance cannot be activated."
+      "blocker": "Five consenting real testers have no observations yet (owner confirmation, 2026-11-07); the approved course is not in the published inventory and needs an explicit owner publication decision. Preparation only; acceptance cannot be activated."
     },
     {
       "id": "JUV-114",

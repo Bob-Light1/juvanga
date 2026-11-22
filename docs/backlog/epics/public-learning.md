@@ -341,7 +341,7 @@ Evidence: apps/web/src/ProgressPanel.tsx ; apps/web/src/progress/progress.ts ; a
 
 ## JUV-111 — Add help, privacy and real feedback
 
-Milestone **M0** · Product/frontend · 1–2 person-days · status **blocked**
+Milestone **M0** · Product/frontend · 1–2 person-days · status **done**
 
 Dependencies: JUV-106.
 
@@ -365,11 +365,9 @@ Requirements: DATA-06, DATA-07.
 
 References: [docs/product/DECISIONS.md](../../../docs/product/DECISIONS.md).
 
-Owner: Claude ; branch: feat/JUV-111-hosting-evidence.
+Owner: Claude ; branch: docs/JUV-111-closure.
 
 Evidence: docs/delivery/VALIDATION-JUV-111.md ; docs/sessions/2026-11-07-help-privacy-feedback.md ; docs/sessions/2026-11-10-email-support.md ; docs/sessions/2026-11-10-email-contact-integration.md ; docs/sessions/2026-11-20-public-operator.md ; docs/sessions/2026-11-20-account-security.md ; docs/sessions/2026-11-20-technical-bootstrap.md ; docs/sessions/2026-11-21-technical-deployment.md.
-
-Blocker: Public operator, support reception/retention and account evidence are recorded. The nonindexable pages.dev technical deployment of 7f78d38 is verified remotely. Build settings are recorded. No precise log retention was found. The owner validated the corrected French notice and reported Web Analytics and Logpush inactive; it awaits merge to main, deployment and remote verification. Official release is not authorized.
 
 ---
 
@@ -438,7 +436,7 @@ Owner: Codex ; branch: feat/JUV-113-acceptance-preparation.
 
 Evidence: docs/reviews/M0-ACCEPTANCE.md ; docs/sessions/2026-11-07-acceptance-preparation.md.
 
-Blocker: JUV-111 is incomplete. Five consenting real testers have no observations yet (owner confirmation, 2026-11-07); the real course is not in the published inventory. Preparation only; acceptance cannot be activated.
+Blocker: Five consenting real testers have no observations yet (owner confirmation, 2026-11-07); the approved course is not in the published inventory and needs an explicit owner publication decision. Preparation only; acceptance cannot be activated.
 
 ---
 

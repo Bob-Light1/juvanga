@@ -1,7 +1,7 @@
 # JUV-111 — Help, privacy and feedback
 
 Owner: Codex. Branch: `feat/JUV-111-help-privacy-feedback`. Date: 2026-11-07.
-Current status: email, public operator wording and nonindexable technical deployment verified; blocked on hosting log/location facts and the resulting notice update. The dated sections below preserve earlier evidence.
+Current status: done on 2026-11-21; see the closure section. The dated sections below preserve earlier evidence.
 
 `/help`, `/privacy` and `/feedback` are statically rendered and linked in the public footer. French copy lives in the shared catalogue. Help explains the actual unpublished/published course boundary, practice and optional resume. The notice describes the exact local record, no automatic expiry, targeted erasure and its failure fallback; exercise text is ephemeral. Hosting requests are distinguished from local storage. No provider, location or log retention is invented.
 
@@ -35,3 +35,12 @@ The owner supplied the public operator identity and confirmed personally handlin
 ## Technical deployment update — 2026-11-21
 
 The remote deployment of `7f78d38` passed the checks in the [release evidence](../operations/M0-RELEASE.md#technical-deployment-evidence--2026-11-21). JUV-111 stays blocked: request-log availability/retention and processing locations are unverified, and the live French notice still says public hosting is not configured. The owner validated the corrected notice on 2026-11-21 and reported Web Analytics and Logpush inactive; those settings were not independently inspected. The correction is not deployed yet.
+
+## Closure — 2026-11-21
+
+- **No fictional address or form:** the public contact is the owner-tested support mailbox.
+- **Local retention and host logs:** the deployed notice explains the local record, erasure, Cloudflare hosting, possible transfers and the absence of a precise published log-retention period found. The owner validated it. Real-user comprehension remains a JUV-113 observation.
+- **Minimal feedback:** the page asks for no sensitive document or unnecessary data.
+- **Verification:** owner-reported two-way support test; local support and PWA browser scenarios; main CI and [remote evidence](../operations/M0-RELEASE.md#corrected-notice-deployment-evidence--2026-11-21).
+
+Limits: Web Analytics and Logpush inactivity is owner-reported. Exact processing locations and log retention remain unknown. This is not legal review.

@@ -411,7 +411,7 @@ Evidence: docs/architecture/decisions/013-public-offline.md ; docs/delivery/VALI
 
 Milestone **M0** · QA/produit · 1.5–3 person-days · status **blocked**
 
-Dependencies: JUV-106, JUV-109, JUV-110, JUV-111, JUV-112, JUV-107.
+Dependencies: JUV-106, JUV-109, JUV-110, JUV-111, JUV-112, JUV-107, JUV-115.
 
 ### Work
 
@@ -436,7 +436,7 @@ Owner: Claude ; branch: feat/JUV-113-course-publication.
 
 Evidence: docs/reviews/M0-ACCEPTANCE.md ; docs/sessions/2026-11-07-acceptance-preparation.md ; docs/sessions/2026-11-26-course-publication.md.
 
-Blocker: Course gate satisfied: owner published approved v1 for acceptance on 2026-11-26 (DEC-07 publication decision). Five consenting real testers, a facilitator and participant-record retention are still needed; no observations exist.
+Blocker: Course gate satisfied: owner published approved v1 for acceptance on 2026-11-26 (DEC-07 publication decision). Five consenting real testers, a facilitator and participant-record retention are still needed; no observations exist. Owner decision 2026-11-26: tester sessions start only after JUV-115 visual orientation work is done. JUV-115 was completed and owner-approved on 2026-11-26.
 
 ---
 
@@ -472,3 +472,39 @@ Owner: Codex ; branch: feat/JUV-114-domain-record.
 Evidence: docs/operations/M0-RELEASE.md ; docs/sessions/2026-11-07-release-preparation.md ; docs/sessions/2026-11-12-domain-registration.md ; docs/sessions/2026-11-20-cloudflare-repository-preparation.md ; docs/sessions/2026-11-20-technical-bootstrap.md.
 
 Blocker: Official release remains blocked by JUV-113 acceptance and operational verification. On 2026-11-20 the owner separately authorized a public nonindexable pages.dev technical bootstrap under JUV-111, without the custom domain; see DEC-10 and M0-RELEASE. No successful deployment, remote smoke or rollback is yet evidenced.
+
+---
+
+<a id="juv-115"></a>
+
+## JUV-115 — Add orientation illustrations, icons and motion before acceptance
+
+Milestone **M0** · Frontend/design · 2–4 person-days · status **done**
+
+Dependencies: JUV-104, JUV-105, JUV-112.
+
+### Work
+
+- Design a home illustration that explains the learning loop at a glance: useful task, clear criteria, practice, worked solution
+- Add a consistent icon set for course, lesson, exercise, solution, offline and progress states using existing tokens
+- Add purposeful Motion transitions within MOTION.md budgets with a reduced-motion equivalent
+- Measure route budgets and offline precache impact; justify any new asset or library with an ADR
+
+### Acceptance criteria
+
+- [ ] Brand palette, symbol and typography unchanged; assets are original and owned by the project
+- [ ] Decorative art is hidden from assistive technology; meaningful icons have text labels; contrast checks pass
+- [ ] Reduced-motion mode removes translation, zoom and progress animation; no animation is essential to understanding
+- [ ] Route budgets in QUALITY.md and offline behavior from ADR-013 still hold at 360 px width
+
+### Verification
+
+- npm run verify; browser suites in normal and reduced-motion modes; before/after mobile screenshots reviewed by the owner
+
+Requirements: USR-04, USR-05, USR-07.
+
+References: [docs/design/BRAND.md](../../../docs/design/BRAND.md) ; [docs/design/MOTION.md](../../../docs/design/MOTION.md) ; [docs/design/UX.md](../../../docs/design/UX.md) ; [docs/delivery/QUALITY.md](../../../docs/delivery/QUALITY.md).
+
+Owner: Claude ; branch: feat/JUV-115-orientation-visuals.
+
+Evidence: docs/delivery/VALIDATION-JUV-115.md ; docs/sessions/2026-11-26-orientation-visuals.md.

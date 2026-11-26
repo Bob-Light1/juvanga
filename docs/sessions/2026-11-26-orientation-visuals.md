@@ -1,0 +1,28 @@
+# Handoff — 2026-11-26 — Claude
+
+- **Ticket, branch and commit:** JUV-115 (`done`) on `feat/JUV-115-orientation-visuals`, branched from the unmerged `feat/JUV-113-course-publication`. Committed locally in two commits.
+- **Session objective:**
+  - Turn a user's suggestion into JUV-115 at P0, ahead of the JUV-113 tester sessions ([decision](../product/DECISIONS.md#acceptance-sequencing-decision--2026-11-26)).
+  - Have the owner pick from visual options.
+  - Integrate the selection.
+- **Completed / evidence:**
+  - Round 1: the owner selected the loop illustration, "line + sun" icons and lively motion ([brand record](../design/BRAND.md#orientation-visuals--2026-11-26)).
+  - Round 2: the owner asked for a first-screen loop, a character and a better menu, then picked learner A and the bottom tab bar.
+  - Both rounds are integrated, and the before/after screenshots were shared ([evidence](../delivery/VALIDATION-JUV-115.md)).
+  - The owner approved the rendering on 2026-11-26.
+- **Commands actually run and results:**
+  - `npm run verify` passed.
+  - `test:e2e` passed 25 scenarios after a hero alignment fix for the font-swap layout shift.
+  - `test:reader` passed 17 scenarios.
+  - Gzipped JavaScript grew by 1,809 bytes in total.
+- **Not verified:**
+  - Physical devices, non-Chromium browsers, screen readers, and the remote site.
+- **New decisions:** the owner's visual selection is recorded in BRAND.md and MOTION.md. No ADR was needed: there is no new library or asset tool.
+- **Blockers, owner and next action:**
+  - Merge JUV-113, then this branch, through `main`.
+  - JUV-113 remains blocked only on real tester sessions.
+- **Files in progress and conflict risks:** `App.tsx`, `styles.css`, `components/ui.tsx`, `fr.ts`, `tokens.css` and two browser specs.
+- **Next task and first command:**
+  - After the merge and deployment, check the live `pages.dev` rendering.
+  - Then start the JUV-113 tester sessions.
+  - First command: `npm run task -- JUV-113`.

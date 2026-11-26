@@ -1,5 +1,6 @@
 import { useId, type ButtonHTMLAttributes, type ComponentProps, type ReactNode } from 'react';
 import { Link } from 'react-router';
+import { Icon, type IconName } from './icons';
 
 type ActionVariant = 'primary' | 'secondary';
 
@@ -72,13 +73,14 @@ type CourseCardProps = {
   href: string;
   actionLabel: string;
   internal?: boolean;
+  icon?: IconName;
 };
 
-export function CourseCard({ title, description, badge, meta, href, actionLabel, internal = false }: CourseCardProps) {
+export function CourseCard({ title, description, badge, meta, href, actionLabel, internal = false, icon }: CourseCardProps) {
   const titleId = useId();
   return (
     <article className="course-card" aria-labelledby={titleId}>
-      <span className="pill">{badge}</span>
+      <div className="course-card-top">{icon && <Icon name={icon} size={40} />}<span className="pill">{badge}</span></div>
       <h3 id={titleId}>{title}</h3>
       <p className="course-meta">{meta}</p>
       <p>{description}</p>

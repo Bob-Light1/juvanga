@@ -22,7 +22,7 @@ for (const width of [360, 1280]) {
     await page.getByRole('link', { name: 'Découvrir les parcours' }).click();
     await expect(page).toHaveURL('/courses');
     await expect(page.locator('#main')).toBeFocused();
-    await expect(page.getByRole('navigation').getByRole('link', { name: 'Les parcours' })).toHaveAttribute('aria-current', 'page');
+    await expect(page.getByRole('navigation').getByRole('link', { name: 'Parcours', exact: true })).toHaveAttribute('aria-current', 'page');
     await page.getByRole('link', { name: 'Voir le parcours' }).click();
     await expect(page).toHaveURL(detail);
     await expect(page.getByRole('heading', { level: 1 })).toHaveText(course.title);

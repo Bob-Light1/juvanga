@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 import { Link } from 'react-router';
 import { Button } from './components/ui';
+import { Icon } from './components/icons';
 import { LessonBlocks } from './LessonReader';
 import { lessonPath, type ReadingCourse, type ReadingLesson } from './content/reader.ts';
 import { selfAssessmentState } from './content/practice.ts';
@@ -26,7 +27,7 @@ export function ExercisePage({ course, lesson, exercise }: { course: ReadingCour
 
   return <article className="exercise-page lesson-body" aria-labelledby="exercise-title">
     <Link className="text-link" to={lessonPath(course, lesson)}>{copy.backToLesson}</Link>
-    <header><p className="eyebrow">{copy.eyebrow}</p><h1 id="exercise-title">{lesson.title}</h1><p className="intro">{copy.introduction}</p></header>
+    <header><p className="eyebrow eyebrow-icon"><Icon name="exercise" />{copy.eyebrow}</p><h1 id="exercise-title">{lesson.title}</h1><p className="intro">{copy.introduction}</p></header>
     <aside className="lesson-note"><strong>{copy.personalOnly}</strong><p>{copy.noCertification}</p></aside>
     <section aria-labelledby="exercise-instructions"><h2 id="exercise-instructions">{copy.instructions}</h2><p className="lesson-prose">{exercise.prompt}</p>
       <ol>{exercise.instructions.map((instruction, index) => <li key={index}>{instruction}</li>)}</ol>
@@ -45,7 +46,7 @@ export function ExercisePage({ course, lesson, exercise }: { course: ReadingCour
       </label>)}
     </fieldset>
     <p role="status" className="assessment-feedback">{copy.feedback[feedback]}</p>
-    <details ref={solution} className="worked-solution"><summary>{copy.compare}</summary><div>
+    <details ref={solution} className="worked-solution"><summary><Icon name="solution" className="icon-inline" />{copy.compare}</summary><div>
       <h2>{copy.solutionTitle}</h2><p>{copy.solutionHint}</p><LessonBlocks blocks={exercise.workedSolution} />
     </div></details>
     <noscript><p>{copy.noScript}</p></noscript>

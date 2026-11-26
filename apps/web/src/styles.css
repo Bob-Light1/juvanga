@@ -84,6 +84,10 @@ input.field-input:read-only { background: var(--color-sand); }
 .brand-link { display: inline-flex; align-items: center; min-height: 44px; }
 .public-main { overflow-wrap: anywhere; }
 .public-hero h1 { font-size: clamp(2.6rem, 5.5vw, 4.8rem); }
+.public-hero { grid-template-rows: auto auto auto auto 1fr; row-gap: 0; align-items: start; }
+.public-hero > * { grid-column: 1; }
+.public-hero > .learning-loop { grid-column: 2; grid-row: 1 / -1; }
+.public-hero > .hero-action { justify-self: start; }
 .public-hero .symbol-card p { font-weight: 600; }
 .overview-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr)); gap: var(--space-8); }
 .overview-grid > * { min-width: 0; }
@@ -148,6 +152,92 @@ input.field-input:read-only { background: var(--color-sand); }
 .support-page { max-width: 75ch; margin: auto; }
 .support-page h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin-top: var(--space-8); }
 .footer nav { display: flex; flex-wrap: wrap; gap: var(--space-4); }
+
+/* JUV-115 orientation visuals: "line + sun" icons, the learning-loop illustration and "lively" motion.
+   Motion stays within MOTION.md budgets; reduced motion keeps only an immediate fade. */
+.icon { flex: none; display: inline-block; vertical-align: middle; }
+.icon-sun { fill: var(--color-gold); }
+.icon-line { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.icon-inline { margin-right: var(--space-2); vertical-align: -0.3em; }
+.eyebrow-icon, .status-with-icon { display: flex; align-items: center; gap: var(--space-3); }
+.eyebrow-icon .icon { width: 28px; height: 28px; }
+.status-with-icon { align-items: start; margin: 0; }
+.button-with-icon { gap: var(--space-2); }
+.page-icon { display: block; margin-bottom: calc(-1 * var(--space-4)); }
+.course-card-top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-4); }
+.course-card { transition: transform var(--duration-fast) var(--ease-standard), box-shadow var(--duration-fast) var(--ease-standard); }
+.course-card:hover, .course-card:focus-within { transform: translateY(-2px); box-shadow: 0 10px 28px rgb(20 33 61 / 0.1); }
+.approach-icon { display: block; margin-bottom: var(--space-2); }
+.worked-solution summary .icon { width: 28px; height: 28px; }
+.worked-solution[open] summary .icon-detail { stroke-dasharray: 1; animation: juv-draw var(--duration-slow) var(--ease-standard) both; }
+
+.learning-loop { margin: 0; padding: var(--space-8) var(--space-6) var(--space-6); background: var(--color-white); border-radius: 180px 180px var(--radius-lg) var(--radius-lg); display: grid; justify-items: center; gap: var(--space-4); box-shadow: 0 1px 2px rgb(20 33 61 / 0.06), 0 12px 32px rgb(20 33 61 / 0.06); }
+.loop-art { width: 100%; max-width: 380px; height: auto; }
+.loop-ring { fill: none; stroke: var(--color-night); stroke-width: 3; }
+.loop-arrow { fill: none; stroke: var(--color-night); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+.loop-sun { fill: var(--color-gold); }
+.learner-shirt { fill: var(--color-night); }
+.learner-skin { fill: var(--illustration-skin); }
+.learner-hair { fill: var(--illustration-hair); }
+.learner-earring { fill: var(--color-dawn); }
+.learner-face { fill: var(--color-night); }
+.learner-notebook { fill: var(--color-white); stroke: var(--color-night); stroke-width: 2.5; }
+.learner-collar, .learner-smile, .learner-lines, .learner-check { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.learner-collar { stroke: var(--color-sand); stroke-width: 3; }
+.learner-smile { stroke: var(--color-night); stroke-width: 2; }
+.learner-lines { stroke: var(--color-night); stroke-width: 2; opacity: .5; }
+.learner-check { stroke: var(--color-leaf); stroke-width: 2.5; }
+.loop-step circle { fill: var(--color-white); stroke: var(--color-night); stroke-width: 3; }
+.loop-step path { fill: none; stroke: var(--color-night); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.loop-step-solution path { stroke: var(--color-leaf); }
+.learning-loop figcaption { width: 100%; max-width: 380px; }
+.learning-loop .eyebrow { margin: 0 0 var(--space-2); color: var(--color-muted); }
+.loop-steps { list-style: none; counter-reset: loop; display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2) var(--space-4); margin: 0; padding: 0; }
+.loop-steps li { counter-increment: loop; display: flex; align-items: center; gap: var(--space-2); font-weight: 600; line-height: 1.3; min-width: 0; }
+.loop-steps li::before { content: counter(loop); flex: none; display: grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--color-night); color: var(--color-sand); font-size: .75rem; }
+.loop-step { transform-box: fill-box; transform-origin: center; }
+.loop-step { animation: juv-rise 220ms var(--ease-standard) backwards; }
+.loop-arrow { animation: juv-fade 200ms var(--ease-standard) backwards; }
+.loop-learner { animation: juv-fade 200ms var(--ease-standard) backwards; }
+.loop-step:nth-of-type(2), .loop-arrow:nth-of-type(1) { animation-delay: 90ms; }
+.loop-step:nth-of-type(3), .loop-arrow:nth-of-type(2) { animation-delay: 180ms; }
+.loop-step:nth-of-type(4), .loop-arrow:nth-of-type(3) { animation-delay: 270ms; }
+.loop-arrow:nth-of-type(4) { animation-delay: 360ms; }
+@keyframes juv-rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes juv-fade { from { opacity: 0; } to { opacity: 1; } }
+@keyframes juv-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+
+/* Main navigation: top links on wide screens, an app-like bottom tab bar on phones (owner choice, 2026-11-26). */
+.main-nav .icon { display: none; }
+@media (max-width: 700px) {
+  html { scroll-padding-bottom: 96px; }
+  .public-header { min-height: 64px; padding-block: var(--space-3); }
+  .public-header .brand-link img { width: 150px; }
+  .public-header .main-nav { position: fixed; inset: auto 0 0; z-index: 20; display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-1); padding: var(--space-1) max(var(--space-2), env(safe-area-inset-right, 0px)) calc(var(--space-2) + env(safe-area-inset-bottom, 0px)) max(var(--space-2), env(safe-area-inset-left, 0px)); background: var(--color-white); border-top: 1px solid var(--color-border); box-shadow: 0 -6px 20px rgb(20 33 61 / 0.08); }
+  .public-header .main-nav a { flex-direction: column; justify-content: center; gap: 2px; min-height: 56px; border-radius: var(--radius-md); font-size: .78rem; font-weight: 600; line-height: 1.2; text-decoration: none; text-align: center; }
+  .public-header .main-nav a[aria-current] { background: var(--color-sand); font-weight: 700; }
+  .main-nav a:focus-visible { outline-offset: -3px; }
+  .main-nav .icon { display: block; }
+  .main-nav a:not([aria-current]) .icon-sun { display: none; }
+  .footer { padding-bottom: calc(104px + env(safe-area-inset-bottom, 0px)); }
+
+  .public-hero { grid-template-columns: 1fr; grid-template-rows: none; padding: var(--space-2) 0 var(--space-12); }
+  .public-hero > *, .public-hero > .learning-loop { grid-column: 1; grid-row: auto; }
+  .public-hero h1 { font-size: 2.2rem; margin: var(--space-3) 0 var(--space-4); }
+  .public-hero .intro { font-size: 1rem; margin: var(--space-4) 0 var(--space-6); }
+  .learning-loop { grid-template-columns: minmax(0, 172px) minmax(0, 1fr); align-items: center; justify-items: stretch; gap: var(--space-3); padding: var(--space-2) var(--space-3) var(--space-2) var(--space-2); border-radius: 90px var(--radius-lg) var(--radius-lg) 90px; }
+  .loop-art { max-width: 172px; }
+  .learning-loop .eyebrow { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .loop-steps { grid-template-columns: 1fr; gap: var(--space-2); font-size: .85rem; }
+  .loop-steps li { gap: 6px; }
+  .loop-steps .icon { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .loop-step { animation-name: juv-fade; }
+  .loop-step, .loop-arrow { animation-delay: 0ms; }
+  .course-card:hover, .course-card:focus-within { transform: none; }
+  .worked-solution[open] summary .icon-detail { animation: none; stroke-dasharray: none; }
+}
 
 .pwa-status:empty { display: none; }
 .pwa-status { max-width: 75ch; margin-inline: auto; }

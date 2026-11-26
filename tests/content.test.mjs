@@ -164,3 +164,15 @@ test('repository public catalogue is valid', () => {
   const directory = fileURLToPath(new URL('../content/public/', import.meta.url));
   assert.doesNotThrow(() => validatePublicContent(directory));
 });
+
+test('published meeting-notes course is the exact owner-approved draft', () => {
+  const read = folder => JSON.parse(fs.readFileSync(new URL(`../content/${folder}/meeting-notes-action-plan/v1.json`, import.meta.url), 'utf8'));
+  const { status, publishedAt, ...published } = read('public');
+  const { status: draftStatus, publishedAt: draftPublishedAt, ...draft } = read('drafts');
+  // Only the publication fields may differ; lesson text, exercises and rubrics stay identical.
+  assert.equal(status, 'published');
+  assert.equal(publishedAt, '2026-11-26T07:50:59Z');
+  assert.equal(draftStatus, 'review');
+  assert.equal(draftPublishedAt, null);
+  assert.deepEqual(published, draft);
+});

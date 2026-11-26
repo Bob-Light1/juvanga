@@ -81,11 +81,11 @@ test('empty inventory and route resolution preserve a real missing-page state', 
   assert.equal(getPage('/courses/missing/nested', []).indexable, false);
 });
 
-test('real discovery inventory contains only the approved course presentation', () => {
+test('real inventory presents only the published approved course', () => {
   const courses = loadOverviews();
   assert.equal(courses.length, 1);
   assert.equal(getPage(publicPaths(courses)[2], courses).description, courses[0].summary);
-  assert.equal(courses[0].availability, 'coming-soon');
+  assert.equal(courses[0].availability, 'published');
 });
 
 test('release origin must be an HTTPS origin, preview has no invented canonical or sitemap URLs', () => {

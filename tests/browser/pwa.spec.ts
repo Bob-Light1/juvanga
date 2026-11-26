@@ -25,7 +25,11 @@ test('public snapshot works offline; unknown/private documents stay outside cach
   expect(paths).not.toContain('/progress');
   expect(paths).not.toContain('/workshop');
   expect(paths).not.toContain('/account');
-  expect(paths.some(path => path.includes('/learn/'))).toBe(false);
+  // Only the published course is precached: its exact version 1 and latest-version aliases.
+  const lessons = paths.filter(path => path.includes('/learn/'));
+  expect(lessons).toContain('/learn/meeting-notes-action-plan/v/1/separate-facts-and-questions');
+  expect(lessons).toContain('/learn/meeting-notes-action-plan/separate-facts-and-questions');
+  expect(lessons.every(path => /^\/learn\/meeting-notes-action-plan\/(v\/1\/)?[a-z0-9-]+(\/exercise)?$/.test(path))).toBe(true);
   expect((await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze()).violations).toEqual([]);
   await page.screenshot({ path: testInfo.outputPath('offline-fallback.png'), fullPage: true });
   await context.setOffline(false);

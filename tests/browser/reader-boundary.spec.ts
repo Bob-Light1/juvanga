@@ -2,8 +2,9 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import fs from 'node:fs';
 
-const draft = JSON.parse(fs.readFileSync(new URL('../../content/drafts/meeting-notes-action-plan/v1.json', import.meta.url), 'utf8'));
-const unpublished = `/learn/${draft.id}/v/${draft.version}/${draft.modules[0].lessons[0].id}`;
+const published = JSON.parse(fs.readFileSync(new URL('../../content/public/meeting-notes-action-plan/v1.json', import.meta.url), 'utf8'));
+// Only exact listed versions are readable; the next version has not been published.
+const unpublished = `/learn/${published.id}/v/${published.version + 1}/${published.modules[0].lessons[0].id}`;
 
 test('unpublished lesson stays inaccessible with helpful static and client recovery', async ({ page, browser, request }) => {
   const context = await browser.newContext({ javaScriptEnabled: false, baseURL: 'http://127.0.0.1:4173' });
@@ -17,7 +18,7 @@ test('unpublished lesson stays inaccessible with helpful static and client recov
     await expect(staticPage).toHaveURL('/courses');
   } finally { await context.close(); }
   const html = await (await request.get(unpublished)).text();
-  expect(html).not.toContain(draft.modules[0].lessons[0].blocks[0].text);
+  expect(html).not.toContain(published.modules[0].lessons[0].blocks[0].text);
   await page.setViewportSize({ width: 360, height: 900 });
   await page.goto('/courses');
   await page.evaluate(url => { history.pushState({}, '', url); dispatchEvent(new PopStateEvent('popstate')); }, unpublished);

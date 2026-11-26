@@ -55,7 +55,7 @@ test('practice boundary rejects unpublished content and excludes unadvertised la
   write(); assert.equal(loadPracticeCourses(root).length, 1);
   for (const status of ['draft', 'review', 'archived']) { course.status = status; write(); assert.throws(() => loadPracticeCourses(root)); }
   course.status = 'published'; course.locale = 'en'; write(); assert.deepEqual(loadPracticeCourses(root), []);
-  assert.deepEqual(loadPracticeCourses(), []);
+  assert.deepEqual(loadPracticeCourses().map(({ id, version }) => [id, version]), [['meeting-notes-action-plan', 1]]);
 });
 
 test('a lesson ID named exercise remains a reading route with its own exercise child', () => {

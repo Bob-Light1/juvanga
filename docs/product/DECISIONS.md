@@ -35,6 +35,12 @@ JUV-103 provides the [complete-lesson review copy](../reviews/meeting-notes-acti
 
 JUV-106 adds selected public course descriptions under [ADR-008](../architecture/decisions/008-public-pages.md), derived from the approved source and marked as coming soon. This does not record lesson publication, change the review/publication timestamp or authorize a deployment.
 
+## DEC-07 publication decision — 2026-11-26
+
+The project owner explicitly decided to publish the owner-approved French course `meeting-notes-action-plan` version 1 in the public inventory so real testers can use it for JUV-113 acceptance. The published file is the JUV-103 approved text unchanged; only `status: published` and `publishedAt: 2026-11-26T07:50:59Z` (the time the decision was recorded) differ, and a test enforces that equality. Its discovery teaser is retired because the published version supersedes it. Alternatives offered: attach the custom domain first, start M1 locally, or only merge the JUV-111 closure; the owner chose publication. JUV-113 is reassigned from Codex to Claude at the owner's request on branch `feat/JUV-113-course-publication`.
+
+Effect: once merged to `main`, the course is readable on the public nonindexable `pages.dev` technical site. This is publication for acceptance, not official launch: it does not authorize `SITE_URL`, indexing, `juvanga.com` attachment or JUV-114. Public reading grants no reuse license. Version 1 is now immutable; any lesson, exercise or rubric correction requires version 2 with its own review. Affects JUV-113 and JUV-114; no architecture change.
+
 ## DEC-11 update — 2026-11-12
 
 The project owner selected and purchased the brand's exact `.com` domain through Cloudflare Registrar, following comparison with another registrar and an optional `.cm` companion. The owner requested that this registration be retained for future sessions. Canonical registration facts and screenshot evidence limits are in [the release record](../operations/M0-RELEASE.md#domain-registration-evidence--2026-11-12).

@@ -8,9 +8,9 @@ Ticket: JUV-103. Prepared on 2026-11-07. Canonical learner content: [French cour
 - Accountable course owner and designated pedagogical reviewer: the project owner participating in this conversation, self-appointed in [DEC-07](../../../docs/product/DECISIONS.md).
 - Sources: the approved JUV-101 fictional notes and worked outcome; lesson explanations, examples, exercises and feedback were drafted for Juvanga. The deadlines retain the approved UTC instants, displayed in Africa/Douala.
 - Third-party excerpts, datasets, quotations, photographs, icons, video and audio: none used in these lessons. No external media license is required for this text-only draft. No external reference is presented as endorsing the course.
-- Publication license: no public reuse license has been granted by this document. The owner approved the complete lessons and reported completing all three exercises on 2026-11-07. Publication terms remain a release responsibility.
+- Publication license: no public reuse license has been granted by this document. The owner approved the complete lessons and reported completing all three exercises on 2026-11-07. Published on 2026-11-26 as [public v1](../../public/meeting-notes-action-plan/v1.json) by [owner decision](../../../docs/product/DECISIONS.md#dec-07-publication-decision--2026-11-26); public reading grants no reuse license.
 
-All meeting participants are fictional roles. No learner data, private course or paid material is included. `access: public` describes the intended free course. The canonical JSON now records the actual human review; `status: review` and `publishedAt: null` keep it unpublished until release checks. Ticket completion records editorial approval, not public publication.
+All meeting participants are fictional roles. No learner data, private course or paid material is included. `access: public` describes the intended free course. The canonical JSON now records the actual human review; This draft keeps `status: review` and `publishedAt: null` as the editorial source; the public copy differs only in those two fields, enforced by a test. Version 1 is now immutable. Ticket completion records editorial approval, not public publication.
 
 ## Review workflow
 

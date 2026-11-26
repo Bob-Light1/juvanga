@@ -65,7 +65,7 @@ test('reader accepts only published French courses and never loads discovery dra
   const english = structuredClone(older);
   english.locale = 'en';
   assert.deepEqual(loadReadingCourses(library(t, [english])), []);
-  assert.deepEqual(loadReadingCourses(), []);
+  assert.deepEqual(loadReadingCourses().map(({ id, version }) => [id, version]), [['meeting-notes-action-plan', 1]]);
 });
 
 test('canonical routes retain exact versions; latest aliases resolve consistently', () => {

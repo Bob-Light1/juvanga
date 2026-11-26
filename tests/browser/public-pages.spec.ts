@@ -2,8 +2,9 @@ import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import fs from 'node:fs';
 
-const course = JSON.parse(fs.readFileSync(new URL('../../content/drafts/meeting-notes-action-plan/v1.json', import.meta.url), 'utf8'));
+const course = JSON.parse(fs.readFileSync(new URL('../../content/public/meeting-notes-action-plan/v1.json', import.meta.url), 'utf8'));
 const detail = `/courses/${course.id}`;
+const firstLesson = `/learn/${course.id}/v/${course.version}/${course.modules[0].lessons[0].id}`;
 const routes = ['/', '/courses', detail];
 
 for (const width of [360, 1280]) {
@@ -29,8 +30,8 @@ for (const width of [360, 1280]) {
     expect(await page.evaluate(() => (window as unknown as { navigationMarker?: string }).navigationMarker)).toBe('same-document');
     await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', course.summary);
     await expect(page.getByText('Gratuit', { exact: true })).toBeVisible();
-    await expect(page.getByText('Prochainement disponible', { exact: true })).toBeVisible();
-    await expect(page.locator('main a[href^="/learn"]')).toHaveCount(0);
+    await expect(page.getByText('Prochainement disponible', { exact: true })).toHaveCount(0);
+    await expect(page.getByRole('link', { name: 'Commencer le parcours' })).toHaveAttribute('href', firstLesson);
     await page.goBack();
     await expect(page).toHaveURL('/courses');
     await page.goForward();
@@ -112,8 +113,9 @@ test('client missing-page metadata, release policy, sitemap and publication boun
   const script = html.match(/src="(\/assets\/[^"\s]+\.js)"/)?.[1];
   expect(script).toBeTruthy();
   const bundle = await (await request.get(script!)).text();
-  expect(bundle).not.toContain('classify-welcome');
-  expect(bundle).not.toContain(course.modules[0].lessons[0].blocks[0].text);
+  // The exact published version ships in the public artifact; review metadata does not.
+  expect(bundle).toContain(course.modules[0].lessons[0].blocks[0].text);
+  expect(bundle).not.toMatch(/reviewedAt|publishedAt/);
   expect((await request.get('/content/drafts/meeting-notes-action-plan/v1.json')).status()).toBe(404);
   expect(sitemap).not.toContain('/workshop');
   expect(sitemap).not.toContain('/404');

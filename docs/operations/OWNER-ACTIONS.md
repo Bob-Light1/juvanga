@@ -1,6 +1,6 @@
 # Owner actions to unblock M0
 
-Updated: 2026-11-21. This guide distinguishes owner-reported preparation from pending configuration and acceptance. M1 local database preparation in JUV-201 is independent of these gates. No account creation, invitation, message or deployment has been executed by this checklist.
+Updated: 2026-11-26. This guide distinguishes owner-reported preparation from pending configuration and acceptance. M1 local database preparation in JUV-201 is independent of these gates. No account creation, invitation, message or deployment has been executed by this checklist.
 
 ## 1. Operate the verified support mailbox
 
@@ -25,9 +25,9 @@ The owner subsequently authorized a first publicly reachable nonindexable `pages
 
 ## 3. Make the course available for real acceptance
 
-The complete French course has editorial approval but no publication decision/timestamp in the public inventory. Identify the exact approved course version and explicitly decide its inclusion in the acceptance artifact. Codex can prepare the resulting artifact and validate it. Do not use the synthetic test course as learner content.
+Done on 2026-11-26: the owner decided to publish the approved course version 1 for acceptance ([DEC-07 publication decision](../product/DECISIONS.md#dec-07-publication-decision--2026-11-26)). Merging that change to `main` makes it readable on the nonindexable technical site. Do not use the synthetic test course as learner content.
 
-Appoint the facilitator/reviewer and recruit five consenting real testers, including a physical mobile device and the required keyboard/accessibility/network coverage. Choose how long participant records are retained outside the repository. JUV-111 is complete. After the course publication decision, run the [acceptance protocol](../reviews/M0-ACCEPTANCE.md), record anonymous observations and review the result. Recruitment and device use require real people; automated tests do not replace them.
+Appoint the facilitator/reviewer and recruit five consenting real testers, including a physical mobile device and the required keyboard/accessibility/network coverage. Choose how long participant records are retained outside the repository. JUV-111 is complete. Then run the [acceptance protocol](../reviews/M0-ACCEPTANCE.md), record anonymous observations and review the result. Recruitment and device use require real people; automated tests do not replace them.
 
 ## 4. Approve and execute the release after acceptance
 

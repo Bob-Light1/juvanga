@@ -432,11 +432,11 @@ Requirements: USR-04, USR-08.
 
 References: [docs/delivery/QUALITY.md](../../../docs/delivery/QUALITY.md).
 
-Owner: Codex ; branch: feat/JUV-113-acceptance-preparation.
+Owner: Claude ; branch: feat/JUV-113-course-publication.
 
-Evidence: docs/reviews/M0-ACCEPTANCE.md ; docs/sessions/2026-11-07-acceptance-preparation.md.
+Evidence: docs/reviews/M0-ACCEPTANCE.md ; docs/sessions/2026-11-07-acceptance-preparation.md ; docs/sessions/2026-11-26-course-publication.md.
 
-Blocker: Five consenting real testers have no observations yet (owner confirmation, 2026-11-07); the approved course is not in the published inventory and needs an explicit owner publication decision. Preparation only; acceptance cannot be activated.
+Blocker: Course gate satisfied: owner published approved v1 for acceptance on 2026-11-26 (DEC-07 publication decision). Five consenting real testers, a facilitator and participant-record retention are still needed; no observations exist.
 
 ---
 

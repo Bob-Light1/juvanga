@@ -8,7 +8,7 @@ Implemented by JUV-102. Decision: [ADR-006](decisions/006-public-content.md). Ca
 - `content/public/course-id/v1.json`: the matching reviewed, published course document.
 - Drafts, private files and real learner data must stay outside `content/public` and the frontend's static assets. Unlisted files and symlinks in this tree fail validation.
 
-The empty catalogue is intentional until a complete course is reviewed. `content/public` is an authoring inventory, not Vite's automatically copied `public` folder. JUV-106 projects public descriptions; JUV-108 consumes only validated published French reading content. Neither feature publishes an editorial draft.
+The catalogue lists only versions whose publication the owner explicitly decided; the first is `meeting-notes-action-plan` v1 ([DEC-07 publication decision](../product/DECISIONS.md#dec-07-publication-decision--2026-11-26)). `content/public` is an authoring inventory, not Vite's automatically copied `public` folder. JUV-106 projects public descriptions; JUV-108 consumes only validated published French reading content. Neither feature publishes an editorial draft.
 
 ## Document structure
 

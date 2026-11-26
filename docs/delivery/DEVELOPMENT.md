@@ -13,7 +13,7 @@ npm run verify
 npm run dev
 ```
 
-`nvm` is optional and must be installed separately if missing. `npm run dev` displays the local URL, usually http://127.0.0.1:5173. The current app serves the M0 public preview; no real course lessons are published yet.
+`nvm` is optional and must be installed separately if missing. `npm run dev` displays the local URL, usually http://127.0.0.1:5173. The current app serves the M0 public preview; the owner-approved French course version 1 is published for acceptance.
 
 ## Stable commands
 

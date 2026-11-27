@@ -14,4 +14,6 @@ Wrap the app in `MotionConfig reducedMotion="user"`. Use `useReducedMotion` to d
 
 Animate mainly transform and opacity; no height transitions on long lists. No animation essential to understanding, forced scrolling, hijacked horizontal scrolling or autoplay video. Use LazyMotion/code splitting when measurements justify it; route budget in QUALITY.
 
+Orientation motion (JUV-115, owner-selected "lively" level, 2026-11-26): the home loop steps rise 10 px and fade in with a 90 ms stagger (220 ms each), course cards lift 2 px on hover/focus (120 ms) and the worked-solution check draws in 300 ms when opened. These are CSS keyframes, not Motion components, so prerendered and no-JavaScript pages show complete content at rest; the public CSP forbids inline style attributes, so delays live in the stylesheet. Reduced motion keeps an immediate fade only.
+
 Tests: normal and reduced modes; keyboard and focus changes; 360 px width; throttled CPU; interruption/resume; no unexpected content shift. Reference: https://motion.dev/docs/react-accessibility (consulted on 2026-11-06).

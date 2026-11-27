@@ -41,6 +41,10 @@ The project owner explicitly decided to publish the owner-approved French course
 
 Effect: once merged to `main`, the course is readable on the public nonindexable `pages.dev` technical site. This is publication for acceptance, not official launch: it does not authorize `SITE_URL`, indexing, `juvanga.com` attachment or JUV-114. Public reading grants no reuse license. Version 1 is now immutable; any lesson, exercise or rubric correction requires version 2 with its own review. Affects JUV-113 and JUV-114; no architecture change.
 
+## Acceptance sequencing decision — 2026-11-26
+
+Following a user's suggestion, the project owner decided that JUV-115 (orientation illustrations, icons and motion within the existing brand) is prioritized and completed before any JUV-113 tester session. Rationale: testers are also prospective customers or investors, and a more inviting first impression should encourage them to return. Alternative offered: run acceptance on the current interface first and improve visuals afterwards; rejected because observations should cover the interface that will be shown to these people. Effect: JUV-113 now depends on JUV-115. The course text, version 1 and brand palette are unchanged. No architecture change unless JUV-115 justifies a new asset tool or library through an ADR.
+
 ## DEC-11 update — 2026-11-12
 
 The project owner selected and purchased the brand's exact `.com` domain through Cloudflare Registrar, following comparison with another registrar and an optional `.cm` companion. The owner requested that this registration be retained for future sessions. Canonical registration facts and screenshot evidence limits are in [the release record](../operations/M0-RELEASE.md#domain-registration-evidence--2026-11-12).

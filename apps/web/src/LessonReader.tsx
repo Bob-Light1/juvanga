@@ -3,6 +3,7 @@ import { useReadingPosition } from './progress/use-progress.ts';
 import { useState } from 'react';
 import { Link } from 'react-router';
 import { ActionLink, Button } from './components/ui';
+import { Icon } from './components/icons';
 import { coursePath } from './content/overview.ts';
 import { lessonLinkPath, lessonPath, readingLessons, type ReadingCourse, type ReadingLesson } from './content/reader.ts';
 import type { ContentBlock } from './content/schema.ts';
@@ -70,7 +71,7 @@ export function LessonReader({ course, lesson }: { course: ReadingCourse; lesson
       <section aria-labelledby="lesson-objectives"><h2 id="lesson-objectives">{copy.objectives}</h2><ul>{lesson.objectives.map(item => <li key={item}>{item}</li>)}</ul></section>
       <LessonBlocks blocks={lesson.blocks} />
       <section aria-labelledby="lesson-example"><h2 id="lesson-example">{copy.example}</h2><LessonBlocks blocks={lesson.example} /></section>
-      <aside className="lesson-note"><ActionLink internal href={exercisePath(course, lesson)}>{copy.practice}</ActionLink><p>{copy.readingNotice}</p></aside>
+      <aside className="lesson-note"><ActionLink internal href={exercisePath(course, lesson)} className="button-with-icon"><Icon name="exercise" sun={false} />{copy.practice}</ActionLink><p>{copy.readingNotice}</p></aside>
       <nav className="lesson-pagination" aria-label={copy.pagination}>
         {previous && <ActionLink internal href={lessonPath(course, previous)} variant="secondary" rel="prev">{copy.previous}<span>{previous.title}</span></ActionLink>}
         {next ? <ActionLink internal href={lessonPath(course, next)} rel="next">{copy.next}<span>{next.title}</span></ActionLink> : <ActionLink internal href={coursePath(course)}>{copy.finish}</ActionLink>}

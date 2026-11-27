@@ -45,6 +45,16 @@ Fraunces for large headings (600/700), Inter for interface and reading (400/600)
 
 Body 17–18 px, minimum 16 px for mobile fields; line height 1.55–1.65; reading width 65–72 characters. Fluid headings with `clamp`, no text in images. Spacing scale 4/8/12/16/24/32/48/64 px; corner radii 8/16/24 px; product target touch controls at least 44 × 44 px. Subtle shadows; predominantly sand background, light surfaces and sparse accents.
 
+## Orientation visuals — 2026-11-26
+
+The project owner selected these JUV-115 options from a proposal sheet: home illustration **A, the learning loop**; icon style **3, line + sun**; motion level **lively**. Rejected options: B (worksheet scene), C (path on night background); icon styles 1 (plain line) and 2 (night disc like the symbol).
+
+- Learning loop: `apps/web/src/components/LearningLoop.tsx`. Four nodes clockwise from the top (useful task, clear criteria, practice, worked solution) around a gold sun, on a white arch replacing the large home symbol card. The drawing is decorative and textless; a visible ordered list carries the steps.
+- Icons: `apps/web/src/components/icons.tsx`. 24 px grid, 2 px round stroke in `currentColor`, with a gold sun disc behind the top right. Always `aria-hidden` next to visible text; never the only carrier of meaning.
+- All artwork is original to the project; no external asset or library. The symbol, palette and typography are unchanged.
+
+After reviewing the screenshots the same day, the owner asked for the loop in the first phone screen, a drawn character and a better menu, then selected from a second sheet: **character A**, a learner holding her notebook in front of the sun at the loop centre (rejected: B, a learner with a phone; C, the same learner in brand colors only), and **menu 1**, a bottom tab bar on phones (rejected: a "Menu" button; pill tabs under the logo). The character adds two illustration-only tones, `--illustration-skin` and `--illustration-hair` in `packages/design/tokens.css`, never used for interface text or controls. On phones, the loop sits between the title and the introduction with a side legend. The menu labels are shortened to "Accueil", "Parcours" and "Ma reprise", and wide screens keep the links at the top right.
+
 ## Tone
 
 One primary action per screen. Concrete verbs: “Resume the lesson”, “Submit my exercise”, “View my payment” (localized into French for launch). Explain the next step after an error. No false counters, fictional testimonials, autonomous-AI promises or misleading certificates.

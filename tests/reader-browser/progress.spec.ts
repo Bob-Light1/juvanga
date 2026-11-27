@@ -19,7 +19,7 @@ for (const width of [360, 1280]) test(`refuse, opt in, resume after reload and e
   const position = JSON.parse((await page.evaluate(key => localStorage.getItem(key), key))!).reading.position;
   await page.reload();
   await expect.poll(() => page.evaluate(position => Math.abs(scrollY / (document.documentElement.scrollHeight - innerHeight) * 1000 - position), position)).toBeLessThan(90);
-  await page.getByRole('link', { name: 'Ma reprise de lecture' }).click();
+  await page.getByRole('navigation', { name: 'Navigation principale' }).getByRole('link', { name: 'Ma reprise' }).click();
   await expect(page).toHaveURL('/progress');
   await expect(page.getByRole('heading', { name: 'Lire les notes', exact: true })).toBeVisible();
   expect((await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa']).analyze()).violations).toEqual([]);
@@ -34,7 +34,7 @@ for (const width of [360, 1280]) test(`refuse, opt in, resume after reload and e
   expect(raw).not.toMatch(/Réponse|criteria|answer|exercise|checked/);
   expect(Object.keys(JSON.parse(raw).reading).sort()).toEqual(['courseId', 'courseVersion', 'lessonId', 'position', 'updatedAt'].sort());
   await page.evaluate(() => localStorage.setItem('unrelated-test', 'keep'));
-  await page.getByRole('link', { name: 'Ma reprise de lecture' }).click();
+  await page.getByRole('navigation', { name: 'Navigation principale' }).getByRole('link', { name: 'Ma reprise' }).click();
   await page.getByRole('button', { name: 'Effacer ma reprise sur cet appareil' }).click();
   await expect(page.getByRole('status')).toHaveText('Votre reprise a été effacée. Aucun nouvel enregistrement ne sera effectué sans votre accord.');
   expect(await page.evaluate(key => localStorage.getItem(key), key)).toBeNull();

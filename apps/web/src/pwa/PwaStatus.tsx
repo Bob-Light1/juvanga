@@ -1,5 +1,6 @@
 import { useEffect, useState, useSyncExternalStore } from 'react';
 import { Button } from '../components/ui';
+import { Icon } from '../components/icons';
 import { messages } from '../i18n/index.ts';
 
 const subscribeConnection = (listener: () => void) => {
@@ -53,7 +54,7 @@ export function PwaStatus() {
   }
   const copy = messages.pwa;
   return <aside className="pwa-status" aria-label={copy.label}>
-    {offline && <p role="status">{copy.offline}</p>}
+    {offline && <p role="status" className="status-with-icon"><Icon name="offline" />{copy.offline}</p>}
     {(failed || !supported) && <p role="status">{copy.unavailable}</p>}
     {waiting && <div><p role="status">{copy.update}</p><Button variant="secondary" disabled={updating} onClick={update}>{updating ? copy.updating : copy.accept}</Button></div>}
   </aside>;

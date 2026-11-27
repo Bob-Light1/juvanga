@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { ActionLink, Button } from './components/ui';
+import { Icon } from './components/icons';
 import { findReadingLesson, lessonPath, type ReadingCourse } from './content/reader.ts';
 import { formatDateTime, messages } from './i18n/index.ts';
 import { progressStore, useProgress } from './progress/use-progress.ts';
@@ -31,7 +32,7 @@ export function ProgressPage({ courses }: { courses: ReadingCourse[] }) {
   const state = useProgress();
   const saved = state.record?.reading;
   const found = saved && findReadingLesson(lessonPath({ id: saved.courseId, version: saved.courseVersion }, { id: saved.lessonId }), courses);
-  return <div className="page-intro progress-page"><h1>{copy.title}</h1><p className="intro">{copy.description}</p>
+  return <div className="page-intro progress-page"><Icon name="progress" size={48} className="page-icon" /><h1>{copy.title}</h1><p className="intro">{copy.description}</p>
     <ProgressControls />
     {state.status === 'enabled' && <section aria-labelledby="saved-reading-title"><h2 id="saved-reading-title">{copy.savedTitle}</h2>
       {!saved ? <p>{copy.empty}</p> : found ? <>

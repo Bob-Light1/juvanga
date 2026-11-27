@@ -10,6 +10,9 @@
   --color-border: #7A746A;
   --color-danger: #B42318;
   --color-warning: #854D0E;
+  /* Illustration-only tones (JUV-115 learner, owner-approved 2026-11-26); never for interface text or controls. */
+  --illustration-skin: #8D5A3B;
+  --illustration-hair: #2B1B14;
   --font-display: 'Fraunces', 'Fraunces Fallback', Georgia, serif;
   --font-body: 'Inter', 'Inter Fallback', system-ui, sans-serif;
   --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px;

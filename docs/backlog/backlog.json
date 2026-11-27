@@ -1,7 +1,7 @@
 {
   "$schema": "./backlog.schema.json",
   "schema_version": 1,
-  "updated_at": "2026-11-21",
+  "updated_at": "2026-11-26",
   "estimate_unit": "indicative person-days, excluding waiting time and provider costs",
   "milestones": [
     "F0",
@@ -991,7 +991,8 @@
         "JUV-110",
         "JUV-111",
         "JUV-112",
-        "JUV-107"
+        "JUV-107",
+        "JUV-115"
       ],
       "steps": [
         "Execute mobile/keyboard/network matrix",
@@ -1017,7 +1018,7 @@
         "docs/sessions/2026-11-07-acceptance-preparation.md",
         "docs/sessions/2026-11-26-course-publication.md"
       ],
-      "blocker": "Course gate satisfied: owner published approved v1 for acceptance on 2026-11-26 (DEC-07 publication decision). Five consenting real testers, a facilitator and participant-record retention are still needed; no observations exist."
+      "blocker": "Course gate satisfied: owner published approved v1 for acceptance on 2026-11-26 (DEC-07 publication decision). Five consenting real testers, a facilitator and participant-record retention are still needed; no observations exist. Owner decision 2026-11-26: tester sessions start only after JUV-115 visual orientation work is done. JUV-115 was completed and owner-approved on 2026-11-26."
     },
     {
       "id": "JUV-114",
@@ -1064,6 +1065,58 @@
         "docs/sessions/2026-11-20-technical-bootstrap.md"
       ],
       "blocker": "Official release remains blocked by JUV-113 acceptance and operational verification. On 2026-11-20 the owner separately authorized a public nonindexable pages.dev technical bootstrap under JUV-111, without the custom domain; see DEC-10 and M0-RELEASE. No successful deployment, remote smoke or rollback is yet evidenced."
+    },
+    {
+      "id": "JUV-115",
+      "milestone": "M0",
+      "epic": "public-learning",
+      "title": "Add orientation illustrations, icons and motion before acceptance",
+      "role": "Frontend/design",
+      "priority": "P0",
+      "status": "done",
+      "updated_at": "2026-11-26",
+      "owner": "Claude",
+      "branch": "feat/JUV-115-orientation-visuals",
+      "blocker": null,
+      "depends_on": [
+        "JUV-104",
+        "JUV-105",
+        "JUV-112"
+      ],
+      "steps": [
+        "Design a home illustration that explains the learning loop at a glance: useful task, clear criteria, practice, worked solution",
+        "Add a consistent icon set for course, lesson, exercise, solution, offline and progress states using existing tokens",
+        "Add purposeful Motion transitions within MOTION.md budgets with a reduced-motion equivalent",
+        "Measure route budgets and offline precache impact; justify any new asset or library with an ADR"
+      ],
+      "acceptance": [
+        "Brand palette, symbol and typography unchanged; assets are original and owned by the project",
+        "Decorative art is hidden from assistive technology; meaningful icons have text labels; contrast checks pass",
+        "Reduced-motion mode removes translation, zoom and progress animation; no animation is essential to understanding",
+        "Route budgets in QUALITY.md and offline behavior from ADR-013 still hold at 360 px width"
+      ],
+      "verification": [
+        "npm run verify; browser suites in normal and reduced-motion modes; before/after mobile screenshots reviewed by the owner"
+      ],
+      "requirements": [
+        "USR-04",
+        "USR-05",
+        "USR-07"
+      ],
+      "references": [
+        "docs/design/BRAND.md",
+        "docs/design/MOTION.md",
+        "docs/design/UX.md",
+        "docs/delivery/QUALITY.md"
+      ],
+      "evidence": [
+        "docs/delivery/VALIDATION-JUV-115.md",
+        "docs/sessions/2026-11-26-orientation-visuals.md"
+      ],
+      "estimate_days": [
+        2,
+        4
+      ]
     },
     {
       "id": "JUV-201",

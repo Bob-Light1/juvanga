@@ -6,7 +6,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { build } from 'vite';
 import { CourseSchema } from '../apps/web/src/content/schema.ts';
-import { contentValidationPlugin, validatePublicContent } from '../scripts/content.mjs';
+import { autoImageMaxBytes, autoImagePageMaxBytes, contentValidationPlugin, validateAutomaticImages, validatePublicContent } from '../scripts/content.mjs';
 
 const fixture = name => JSON.parse(fs.readFileSync(new URL(`./fixtures/content/${name}.json`, import.meta.url), 'utf8'));
 const validCourse = () => fixture('valid-course');
@@ -175,4 +175,60 @@ test('published meeting-notes course is the exact owner-approved draft', () => {
   assert.equal(draftStatus, 'review');
   assert.equal(draftPublishedAt, null);
   assert.deepEqual(published, draft);
+});
+
+// ADR-015: automatic images and icon callouts.
+const autoImage = (id, src, display = 'auto') => ({ type: 'image', id, src, alt: 'Schéma fictif.', width: 640, height: 360, display });
+function version2(blocks = [], solution = []) {
+  const course = validCourse();
+  course.schemaVersion = 2;
+  lesson(course).blocks.push(...blocks);
+  lesson(course).exercise.workedSolution.push(...solution);
+  return CourseSchema.parse(course);
+}
+function media(t, sizes) {
+  const directory = sandbox(t);
+  for (const [name, bytes] of Object.entries(sizes)) fs.writeFileSync(path.join(directory, name), Buffer.alloc(bytes));
+  return directory;
+}
+
+test('image display defaults to request and only accepts auto or request', () => {
+  const { display, ...plain } = autoImage('plain-image', '/media/plain.webp');
+  assert.equal(display, 'auto');
+  const course = version2([plain]);
+  assert.equal(lesson(course).blocks.at(-1).display, undefined);
+  for (const display of ['eager', 'AUTO', '']) {
+    const copy = validCourse();
+    copy.schemaVersion = 2;
+    lesson(copy).blocks.push(autoImage('bad-image', '/media/bad.webp', display));
+    assert.equal(CourseSchema.safeParse(copy).success, false, display);
+  }
+});
+
+test('tip and try notes require schema version 2', () => {
+  for (const tone of ['tip', 'try']) {
+    const note = { type: 'note', id: `${tone}-note`, tone, text: 'Essayez dans votre assistant.' };
+    const older = validCourse();
+    lesson(older).example.push(note);
+    const result = CourseSchema.safeParse(older);
+    assert.equal(result.success, false);
+    assert.ok(result.error.issues.some(issue => /schemaVersion 2/.test(issue.message)));
+    assert.equal(version2([note]).schemaVersion, 2);
+  }
+});
+
+test('automatic images need an existing file within the per-image budget', t => {
+  const directory = media(t, { 'small.webp': autoImageMaxBytes, 'large.webp': autoImageMaxBytes + 1 });
+  validateAutomaticImages([version2([autoImage('small-image', '/media/small.webp')])], directory);
+  assert.throws(() => validateAutomaticImages([version2([autoImage('missing-image', '/media/missing.webp')])], directory), /needs a regular file at \/media\/missing\.webp/);
+  assert.throws(() => validateAutomaticImages([version2([autoImage('large-image', '/media/large.webp')])], directory), /limit is 40960/);
+  validateAutomaticImages([version2([autoImage('requested-image', '/media/missing.webp', 'request')])], directory);
+});
+
+test('automatic images share one page budget per lesson and per worked solution', t => {
+  const third = autoImagePageMaxBytes / 3;
+  const directory = media(t, { 'a.webp': third, 'b.webp': third, 'c.webp': third, 'd.webp': 1 });
+  const full = ['a', 'b', 'c'].map(name => autoImage(`${name}-image`, `/media/${name}.webp`));
+  validateAutomaticImages([version2(full, [autoImage('d-solution', '/media/d.webp')])], directory);
+  assert.throws(() => validateAutomaticImages([version2([...full, autoImage('d-image', '/media/d.webp')])], directory), /exceed 122880 bytes/);
 });

@@ -4,6 +4,10 @@ import { fileURLToPath } from 'node:url';
 import { CatalogueSchema, CourseSchema } from '../apps/web/src/content/schema.ts';
 
 export const publicContentDirectory = fileURLToPath(new URL('../content/public/', import.meta.url));
+export const publicMediaDirectory = fileURLToPath(new URL('../apps/web/public/media/', import.meta.url));
+// ADR-015 budgets for images displayed without an explicit request.
+export const autoImageMaxBytes = 40 * 1024;
+export const autoImagePageMaxBytes = 120 * 1024;
 const fieldPath = parts => parts.reduce((result, part) =>
   typeof part === 'number' ? `${result}[${part}]` : `${result}.${String(part)}`, '$');
 
@@ -82,18 +86,42 @@ export function validatePublicContent(directory = publicContentDirectory) {
   return [...courses.values()].map(({ course }) => course);
 }
 
-export function contentValidationPlugin(directory = publicContentDirectory) {
+// ADR-015: every automatic image exists and stays within its file and page byte budgets.
+export function validateAutomaticImages(courses, mediaDirectory = publicMediaDirectory) {
+  for (const course of courses) course.modules.forEach((module, mi) => module.lessons.forEach((lesson, li) => {
+    const pages = [
+      [['blocks', lesson.blocks], ['example', lesson.example]],
+      [['exercise.workedSolution', lesson.exercise.workedSolution]],
+    ];
+    for (const page of pages) {
+      let total = 0;
+      for (const [field, blocks] of page) blocks.forEach((block, bi) => {
+        if (block.type !== 'image' || block.display !== 'auto') return;
+        const where = `${course.id}@${course.version}: ${fieldPath(['modules', mi, 'lessons', li])}.${field}[${bi}]`;
+        const asset = path.join(mediaDirectory, block.src.slice('/media/'.length));
+        if (!fs.existsSync(asset) || !fs.lstatSync(asset).isFile()) throw new Error(`${where}: Automatic image needs a regular file at ${block.src}`);
+        const bytes = fs.statSync(asset).size;
+        if (bytes > autoImageMaxBytes) throw new Error(`${where}: Automatic image is ${bytes} bytes; the limit is ${autoImageMaxBytes}. Compress it or use display "request"`);
+        total += bytes;
+        if (total > autoImagePageMaxBytes) throw new Error(`${where}: Automatic images on this page exceed ${autoImagePageMaxBytes} bytes. Compress them or use display "request"`);
+      });
+    }
+  }));
+}
+
+export function contentValidationPlugin(directory = publicContentDirectory, { mediaDirectory = publicMediaDirectory } = {}) {
   return {
     name: 'validate-public-content',
     apply: 'build',
-    buildStart() { validatePublicContent(directory); },
+    buildStart() { validateAutomaticImages(validatePublicContent(directory), mediaDirectory); },
   };
 }
 
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   try {
     const courses = validatePublicContent();
-    console.log(`${courses.length} public course version(s): schemas, IDs and links validated.`);
+    validateAutomaticImages(courses);
+    console.log(`${courses.length} public course version(s): schemas, IDs, links and automatic image budgets validated.`);
   } catch (error) {
     console.error(error.message);
     process.exitCode = 1;

@@ -1,9 +1,9 @@
 import { ProgressControls } from './ProgressPanel';
 import { useReadingPosition } from './progress/use-progress.ts';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router';
 import { ActionLink, Button } from './components/ui';
-import { Icon } from './components/icons';
+import { Icon, type IconName } from './components/icons';
 import { coursePath } from './content/overview.ts';
 import { lessonLinkPath, lessonPath, readingLessons, type ReadingCourse, type ReadingLesson } from './content/reader.ts';
 import type { ContentBlock } from './content/schema.ts';
@@ -30,6 +30,37 @@ function LessonImage({ block }: { block: Extract<ContentBlock, { type: 'image' }
   </figure>;
 }
 
+// ADR-015: a lightweight image shown without a request; failure keeps its description and a retry.
+function AutoImage({ block }: { block: Extract<ContentBlock, { type: 'image' }> }) {
+  const [failed, setFailed] = useState(false);
+  const [attempt, setAttempt] = useState(0);
+  const image = useRef<HTMLImageElement>(null);
+  const figure = useRef<HTMLElement>(null);
+  // An error before hydration fires no React handler, so inspect the prerendered element once.
+  useEffect(() => {
+    const element = image.current;
+    if (element?.complete && element.naturalWidth === 0) setFailed(true);
+  }, []);
+  return <figure className="lesson-image lesson-image-auto" id={`block-${block.id}`} ref={figure} tabIndex={-1}>
+    {failed
+      ? <>
+        <p>{block.alt}</p>
+        <p role="status">{copy.imageError}</p>
+        <Button variant="secondary" onClick={() => { setFailed(false); setAttempt(attempt + 1); figure.current?.focus(); }}>{copy.imageRetry}</Button>
+      </>
+      : <img key={attempt} ref={image} src={block.src} alt={block.alt} width={block.width} height={block.height} loading="lazy" decoding="async"
+        referrerPolicy="no-referrer" onError={() => setFailed(true)} />}
+    {block.caption && <figcaption>{block.caption}</figcaption>}
+  </figure>;
+}
+
+const notes: Record<Extract<ContentBlock, { type: 'note' }>['tone'], { label: string; icon: IconName; sun: boolean }> = {
+  information: { label: copy.information, icon: 'information', sun: false },
+  warning: { label: copy.warning, icon: 'warning', sun: false },
+  tip: { label: copy.tip, icon: 'tip', sun: true },
+  try: { label: copy.try, icon: 'exercise', sun: false },
+};
+
 function unreachable(block: never): never {
   throw new Error(`Unsupported block: ${JSON.stringify(block)}`);
 }
@@ -43,10 +74,16 @@ export function LessonBlocks({ blocks }: { blocks: ContentBlock[] }) {
         const List = block.ordered ? 'ol' : 'ul';
         return <List key={block.id} id={`block-${block.id}`}>{block.items.map((item, index) => <li key={index}>{item}</li>)}</List>;
       }
-      case 'note': return <aside key={block.id} id={`block-${block.id}`} className={`lesson-note lesson-note-${block.tone}`}><strong>{block.tone === 'warning' ? copy.warning : copy.information}</strong><p className="lesson-prose">{block.text}</p></aside>;
+      case 'note': {
+        const note = notes[block.tone];
+        return <aside key={block.id} id={`block-${block.id}`} className={`lesson-note lesson-note-${block.tone}`}>
+          <strong className="lesson-note-label"><Icon name={note.icon} size={22} sun={note.sun} className="icon-inline" />{note.label}</strong>
+          <p className="lesson-prose">{block.text}</p>
+        </aside>;
+      }
       case 'link': return <p key={block.id} id={`block-${block.id}`}><a className="text-link" href={block.url}>{block.text}</a></p>;
       case 'lesson-link': return <p key={block.id} id={`block-${block.id}`}><Link className="text-link" to={lessonLinkPath(block)}>{block.text}</Link></p>;
-      case 'image': return <LessonImage key={block.id} block={block} />;
+      case 'image': return block.display === 'auto' ? <AutoImage key={block.id} block={block} /> : <LessonImage key={block.id} block={block} />;
       default: return unreachable(block);
     }
   })}</>;

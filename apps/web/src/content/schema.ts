@@ -35,11 +35,13 @@ export const BlockSchema = z.discriminatedUnion('type', [
     src: z.string().max(200).regex(/^\/media\/[a-z0-9]+(?:-[a-z0-9]+)*\.(?:png|jpg|webp|avif)$/),
     alt: shortText, width: z.number().int().min(1).max(8192), height: z.number().int().min(1).max(8192),
     caption: shortText.optional(),
+    // ADR-015: "auto" images display without a request, within build-enforced byte budgets.
+    display: z.enum(['auto', 'request']).optional(),
   }),
   z.strictObject({ type: z.literal('paragraph'), id: ContentIdSchema, text }),
   z.strictObject({ type: z.literal('heading'), id: ContentIdSchema, level: z.union([z.literal(2), z.literal(3)]), text: shortText }),
   z.strictObject({ type: z.literal('list'), id: ContentIdSchema, ordered: z.boolean(), items: z.array(text).min(1).max(50) }),
-  z.strictObject({ type: z.literal('note'), id: ContentIdSchema, tone: z.enum(['information', 'warning']), text }),
+  z.strictObject({ type: z.literal('note'), id: ContentIdSchema, tone: z.enum(['information', 'warning', 'tip', 'try']), text }),
   z.strictObject({ type: z.literal('link'), id: ContentIdSchema, text: shortText, url: PublicUrlSchema }),
   z.strictObject({
     type: z.literal('lesson-link'), id: ContentIdSchema, text: shortText,
@@ -99,6 +101,11 @@ export const CourseSchema = z.strictObject({
     ids.add(id);
   };
   claim(course.id, ['id']);
+  const requireVersion2 = (block: z.infer<typeof BlockSchema>, path: (string | number)[]) => {
+    if (course.schemaVersion !== 1) return;
+    if (block.type === 'image') context.addIssue({ code: 'custom', path, message: 'Images require schemaVersion 2' });
+    if (block.type === 'note' && (block.tone === 'tip' || block.tone === 'try')) context.addIssue({ code: 'custom', path, message: 'Tip and try notes require schemaVersion 2' });
+  };
   course.modules.forEach((module, mi) => {
     const mp = ['modules', mi];
     claim(module.id, [...mp, 'id']);
@@ -108,7 +115,7 @@ export const CourseSchema = z.strictObject({
       for (const field of ['blocks', 'example'] as const) {
         lesson[field].forEach((block, bi) => {
           claim(block.id, [...lp, field, bi, 'id']);
-          if (course.schemaVersion === 1 && block.type === 'image') context.addIssue({ code: 'custom', path: [...lp, field, bi], message: 'Images require schemaVersion 2' });
+          requireVersion2(block, [...lp, field, bi]);
         });
       }
       claim(lesson.exercise.id, [...lp, 'exercise', 'id']);
@@ -117,7 +124,7 @@ export const CourseSchema = z.strictObject({
         claim(criterion.id, [...lp, 'exercise', 'rubric', 'criteria', ci, 'id']));
       lesson.exercise.workedSolution.forEach((block, bi) => {
         claim(block.id, [...lp, 'exercise', 'workedSolution', bi, 'id']);
-        if (course.schemaVersion === 1 && block.type === 'image') context.addIssue({ code: 'custom', path: [...lp, 'exercise', 'workedSolution', bi], message: 'Images require schemaVersion 2' });
+        requireVersion2(block, [...lp, 'exercise', 'workedSolution', bi]);
       });
     });
   });

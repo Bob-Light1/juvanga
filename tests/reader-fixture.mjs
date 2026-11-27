@@ -37,7 +37,13 @@ export function readerFixtures() {
       { type: 'link', id: `reader-external${suffix}`, text: 'Consulter la référence fictive', url: 'https://example.com/reference' },
       { type: 'lesson-link', id: `reader-internal${suffix}`, text: 'Revoir la première leçon de cette version', courseId: base.id, courseVersion: 2, lessonId: 'fixture-lesson-1' },
     ];
-    if (index === 0) lesson.blocks.push({ type: 'image', id: 'reader-illustration', src: '/media/reader-fixture.png', alt: 'Schéma fictif : une note mène à une action.', width: 640, height: 360, caption: 'Illustration synthétique de test.' });
+    if (index === 0) lesson.blocks.push(
+      { type: 'image', id: 'reader-illustration', src: '/media/reader-fixture.png', alt: 'Schéma fictif : une note mène à une action.', width: 640, height: 360, caption: 'Illustration synthétique de test.' },
+      // ADR-015: a lightweight automatic image and the two icon callouts.
+      { type: 'image', id: 'reader-auto-illustration', src: '/media/reader-auto.png', alt: 'Schéma fictif affiché automatiquement.', width: 1, height: 1, display: 'auto' },
+      { type: 'note', id: 'reader-tip', tone: 'tip', text: 'Gardez une copie de la note.' },
+      { type: 'note', id: 'reader-try', tone: 'try', text: 'Retrouvez la tâche dans votre propre note fictive.' },
+    );
     base.modules[index === 2 ? 1 : 0].lessons.push(lesson);
   }
   const older = structuredClone(base);
@@ -45,7 +51,7 @@ export function readerFixtures() {
   older.version = 1;
   older.title += ' — version conservée';
   for (const module of older.modules) for (const lesson of module.lessons) {
-    lesson.blocks = lesson.blocks.filter(block => block.type !== 'image');
+    lesson.blocks = lesson.blocks.filter(block => block.type !== 'image' && !(block.type === 'note' && ['tip', 'try'].includes(block.tone)));
     for (const block of lesson.blocks) if (block.type === 'lesson-link') block.courseVersion = 1;
   }
   return [older, base];

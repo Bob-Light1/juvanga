@@ -112,3 +112,15 @@ Effect:
 - **JUV-113:** acceptance now waits for that N0 course instead of testing the current course.
 
 Nothing is on sale. No architecture change: the existing image content block, M1 accounts and M2 entitlements already cover this model. Affects JUV-113, JUV-116, JUV-117 and JUV-301.
+
+## DEC-15 N0 course plan approval — 2026-11-27
+
+The project owner approved the [N0 course plan](N0-COURSE.md) and made four choices:
+
+- learners are addressed formally (*vouvoiement*);
+- visuals are mixed: diagrams drawn by the project, plus owner screenshots annotated by Claude;
+- exercises require real use of ChatGPT or Claude on a free plan;
+- lightweight images display automatically while heavy ones keep the load action.
+
+Alternatives offered and declined: informal address, screenshots only, diagrams only, paper-only or optional tool use, and keeping every image behind a load action or showing every image automatically. Effect: [ADR-015](../architecture/decisions/015-light-illustrations.md) amends ADR-010 image loading and adds tip/try callouts. The N0 course requires a free account with one vendor, but no Juvanga account. Affects JUV-117.
+

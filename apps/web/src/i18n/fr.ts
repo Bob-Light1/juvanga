@@ -61,6 +61,8 @@ export const fr = {
     finish: 'Revenir au parcours',
     information: 'À retenir',
     warning: 'Attention',
+    tip: 'Astuce',
+    try: 'Essayez',
     practice: 'Pratiquer et s’auto-évaluer',
     readingNotice: 'La lecture seule ne valide aucune compétence. Vous pouvez déjà observer les exemples et revenir sur les explications.',
     imageNoScript: 'Activez JavaScript pour charger l’illustration facultative. Sa description reste lisible ici.',

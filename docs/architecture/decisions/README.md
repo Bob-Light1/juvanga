@@ -25,4 +25,6 @@
 
 | [ADR-014](014-local-database.md) | Local database boundary and explicit privileges | Adopted for local M1 preparation |
 
+| [ADR-015](015-light-illustrations.md) | Automatic lightweight illustrations and icon callouts | Adopted for JUV-117; amends ADR-010 image loading |
+
 Create a new decision to supersede an old one; do not rewrite history. Template: `docs/templates/ADR.md`.

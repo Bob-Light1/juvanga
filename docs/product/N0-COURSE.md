@@ -1,6 +1,6 @@
 # N0 free course — first steps with AI assistants
 
-Ticket: JUV-117. Date: 2026-11-27. Status: **plan proposed, awaiting the project owner's approval**. No lesson has been written. Decision context: [DEC-15](DECISIONS.md#dec-15-launch-offer--2026-11-27) and the [launch offer](OFFERS.md). This plan supersedes [FREE-COURSE.md](FREE-COURSE.md) as the M0 course direction.
+Ticket: JUV-117. Date: 2026-11-27. Status: **plan approved by the project owner on 2026-11-27**. No lesson has been written yet. The reader change is delivered by [ADR-015](../architecture/decisions/015-light-illustrations.md). Decision context: [DEC-15](DECISIONS.md#dec-15-launch-offer--2026-11-27) and the [launch offer](OFFERS.md). This plan supersedes [FREE-COURSE.md](FREE-COURSE.md) as the M0 course direction.
 
 ## Outcome and audience
 

@@ -68,7 +68,7 @@ The course is self-assessed only. It awards no certification or competence score
 
 The owner chose a mixed approach on 2026-11-27: schematic diagrams drawn by the project, plus a few real screenshots captured by the owner and annotated by Claude.
 
-**Diagrams.** About 6 diagrams, drawn by Claude in the Juvanga palette as SVG sources and exported to WebP. No new dependency: the existing headless Chrome can render them.
+**Diagrams.** Six diagrams, drawn by Claude in the Juvanga palette as HTML and inline SVG sources and exported to WebP by `scripts/render-diagrams.mjs`. No new dependency: the existing headless Chrome renders them. Delivered on 2026-11-27; see the [draft record](../../content/drafts/premiers-pas-ia/README.md).
 
 | Diagram | Use |
 | --- | --- |

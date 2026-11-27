@@ -34,7 +34,7 @@ The project owner asked for courses that feel alive, with images and icons. On 2
 - **Keep every image behind the action:** rejected by the owner because the course looks inert.
 - **Display every image automatically:** rejected because a screenshot-heavy lesson could cost hundreds of kilobytes on a prepaid mobile plan.
 - **Size detection at runtime, or by the browser (`loading="lazy"` only):** rejected because the author would get no feedback and lazy loading alone still downloads everything the learner scrolls past.
-- **SVG illustrations:** still excluded, as in ADR-010. Diagrams are authored as SVG sources and exported to WebP.
+- **SVG illustrations:** still excluded, as in ADR-010. Diagrams are authored as HTML and inline SVG sources and exported to WebP by `scripts/render-diagrams.mjs` with the existing Playwright browser.
 
 ## Consequences, costs and limitations
 

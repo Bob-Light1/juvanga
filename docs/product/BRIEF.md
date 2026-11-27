@@ -4,7 +4,7 @@ User decision on 6 November 2026: name **Juvanga**. Working tagline, translated:
 
 ## Promise
 
-Enable a person or team to perform useful tasks through practical, guided learning. The first courses cover LLMs and office productivity, followed by websites and web applications. The model may cover AI, development and science; domain or level never automatically determines price.
+Enable a person or team to perform useful tasks through practical, guided learning. Launch focuses on one domain: generative AI assistants for everyday professional work. The primary audience is executives and administrators of public, private and parapublic organizations ([DEC-15](DECISIONS.md#dec-15-launch-offer--2026-11-27), [launch offer](OFFERS.md)). Websites, applications, AI agent development and marketing follow only after observed demand. The model may cover AI, development and science; domain or level never automatically determines price.
 
 ## Audiences and expected outcomes
 

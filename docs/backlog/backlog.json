@@ -1,7 +1,7 @@
 {
   "$schema": "./backlog.schema.json",
   "schema_version": 1,
-  "updated_at": "2026-11-26",
+  "updated_at": "2026-11-27",
   "estimate_unit": "indicative person-days, excluding waiting time and provider costs",
   "milestones": [
     "F0",
@@ -992,7 +992,8 @@
         "JUV-111",
         "JUV-112",
         "JUV-107",
-        "JUV-115"
+        "JUV-115",
+        "JUV-117"
       ],
       "steps": [
         "Execute mobile/keyboard/network matrix",
@@ -1020,7 +1021,7 @@
         "docs/operations/M0-RELEASE.md#acceptance-candidate-deployment-evidence--2026-11-27",
         "docs/sessions/2026-11-27-acceptance-artifact.md"
       ],
-      "blocker": "Course and visual gates satisfied: JUV-113 (PR #5) and JUV-115 (PR #6) are merged; main 5e80fcc passed CI and its exact artifact is live on the technical site (verified 2026-11-27). Five consenting real testers, a facilitator and participant-record retention are still needed; no observations exist."
+      "blocker": "DEC-15 (2026-11-27): acceptance now waits for the new N0 course (JUV-117) instead of testing meeting-notes-action-plan. The 5e80fcc candidate evidence is history. Five consenting real testers, a facilitator and participant-record retention are still needed; no observations exist."
     },
     {
       "id": "JUV-114",
@@ -1118,6 +1119,98 @@
       "estimate_days": [
         2,
         4
+      ]
+    },
+    {
+      "id": "JUV-116",
+      "milestone": "M0",
+      "epic": "public-learning",
+      "title": "Define the launch offer catalogue for AI at work",
+      "role": "Product/finance",
+      "priority": "P0",
+      "status": "done",
+      "updated_at": "2026-11-27",
+      "owner": "Claude",
+      "branch": "docs/JUV-116-launch-offer",
+      "blocker": null,
+      "depends_on": [
+        "JUV-101"
+      ],
+      "steps": [
+        "Analyze the owner's six-level proposal, its prices and its capacity commitments",
+        "Record the approved launch range, common rules, durations, follow-up and prices excluding tax",
+        "Keep the dual-control payment rule and mark nothing as on sale",
+        "Supersede the M0 course direction and sequence the new N0 course before acceptance"
+      ],
+      "acceptance": [
+        "The project owner explicitly approved the range, group pricing rule, durations, follow-up and launch prices",
+        "Paid access keeps separate payment entry and approval; a screenshot never grants access",
+        "No offer is presented as on sale before JUV-301 and M2",
+        "The previous course plan is marked superseded and its history is kept"
+      ],
+      "verification": [
+        "npm run verify; owner answers recorded in DEC-15"
+      ],
+      "requirements": [],
+      "references": [
+        "docs/product/OFFERS.md",
+        "docs/product/DECISIONS.md",
+        "docs/product/BRIEF.md"
+      ],
+      "evidence": [
+        "docs/product/OFFERS.md",
+        "docs/sessions/2026-11-27-launch-offer.md"
+      ],
+      "estimate_days": [
+        0.5,
+        1
+      ]
+    },
+    {
+      "id": "JUV-117",
+      "milestone": "M0",
+      "epic": "public-learning",
+      "title": "Plan and author the free N0 course on AI assistants",
+      "role": "Education/product",
+      "priority": "P0",
+      "status": "todo",
+      "updated_at": "2026-11-27",
+      "owner": null,
+      "branch": null,
+      "blocker": null,
+      "depends_on": [
+        "JUV-116"
+      ],
+      "steps": [
+        "Plan the outcome, lesson sequence, exercises and worked solutions for the N0 course and obtain the owner's approval",
+        "Explain the ChatGPT and Claude interfaces step by step with dated, annotated screenshots captured by the project, icons and illustrations using the existing image block",
+        "Teach data confidentiality: what must never be pasted into a public AI assistant",
+        "Author the French course under a new course id at version 1, with owner review and a walkthrough by someone who did not write it",
+        "Publish it and withdraw meeting-notes-action-plan from the public inventory without changing its immutable version 1"
+      ],
+      "acceptance": [
+        "Reading needs no Juvanga account or payment; any exercise using a vendor tool works on its free plan and says so",
+        "Screenshots contain no personal data, have text alternatives, state their capture date and stay within route budgets",
+        "Pages state that Juvanga is not affiliated with the vendors named",
+        "Owner review and non-author walkthrough are recorded before publication"
+      ],
+      "verification": [
+        "npm run verify; check:course; browser suites run sequentially; owner review recorded"
+      ],
+      "requirements": [
+        "COUR-04",
+        "LEARN-01",
+        "USR-08"
+      ],
+      "references": [
+        "docs/product/OFFERS.md",
+        "docs/architecture/PUBLIC-CONTENT.md",
+        "docs/product/FREE-COURSE.md"
+      ],
+      "evidence": [],
+      "estimate_days": [
+        5,
+        10
       ]
     },
     {

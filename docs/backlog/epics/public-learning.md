@@ -411,7 +411,7 @@ Evidence: docs/architecture/decisions/013-public-offline.md ; docs/delivery/VALI
 
 Milestone **M0** · QA/produit · 1.5–3 person-days · status **blocked**
 
-Dependencies: JUV-106, JUV-109, JUV-110, JUV-111, JUV-112, JUV-107, JUV-115.
+Dependencies: JUV-106, JUV-109, JUV-110, JUV-111, JUV-112, JUV-107, JUV-115, JUV-117.
 
 ### Work
 
@@ -436,7 +436,7 @@ Owner: Claude ; branch: docs/JUV-113-acceptance-artifact.
 
 Evidence: docs/reviews/M0-ACCEPTANCE.md ; docs/sessions/2026-11-07-acceptance-preparation.md ; docs/sessions/2026-11-26-course-publication.md ; docs/operations/M0-RELEASE.md#acceptance-candidate-deployment-evidence--2026-11-27 ; docs/sessions/2026-11-27-acceptance-artifact.md.
 
-Blocker: Course and visual gates satisfied: JUV-113 (PR #5) and JUV-115 (PR #6) are merged; main 5e80fcc passed CI and its exact artifact is live on the technical site (verified 2026-11-27). Five consenting real testers, a facilitator and participant-record retention are still needed; no observations exist.
+Blocker: DEC-15 (2026-11-27): acceptance now waits for the new N0 course (JUV-117) instead of testing meeting-notes-action-plan. The 5e80fcc candidate evidence is history. Five consenting real testers, a facilitator and participant-record retention are still needed; no observations exist.
 
 ---
 
@@ -508,3 +508,76 @@ References: [docs/design/BRAND.md](../../../docs/design/BRAND.md) ; [docs/design
 Owner: Claude ; branch: feat/JUV-115-orientation-visuals.
 
 Evidence: docs/delivery/VALIDATION-JUV-115.md ; docs/sessions/2026-11-26-orientation-visuals.md.
+
+---
+
+<a id="juv-116"></a>
+
+## JUV-116 — Define the launch offer catalogue for AI at work
+
+Milestone **M0** · Product/finance · 0.5–1 person-days · status **done**
+
+Dependencies: JUV-101.
+
+### Work
+
+- Analyze the owner's six-level proposal, its prices and its capacity commitments
+- Record the approved launch range, common rules, durations, follow-up and prices excluding tax
+- Keep the dual-control payment rule and mark nothing as on sale
+- Supersede the M0 course direction and sequence the new N0 course before acceptance
+
+### Acceptance criteria
+
+- [ ] The project owner explicitly approved the range, group pricing rule, durations, follow-up and launch prices
+- [ ] Paid access keeps separate payment entry and approval; a screenshot never grants access
+- [ ] No offer is presented as on sale before JUV-301 and M2
+- [ ] The previous course plan is marked superseded and its history is kept
+
+### Verification
+
+- npm run verify; owner answers recorded in DEC-15
+
+Requirements: cross-cutting.
+
+References: [docs/product/OFFERS.md](../../../docs/product/OFFERS.md) ; [docs/product/DECISIONS.md](../../../docs/product/DECISIONS.md) ; [docs/product/BRIEF.md](../../../docs/product/BRIEF.md).
+
+Owner: Claude ; branch: docs/JUV-116-launch-offer.
+
+Evidence: docs/product/OFFERS.md ; docs/sessions/2026-11-27-launch-offer.md.
+
+---
+
+<a id="juv-117"></a>
+
+## JUV-117 — Plan and author the free N0 course on AI assistants
+
+Milestone **M0** · Education/product · 5–10 person-days · status **todo**
+
+Dependencies: JUV-116.
+
+### Work
+
+- Plan the outcome, lesson sequence, exercises and worked solutions for the N0 course and obtain the owner's approval
+- Explain the ChatGPT and Claude interfaces step by step with dated, annotated screenshots captured by the project, icons and illustrations using the existing image block
+- Teach data confidentiality: what must never be pasted into a public AI assistant
+- Author the French course under a new course id at version 1, with owner review and a walkthrough by someone who did not write it
+- Publish it and withdraw meeting-notes-action-plan from the public inventory without changing its immutable version 1
+
+### Acceptance criteria
+
+- [ ] Reading needs no Juvanga account or payment; any exercise using a vendor tool works on its free plan and says so
+- [ ] Screenshots contain no personal data, have text alternatives, state their capture date and stay within route budgets
+- [ ] Pages state that Juvanga is not affiliated with the vendors named
+- [ ] Owner review and non-author walkthrough are recorded before publication
+
+### Verification
+
+- npm run verify; check:course; browser suites run sequentially; owner review recorded
+
+Requirements: COUR-04, LEARN-01, USR-08.
+
+References: [docs/product/OFFERS.md](../../../docs/product/OFFERS.md) ; [docs/architecture/PUBLIC-CONTENT.md](../../../docs/architecture/PUBLIC-CONTENT.md) ; [docs/product/FREE-COURSE.md](../../../docs/product/FREE-COURSE.md).
+
+Owner: unassigned ; branch: —.
+
+Evidence: none — task not delivered.

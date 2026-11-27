@@ -2,6 +2,8 @@
 
 Ticket: JUV-101. Date: 2026-11-07. Status: plan approved by the project owner on 2026-11-07; course not published.
 
+> **Superseded on 2026-11-27 by [DEC-15](DECISIONS.md#dec-15-launch-offer--2026-11-27).** The M0 course direction is now the N0 course “First steps with AI” planned in JUV-117 ([launch offer](OFFERS.md)). Version 1 of this course was published on 2026-11-26, stays immutable, and is withdrawn from the public inventory when the N0 course is published. The text below is kept as history.
+
 ## Outcome and audience
 
 A beginner will turn a short set of fictional meeting notes into a concise summary and an action plan showing what must happen, who is responsible, when it is due and what still needs clarification. The result is a reusable office document that a colleague can act on.

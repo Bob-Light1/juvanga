@@ -2,14 +2,14 @@
 
 Generated from `backlog.json`. Edit the source, then run `npm run backlog:generate`. Do not edit this view.
 
-88 tasks. Estimates are indicative person-days, excluding waiting, validation and provider costs. An estimate is not a delivery date.
+90 tasks. Estimates are indicative person-days, excluding waiting, validation and provider costs. An estimate is not a delivery date.
 
 Usage: `npm run next` for ready tasks; `npm run task -- JUV-101` for a ticket. Status and owner are in JSON. `done` requires evidence; an unchecked box in this generated view is a reference criterion, not a second tracker.
 
 | Milestone | Tasks | Total estimated person-days |
 | --- | ---: | ---: |
 | F0 | 7 | 6–12.5 |
-| M0 | 15 | 20.5–40.5 |
+| M0 | 17 | 26–51.5 |
 | M1 | 23 | 40–79 |
 | M2 | 29 | 75–146 |
 | P1 | 8 | 25–48 |
@@ -52,9 +52,11 @@ Usage: `npm run next` for ready tasks; `npm run task -- JUV-101` for a ticket. S
 | [JUV-110](epics/public-learning.md#juv-110) | M0 | Save reading progress with local consent | JUV-108 | done |
 | [JUV-111](epics/public-learning.md#juv-111) | M0 | Add help, privacy and real feedback | JUV-106 | done |
 | [JUV-112](epics/public-learning.md#juv-112) | M0 | Optimize slow networks, public PWA and motion | JUV-108, JUV-110, JUV-105 | done |
-| [JUV-113](epics/public-learning.md#juv-113) | M0 | Run acceptance testing with real testers | JUV-106, JUV-109, JUV-110, JUV-111, JUV-112, JUV-107, JUV-115 | blocked |
+| [JUV-113](epics/public-learning.md#juv-113) | M0 | Run acceptance testing with real testers | JUV-106, JUV-109, JUV-110, JUV-111, JUV-112, JUV-107, JUV-115, JUV-117 | blocked |
 | [JUV-114](epics/public-learning.md#juv-114) | M0 | Publish M0 for free and test rollback | JUV-113, JUV-005 | blocked |
 | [JUV-115](epics/public-learning.md#juv-115) | M0 | Add orientation illustrations, icons and motion before acceptance | JUV-104, JUV-105, JUV-112 | done |
+| [JUV-116](epics/public-learning.md#juv-116) | M0 | Define the launch offer catalogue for AI at work | JUV-101 | done |
+| [JUV-117](epics/public-learning.md#juv-117) | M0 | Plan and author the free N0 course on AI assistants | JUV-116 | todo |
 | [JUV-201](epics/identity-platform.md#juv-201) | M1 | Initialize PostgreSQL, migrations and local environment | JUV-006 | done |
 | [JUV-202](epics/identity-platform.md#juv-202) | M1 | Create Hono API, OpenAPI and same-origin routing | JUV-201, JUV-114 | todo |
 | [JUV-203](epics/identity-platform.md#juv-203) | M1 | Configure provider email, identity and MFA | JUV-202 | todo |

@@ -27,8 +27,8 @@
   "publishedAt": null,
   "modules": [
     {
-      "id": "discover",
-      "title": "Découvrir l’assistant",
+      "id": "first-steps",
+      "title": "Six étapes pour bien démarrer",
       "lessons": [
         {
           "id": "account-and-interface",
@@ -326,13 +326,7 @@
               }
             ]
           }
-        }
-      ]
-    },
-    {
-      "id": "use-well",
-      "title": "Bien s’en servir",
-      "lessons": [
+        },
         {
           "id": "write-a-clear-request",
           "title": "Écrire une demande claire",

@@ -10,6 +10,10 @@ The canonical draft is [v1.json](v1.json): six lessons, status `draft`, authored
 - **Fictional data.** The data is obviously fictional: an “Office fictif des archives du Littoral”, “M. Exemple Paul” and “Mme Modèle Alice”, matricules 000 000 and 111 222, and the phone number 6 00 00 00 00. Undated weekdays keep the scenarios evergreen.
 - **No N1 link.** The plan's closing link to the N1 description is omitted because no N1 page exists. Add it in a later version.
 
+## Phone preview
+
+`node scripts/preview-draft.mjs content/drafts/premiers-pas-ia [port]` builds the real reader with this draft in a temporary inventory. Inside that inventory the draft is marked published, with metadata labeled “Local preview only — not reviewed”. The script then restores the default build and serves the preview, unindexed, on the local network. Nothing is deployed, and the temporary files are removed when the server stops.
+
 ## Unverified vendor details
 
 Before review, confirm these against the owner screenshots and correct the text.

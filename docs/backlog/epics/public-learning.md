@@ -551,7 +551,7 @@ Evidence: docs/product/OFFERS.md ; docs/sessions/2026-11-27-launch-offer.md.
 
 ## JUV-117 — Plan and author the free N0 course on AI assistants
 
-Milestone **M0** · Education/product · 5–10 person-days · status **todo**
+Milestone **M0** · Education/product · 5–10 person-days · status **in_progress**
 
 Dependencies: JUV-116.
 
@@ -576,8 +576,8 @@ Dependencies: JUV-116.
 
 Requirements: COUR-04, LEARN-01, USR-08.
 
-References: [docs/product/OFFERS.md](../../../docs/product/OFFERS.md) ; [docs/architecture/PUBLIC-CONTENT.md](../../../docs/architecture/PUBLIC-CONTENT.md) ; [docs/product/FREE-COURSE.md](../../../docs/product/FREE-COURSE.md).
+References: [docs/product/N0-COURSE.md](../../../docs/product/N0-COURSE.md) ; [docs/product/OFFERS.md](../../../docs/product/OFFERS.md) ; [docs/architecture/PUBLIC-CONTENT.md](../../../docs/architecture/PUBLIC-CONTENT.md) ; [docs/product/FREE-COURSE.md](../../../docs/product/FREE-COURSE.md).
 
-Owner: unassigned ; branch: —.
+Owner: Claude ; branch: feat/JUV-117-n0-course.
 
 Evidence: none — task not delivered.

@@ -1173,10 +1173,10 @@
       "title": "Plan and author the free N0 course on AI assistants",
       "role": "Education/product",
       "priority": "P0",
-      "status": "todo",
+      "status": "in_progress",
       "updated_at": "2026-11-27",
-      "owner": null,
-      "branch": null,
+      "owner": "Claude",
+      "branch": "feat/JUV-117-n0-course",
       "blocker": null,
       "depends_on": [
         "JUV-116"
@@ -1203,6 +1203,7 @@
         "USR-08"
       ],
       "references": [
+        "docs/product/N0-COURSE.md",
         "docs/product/OFFERS.md",
         "docs/architecture/PUBLIC-CONTENT.md",
         "docs/product/FREE-COURSE.md"

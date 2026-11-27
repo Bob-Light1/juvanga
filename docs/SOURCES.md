@@ -78,6 +78,19 @@ Consulted the official [Pages data-localization guidance](https://developers.clo
 
 Consulted the official [Pages data-localization guidance](https://developers.cloudflare.com/data-localization/how-to/pages/), [Logs FAQ](https://developers.cloudflare.com/logs/faq/general-faq/) and search excerpts of the [Privacy Policy](https://www.cloudflare.com/privacypolicy/) and [DPA v6.3](https://cf-assets.www.cloudflare.com/slt3lc6tev37/3LmXORq5FW5EuJ0OT1B871/f466268011407efbc07f4fadbd1af466/Cloudflare_Customer_DPA_v6.3_June_20__2025.pdf). Cloudflare acts as processor for Customer Logs, which can include IP addresses; the DPA covers self-serve agreements; Regional Services do not apply to `*.pages.dev`. No precise retention period for static Pages request logs was found. The full policy and DPA could not be opened from the Camtel connection, so their current text was not read end to end. This is not legal advice.
 
+## N0 course provider research — 2026-11-27
+
+For JUV-117, read the official Anthropic [Supported Regions Policy](https://www.anthropic.com/supported-countries) and the OpenAI [supported countries article](https://help.openai.com/en/articles/7947663-chatgpt-supported-countries).
+- **Anthropic:** the policy was effective on 12 November 2026. It has one list for all products, including Claude.ai, and Cameroon is on it.
+- **OpenAI:** the article showed "Updated: 4 days ago", about 23 November 2026. Its list covers ChatGPT (web and mobile) and the API, and Cameroon is on it.
+
+Search excerpts of Anthropic's [consumer terms update](https://www.anthropic.com/news/updates-to-our-consumer-terms) (28 August 2025) and [privacy settings help](https://privacy.claude.com/en/articles/12109829-how-do-i-change-my-privacy-settings) describe the following. They were not read end to end.
+- A "Help improve Claude" toggle controls model training on consumer chats.
+- Retention is 30 days when training is off and five years when it is on.
+- The terms exclude commercial plans.
+
+Interface labels, free-plan limits and subscription prices were not researched. Verify them against owner-captured screenshots before authoring. Availability can change: recheck before publication.
+
 ## Order of authority
 
 Current user instruction → explicit project decisions → source requirements not superseded → documented assumptions. Resolve and trace significant contradictions; ADRs do not cancel financial requirements for technical convenience.

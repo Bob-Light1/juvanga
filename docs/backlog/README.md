@@ -56,7 +56,7 @@ Usage: `npm run next` for ready tasks; `npm run task -- JUV-101` for a ticket. S
 | [JUV-114](epics/public-learning.md#juv-114) | M0 | Publish M0 for free and test rollback | JUV-113, JUV-005 | blocked |
 | [JUV-115](epics/public-learning.md#juv-115) | M0 | Add orientation illustrations, icons and motion before acceptance | JUV-104, JUV-105, JUV-112 | done |
 | [JUV-116](epics/public-learning.md#juv-116) | M0 | Define the launch offer catalogue for AI at work | JUV-101 | done |
-| [JUV-117](epics/public-learning.md#juv-117) | M0 | Plan and author the free N0 course on AI assistants | JUV-116 | todo |
+| [JUV-117](epics/public-learning.md#juv-117) | M0 | Plan and author the free N0 course on AI assistants | JUV-116 | in_progress |
 | [JUV-201](epics/identity-platform.md#juv-201) | M1 | Initialize PostgreSQL, migrations and local environment | JUV-006 | done |
 | [JUV-202](epics/identity-platform.md#juv-202) | M1 | Create Hono API, OpenAPI and same-origin routing | JUV-201, JUV-114 | todo |
 | [JUV-203](epics/identity-platform.md#juv-203) | M1 | Configure provider email, identity and MFA | JUV-202 | todo |

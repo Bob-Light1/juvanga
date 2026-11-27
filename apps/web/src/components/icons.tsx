@@ -10,6 +10,10 @@ const paths = {
   offline: ['M8 2.5h8a1.5 1.5 0 0 1 1.5 1.5v16a1.5 1.5 0 0 1-1.5 1.5H8A1.5 1.5 0 0 1 6.5 20V4A1.5 1.5 0 0 1 8 2.5z', 'M12 7v7M9.5 11.5L12 14l2.5-2.5M10.5 18.5h3'],
   progress: ['M4 18l5-5 4 3 7-8', 'M15 8h5v5'],
   home: ['M4 11L12 4l8 7', 'M6.5 9.5V20h11V9.5M10 20v-5h4v5'],
+  // ADR-015 lesson callouts.
+  information: ['M12 3a9 9 0 1 0 0 18a9 9 0 1 0 0-18z', 'M12 11v5.5M12 7.5v.01'],
+  warning: ['M12 3.5L21.5 20h-19z', 'M12 9.5v5M12 17.5v.01'],
+  tip: ['M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2V17h5v-1.1c0-.8.4-1.5 1-2A6 6 0 0 0 12 3z', 'M10 20.5h4'],
 } as const;
 
 export type IconName = keyof typeof paths;

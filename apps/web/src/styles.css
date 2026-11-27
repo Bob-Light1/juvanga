@@ -122,8 +122,14 @@ input.field-input:read-only { background: var(--color-sand); }
 .lesson-note { border-left: 4px solid var(--color-night); padding: var(--space-6); margin-block: var(--space-8); background: var(--color-white); border-radius: var(--radius-sm); }
 .lesson-note-warning { border-left-color: var(--color-warning); }
 .lesson-note p { margin-bottom: 0; }
+.lesson-note-label { display: flex; align-items: center; }
+.lesson-note-tip { border-left-color: var(--color-gold); }
+.lesson-note-try { border-left-color: var(--color-night); background: var(--color-sand); }
 .lesson-image { margin: var(--space-8) 0; padding: var(--space-6); border: 1px solid var(--color-border); border-radius: var(--radius-md); }
 .lesson-image img { display: block; max-width: 100%; height: auto; margin-top: var(--space-4); }
+.lesson-image-auto { padding: 0; border: 0; }
+.lesson-image-auto img { margin-top: 0; border-radius: var(--radius-md); }
+.lesson-image-auto figcaption, .lesson-image-auto [role="status"] { margin-top: var(--space-3); }
 .lesson-image figcaption, .lesson-image [role="status"] { color: var(--color-muted); }
 .lesson-pagination { display: flex; flex-wrap: wrap; gap: var(--space-4); margin-block: var(--space-12); }
 .lesson-pagination .button { flex-direction: column; gap: var(--space-2); flex: 1 1 200px; }

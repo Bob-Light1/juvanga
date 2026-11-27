@@ -11,7 +11,7 @@ import { siteOrigin } from '../scripts/site-output.mjs';
 const directory = process.env.JUVANGA_READER_FIXTURE_ROOT;
 if (!directory) throw new Error('Run the reader fixture through npm run test:reader');
 export default defineConfig({
-  plugins: [react(), overviewPlugin({ publicDirectory: directory }), readerPlugin(directory), practicePlugin(directory), contentValidationPlugin(directory), staticPreviewPlugin()],
+  plugins: [react(), overviewPlugin({ publicDirectory: directory }), readerPlugin(directory), practicePlugin(directory), contentValidationPlugin(directory, { mediaDirectory: process.env.JUVANGA_READER_FIXTURE_MEDIA }), staticPreviewPlugin()],
   define: { __PSEUDO_LOCALIZATION__: false, __SITE_ORIGIN__: JSON.stringify(siteOrigin(process.env.SITE_URL)) },
   build: { target: 'es2022' },
 });

@@ -95,7 +95,7 @@ test('requested illustration survives slow network, failure and keyboard retry',
     else await route.fulfill({ contentType: 'image/png', body: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aWZkAAAAASUVORK5CYII=', 'base64') });
   });
   await page.goto(lesson(1));
-  const figure = page.locator('figure');
+  const figure = page.locator('#block-reader-illustration');
   await figure.scrollIntoViewIfNeeded();
   await expect(figure.getByText('Schéma fictif : une note mène à une action.', { exact: true })).toBeVisible();
   await expect(figure.locator('img')).toHaveCount(0);
@@ -121,4 +121,43 @@ test('requested illustration survives slow network, failure and keyboard retry',
   await page.getByRole('navigation', { name: 'Passer à une autre leçon' }).locator('[rel="next"]').click();
   await expect(page).toHaveURL(lesson(2));
   await expect(page.locator('#main')).toBeFocused();
+});
+
+// ADR-015: automatic lightweight illustrations and icon callouts.
+test('automatic illustration is prerendered, shown without action and recovers from failure', async ({ page, context, request }) => {
+  const html = await (await request.get(lesson(1))).text();
+  expect(html).toMatch(/<img[^>]+src="\/media\/reader-auto\.png"[^>]+loading="lazy"|<img[^>]+loading="lazy"[^>]+src="\/media\/reader-auto\.png"/);
+  let requests = 0;
+  await context.route('**/media/reader-auto.png', async route => {
+    requests++;
+    if (requests === 1) await route.abort();
+    else await route.fulfill({ contentType: 'image/png', body: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aWZkAAAAASUVORK5CYII=', 'base64') });
+  });
+  await page.goto(lesson(1));
+  const figure = page.locator('#block-reader-auto-illustration');
+  await figure.scrollIntoViewIfNeeded();
+  await expect(figure.getByText('Schéma fictif affiché automatiquement.', { exact: true })).toBeVisible();
+  await expect(figure.getByRole('status')).toContainText('L’illustration est indisponible');
+  const retry = figure.getByRole('button', { name: 'Réessayer l’illustration' });
+  await retry.focus();
+  await page.keyboard.press('Enter');
+  await expect(figure.getByRole('img')).toHaveAttribute('alt', 'Schéma fictif affiché automatiquement.');
+  await expect.poll(() => figure.locator('img').evaluate(image => (image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+  await expect(figure).toBeFocused();
+  expect(requests).toBe(2);
+});
+
+test('automatic illustration displays without JavaScript and callouts keep their labels', async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  try {
+    await context.route('**/media/reader-auto.png', route => route.fulfill({ contentType: 'image/png', body: Buffer.from('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMCAO+aWZkAAAAASUVORK5CYII=', 'base64') }));
+    const page = await context.newPage();
+    await page.goto(lesson(1));
+    const image = page.locator('#block-reader-auto-illustration img');
+    await image.scrollIntoViewIfNeeded();
+    await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+    await expect(page.locator('#block-reader-tip')).toContainText('Astuce');
+    await expect(page.locator('#block-reader-try')).toContainText('Essayez');
+    await expect(page.locator('#block-reader-tip svg')).toHaveAttribute('aria-hidden', 'true');
+  } finally { await context.close(); }
 });

@@ -20,6 +20,7 @@ Reference date: 2026-11-06. The roles below are responsibilities to assign, not 
 | DEC-12 | External SMTP, sender domain and quota | Not configured | Operations | Before public M1 registration |
 | DEC-13 | Repository maintainer and reviewers | To appoint | Project owner | Before remote teamwork |
 | DEC-14 | English documentation, code, identifiers and code comments; French launch interface | Confirmed by the user on 2026-11-06 | Codex for JUV-007; contributors thereafter | Applies to all maintained documentation and new comments; preserve source archives with English companions |
+| DEC-15 | Launch offer: one domain (AI at work), levels, durations, follow-up and launch prices | Approved by the project owner on 2026-11-27 for planning and presentation; not on sale | Project owner | Sales after JUV-301; N0 course in JUV-117 |
 
 ## Recording a decision
 
@@ -88,3 +89,38 @@ The owner created the Pages project with `main` as its production branch after t
 ## DEC-10 hosting notice validation — 2026-11-21
 
 The owner validated the French hosting notice naming Cloudflare Pages, possible processing outside Cameroon, the absence of a precise published log-retention period found, and the commitment that Juvanga neither exports these logs nor uses them to identify visitors. The owner reported Web Analytics and Logpush inactive; these settings were not independently inspected. This supersedes the notice's unverified-provider wording. It is not legal review and does not authorize official launch. JUV-111 stays blocked until the notice is deployed and verified remotely.
+
+## DEC-15 launch offer — 2026-11-27
+
+The project owner decided to rethink all course content and launch with a single domain: generative AI assistants for everyday professional work. The primary audience is executives and administrators of public, private and parapublic organizations, and groups of employees or members. The owner proposed six levels and a community. Claude analyzed them. The owner then approved the launch range, durations, follow-up and prices recorded in [OFFERS.md](OFFERS.md). The owner explicitly chose:
+
+- a launch range of N0 (free), N1 online, N1, N2 (custom assistants without code), a leaders' session and the community. Websites, applications, agent development and marketing move to a waitlisted creator track;
+- the group pricing rule (−15% for 5–9, −25% for 10) and launch prices N1 200,000 / 850,000 / 1,500,000 XAF, N1 online 50,000 and N2 350,000 / 1,500,000 / 2,600,000. The community stays at 60,000 per year;
+- 2 × 2 hours per week in person: N1 runs 4 weeks (16 hours), N2 runs 6 weeks (24 hours);
+- one offered subscription month for N1;
+- follow-up of 1 hour per month individually plus 2 group sessions per month;
+- prices excluding tax, with any applicable tax added to the payment;
+- course content visible only after payment is verified and approved. A second person records the payment and the owner approves. The [SECURITY.md](../architecture/SECURITY.md) dual-control rule is kept; the owner's initial wish to validate alone was not adopted.
+
+Alternatives considered: the owner's original six-level paid ladder. It was rejected for launch because it spread four domains across an audience that buys one and committed trainers to year-long cohorts. The owner's original group discounts (up to −50%) were rejected because follow-up and subscription costs are per person.
+
+Effect:
+- **DEC-02:** launch prices are now set for these offers; order validity and fees remain pending.
+- **DEC-04:** the dual-control rule is confirmed; the second operator is still unnamed.
+- **DEC-05:** the owner's intent is prices excluding tax, while the tax regime remains for a local expert.
+- **M0 course:** this supersedes `meeting-notes-action-plan` as the M0 course direction. Its version 1 remains immutable, and is withdrawn from the public inventory once the new N0 course is published under JUV-117.
+- **JUV-113:** acceptance now waits for that N0 course instead of testing the current course.
+
+Nothing is on sale. No architecture change: the existing image content block, M1 accounts and M2 entitlements already cover this model. Affects JUV-113, JUV-116, JUV-117 and JUV-301.
+
+## DEC-15 N0 course plan approval — 2026-11-27
+
+The project owner approved the [N0 course plan](N0-COURSE.md) and made four choices:
+
+- learners are addressed formally (*vouvoiement*);
+- visuals are mixed: diagrams drawn by the project, plus owner screenshots annotated by Claude;
+- exercises require real use of ChatGPT or Claude on a free plan;
+- lightweight images display automatically while heavy ones keep the load action.
+
+Alternatives offered and declined: informal address, screenshots only, diagrams only, paper-only or optional tool use, and keeping every image behind a load action or showing every image automatically. Effect: [ADR-015](../architecture/decisions/015-light-illustrations.md) amends ADR-010 image loading and adds tip/try callouts. The N0 course requires a free account with one vendor, but no Juvanga account. Affects JUV-117.
+

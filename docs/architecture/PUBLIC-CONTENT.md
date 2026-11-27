@@ -41,10 +41,10 @@ All blocks have a stable `id` and one of these `type` values:
 | `paragraph` | `text` |
 | `heading` | `level` (2 or 3), `text` |
 | `list` | `ordered` (boolean), nonempty `items` (plain strings) |
-| `note` | `tone` (`information` or `warning`), `text` |
+| `note` | `tone` (`information` or `warning`; schema 2 also `tip` or `try`), `text` |
 | `link` | `text`, `url` (absolute HTTPS, no credentials, whitespace or backslashes) |
 | `lesson-link` | `text`, `courseId`, `courseVersion`, `lessonId` |
-| `image` (schema 2 only) | `src` (same-origin `/media/<lowercase-name>.(png\|jpg\|webp\|avif)`), nonblank `alt`, integer `width`/`height` (1–8192), optional `caption` |
+| `image` (schema 2 only) | `src` (same-origin `/media/<lowercase-name>.(png\|jpg\|webp\|avif)`), nonblank `alt`, integer `width`/`height` (1–8192), optional `caption`, optional `display` (`request` by default, or `auto` under ADR-015) |
 
 An internal lesson link must resolve to a lesson in a version listed in the same public catalogue. The checker inspects teaching blocks, examples and worked solutions. JUV-108 generates `/learn/:course/v/:version/:lesson` references preserving the exact version. External links are validated without fetching their targets; review destination availability and relevance before publication.
 
@@ -68,7 +68,7 @@ Correct a draft before publication. Correct a published course by adding a new v
 
 The reader projection excludes exercise instructions, rubrics, worked solutions and editorial metadata. It renders plain text, objectives and examples; exercise interaction remains JUV-109. See [ADR-010](decisions/010-lesson-reader.md). Canonical URLs retain course versions; `/learn/:course/:lesson` selects the latest published French version and points its canonical to the versioned route. Only canonical routes enter the sitemap.
 
-An image must have a meaningful equivalent description, intrinsic dimensions, reviewed rights and a matching raster asset in `apps/web/public/media/`. No remote URL, traversal, SVG, data URL, video or iframe is accepted. Images require an explicit load action, retain their description during failure and offer retry. Text remains readable with JavaScript disabled; optional images need JavaScript to load. The schema validates source syntax and dimensions; it does not verify asset existence, bytes, relevance or rights. Check those before publication. Current real content remains text-only and unpublished.
+An image must have a meaningful equivalent description, intrinsic dimensions, reviewed rights and a matching raster asset in `apps/web/public/media/`. No remote URL, traversal, SVG, data URL, video or iframe is accepted. Images with `display: "request"` (the default) require an explicit load action and need JavaScript to load. Images with `display: "auto"` ([ADR-015](decisions/015-light-illustrations.md)) are prerendered with lazy loading and appear without JavaScript. The build fails unless each automatic image exists in `apps/web/public/media/` and weighs at most 40 KiB, with at most 120 KiB of automatic images per lesson page or per worked solution. Every image retains its description during failure and offers a retry. Text remains readable with JavaScript disabled. Request images are not checked for existence or bytes, and no image is checked for pixel dimensions, relevance or rights: check those before publication. `tip` and `try` notes render with a decorative icon and their visible label (*Astuce*, *Essayez*).
 
 ## Exercise presentation (JUV-109)
 

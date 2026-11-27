@@ -1,6 +1,6 @@
 # M0 release and rollback record
 
-Updated: 2026-11-21. JUV-114 preparation owner: Codex, branch `feat/JUV-114-domain-record`. JUV-111 closure owner: Claude, branch `docs/JUV-111-closure`.
+Updated: 2026-11-27. JUV-114 preparation owner: Codex, branch `feat/JUV-114-domain-record`. JUV-113 acceptance-candidate check: Claude, branch `docs/JUV-113-acceptance-artifact`.
 Status: **official release blocked; nonindexable technical deployment verified; rollback not run**.
 
 ## Current record
@@ -10,12 +10,12 @@ Status: **official release blocked; nonindexable technical deployment verified; 
 | JUV-113 acceptance | Incomplete; [entry gates and observation report](../reviews/M0-ACCEPTANCE.md) |
 | Owner-controlled Cloudflare access/project | Pages project `juvanga` shown in owner screenshot; see [technical deployment evidence](#technical-deployment-evidence--2026-11-21). No agent account access |
 | Public HTTPS origin / domain | Technical origin `https://juvanga.pages.dev` verified. `juvanga.com` remains unattached; official origin not configured |
-| Accepted release commit / artifact hash | Not selected; latest implementation evidence is [JUV-112](../delivery/VALIDATION-JUV-112.md) |
-| Real published course version | None; approved course remains editorial |
+| Accepted release commit / artifact hash | Not selected. Acceptance candidate under test: `main` at `5e80fcc`, PWA cache `juvanga-public-2f9ae5e6c3ec725358ff`; see [candidate evidence](#acceptance-candidate-deployment-evidence--2026-11-27) |
+| Real published course version | `meeting-notes-action-plan` v1, published for acceptance ([DEC-07](../product/DECISIONS.md#dec-07-publication-decision--2026-11-26)); live on the technical site since the `5e80fcc` deployment |
 | Real support URL and reception test | Email reception/retention and operator wording recorded in [JUV-111 evidence](../delivery/VALIDATION-JUV-111.md); hosting notice deployed |
 | Hosting logs, location, retention and feedback policy | Provider role and possible transfers documented; no precise log retention found; owner-validated notice deployed on 2026-11-21; Web Analytics/Logpush state owner-reported |
 | Free-plan quotas / owning account / check date | Plan and quotas not displayed in the supplied screenshots; recheck at release |
-| Production deployment ID / operator / UTC timestamp | Latest technical deployment serves `260ddbf` (ID not supplied). Earlier: `a449b027-aa67-4ed2-a0f0-0637f8f2d34a`, `7f78d38`, 2026-11-21T15:34:48Z. No official production release |
+| Production deployment ID / operator / UTC timestamp | Latest technical deployment serves `5e80fcc` (ID not supplied; identity inferred from artifact hashes on 2026-11-27). Before: `260ddbf`. Earlier: `a449b027-aa67-4ed2-a0f0-0637f8f2d34a`, `7f78d38`, 2026-11-21T15:34:48Z. No official production release |
 | Previous compatible deployment / rollback target | `a449b027` exists; compatibility and rollback not tested |
 | Actual rollback and restoration results | Not run |
 | Remote HTTPS, headers, deep-link and installed-worker smoke | Passed for the technical deployment; official-release smoke not run |
@@ -86,6 +86,20 @@ Not verified: plan and quotas, actual request-log contents, precise log retentio
 This supersedes the undeployed-correction state above. `main` at `260ddbf` passed Quality CI. All 28 compared public files matched a local build of the identical tree, and cache `juvanga-public-2aab75674ca10db0889a` is live. `/privacy` shows the owner-validated notice. Nine routes passed in headless Chrome at 360 px with the service worker active.
 
 `/build-report.json` is absent from the new deployment: a cache-busted request returned 404. The plain URL still returned a stale edge-cache copy of the non-secret report (`cf-cache-status: HIT`).
+
+## Acceptance-candidate deployment evidence — 2026-11-27
+
+This supersedes the `260ddbf` state above. PR #5 (JUV-113 course publication) and PR #6 (JUV-115 orientation visuals) were merged in that order; `main` is `5e80fcc`. Its Quality run on GitHub Actions passed `verify`, `test:e2e` and the database job (read through the public API; no account access).
+
+Read-only checks from this workstation on 2026-11-27 around 07:57Z, against a local Node 24 build of the identical tree:
+
+- All 42 served public files matched by SHA-256: 19 by direct path and 23 HTML pages by their extensionless route (`*.html` answers 308 to it). `_headers` is not served. PWA cache `juvanga-public-2f9ae5e6c3ec725358ff` is live.
+- The worker precaches the three v1 lessons and exercises, under both the latest and the `/v/1/` addresses.
+- Unknown routes, including under `/learn/`, returned HTTP 404 with the matching recovery page. Uncached `/build-report.json` returned 404.
+- CSP, nosniff, referrer, frame, permissions and `X-Robots-Tag: noindex, nofollow` headers were effective on the home page.
+- Headless Chrome at 360 px loaded 11 routes (home, catalogue, course, two versioned and one latest lesson/exercise, help, feedback, privacy, progress, offline) with HTTP 200, no horizontal overflow, no console error or failed request. The worker was activated at scope `/`. The home page shows the JUV-115 loop, learner and bottom tab bar.
+
+Local `npm run verify` on the same tree passed (95 tests). Not verified: provider deployment ID, real devices, non-Chromium browsers, screen readers, installed-client update and real testers. Any later merge to `main` replaces this artifact; record the new commit and cache before observing a session.
 
 ## Official-release entry checklist (not executed)
 

@@ -1,6 +1,6 @@
 # Current status — Juvanga
 
-Updated on 2026-11-26. **F0 complete; M0 underway. JUV-101–112 done; approved course v1 published for acceptance on branch; JUV-113/114 blocked; technical `pages.dev` deployment verified. M1 local database foundation (JUV-201) done.**
+Updated on 2026-11-27. **F0 complete; M0 underway. JUV-101–112 and JUV-115 done; approved course v1 and orientation visuals live on the technical `pages.dev` site; JUV-113/114 blocked. M1 local database foundation (JUV-201) done.**
 
 ## Stable decisions
 
@@ -8,7 +8,7 @@ Juvanga; symbol B (J + sun); night/sand/gold; React/TypeScript/Vite/Motion. M0 i
 
 ## Repository
 
-PR #2 is merged at `7f78d38`; its main CI passed. Use isolated Node 24/npm 11. Account email verification and active TOTP are recorded. Pages serves `main` with automatic deployments, so every merge to `main` republishes the public nonindexable technical site.
+PR #5 (JUV-113 course publication) and PR #6 (JUV-115 visuals) are merged; `main` is `5e80fcc` and its Quality CI passed. Use isolated Node 24/npm 11. Account email verification and active TOTP are recorded. Pages serves `main` with automatic deployments, so every merge to `main` republishes the public nonindexable technical site.
 
 ## Current work and evidence
 
@@ -22,14 +22,14 @@ Previous learning delivery: [reader](delivery/VALIDATION-JUV-108.md), [practice]
 
 ## Release gates and next work
 
-The owner decided on 2026-11-26 to publish `meeting-notes-action-plan` v1 for acceptance ([DEC-07 publication decision](product/DECISIONS.md#dec-07-publication-decision--2026-11-26)). The public copy equals the approved draft except `status`/`publishedAt`, enforced by a test. It reaches the nonindexable technical site only after merge to `main`. Version 1 is immutable. Synthetic published content is test-only and must never remain in the default artifact.
+The owner decided on 2026-11-26 to publish `meeting-notes-action-plan` v1 for acceptance ([DEC-07 publication decision](product/DECISIONS.md#dec-07-publication-decision--2026-11-26)). The public copy equals the approved draft except `status`/`publishedAt`, enforced by a test. It is live on the nonindexable technical site. Version 1 is immutable. Synthetic published content is test-only and must never remain in the default artifact.
 
-JUV-113: owner Claude (reassigned from Codex by the owner, 2026-11-26); branch `feat/JUV-113-course-publication`; status `blocked` on real testers; JUV-115 had to finish first ([owner decision](product/DECISIONS.md#acceptance-sequencing-decision--2026-11-26)). JUV-115: owner Claude; branch `feat/JUV-115-orientation-visuals` (stacked on the unmerged JUV-113 branch); date 2026-11-26; status `done`. Owner-selected loop with learner (first phone screen), line + sun icons, bottom tab bar and lively CSS motion; verify, 25 browser and 17 reader scenarios passed; owner approved the rendering ([evidence](delivery/VALIDATION-JUV-115.md)). Merge JUV-113 first, then JUV-115. Five real testers have no observations yet; the [protocol and blank observation sheet](reviews/M0-ACCEPTANCE.md) are prepared. JUV-114: owner Codex, reassigned for repository preparation; branch `feat/JUV-114-domain-record`; date 2026-11-20; status `blocked` (preparation only). **`juvanga.com` is purchased and active at Cloudflare Registrar**, evidenced by owner-supplied screenshots; see [registration facts and limits](operations/M0-RELEASE.md#domain-registration-evidence--2026-11-12). Custom-domain DNS/HTTPS attachment and email verification remain unverified. No official production origin or rollback exists. Official release requires completed acceptance; the separately authorized technical bootstrap is described in [the release record](operations/M0-RELEASE.md#technical-bootstrap-authorized--2026-11-20). Real testers, physical devices, non-Chromium, screen readers and independent learner review remain unverified.
+JUV-113: owner Claude (reassigned from Codex by the owner, 2026-11-26); branch `docs/JUV-113-acceptance-artifact`; date 2026-11-27; status `blocked` on real testers only. The acceptance candidate is recorded: all 42 live public files match a local build of `5e80fcc`, cache `juvanga-public-2f9ae5e6c3ec725358ff`, 11 routes passed in headless Chrome at 360 px ([evidence](operations/M0-RELEASE.md#acceptance-candidate-deployment-evidence--2026-11-27)). JUV-115 (owner Claude, `done`): owner-approved loop, learner, icons, tab bar and motion ([evidence](delivery/VALIDATION-JUV-115.md)). Five real testers have no observations yet; the [protocol and blank observation sheet](reviews/M0-ACCEPTANCE.md) are prepared. JUV-114: owner Codex, reassigned for repository preparation; branch `feat/JUV-114-domain-record`; date 2026-11-20; status `blocked` (preparation only). **`juvanga.com` is purchased and active at Cloudflare Registrar**, evidenced by owner-supplied screenshots; see [registration facts and limits](operations/M0-RELEASE.md#domain-registration-evidence--2026-11-12). Custom-domain DNS/HTTPS attachment and email verification remain unverified. No official production origin or rollback exists. Official release requires completed acceptance; the separately authorized technical bootstrap is described in [the release record](operations/M0-RELEASE.md#technical-bootstrap-authorized--2026-11-20). Real testers, physical devices, non-Chromium, screen readers and independent learner review remain unverified.
 
 No business backend, hosted database, real accounts, SMTP, synchronization or configured English translation. JUV-201 uses fictional local data only. ADR-005 requires review before real accounts. M0 course accountable owner/reviewer: project owner, self-appointed on 2026-11-07. Maintainer/C1 roles remain unassigned; the M0 hosting/support operator is confirmed; [decisions](product/DECISIONS.md).
 
 Commands: `npm run context`, `npm run task -- JUV-113`, `npm run verify`, `npm run db:start`, `npm run test:db`, `npm run db:stop`, `PLAYWRIGHT_CHANNEL=chrome npm run test:e2e`, `PLAYWRIGHT_CHANNEL=chrome npm run test:reader`. Run browser suites sequentially; they share the output artifact.
 
-JUV-202 still depends on JUV-114. Full local verify passed (94 tests); 17 reader scenarios passed and the French noindex artifact was restored. CI on `f098d48` passed 94 tests, all 25 browser scenarios and two 39-assertion database cycles. Custom-domain DNS/HTTPS, rollback and human acceptance remain unverified.
+JUV-202 still depends on JUV-114. Local verify on `5e80fcc` passed (95 tests). Custom-domain DNS/HTTPS, rollback and human acceptance remain unverified.
 
-Latest handoff: [Orientation visuals](sessions/2026-11-26-orientation-visuals.md). Prior: [course publication](sessions/2026-11-26-course-publication.md), [technical deployment](sessions/2026-11-21-technical-deployment.md), [technical bootstrap](sessions/2026-11-20-technical-bootstrap.md).
+Latest handoff: [Acceptance artifact](sessions/2026-11-27-acceptance-artifact.md). Prior: [orientation visuals](sessions/2026-11-26-orientation-visuals.md), [course publication](sessions/2026-11-26-course-publication.md), [technical deployment](sessions/2026-11-21-technical-deployment.md).

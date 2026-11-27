@@ -432,11 +432,11 @@ Requirements: USR-04, USR-08.
 
 References: [docs/delivery/QUALITY.md](../../../docs/delivery/QUALITY.md).
 
-Owner: Claude ; branch: feat/JUV-113-course-publication.
+Owner: Claude ; branch: docs/JUV-113-acceptance-artifact.
 
-Evidence: docs/reviews/M0-ACCEPTANCE.md ; docs/sessions/2026-11-07-acceptance-preparation.md ; docs/sessions/2026-11-26-course-publication.md.
+Evidence: docs/reviews/M0-ACCEPTANCE.md ; docs/sessions/2026-11-07-acceptance-preparation.md ; docs/sessions/2026-11-26-course-publication.md ; docs/operations/M0-RELEASE.md#acceptance-candidate-deployment-evidence--2026-11-27 ; docs/sessions/2026-11-27-acceptance-artifact.md.
 
-Blocker: Course gate satisfied: owner published approved v1 for acceptance on 2026-11-26 (DEC-07 publication decision). Five consenting real testers, a facilitator and participant-record retention are still needed; no observations exist. Owner decision 2026-11-26: tester sessions start only after JUV-115 visual orientation work is done. JUV-115 was completed and owner-approved on 2026-11-26.
+Blocker: Course and visual gates satisfied: JUV-113 (PR #5) and JUV-115 (PR #6) are merged; main 5e80fcc passed CI and its exact artifact is live on the technical site (verified 2026-11-27). Five consenting real testers, a facilitator and participant-record retention are still needed; no observations exist.
 
 ---
 

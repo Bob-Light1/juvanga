@@ -7,7 +7,7 @@ Status: **blocked; real-tester acceptance not executed**. No participants have b
 
 JUV-111 must be done, including an actual support URL, authorized reception test and accurate retention notice. JUV-112 is done; its [technical results and limits](../delivery/VALIDATION-JUV-112.md) are supporting evidence only. Do not activate JUV-113 before all backlog dependencies are done.
 
-Course gate satisfied on 2026-11-26: `meeting-notes-action-plan` version 1, published `2026-11-26T07:50:59Z` by [owner decision](../product/DECISIONS.md#dec-07-publication-decision--2026-11-26), identical to the approved text. Record the exact commit/artifact and preview URL before observing the journey; the course is reachable on the technical site only after merge to `main` and redeployment.
+Course gate satisfied on 2026-11-26: `meeting-notes-action-plan` version 1, published `2026-11-26T07:50:59Z` by [owner decision](../product/DECISIONS.md#dec-07-publication-decision--2026-11-26), identical to the approved text. Recorded on 2026-11-27: the course is live on `https://juvanga.pages.dev` from `main` at `5e80fcc`, PWA cache `juvanga-public-2f9ae5e6c3ec725358ff` ([deployment evidence](../operations/M0-RELEASE.md#acceptance-candidate-deployment-evidence--2026-11-27)). JUV-115 visuals are included. If `main` changes before a session, record the new commit and cache first.
 
 Appoint a facilitator/reviewer, obtain five consenting real participants, and provide a working browser/device for each planned session. Recruitment, invitations and account creation have not been performed. Keep participant names/contact details and any consent evidence under the facilitator's controlled records, not in the repository. Explain the purpose, voluntary participation, ability to stop, use of redacted observations and the chosen retention/deletion date before starting. Recording audio/video/screenshots requires separate explicit agreement; it is not necessary for this protocol. Choose and record actual retention terms rather than claiming an unapproved policy.
 
@@ -42,7 +42,7 @@ Distribute coverage across the five sessions and any facilitator checks. Five pa
 
 | Report field | Current result |
 | --- | --- |
-| Acceptance artifact / course version / URL | Not selected |
+| Acceptance artifact / course version / URL | Candidate `5e80fcc` / `meeting-notes-action-plan` v1 / `https://juvanga.pages.dev` (technical, noindex); not yet accepted |
 | Facilitator / independent reviewer | Not appointed |
 | Five participant sessions / consent | Not performed or recorded |
 | Real-device / screen-reader observations | Not performed |
